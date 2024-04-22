@@ -1,9 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { FaUnlock } from 'react-icons/fa';
-import { FaMobileRetro } from "react-icons/fa6";
-import {Link, Outlet,} from 'react-router-dom';
+import { FaMobileRetro, FaUnlockKeyhole } from "react-icons/fa6";
+import {Link} from 'react-router-dom';
 import './Login.css';
 import Header from '../components/header';
 
@@ -23,13 +22,14 @@ const InputLoginPass = (props) => {
     return (
         <>  
             <div className = "login-pass">
-                <FaUnlock className="login-icon-pass" />
+                <FaUnlockKeyhole className="login-icon-pass" />
                 <input autoComplete = "on" type = "password" placeholder ="Password" id='login-input-pass'></input>
             </div>
             
         </>
     )
 }
+
 
 function Login() {
   const [setMessage] = useState('');
@@ -42,11 +42,11 @@ function Login() {
       .catch(error => {
         console.log(error);
       });
-  }, []);
+  }, [setMessage]);
 
   return (
     <>
-        <div className = "login-header">
+        <div>
             <Header />
         </div>
         
@@ -60,9 +60,9 @@ function Login() {
                 <p><Link to = "/signup" className = "login-forgot">Forgot Password</Link></p>
                 <Link to ="/home" className = "login-submit">LOG IN</Link>
                 <p>New User?<Link to ="/signup" className = "login-signup">Sign Up</Link></p>
-                
             </div>
-            
+            <div className = "login-type">
+            </div>
         </div>
       
     </>

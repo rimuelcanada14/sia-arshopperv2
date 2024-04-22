@@ -30,7 +30,7 @@ body {
 }
 .login-categories{
     text-align: left;
-    font-size: 20px;
+    font-size: 17px;
     margin-bottom: 0em;
     font-family: "Poppins";
 }
@@ -39,13 +39,13 @@ body {
 }
 .login-icon-mobile {
     position: absolute;
-    top: .9em;
+    top: .65em;
     left: .5em;
     font-size: 1.5em;
 }
 .login-p-mobile{
     position: absolute;
-    top: .55em;
+    top: .1em;
     left: 3.1em;
     font-size: 15px;
 }
@@ -58,12 +58,12 @@ body {
 }
 .login-icon-pass {
     position: absolute;
-    top: .9em;
+    top: .65em;
     left: .5em;
     font-size: 1.5em; /* Adjust size as needed */
 }
-  input[type="number"],
-  select {
+input[type="number"],
+select {
     width: 100%;
     margin: 8px 0;
     display: inline-block;
@@ -74,9 +74,9 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
       0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 15px;
-  }
-  input[type="password"],
-  select {
+}
+input[type="password"],
+select {
     width: 100%;
     margin: 8px 0;
     display: inline-block;
@@ -87,7 +87,12 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
       0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 15px;
-  }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 #login-input-pass{
     padding-left: 50px;
     font-size: 15px;
@@ -95,13 +100,19 @@ body {
 .login-forgot{
     text-align: center;
     font-size: 15.5px;
+    text-decoration: none;
+    color:#E96760
+}
+.login-forgot:hover{
+    color: #b9524c;
+    text-decoration: underline;
 }
 .login-submit{
     padding: .5em;
     background-color: #E96760;
     border-radius: 5px;
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
     color: white;
     font-size: 20px;
     text-decoration: none;
@@ -110,19 +121,18 @@ body {
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .login-submit:hover{
-    padding: .5em;
     background-color: #b9524c;
-    border-radius: 5px;
-    padding-left: 2em;
-    padding-right: 2em;
-    color: white;
-    font-size: 20px;
-    text-decoration: none;
-    font-weight: bolder;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .login-signup{
     margin-left: 5px;
-    margin-bottom: 1em;
+    text-decoration: none;
+    color:#E96760
+}
+.login-signup:hover{
+    color: #b9524c;
+    text-decoration: underline;
+}
+.login-type{
+    text-align: center;
+    font-size: 100px;
 }
