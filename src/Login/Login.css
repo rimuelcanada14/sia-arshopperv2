@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700,900");
+
+body {
+  font-family: "Poppins";
+  margin: 0;
+}
+.login-page{
+    align-items: center;
+    margin: 0 auto;
+}
+.login-title{
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: -5%;
+    margin-top: .5em;
+}
+.login-container{
+    font-family: "Poppins";
+    background-color: #FCF3A6;
+    margin: 5%;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    justify-content: center;
+    text-align: center;
+}
+.login-categories{
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 0em;
+    font-family: "Poppins";
+}
+.login-mobile{
+    position: relative;
+}
+.login-icon-mobile {
+    position: absolute;
+    top: .9em;
+    left: .5em;
+    font-size: 1.5em;
+}
+.login-p-mobile{
+    position: absolute;
+    top: .55em;
+    left: 3.1em;
+    font-size: 15px;
+}
+#login-input-mobile{
+    padding-left: 80px;
+    font-size: 15px;
+}
+.login-pass{
+    position: relative;
+}
+.login-icon-pass {
+    position: absolute;
+    top: .9em;
+    left: .5em;
+    font-size: 1.5em; /* Adjust size as needed */
+}
+  input[type="number"],
+  select {
+    width: 100%;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: Poppins;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 15px;
+  }
+  input[type="password"],
+  select {
+    width: 100%;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: Poppins;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 15px;
+  }
+#login-input-pass{
+    padding-left: 50px;
+    font-size: 15px;
+}
+.login-forgot{
+    text-align: center;
+    font-size: 15.5px;
+}
+.login-submit{
+    padding: .5em;
+    background-color: #E96760;
+    border-radius: 5px;
+    padding-left: 2em;
+    padding-right: 2em;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bolder;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.login-submit:hover{
+    padding: .5em;
+    background-color: #b9524c;
+    border-radius: 5px;
+    padding-left: 2em;
+    padding-right: 2em;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bolder;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.login-signup{
+    margin-left: 5px;
+    margin-bottom: 1em;
+}

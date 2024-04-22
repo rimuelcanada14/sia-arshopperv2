@@ -1,0 +1,33 @@
+.header {
+    position: sticky;
+    top: 0;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background: #E96760;
+    text-align: center;
+    color: white;
+    font-size: .8em;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: 1;
+}
+.header-line{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-line h1{
+    margin: 10px;
+}
+.header-separate{
+    font-size: 35px;
+    margin: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-weight: 300;
+}
+.subscript{
+    font-size: 10px;
+    font-weight: 200;
+    margin-left: -1px;
+}
