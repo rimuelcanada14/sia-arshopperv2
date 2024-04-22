@@ -9,13 +9,14 @@ import {
 
 import Login from './Login/Login';
 import Signup from './Signup/Signup';
-
+import Category from './Category/Categories';
 
 const router =createBrowserRouter(
   createRoutesFromElements(
     <Route path = "/"  >
       <Route index element={<Login />}></Route>
       <Route path = "signup" element={<Signup />}></Route>
+      <Route path = "category" element={<Category />}></Route>
     </Route>
   )
 )
