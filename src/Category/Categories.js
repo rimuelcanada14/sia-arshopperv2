@@ -3,7 +3,6 @@ import React from 'react';
 // import axios from 'axios';
 import {Link} from 'react-router-dom';
 import './Categories.css';
-import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import Header from '../components/header';
 
 
@@ -18,7 +17,7 @@ function Category() {
     //     .catch(error => {
     //       console.log(error);
     //     });
-    // }, [setMessage]);
+    // }, []);
 
     
       const categoryButtons = [
@@ -26,18 +25,24 @@ function Category() {
         {label: 'Snacks', to: '/snacks'},
         {label: 'Hair Products', to: 'hairproduct'},
         {label: 'Dairy Products', to: 'dairyproduct'},
+        {label: 'Beverages', to: '/beverages'},
+        {label: 'Snacks', to: '/snacks'},
+        {label: 'Hair Products', to: 'hairproduct'},
+        {label: 'Add Margin', to: 'addmargin', categoryBottom: true},
       ];
     
     return (
       <div>
-        <Header header="Category" />
+            <Header header={<a href = "/home" className="category-back">BACK</a>} headerright="CATEGORIES" />
         {/* <h1 className="category-header-text"><MdOutlineArrowBackIosNew  className="cetegory-back-button"/>Category</h1> */}
         
         <div>
           {categoryButtons.map((button, index) => (
             <Link key={index} to={button.to}>
               <br></br>
-              <button className="categoryButtons">{button.label}</button>
+              <button className={`categoryButtons ${button.categoryBottom ? 'categoryBottom' : ''}`}>
+              {button.label}
+              </button>
             </Link>
           ))}
         </div>

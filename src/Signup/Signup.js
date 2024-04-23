@@ -92,7 +92,7 @@ function Login() {
   return (
     <>
         <div className='signup-header'>
-            <Header />
+            <Header header="ARShopper"/>
         </div>
         
         <div className='signup-page'>

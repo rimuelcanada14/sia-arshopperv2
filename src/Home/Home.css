@@ -3,14 +3,14 @@
   flex-direction: column;
   height: 83vh;
   justify-content: center;
-  margin-left: 2.5em;
-  margin-right: 2.5em;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
 }
 .home-icon {
   position: relative;
-  margin: 8px 0;
+  margin: 12px 0;
   border-radius: 30px;
-  height: 9em;
+  height: 8.5em;
   padding-left: 2em;
   padding-right: 2em;
   font-family: Poppins;
@@ -26,8 +26,8 @@
 }
 .home-categories{
   position: absolute;
-  font-size: 45px;
+  font-size: 39px;
   text-align: center;
-  top: .2em;
-  left: 1.9em;
+  top: .45em;
+  left: 2.4em;
 }

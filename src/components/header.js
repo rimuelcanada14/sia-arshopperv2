@@ -18,7 +18,7 @@ const Header = (props) => {
                 <div class="header-line">
                     <h1>{props.header}</h1>
                     <p class="header-separate"> | </p>
-                    <h1> ICHI MART<sub class="subscript">©</sub></h1> 
+                    <h1>{props.headerright}<sub className="subscript">{props.headersub}</sub></h1>
                 </div>
             </div> 
         </>

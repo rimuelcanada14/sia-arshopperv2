@@ -48,12 +48,9 @@ button {
 a {
     text-decoration: none;
 }
-
-.cetegory-back-button {
-    width: 1.6em;
-    height: .8em;
-    float: left;
-    margin-top: 13.9px;
-    margin-bottom: auto;
-    margin-right: -1.4em;
+.category-back{
+    color: white;
+}
+.categoryBottom{
+    margin-bottom: 10em;
 }

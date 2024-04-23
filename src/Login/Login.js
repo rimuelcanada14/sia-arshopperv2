@@ -47,9 +47,7 @@ function Login() {
   return (
     <>
         <div>
-            <Header header="Arshopper"/>
-            
-
+            <Header header="ARShopper" headerright="ICHI MART" headersub="©"/>
         </div>
         
         <div className='login-page'>
