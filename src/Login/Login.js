@@ -5,6 +5,7 @@ import { FaMobileRetro, FaUnlockKeyhole } from "react-icons/fa6";
 import {Link} from 'react-router-dom';
 import './Login.css';
 import Header from '../components/header';
+import { TypeAnimation } from 'react-type-animation';
 
 const InputLoginMobile = (props) => {
     return (
@@ -12,7 +13,7 @@ const InputLoginMobile = (props) => {
             <div className = "login-mobile">
                 <FaMobileRetro className="login-icon-mobile" />
                 <p className = "login-p-mobile">+63</p>
-                <input autoComplete = "on" type = "number" placeholder ="9151234567" id='login-input-mobile' maxlength="10"></input>
+                <input autoComplete = "on" type = "number" placeholder ="9151234567" id='login-input-mobile' maxLength="10"></input>
             </div>
             
         </>
@@ -29,7 +30,6 @@ const InputLoginPass = (props) => {
         </>
     )
 }
-
 
 function Login() {
   const [setMessage] = useState('');
@@ -63,7 +63,26 @@ function Login() {
                 <Link to ="/home" className = "login-submit">LOG IN</Link>
                 <p>New User?<Link to ="/signup" className = "login-signup">Sign Up</Link></p>
             </div>
+
             <div className = "login-type">
+            <TypeAnimation
+                sequence={[
+                    'I love you', 3000, 
+                    '愛してる', 3000,
+                    'Mahal kita', 3000,
+                    '사랑해요', 3000,
+                    'Te quiero', 3000,
+                    'أحبك', 3000,
+                    'я тебе люблю', 3000,
+                    "Je t'aime", 3000, 
+                    'Σε αγαπώ', 3000,
+                    'Jag älskar dig', 3000,
+                    'Ti amo', 3000,
+                ]}
+                wrapper="span"
+                speed={300}
+                repeat={Infinity}
+                />
             </div>
         </div>
       
