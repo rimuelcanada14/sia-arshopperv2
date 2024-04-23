@@ -4,6 +4,7 @@ import axios from 'axios';
 import {Link, Outlet,} from 'react-router-dom';
 import './Categories.css';
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
+import Header from '../components/header';
 
 
 function Category() {
@@ -29,12 +30,8 @@ function Category() {
     
     return (
       <div>
-        <div className="category-header">
-          <span>
-            
-            <h1 className="category-header-text"><MdOutlineArrowBackIosNew  className="cetegory-back-button"/>Category</h1>
-          </span>
-        </div>
+        <Header header="Category" />
+        {/* <h1 className="category-header-text"><MdOutlineArrowBackIosNew  className="cetegory-back-button"/>Category</h1> */}
         
         <div>
           {categoryButtons.map((button, index) => (
