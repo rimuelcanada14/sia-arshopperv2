@@ -10,6 +10,8 @@ import {
 import Login from './Login/Login';
 import Signup from './Signup/Signup';
 import Category from './Category/Categories';
+import Home from './Home/Home';
+
 
 const router =createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +19,7 @@ const router =createBrowserRouter(
       <Route index element={<Login />}></Route>
       <Route path = "signup" element={<Signup />}></Route>
       <Route path = "category" element={<Category />}></Route>
+      <Route path = "Home" element={<Home/>}></Route>
     </Route>
   )
 )
