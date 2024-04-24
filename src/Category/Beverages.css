@@ -1,42 +1,49 @@
-.beveragesButtons {
+.beverages-buttons {
     width:80%;
     display: flex;
-    justify-content: center;
     margin-left: auto;
     margin-right: auto;
     font-size: 12px;
     border-radius: 20px;
     background-color: #FBF08F;
     height: 8em;
-    text-align: center;
     margin-top: 10px;
     font-family: Poppins;
     font-weight: bold;
+    color: black;
+    border: none;
+    cursor: pointer;
 }
 
 button {
     text-decoration: none;
     border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     box-shadow: 5px 5px 5px gray;
-
 }
 
 a {
     text-decoration: none;
 }
 
-.cetegory-back-button {
-    width: 1.6em;
-    height: .8em;
-    float: left;
-    margin-top: 13.9px;
-    margin-bottom: auto;
-    margin-right: -1.4em;
-}
 
 .beverages-back {
     color: white;
 }
+
+.beverages-img {
+    width: 60px; 
+    height: auto; 
+    margin-left: 20px;
+    border-radius: 10px;
+}
+
+.button-label {
+    flex: 1;
+    margin-right: 45px;
+    align-items: center;
+}
+
+/* .beverages-button-content {
+    align-items: center;
+    display: flex;
+} */

@@ -3,9 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import {Link, Outlet,} from 'react-router-dom';
 import './Beverages.css';
-import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import Header from '../components/header';
-
 
 function Beverages() {
     const [setMessage] = useState('');
@@ -22,10 +20,10 @@ function Beverages() {
 
     
       const beveragesButtons = [
-        {label: 'C2 Green Tea Lemon 355ML', to: '', imageUrl: './public/ProductImage/green tea.jpg'},
-        {label: 'Kopiko Lucky Day', to: ''},
-        {label: 'Nova Country Cheddar', to: ''},
-        {label: 'Pillows Chocolate Crackers', to: ''},
+        {label: 'C2 Green Tea Lemon 355ML', SecondaryLabel: 'PHP 40', to: '', imageUrl: '/ProductImage/green-tea.jpg'},
+        {label: 'Kopiko Lucky Day', to: '', SecondaryLabel: 'PHP 29', imageUrl: '/ProductImage/green-tea.jpg'},
+        {label: 'Nova Country Cheddar', to: '', SecondaryLabel: 'PHP 33', imageUrl: '/ProductImage/green-tea.jpg'},
+        {label: 'Pillows Chocolate Crackers', to: '', SecondaryLabel: 'PHP 55', imageUrl: '/ProductImage/green-tea.jpg'},
       ];
     
     return (
@@ -37,7 +35,14 @@ function Beverages() {
           {beveragesButtons.map((button, index) => (
             <Link key={index} to={button.to}>
               <br></br>
-              <button className="beveragesButtons">{button.label}</button>
+              <button className="beverages-buttons">
+                
+                <img className="beverages-img"src={button.imageUrl} alt={button.label} />
+                <span className="button-label">{button.label}<br></br>{button.SecondaryLabel}</span>
+                
+                
+                
+              </button>
             </Link>
           ))}
         </div>
