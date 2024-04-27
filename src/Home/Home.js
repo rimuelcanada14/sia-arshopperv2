@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.css';
 import Header from '../components/header';
+import Footer from '../components/footer';
 import { LuScanLine } from "react-icons/lu";
 import { ImSearch } from "react-icons/im";
 import { FaPeopleGroup } from "react-icons/fa6";
@@ -36,9 +37,8 @@ function Home() {
             </div>
           </div>
 
-        <div className='footer'>
-          {/* Footer content goes here */}
-        </div>
+        <Footer />
+
       </div>
       </>
       
