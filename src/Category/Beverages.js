@@ -20,7 +20,7 @@ function Beverages() {
 
     
       const beveragesButtons = [
-        {label: 'C2 Green Tea Lemon 355ML', SecondaryLabel: 'PHP 40', to: '', imageUrl: '/ProductImage/green-tea.jpg'},
+        {label: 'C2 Green Tea Lemon 355ML', SecondaryLabel: 'PHP 40', to: '/wayfinding', imageUrl: '/ProductImage/green-tea.jpg'},
         {label: 'Kopiko Lucky Day', to: '', SecondaryLabel: 'PHP 29', imageUrl: '/ProductImage/green-tea.jpg'},
         {label: 'Nova Country Cheddar', to: '', SecondaryLabel: 'PHP 33', imageUrl: '/ProductImage/green-tea.jpg'},
         {label: 'Pillows Chocolate Crackers', to: '', SecondaryLabel: 'PHP 55', imageUrl: '/ProductImage/green-tea.jpg'},

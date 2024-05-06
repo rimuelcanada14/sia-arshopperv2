@@ -1,0 +1,67 @@
+.wayfinding-container{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+}
+.wayfinding-upper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.wayfinding-box{
+    margin-top: 1em;
+    padding-top: 10em;
+    background-color: #fca6a6;
+    border-radius: 7px;
+    width: 3em;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.wayfinding-drinks{
+    order: 1;
+    margin-top: 1em;
+}
+.wayfinding-hygiene{
+    order: 2;
+    margin-top: 1em;
+}
+.wayfinding-laundry{
+    order: 3;
+    margin-top: 1em;
+}
+p.wayfinding-name{
+    font-size: 18px;
+    text-align: center;
+    margin: 0 1.3em;
+}
+.wayfinding-lower{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;    
+}
+.wayfinding-icecream{
+    order: 1;
+    margin-top: 1em;
+    margin-left: -2em ;
+    margin-right: .5em;
+}
+.wayfinding-snack{
+    order: 2;
+    margin-top: 1em;
+    margin-left: -1em;
+    margin-right: 1em;
+}
+.wayfinding-liquor{
+    order: 3;
+    margin-top: 1em;
+    margin-right: -.3em;
+    margin-left: .5em;
+    
+}
+  
+
+
