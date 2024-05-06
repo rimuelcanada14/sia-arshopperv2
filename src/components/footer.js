@@ -2,8 +2,8 @@ import React from 'react';
 import './footer.css';
 import { Link } from 'react-router-dom';
 import { FaUserCircle } from 'react-icons/fa';
-import { IoIosHome } from 'react-icons/io';
-import { IoExit } from 'react-icons/io5';
+import { AiFillHome } from "react-icons/ai";
+import { RiLogoutCircleLine } from "react-icons/ri";
 
 const Footer = () => {
     return (
@@ -12,11 +12,11 @@ const Footer = () => {
             <Link to="">
               <FaUserCircle className='footer-icon'/>
             </Link>
-            <Link to="">
-              <IoIosHome className='footer-icon' />
+            <Link to="/home">
+              <AiFillHome className='footer-icon' />
             </Link>
             <Link to ="">
-              <IoExit className='footer-icon' />
+              <RiLogoutCircleLine className='footer-icon' />
             </Link>
           </ul>
         </div>
