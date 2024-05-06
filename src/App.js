@@ -14,6 +14,8 @@ import Profile from './profile/Profile';
 import Category from './Category/Categories';
 import Home from './Home/Home';
 import Beverages from './Category/Beverages';
+import Wayfinding from './Wayfinding/Wayfinding';
+
 
 const router =createBrowserRouter(
   createRoutesFromElements(
@@ -24,6 +26,8 @@ const router =createBrowserRouter(
       <Route path = "category" element={<Category />}></Route>
       <Route path = "Home" element={<Home/>}></Route>
       <Route path = "beverages" element={<Beverages />}></Route>
+      <Route path = "wayfinding" element={<Wayfinding />}></Route>
+
 
     </Route>
   )

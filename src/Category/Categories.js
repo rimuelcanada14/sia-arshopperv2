@@ -34,7 +34,7 @@ function Category() {
     return (
       <div>
             <Header header={<a href = "/home" className="category-back">BACK</a>} headerright="CATEGORIES" />
-        {/* <h1 className="category-header-text"><MdOutlineArrowBackIosNew  className="cetegory-back-button"/>Category</h1> */}
+        
         
         <div>
           {categoryButtons.map((button, index) => (
