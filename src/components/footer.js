@@ -9,13 +9,13 @@ const Footer = () => {
     return (
         <div className="footer">
           <ul className='footer-icons'>
-            <Link to="">
+            <Link to="/Profile">
               <FaUserCircle className='footer-icon'/>
             </Link>
-            <Link to="/home">
+            <Link to="/Home">
               <AiFillHome className='footer-icon' />
             </Link>
-            <Link to ="">
+            <Link to ="/">
               <RiLogoutCircleLine className='footer-icon' />
             </Link>
           </ul>

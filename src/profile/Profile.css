@@ -1,47 +1,39 @@
-.profile-icon {
-    display: flex;
-    justify-content: center;
-}
-
 .profile-container{
     display: flex;
     flex-direction: column;
+}
+
+.profile-icon {
+    display: block;
+    margin: auto;
+    justify-content: center;
+    height: 145px;
+    width: 145px;
 }
 
 .profile-btn {
     position: relative;
     margin: 12px 0;
     border-radius: 20px;
-    height: 8.5em;
+    height: 3.5em;
     font-family: Poppins;
     background-color: #FCF3A6;
     max-width: 100%;
     color: black;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    font-weight: bold;
+    font-size: 35px;
 }
 
 .profile-btn-icon-left {
-    position: absolute;
-    top: .6em;
-    left: .15em;  
-    font-size: 40px;
-    color: black;
-}
-
-.profile-btn-icon-right {
-    position: absolute;
-    display: flex;
-    top: .6em;
-    left: 7em;  
-    font-size: 50px;
-    color: black;
+    height: 100%;
 }
 
 .profile-categories {
-    position: absolute;
-    font-weight: bold;
-    font-size: 30px;
-    text-align: center;
-    top: .45em;
+    padding: 8.5% 0%;
+}
+
+.profile-btn-icon-right {
+    height: 100%;
 }
