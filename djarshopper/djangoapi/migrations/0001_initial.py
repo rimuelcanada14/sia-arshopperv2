@@ -15,9 +15,15 @@ class Migration(migrations.Migration):
             name='SignUp',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('username', models.CharField(max_length=100)),
+                ('firstName', models.CharField(max_length=100)),
+                ('lastName', models.CharField(max_length=100)),
                 ('mobileNumber', models.BigIntegerField(blank=True, null=True)),
-                ('password', models.CharField(max_length=11)),
+                ('password', models.CharField(max_length=128)),
+                
+                ('healthComplication', models.CharField(max_length=3, choices=[
+                    ('yes', 'I have health complications'),
+                    ('no', 'I do not have health complications')    
+                ], default='no')),
             ],
         ),
     ]

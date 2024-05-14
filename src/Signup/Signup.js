@@ -77,17 +77,36 @@ import Header from '../components/header';
 // };
 const Signup = () => {
   const [formData, setFormData] = useState({
-    username: '',
+    firstName: '',
+    lastName: '',
     password: '',
+    confirmPassword: '',
     mobileNumber: '',
+    healthComplication: '',
   });
 
+  const [passErr, setPassError] = useState('');
+
+
+
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const{name, value} = e.target;
+    setFormData({ ...formData, [name]: value });
+
+    if (name === 'password' || name === 'confirmPassword'){
+      setPassError('');
+    }
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if(formData.password !== formData.confirmPassword){
+      setPassError('Password do not match');
+      return;
+    }
+
+
     try {
       const response = await axios.post('http://localhost:8000/api/signup/', formData);
       if (response.status === 201) {
@@ -148,11 +167,20 @@ const Signup = () => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          name="username"
-          placeholder="Username"
-          value={formData.username}
+          name="firstName"
+          placeholder="First Name"
+          value={formData.firstName}
           onChange={handleChange}
         />
+        
+        <input
+          type="text"
+          name="lastName"
+          placeholder="Last Name"
+          value={formData.lastName}
+          onChange={handleChange}
+        />
+        
         <input
           type="password"
           name="password"
@@ -160,6 +188,16 @@ const Signup = () => {
           value={formData.password}
           onChange={handleChange}
         />
+        
+        <input
+          type="password"
+          name="confirmPassword"
+          placeholder="Confirm Password"
+          onChange={handleChange}
+        />
+
+        {passErr && <div style={{color: 'red'}}>{passErr} </div>}
+        
         <input
           type="number"
           name="mobileNumber"
@@ -167,6 +205,12 @@ const Signup = () => {
           value={formData.mobileNumber}
           onChange={handleChange}
         />
+        
+        <select name="healthComplication" id="dropdown" onChange={handleChange} value={formData.healthComplication}>
+          <option value="yes">I Have Health Complications</option>
+          <option value ="no">I Don't Have Health Complications</option>
+        </select>
+        
         <button type="submit">Sign Up</button>
       </form>
     </div>

@@ -175,3 +175,7 @@ select {
     color: #b9524c;
     text-decoration: underline;
 }
+
+#dropdown {
+    width: 350px;
+}
