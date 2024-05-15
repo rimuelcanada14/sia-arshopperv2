@@ -32,7 +32,7 @@ body {
     padding-bottom: 1px;
     justify-content: center;
     text-align: center;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 .signup-categories{
     text-align: left;
@@ -160,7 +160,9 @@ select {
     font-weight: bolder;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: .5em;
 }
 .signup-submit:hover{
     background-color: #b9524c;
@@ -174,8 +176,4 @@ select {
 .signup-login:hover{
     color: #b9524c;
     text-decoration: underline;
-}
-
-#dropdown {
-    width: 350px;
 }
