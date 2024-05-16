@@ -11,21 +11,21 @@ function AboutUs() {
         {label: 'History of the Store', to: '/IchimartInfo'},
         {label: 'Developers Information', to: '/DevInfo'},
         {label: 'ARShoppers Developers', to: '/DevImage'},
-        {label: 'Add Margin', to: 'addmargin', aboutUsbottom: true},
+        
     ];
 
     
     return (
         <div>
-            <Header header={<b href = "/home" classname="back-btn">BACK</b>} headerright="AboutUs" />
+            <Header header={<a href = "/home" classname="back-btn">BACK</a>} headerright="AboutUs" />
 
             <div>
               {aboutUsButtons.map ((button, index) => (
                 <Link key={index} to={button.to}>
-                <br></br>
-                <button classname={`aboutUsButtons ${button.aboutUsbottom ? 'aboutUsbottom' : ''}`}>
-                {button.label}
-                </button>
+                  <br></br>
+                  <button className={`aboutUsButtons`}>
+                  {button.label}
+                  </button>
                 </Link>
               ))}
             </div>

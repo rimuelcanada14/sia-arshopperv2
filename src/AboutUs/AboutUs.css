@@ -19,23 +19,31 @@
     border-bottom-right-radius: 20px;
 }
 .aboutUsButtons {
-    align-content: stretch;
-    background: #E44138;
+    background: #FF6961;
     justify-content: center;
-    margin-bottom: 2em;
+    margin-bottom: .30em;
     font-family: Poppins;
     font-weight: bold;
-    font-size: 32px;
-    width: 85%;
-    height: 3em;
+    font-size: 28px;
+    width: 80%;
+    color: white;
+    height: 5em;
     display: flex;
     border-radius: 20px;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; 
+    margin-top: 15px;
     transition-duration: 0.4s;
     cursor: pointer;
     
 }  
+.aboutUsButtons:hover {
+    color:#E44138;
+    color:white;
+    background-color: #ff553e; opacity: 93%;
+    border: 1px solid #FBF08F;
+}
+
 
 button {
     text-decoration: none;
@@ -47,12 +55,11 @@ button {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-b {
+a {
     text-decoration: none;
+    color: white;
 }
 .back-btn{
-    color:white;
+    text-decoration:white;
 }
-.aboutUsbottom{
-    margin-bottom: 10em;
-}
+
