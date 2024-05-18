@@ -20,7 +20,10 @@
     align-items: center;
 }
 .header-line h1{
-    margin: 10px;
+    margin: 7px;
+    width: 150px;
+    margin-left: -1px;
+    margin-right: -1px;
 }
 .header-separate{
     font-size: 35px;

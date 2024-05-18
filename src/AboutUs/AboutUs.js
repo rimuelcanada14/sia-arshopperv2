@@ -7,31 +7,39 @@ import Header from '../components/header';
     
 function AboutUs() {
 
+
+
     const aboutUsButtons = [
         {label: 'History of the Store', to: '/IchimartInfo'},
         {label: 'Developers Information', to: '/DevInfo'},
         {label: 'ARShoppers Developers', to: '/DevImage'},
         
     ];
-
+    
+  
     
     return (
+      <>
         <div>
-            <Header header={<a href = "/home" classname="back-btn">BACK</a>} headerright="AboutUs" />
+
+           <Header header={<a href ="/home"classname="back-btn">BACK</a>} headerright="ABOUT US"/>
 
             <div>
               {aboutUsButtons.map ((button, index) => (
                 <Link key={index} to={button.to}>
                   <br></br>
-                  <button className={`aboutUsButtons`}>
-                  {button.label}
-                  </button>
+                    <button className={`aboutUsButtons`}>
+                      {button.label}
+                   </button>
                 </Link>
               ))}
             </div>
         </div>
+      </>
   );
 }
+
+
 
 
 export default AboutUs;

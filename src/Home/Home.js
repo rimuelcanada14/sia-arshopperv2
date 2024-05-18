@@ -31,16 +31,18 @@ function Home() {
             </div>
           </Link>
 
+          <Link to ="/aboutUs">
             <div className='home-icon'>
               <FaPeopleGroup className="icon" />
               <h1 className='home-categories'>ABOUT US</h1>
             </div>
-          </div>
+          </Link>
 
         <Footer />
 
+        </div>
       </div>
-      </>
+    </>
       
     );
 }

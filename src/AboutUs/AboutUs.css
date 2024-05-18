@@ -1,4 +1,4 @@
-.aboutUs-textheader {
+.aboutUs-header-text {
     position: relative;
     text-align: center;
     font-size: 40px;
@@ -13,16 +13,18 @@
     background: #E96760;
     text-align: center;
     color: white;
-    z-index: 1;
-    width: 100%;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    z-index: 1;
+    width: 100%;
+    
 }
 .aboutUsButtons {
     background: #FF6961;
     justify-content: center;
     margin-bottom: .30em;
     font-family: Poppins;
+    flex-direction: column;
     font-weight: bold;
     font-size: 28px;
     width: 80%;
@@ -32,7 +34,8 @@
     border-radius: 20px;
     margin-left: auto;
     margin-right: auto; 
-    margin-top: 15px;
+    margin-top: 48px;
+    margin-bottom: -38px;
     transition-duration: 0.4s;
     cursor: pointer;
     
@@ -40,7 +43,7 @@
 .aboutUsButtons:hover {
     color:#E44138;
     color:white;
-    background-color: #ff553e; opacity: 93%;
+    background-color: #E44138; opacity: 80%;
     border: 1px solid #FBF08F;
 }
 
@@ -58,8 +61,12 @@ button {
 a {
     text-decoration: none;
     color: white;
+    margin-right: -15px;
+    margin-left: 38px;
+    
 }
 .back-btn{
     text-decoration:white;
+    margin-left: -15px;
 }
 
