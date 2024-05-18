@@ -22,10 +22,10 @@ function AboutUs() {
       <>
         <div>
 
-           <Header header={<a href ="/home"classname="back-btn">BACK</a>} headerright="ABOUT US"/>
+           <Header header={<a href = "/home" classname="back-btn">BACK</a>} headerright="ABOUT US" />
 
             <div>
-              {aboutUsButtons.map ((button, index) => (
+              {aboutUsButtons.map((button, index) => (
                 <Link key={index} to={button.to}>
                   <br></br>
                     <button className={`aboutUsButtons`}>

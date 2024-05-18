@@ -34,6 +34,12 @@
     font-family: Poppins;
     font-weight: bold;
 }
+.categoryButtons:hover {
+    color:#E44138;
+    color:white;
+    background-color: #E44138; opacity: 80%;
+    border: 1px solid #FBF08F;
+}
 
 button {
     text-decoration: none;
@@ -48,6 +54,7 @@ button {
 
 a {
     text-decoration: none;
+
 }
 .category-back{
     color: white;

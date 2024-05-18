@@ -26,20 +26,21 @@
     font-family: Poppins;
     flex-direction: column;
     font-weight: bold;
-    font-size: 28px;
-    width: 80%;
+    font-size: 29px;
+    width:92%;
     color: white;
     height: 5em;
     display: flex;
     border-radius: 20px;
     margin-left: auto;
     margin-right: auto; 
-    margin-top: 48px;
-    margin-bottom: -38px;
+    margin-top: 49.1px;
+    margin-bottom: -45px;
     transition-duration: 0.4s;
     cursor: pointer;
-    
+     
 }  
+
 .aboutUsButtons:hover {
     color:#E44138;
     color:white;
@@ -50,10 +51,6 @@
 
 button {
     text-decoration: none;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -61,8 +58,8 @@ button {
 a {
     text-decoration: none;
     color: white;
-    margin-right: -15px;
-    margin-left: 38px;
+    margin-right: -28px;
+    margin-left: 28px;
     
 }
 .back-btn{

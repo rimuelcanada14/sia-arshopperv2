@@ -15,11 +15,12 @@
 .profile-btn {
     position: relative;
     margin: 12px 0;
+    margin-right: 10px;
     border-radius: 20px;
     height: 3.5em;
     font-family: Poppins;
     background-color: #FCF3A6;
-    max-width: 100%;
+    width: 95%;
     color: black;
     display: flex;
     align-items: center;
@@ -27,6 +28,7 @@
     text-align: center;
     font-weight: bold;
     font-size: 35px;
+    
 }
 
 .profile-btn-icon-left {

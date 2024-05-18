@@ -40,9 +40,9 @@ function Category() {
           {categoryButtons.map((button, index) => (
             <Link key={index} to={button.to}>
               <br></br>
-              <button className={`categoryButtons ${button.categoryBottom ? 'categoryBottom' : ''}`}>
-              {button.label}
-              </button>
+                 <button className={`categoryButtons ${button.categoryBottom ? 'categoryBottom' : ''}`}>
+                    {button.label}
+                </button>
             </Link>
           ))}
         </div>
