@@ -19,23 +19,24 @@ function AboutUs() {
   
     
     return (
-      <>
-        <div>
-
-           <Header header={<a href = "/home" classname="back-btn">BACK</a>} headerright="ABOUT US" />
-
-            <div>
-              {aboutUsButtons.map((button, index) => (
-                <Link key={index} to={button.to}>
-                  <br></br>
-                    <button className={`aboutUsButtons`}>
-                      {button.label}
-                   </button>
-                </Link>
-              ))}
-            </div>
+    <>
+        <div className='aboutus-header'>
+            <Header header={<a href = "/home" className="category-back">BACK</a>} headerright="ABOUT US" 
+            headersub={<a href = "/home" className="aboutus-sub">h</a>}/>
         </div>
-      </>
+        
+        <div>
+          {aboutUsButtons.map ((button, index) => (
+          <Link key={index} to={button.to}>
+            <br></br>
+            <button className={`aboutUsButtons`}>
+              {button.label}
+            </button>
+          </Link>
+          ))}
+        </div>
+    </>
+        
   );
 }
 

@@ -13,35 +13,34 @@ function Home() {
         <div>
             <Header header="ARShopper" headerright="ICHI MART" headersub="©" />
         </div>
+
         <div>
-
           <div className='home-container'>
-            
-          <Link to ="/signup">
-            <div className='home-icon'>
-              <LuScanLine className="icon"/>
-              <h1 className='home-categories'>SCAN</h1>
-            </div>
-          </Link>
-            
-          <Link to ="/category">
-            <div className='home-icon'>
-              <ImSearch className="icon" />
-              <h1 className='home-categories'>SEARCH</h1>
-            </div>
-          </Link>
+            <Link to ="/signup">
+              <div className='home-icon'>
+                <LuScanLine className="icon"/>
+                <h1 className='home-categories'>SCAN</h1>
+              </div>
+            </Link>
+              
+            <Link to ="/category">
+              <div className='home-icon'>
+                <ImSearch className="icon" />
+                <h1 className='home-categories'>SEARCH</h1>
+              </div>
+            </Link>
 
-          <Link to ="/aboutUs">
-            <div className='home-icon'>
-              <FaPeopleGroup className="icon" />
-              <h1 className='home-categories'>ABOUT US</h1>
-            </div>
-          </Link>
-
-        <Footer />
-
+            <Link to ="/aboutUs">
+              <div className='home-icon'>
+                <FaPeopleGroup className="icon" />
+                <h1 className='home-categories'>ABOUT US</h1>
+              </div>
+            </Link>
+          </div>
+          <div>
+            <Footer />
+          </div>
         </div>
-      </div>
     </>
       
     );

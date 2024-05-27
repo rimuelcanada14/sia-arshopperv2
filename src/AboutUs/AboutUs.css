@@ -5,20 +5,11 @@
     margin-left: auto;
     margin-right: auto;
 }
-.aboutUs-header {
-    position: sticky;
-    top: 0;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    background: #E96760;
-    text-align: center;
-    color: white;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    z-index: 1;
-    width: 100%;
-    
+
+.aboutus-sub{
+    visibility: hidden;
 }
+
 .aboutUsButtons {
     background: #FF6961;
     justify-content: center;
@@ -54,16 +45,3 @@ button {
     color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
-a {
-    text-decoration: none;
-    color: white;
-    margin-right: -28px;
-    margin-left: 28px;
-    
-}
-.back-btn{
-    text-decoration:white;
-    margin-left: -15px;
-}
-
