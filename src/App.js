@@ -15,6 +15,7 @@ import Home from './Home/Home';
 import Beverages from './Category/Beverages';
 import AboutUs from './AboutUs/AboutUs';
 import Wayfinding from './Wayfinding/Wayfinding';
+import Barcodescan from './Barcodescan/Barcodescan';
 
 
 const router =createBrowserRouter(
@@ -28,6 +29,7 @@ const router =createBrowserRouter(
       <Route path = "beverages" element={<Beverages />}></Route>
       <Route path = "AboutUs" element={<AboutUs />}></Route>
       <Route path = "wayfinding" element={<Wayfinding />}></Route>
+      <Route path = "Barcodescan" element ={<Barcodescan/>}></Route>
 
 
     </Route>
