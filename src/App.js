@@ -30,8 +30,6 @@ const router =createBrowserRouter(
       <Route path = "AboutUs" element={<AboutUs />}></Route>
       <Route path = "wayfinding" element={<Wayfinding />}></Route>
       <Route path = "Barcodescan" element ={<Barcodescan/>}></Route>
-
-
     </Route>
   )
 )

@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './AboutUs.css';
 import Header from '../components/header';
+import Footer from '../components/footer';
 
 
     
@@ -34,6 +35,9 @@ function AboutUs() {
             </button>
           </Link>
           ))}
+        </div>
+        <div>
+          <Footer />
         </div>
     </>
         
