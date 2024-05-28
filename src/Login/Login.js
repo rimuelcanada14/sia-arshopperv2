@@ -42,12 +42,22 @@ const Login = () => {
             <h1 className = "login-title">LOG IN</h1>
             <div className = "login-container">
                 <form onSubmit={handleSubmit}>
-                    <p className = "login-categories">Mobile Number</p>
-                    <input type="text" value={mobile_Number} onChange={(e) => setMobile_Number(e.target.value)} />
-                    <p className = "login-categories">Password</p>
-                    <input type="password" value={password} onChange={(e) => setpassword(e.target.value)} />
+                    <div className = "login-user">
+                        <p className = "login-categories">Mobile Number</p>
+                        <p className = "login-p-mobile">+63</p>
+                        <input type="text" id="login-input-mobile" value={mobile_Number} onChange={(e) => setMobile_Number(e.target.value)} />
+                        <FaMobileRetro className="login-icon-mobile" />
+                    </div>
+                    
+                    <div className = "login-user">
+                        <p className = "login-categories">Password</p>
+                        <input type="password" id = "login-input-pass" value={password} onChange={(e) => setpassword(e.target.value)} />
+                        <FaUnlockKeyhole className="login-icon-pass" />
+                    </div>
+                    
+                    
                     <p><Link to = "/signup" className = "login-forgot">Forgot Password</Link></p>
-                    <button type="submit">Login</button>
+                    <button type="submit" className = "login-submit">LOG IN</button>
                     <p>New User?<Link to ="/signup" className = "login-signup">Sign Up</Link></p>
                 </form>
                 {error && <p style={{color: "red"}}>{error}</p>}
