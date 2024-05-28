@@ -13,7 +13,7 @@ const Signup = () => {
     lastName: '',
     password: '',
     confirmPassword: '',
-    mobileNumber: '',
+    mobile_number: '',
     healthComplication: '',
   });
 
@@ -97,9 +97,9 @@ const Signup = () => {
                     <input
                       id="signup-input-mobile"
                       type="number"
-                      name="mobileNumber"
+                      name="mobile_number"
                       placeholder="Mobile Number"
-                      value={formData.mobileNumber}
+                      value={formData.mobile_number}
                       onChange={handleChange}
                       required
                     />

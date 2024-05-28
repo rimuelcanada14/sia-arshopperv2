@@ -40,6 +40,12 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'djangoapi',
+    'rest_framework.authtoken',
+]
+
+AUTHENTICATION_BACKENDS = [
+    'djangoapi.authentication.MobileNumberBackend',
+    'django.contrib.auth.backends.ModelBackend',
 ]
 
 MIDDLEWARE = [
@@ -55,6 +61,12 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
 
 ROOT_URLCONF = 'djarshopper.urls'
 
@@ -76,7 +88,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'djarshopper.wsgi.application'
 
-
+AUTH_USER_MODEL = 'djangoapi.LoginUser'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
