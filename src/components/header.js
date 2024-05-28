@@ -4,10 +4,10 @@ import './header.css'
 const Header = (props) => {
     return (
         <>
-            <div class="header">
-                <div class="header-line">
+            <div className="header">
+                <div className="header-line">
                     <h1>{props.header}</h1>
-                    <p class="header-separate"> | </p>
+                    <p className="header-separate"> | </p>
                     <h1>{props.headerright}<sub className="subscript">{props.headersub}</sub></h1>
                 </div>
             </div> 

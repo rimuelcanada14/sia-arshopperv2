@@ -2,10 +2,6 @@ import React from 'react';
 import "./Wayfinding.css"
 import Header from '../components/header';
 import Footer from '../components/footer';
-import { LuScanLine } from "react-icons/lu";
-import { ImSearch } from "react-icons/im";
-import { FaPeopleGroup } from "react-icons/fa6";
-import {Link} from 'react-router-dom';  
 
 function Wayfinding() {
     return (

@@ -16,7 +16,7 @@ function Home() {
 
         <div>
           <div className='home-container'>
-            <Link to ="/signup">
+            <Link to ="/barcodescan">
               <div className='home-icon'>
                 <LuScanLine className="icon"/>
                 <h1 className='home-categories'>SCAN</h1>
