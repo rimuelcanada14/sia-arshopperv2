@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 
 class MyLoginManager(BaseUserManager):
     def create_user(self, mobile_number, password=None, **extra_fields):
@@ -16,7 +16,7 @@ class MyLoginManager(BaseUserManager):
         
         return self.create_user(mobile_number, password, **extra_fields)
 
-class LoginUser(AbstractBaseUser):
+class LoginUser(AbstractBaseUser, PermissionsMixin):
     username = None
     mobile_number = models.BigIntegerField(unique=True)
     is_active = models.BooleanField(default=True)

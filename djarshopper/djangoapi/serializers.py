@@ -13,14 +13,16 @@ class SignUpSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         password = validated_data.pop('password')
         validated_data['password'] = make_password(password)
+        
         login_user = LoginUser.objects.create_user(
             mobile_number=validated_data['mobile_number'],
             password=password
         )
+        
         signup = SignUp.objects.create(user=login_user, **validated_data)
         return signup
 
-    
+#for login serializer
 class AuthSerializer(serializers.Serializer):
     mobile_number = serializers.IntegerField()
     password = serializers.CharField()

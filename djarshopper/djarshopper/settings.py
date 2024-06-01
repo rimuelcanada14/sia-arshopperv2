@@ -122,6 +122,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#redirecting custom URL from default admin to a dashboard
+# settings.py
+
+LOGIN_REDIRECT_URL = '/dashboard/'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
