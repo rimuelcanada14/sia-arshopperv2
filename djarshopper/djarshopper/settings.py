@@ -125,7 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 #redirecting custom URL from default admin to a dashboard
 # settings.py
 
-LOGIN_REDIRECT_URL = '/dashboard/'
+# LOGIN_REDIRECT_URL = '/dashboard/'
 
 
 # Internationalization
