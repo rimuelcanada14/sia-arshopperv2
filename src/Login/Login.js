@@ -1,8 +1,8 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState} from 'react';
 import axios from 'axios';
 import { FaMobileRetro, FaUnlockKeyhole } from "react-icons/fa6";
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import './Login.css';
 import Header from '../components/header';
 import { TypeAnimation } from 'react-type-animation';
@@ -14,6 +14,7 @@ const Login = () => {
     const[password, setpassword] = useState('');
     const[token, setToken] = useState(null);
     const[error, setError] = useState(null);
+    const redirect = useNavigate();
     
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -26,6 +27,7 @@ const Login = () => {
             const response = await axios.post('http://localhost:8000/api/login/', requestData);
             setToken(response.data.token);
             setError(null);
+            redirect('/Home');
         } catch (error) {
             console.error('Error:', error.response.data);  // Log the error response for debugging
             setError('Invalid credentials');
@@ -62,6 +64,7 @@ const Login = () => {
                 </form>
                 {error && <p style={{color: "red"}}>{error}</p>}
                 {token && <p>Logged In: {token} </p>}
+                {console.log({token})}
             </div>
 
             <div className = "login-type">

@@ -1,6 +1,7 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 
+#handles the validation for the login
 class MyLoginManager(BaseUserManager):
     def create_user(self, mobile_number, password=None, **extra_fields):
         if not mobile_number:
@@ -15,8 +16,8 @@ class MyLoginManager(BaseUserManager):
         extra_fields.setdefault('is_superuser', True)
         
         return self.create_user(mobile_number, password, **extra_fields)
-
-class LoginUser(AbstractBaseUser):
+#for the login 
+class LoginUser(AbstractBaseUser, PermissionsMixin):
     username = None
     mobile_number = models.BigIntegerField(unique=True)
     is_active = models.BooleanField(default=True)
@@ -30,7 +31,7 @@ class LoginUser(AbstractBaseUser):
 
     def __str__(self):
         return str(self.mobile_number)
-
+# this is for the creation for new users
 class SignUp(models.Model):
     firstName = models.CharField(max_length=100)
     lastName = models.CharField(max_length=100)
@@ -48,3 +49,14 @@ class SignUp(models.Model):
 
     def __str__(self):
         return f'{self.firstName} {self.lastName} - {self.mobile_number}'
+
+#crud for the admin panel
+class AddProduct(models.Model):
+    name = models.CharField(max_length=255)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    ingredients = models.TextField()
+    nutritional_facts = models.TextField()
+    image = models.ImageField(upload_to='djangoapi/ProductImage')
+    
+    def __str__(self):
+        return self.name
