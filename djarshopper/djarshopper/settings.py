@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -59,6 +60,17 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
 ]
+JAZZMIN_SETTINGS = {
+    'welcome_sign': "Welcome to IchiMart Admin Panel",
+    'login_logo': None,
+    
+}
+
+JAZZMIN_UI_TWEAKS = {
+    'theme': 'pulse',
+}
+#PAG TINANGGAL MO COMMENT NITO MAKIKITA MO UI PREVIEWER NG LIBRARY SA ADMIN
+# JAZZMIN_SETTINGS["show_ui_builder"] = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 
