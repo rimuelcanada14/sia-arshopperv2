@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from .models import LoginUser
+from .models import LoginUser, AddProduct
 
 class UserAdmin(BaseUserAdmin):
     list_display = ('mobile_number', 'is_staff', 'is_active')
@@ -18,4 +18,17 @@ try:
 except admin.sites.NotRegistered:
     pass
 
+
 admin.site.register(LoginUser, UserAdmin)
+
+#this is for fetching data from the database to display products
+
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ('name', 'price', 'ingredients', 'nutritional_facts')
+    search_fields = ('name',)
+    list_filter = ('price',)
+
+admin.site.register(AddProduct, ProductAdmin)
+
+
+    
