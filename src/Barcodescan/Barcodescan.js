@@ -17,7 +17,7 @@ const BarcodeScanner = () => {
         if (result) {
           const code = result.getText();
           setScannedCode(code);
-          if (code === '4801010105107') {
+          if (code === '051111407592') {
             setMessage('Johnsons Baby Powder');
           }
           else if (code === '4800131591004') {
