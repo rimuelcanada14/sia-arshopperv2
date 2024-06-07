@@ -1,20 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { BrowserMultiFormatReader } from '@zxing/library';
-import './Barcodescan.css'; // Import the CSS file for additional styling if needed
+import './Barcodescan.css';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import Border from './border.png';
+import CokeGif from './coke.gif';
+import Zesto from './zesto.png';
 import 'aframe';
 
 const BarcodeScanner = () => {
   const [scannedCode, setScannedCode] = useState(null);
   const [message, setMessage] = useState('');
   const scannerRef = useRef(null);
-  const arSceneRef = useRef(null); // Reference to AR scene container
+  const arSceneRef = useRef(null); 
 
   useEffect(() => {
     const codeReader = new BrowserMultiFormatReader();
-    let isScanned = false; // Flag to track if barcode is scanned
+    let isScanned = false;
 
     const scanBarcode = () => {
       if (!isScanned && scannerRef.current) {
@@ -25,10 +27,10 @@ const BarcodeScanner = () => {
             setScannedCode(code);
             if (code === '051111407592') {
               setMessage('Johnsons Baby Powder');
-              displayAR('red'); // Call function to display AR content with red box
+              displayAR('red', 'box', code); 
             } else if (code === '9780201379624') {
               setMessage('Book');
-              displayAR('blue'); // Call function to display AR content with blue box
+              displayAR('blue', 'sphere', code); 
             } else {
               setMessage('Scan again');
             }
@@ -36,25 +38,58 @@ const BarcodeScanner = () => {
         });
       }
     };
-
     scanBarcode();
-
     return () => {
-      // Clean up code if needed
+
     };
   }, [scannerRef]);
 
   // Function to display AR content
-  const displayAR = (color) => {
+  const displayAR = (color, shape, code) => {
     // Clear previous AR content if any
     arSceneRef.current.innerHTML = '';
 
-    // Create a simple AR scene with a box of specified color
     const arScene = document.createElement('a-scene');
-    const arBox = document.createElement('a-box');
-    arBox.setAttribute('position', '0 0 -5');
-    arBox.setAttribute('color', color);
-    arScene.appendChild(arBox);
+    let arElement;
+
+    if (code === '051111407592') {
+      
+      arElement = document.createElement('a-image');
+      arElement.setAttribute('src', CokeGif);
+      arElement.setAttribute('position', '0 1.6 -3');
+      arElement.setAttribute('height', '2');
+      arElement.setAttribute('width', '2');
+    } else if (code === '9780201379624') {
+      
+      arElement = document.createElement('a-image');
+      arElement.setAttribute('src', Zesto);
+      arElement.setAttribute('position', '0 1.6 -3');
+      arElement.setAttribute('height', '2');
+      arElement.setAttribute('width', '2');
+    } else {
+      
+      switch (shape) {
+        case 'box':
+          arElement = document.createElement('a-box');
+          break;
+        case 'sphere':
+          arElement = document.createElement('a-sphere');
+          break;
+        case 'cylinder':
+          arElement = document.createElement('a-cylinder');
+          break;
+        case 'cone':
+          arElement = document.createElement('a-cone');
+          break;
+        default:
+          arElement = document.createElement('a-box');
+      }
+
+      arElement.setAttribute('position', '0 0 -5');
+      arElement.setAttribute('color', color);
+    }
+
+    arScene.appendChild(arElement);
     
     // Append AR scene to the container
     arSceneRef.current.appendChild(arScene);
@@ -89,7 +124,7 @@ const BarcodeScanner = () => {
         <div>
           <h3 className='scanner-title'>Scanned Barcode Details</h3>
           <p className='scanned-code'>{scannedCode}</p>
-          <p className='message'>{message}</p> {/* Display the message */}
+          <p className='message'>{message}</p>
         </div>
       </div>
 
