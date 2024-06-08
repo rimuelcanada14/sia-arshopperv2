@@ -61,10 +61,16 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
 ]
 JAZZMIN_SETTINGS = {
+    'usermenu_links': [{"name": "Support", "url": "https://github.com/farridav/django-jazzmin/issues", "new_window": True},],
+
     'welcome_sign': "Welcome to IchiMart Admin Panel",
     'login_logo': None,
-    
+    'site_title': "IchiMart",
+    'site_brand': "IchiMart Admin", 
+    'hide_models': ["auth.Group"],
 }
+
+DEBUG = TEMPLATE_DEBUG = True
 
 JAZZMIN_UI_TWEAKS = {
     'theme': 'pulse',
