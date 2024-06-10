@@ -10,7 +10,6 @@
     top: 0;
     padding-top: 1%;
     padding-bottom: 1%;
-    background: #E96760;
     text-align: center;
     color: white;
     z-index: 1;
@@ -27,12 +26,16 @@
     margin-right: auto;
     font-size: 32px;
     border-radius: 20px;
-    background-color: #FF6961;
+    background-image: url("chinesepattern.png");
+    background-size: cover;
+    background-position: center;
     height: 2.5em;
     text-align: center;
     margin-top: 10px;
     font-family: Poppins;
     font-weight: bold;
+    border: solid;
+    border-color: black;
 }
 .categoryButtons:hover {
     color:#E44138;

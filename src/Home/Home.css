@@ -14,10 +14,18 @@
   padding-left: 2em;
   padding-right: 2em;
   font-family: Poppins;
-  background-color: #FCF3A6;
+  background-image: url("logochipattls.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   max-width: 100%;
   color: black;
+  border: solid;
+  border-color: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+              0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 .icon{
   position: absolute;
   top: .6em;
@@ -25,6 +33,7 @@
   font-size: 65px;
   color: black;
 }
+
 .home-categories{
   position: absolute;
   font-size: 39px;
