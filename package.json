@@ -10,7 +10,7 @@
     "aframe": "^1.6.0",
     "aframe-ar": "^0.2.1-a",
     "aframe-react": "^4.4.0",
-    "axios": "^1.6.8",
+    "axios": "^1.7.2",
     "ra-data-simple-rest": "^4.16.17",
     "react": "^18.2.0",
     "react-admin": "^4.16.18",
