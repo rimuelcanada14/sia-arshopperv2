@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -59,6 +60,23 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
 ]
+JAZZMIN_SETTINGS = {
+    'usermenu_links': [{"name": "Support", "url": "https://github.com/farridav/django-jazzmin/issues", "new_window": True},],
+
+    'welcome_sign': "Welcome to IchiMart Admin Panel",
+    'login_logo': None,
+    'site_title': "IchiMart",
+    'site_brand': "IchiMart Admin", 
+    'hide_models': ["auth.Group"],
+}
+
+DEBUG = TEMPLATE_DEBUG = True
+
+JAZZMIN_UI_TWEAKS = {
+    'theme': 'pulse',
+}
+#PAG TINANGGAL MO COMMENT NITO MAKIKITA MO UI PREVIEWER NG LIBRARY SA ADMIN
+# JAZZMIN_SETTINGS["show_ui_builder"] = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 
@@ -122,10 +140,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-#redirecting custom URL from default admin to a dashboard
 # settings.py
-
-LOGIN_REDIRECT_URL = '/dashboard/'
 
 
 # Internationalization
@@ -144,8 +159,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+#in order to store images from crud into react public folder
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# this handles the media files settings
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 import { FaMobileRetro, FaUser, FaLock, FaLockOpen, FaNotesMedical  } from "react-icons/fa6";
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import './Signup.css';
 import Header from '../components/header';
 
@@ -18,6 +18,7 @@ const Signup = () => {
   });
 
   const [passErr, setPassError] = useState('');
+  const Redirection = useNavigate('');
 
   const handleChange = (e) => {
     const{name, value} = e.target;
@@ -27,7 +28,7 @@ const Signup = () => {
       setPassError('');
     }
   }
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -41,6 +42,8 @@ const Signup = () => {
       const response = await axios.post('http://localhost:8000/api/signup/', formData);
       if (response.status === 201) {
         console.log('User signed up successfully!');
+        Redirection('/');
+
         // Redirect to login page or perform other actions
       } else {
         console.error('Failed to sign up');
