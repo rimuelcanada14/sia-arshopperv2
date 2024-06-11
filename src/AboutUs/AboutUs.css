@@ -13,30 +13,31 @@
 .aboutUsButtons {
     background: #FF6961;
     justify-content: center;
-    margin-bottom: .30em;
-    font-family: Poppins;
     flex-direction: column;
-    font-weight: bold;
-    font-size: 29px;
     width:92%;
     color: white;
-    height: 5em;
+    height: 6.5em;
     display: flex;
     border-radius: 20px;
     margin-left: auto;
     margin-right: auto; 
-    margin-top: 49.1px;
-    margin-bottom: -45px;
-    transition-duration: 0.4s;
-    cursor: pointer;
+    margin-top: 78.1px;
+    margin-bottom: -50px;
+
      
 }  
 
 .aboutUsButtons:hover {
     color:#E44138;
     color:white;
+    font-size: 29px;
+    font-weight: bold;
+    font-family: Poppins;
+    text-decoration: black;
     background-color: #E44138; opacity: 80%;
     border: 1px solid #FBF08F;
+    transition-duration: 0.4s;
+    cursor: pointer;
 }
 
 

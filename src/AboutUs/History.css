@@ -1,0 +1,65 @@
+.ichiInfo-text-header {
+    position: relative;
+    text-align: center;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.history-sub{
+    visibility: hidden;
+}
+
+.ichi-about-header {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+    margin-top: 2.2rem;
+    margin-bottom: 1.4rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    width: 70%;
+    height: 1em;
+    background-color:rgba(247, 206, 104, 0.8);
+    border-color: #f32170;
+    font-family: 'Poppins ExtraBold';
+    font-weight: 600;
+    background: linear-gradient(to right, #f32170, #ff6b08);
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    border-radius: 10px;
+}
+    
+.picture {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    margin-bottom: .5em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.adjust{
+    width: 90%;
+    height: auto;
+    border-radius: 20px;
+    border: 7px solid;
+    border-color: #f32170;
+    border-color:rgba(247, 206, 104, 0.8);
+    background: linear-gradient(to right, #f32170, #ff6b08);
+        
+        
+    
+}
+
+.history-back{
+    color: white;
+}
+
+
