@@ -1,10 +1,11 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FaMobileRetro, FaUser, FaLock, FaLockOpen, FaNotesMedical  } from "react-icons/fa6";
 import {Link, useNavigate} from 'react-router-dom';
 import './Signup.css';
 import Header from '../components/header';
+import { RxCrossCircled } from "react-icons/rx"
 
 //FOR BACK-END
 const Signup = () => {
@@ -14,29 +15,42 @@ const Signup = () => {
     password: '',
     confirmPassword: '',
     mobile_number: '',
-    healthComplication: '',
+    healthComplication: 'no',
   });
 
   const [passErr, setPassError] = useState('');
   const Redirection = useNavigate('');
+  const [mobileErr, setMobileError] = useState('');
 
   const handleChange = (e) => {
-    const{name, value} = e.target;
+    const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
 
-    if (name === 'password' || name === 'confirmPassword'){
-      setPassError('');
+    if (name === 'password' || name === 'confirmPassword') {
+        setPassError('');
+    } 
+    else if (name === 'mobile_number') {
+        if (!value.startsWith('9') || value.length !== 10) {
+            setMobileError('');
+        } else {
+            setMobileError('');
+        }
     }
-  }
+}
   
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if(formData.password !== formData.confirmPassword){
+    if (formData.password !== formData.confirmPassword) {
       setPassError('Password do not match');
+      setMobileError('');
+      return;
+    } 
+    else if (!formData.mobile_number.startsWith('9') || formData.mobile_number.length !== 10) {
+      setMobileError('Invalid Mobile Number');
+      setPassError('');
       return;
     }
-
 
     try {
       const response = await axios.post('http://localhost:8000/api/signup/', formData);
@@ -52,6 +66,14 @@ const Signup = () => {
       console.error('Failed to sign up', error);
     }
   };
+  useEffect(() => {
+    const timer = setTimeout(() => {
+        setPassError('');
+        setMobileError('');
+    }, 3000);
+
+    return () => clearTimeout(timer);
+}, [passErr, mobileErr]);
 
 //FOR FRONT-END
   return (
@@ -78,6 +100,7 @@ const Signup = () => {
                       required
                     />
                 </div>
+                
 
               <p className = "signup-categories">Last Name</p>
                 <div className = "signup-user">
@@ -102,6 +125,8 @@ const Signup = () => {
                       type="number"
                       name="mobile_number"
                       placeholder="Mobile Number"
+                      maxlength="10"
+                      pattern="9[0-9]{9}"
                       value={formData.mobile_number}
                       onChange={handleChange}
                       required
@@ -138,19 +163,41 @@ const Signup = () => {
               <p className = "signup-categories">Health Complications</p>
                 <div className = "signup-health">
                   <FaNotesMedical className="signup-icon-health" />
-                  <select name="healthComplication" id="signup-input-health" onChange={handleChange} value={formData.healthComplication}>
+                  <select 
+                    name="healthComplication" 
+                    id="signup-input-health" 
+                    onChange={handleChange} 
+                    value={formData.healthComplication}
+                  >
                     <option value="yes">I Have Health Complications</option>
                     <option value ="no">I Don't Have Health Complications</option>
                   </select>
                 </div>
-
+              
+                <p>Already have an account?<Link to ="/" className = "signup-login">Login</Link></p>
               </div>
               
-
             <div className='signup-low'>
-              {passErr && <div style={{color: 'red'}}>{passErr} </div>}
+
+              {mobileErr && 
+              <div className="popup">
+                <RxCrossCircled className='ekis'/>
+                  <div className="popup-text">
+                    {mobileErr}
+                  </div>
+                <RxCrossCircled className='ekisR'/>
+              </div>}
+
+              {passErr &&
+              <div className="popup">
+                <RxCrossCircled className='ekis-pass'/>
+                  <div className="popup-text">
+                    {passErr}
+                  </div>
+                <RxCrossCircled className='ekis-passR'/>
+              </div>}
+
               <button type="submit" className = "signup-submit">SIGN UP</button>
-              <p>Already have an account?<Link to ="/" className = "signup-login">Login</Link></p>
             </div>
 
           </form>
