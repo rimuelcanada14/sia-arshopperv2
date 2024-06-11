@@ -13,33 +13,25 @@
 .aboutUsButtons {
     background-image: url("logochipattls.png");
     justify-content: center;
+    border: solid;
+    border-color: black;
     margin-bottom: .30em;
-    font-family: Poppins;
-    flex-direction: column;
-    width:92%;
-    color: white;
-    height: 5em;
-    display: flex;
-    border-radius: 20px;
     margin-left: auto;
     margin-right: auto; 
     margin-top: 49.1px;
+    font-family: Poppins;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 29px;
+    width:92%;
+    color: black;
+    height: 5em;
+    display: flex;
+    border-radius: 20px;
     margin-bottom: -45px;
     transition-duration: 0.4s;
     cursor: pointer;
-     
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }  
 
-.aboutUsButtons:hover {
-    color:#E44138;
-    color:white;
-    background-color: #E44138; opacity: 80%;
-    border: 1px solid #FBF08F;
-}
-
-
-button {
-    text-decoration: none;
-    color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}

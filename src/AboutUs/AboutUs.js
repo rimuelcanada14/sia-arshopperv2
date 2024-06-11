@@ -11,10 +11,8 @@ function AboutUs() {
 
 
     const aboutUsButtons = [
-        {label: 'History of the Store', to: '/History'},
-        {label: 'Developers Information', to: '/DevInfo'},
-        {label: 'ARShoppers Developers', to: '/DevImage'},
-        
+      {label: 'History of the Store', to: '/History'},
+      {label: 'Developers Information', to: '/DevInfo'},
     ];
     
   

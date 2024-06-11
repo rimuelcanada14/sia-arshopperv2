@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import './History.css';
 import Header from '../components/header';
 
@@ -20,8 +19,7 @@ function History() {
 
             <div className="picture">
                 <img src='./HistoryImage/Ichilogo.png' alt="AboutUs" className="adjust"/>
-        </div>
-
+            </div>
         <div> 
             
         </div>
