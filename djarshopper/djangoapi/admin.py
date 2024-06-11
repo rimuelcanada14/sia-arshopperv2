@@ -1,23 +1,25 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from .models import LoginUser, AddProduct
+from .forms import UserChangeForm, UserCreationForm
 
 class UserAdmin(BaseUserAdmin):
+    form = UserChangeForm
+    add_form = UserCreationForm
+
     list_display = ('mobile_number', 'is_staff', 'is_active')
     search_fields = ('mobile_number',)
     ordering = ('mobile_number',)
     fieldsets = (
         (None, {'fields': ('mobile_number', 'password')}),
         ('Permissions', {'fields': ('is_staff', 'is_active', 'is_superuser', 'groups', 'user_permissions')}),
-       
     )
-
-# Unregister the default `LoginUser` registration if it exists
-try:
-    admin.site.unregister(LoginUser)
-except admin.sites.NotRegistered:
-    pass
-
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('mobile_number', 'password1', 'password2'),
+        }),
+    )
 
 admin.site.register(LoginUser, UserAdmin)
 
