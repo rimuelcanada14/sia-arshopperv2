@@ -33,7 +33,15 @@ const Login = () => {
             setError('Invalid credentials');
             setToken(null);
         }
-};
+    };
+
+    const Inputlimiter = (e) => {
+        const value = e.target.value;
+        if (value.length <= 10){
+            setMobile_Number(value);
+        }
+    };
+        
   return (
     <>
         <div>
@@ -47,7 +55,7 @@ const Login = () => {
                     <div className = "login-user">
                         <p className = "login-categories">Mobile Number</p>
                         <p className = "login-p-mobile">+63</p>
-                        <input type="text" id="login-input-mobile" value={mobile_Number} onChange={(e) => setMobile_Number(e.target.value)} />
+                        <input type="number" id="login-input-mobile" value={mobile_Number} onChange={Inputlimiter}/>
                         <FaMobileRetro className="login-icon-mobile" />
                     </div>
                     

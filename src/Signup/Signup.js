@@ -73,7 +73,15 @@ const Signup = () => {
     }, 3000);
 
     return () => clearTimeout(timer);
-}, [passErr, mobileErr]);
+  }, [passErr, mobileErr]);
+
+  const Inputlimiter = (e) => {
+    const {name, value} = e.target;
+    if (value.length <= 10){
+      setFormData({ ...formData, [name]: value});
+    }
+  };
+
 
 //FOR FRONT-END
   return (
@@ -128,7 +136,7 @@ const Signup = () => {
                       maxlength="10"
                       pattern="9[0-9]{9}"
                       value={formData.mobile_number}
-                      onChange={handleChange}
+                      onChange={Inputlimiter}
                       required
                     />
                 </div>
