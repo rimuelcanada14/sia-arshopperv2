@@ -1,11 +1,12 @@
 from rest_framework import generics
 from .models import SignUp
-from .serializers import SignUpSerializer
-from .serializers import AuthSerializer
+from .serializers import SignUpSerializer, AuthSerializer, DisplayProdSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from rest_framework import status
+from .models import AddProduct
+
 
 class UserCreateView(generics.CreateAPIView):
     queryset = SignUp.objects.all()
@@ -20,3 +21,8 @@ class LoginView(APIView):
             return Response({'token': token.key}, status=status.HTTP_200_OK)
         print(serializer.errors)  # Print the errors to the console
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+class ProductView(generics.ListAPIView):
+    queryset = AddProduct.objects.all()
+    serializer_class = DisplayProdSerializer
+

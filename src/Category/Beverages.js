@@ -1,31 +1,31 @@
-import React from 'react';
-// import { useState, useEffect } from 'react';
-// import axios from 'axios';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
+import axios from 'axios';
 import {Link} from 'react-router-dom';
 import './Beverages.css';
 import Header from '../components/header';
 
 function Beverages() {
-    // const [setMessage] = useState('');
-  
-    // useEffect(() => {
-    //   axios.get('http://localhost:8000/api/hello-world/')
-    //     .then(response => {
-    //       setMessage(response.data.message);
-    //     })
-    //     .catch(error => {
-    //       console.log(error);
-    //     });
-    // }, []);
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+      axios.get('http://localhost:8000/api/products/')
+      .then(response => {
+        setProducts(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching products', error);
+      });
+    }, []);
 
     
-      const beveragesButtons = [
-        {label: 'C2 Green Tea Lemon 355ML', SecondaryLabel: 'PHP 40', to: '/wayfinding', imageUrl: '/ProductImage/green-tea.jpg'},
-        {label: 'Kopiko Lucky Day', to: '', SecondaryLabel: 'PHP 29', imageUrl: '/ProductImage/green-tea.jpg'},
-        {label: 'Nova Country Cheddar', to: '', SecondaryLabel: 'PHP 33', imageUrl: '/ProductImage/green-tea.jpg'},
-        {label: 'Pillows Chocolate Crackers', to: '', SecondaryLabel: 'PHP 55', imageUrl: '/ProductImage/green-tea.jpg'},
-      ];
-    
+      const beveragesButtons = products.map(product => ({
+        label:product.name,
+        SecondaryLabel: 'PHP ' + product.price,
+        to: '',
+        imageUrl: product.image,
+      }));
+
     return (
       <div>
         <Header header={<a href="/category" className="beverages-back">BACK</a>} headerright="BEVERAGES" />

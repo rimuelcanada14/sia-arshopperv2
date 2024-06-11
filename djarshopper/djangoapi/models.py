@@ -31,6 +31,7 @@ class LoginUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return str(self.mobile_number)
+    
 # this is for the creation for new users
 class SignUp(models.Model):
     firstName = models.CharField(max_length=100)
@@ -60,3 +61,4 @@ class AddProduct(models.Model):
     
     def __str__(self):
         return self.name
+    

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import SignUp, LoginUser
+from .models import SignUp, LoginUser, AddProduct
 from django.contrib.auth.hashers import make_password  
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth import authenticate
@@ -41,3 +41,10 @@ class AuthSerializer(serializers.Serializer):
 
         data['user'] = user
         return data
+# serializer for displaying products
+
+class DisplayProdSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AddProduct
+        fields = ['id', 'name', 'price', 'ingredients', 'nutritional_facts', 'image']
+    
