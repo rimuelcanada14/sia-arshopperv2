@@ -20,33 +20,283 @@
 }
 
 .devcard {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
     background-color: rgba(247, 206, 104, .8);
-}
-
-.devpic {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
 }
 
 .devcontents {
     text-align: center;
 }
 
-.devindiv {
+.card-container {
     display: flex;
-    flex-direction: column;
-    height: 80%;
-    width: 15%;
-    margin-left: auto;
-    margin-right: auto;
-    border: solid;
-    border-color: #E96760;
-    border-width: 5px;
-    border-radius: 5px;
-    background-image: linear-gradient(to right, coral, lightyellow);
-    box-shadow: 5px 5px 5px grey;
+    flex-direction: row;
+    justify-content: space-around;
+    perspective: 1500px;
+}
+
+.card {
+    width: 200px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    cursor: pointer;
+}
+  
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.card-back-contact {
+    color: black;
+}
+
+.card-back-contact a {
+    text-decoration: none;
+    color: white;
+}
+  
+.card-front-angelo, .card-back-angelo {
+    width: 200px;
+    height: 300px;
+    backface-visibility: hidden;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    position: relative;
+    color: white;
+    border-radius: 10px;
+    border: solid;
+    border-color: black;
+    border-width: 5px;
+}
+  
+.card-front-angelo {
+    width: 200px;
+    height: 300px;
+    background-image: url('/public/AboutUsImages/try.jpg');
+    background-size: cover;
+    position: absolute;
+    align-items: last baseline;
+    text-align: center;
+}
+
+.card-back-angelo {
+    width: 200px;
+    height: 300px;
+    background-image: url('/public/AboutUsImages/chinesepattern.png');
+    background-size: cover;
+    background-position: center;
+    transform: rotateY(180deg);
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.card-front-rimuel, .card-back-rimuel {
+    width: 200px;
+    height: 300px;
+    backface-visibility: hidden;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    color: white;
+    border-radius: 10px;
+    border: solid;
+    border-color: black;
+    border-width: 5px;
+}
+  
+.card-front-rimuel {
+    width: 200px;
+    height: 300px;
+    background-image: url('/public/AboutUsImages/try.jpg');
+    background-size: cover;
+    position: absolute;
+    align-items: last baseline;
+    text-align: center;
+}
+
+.card-back-rimuel {
+    width: 200px;
+    height: 300px;
+    background-image: url('/public/AboutUsImages/chinesepattern.png');
+    background-size: cover;
+    background-position: center;
+    transform: rotateY(180deg);
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.card-front-cj, .card-back-cj {
+    width: 200px;
+    height: 300px;
+    backface-visibility: hidden;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    color: white;
+    border-radius: 10px;
+    border: solid;
+    border-color: black;
+    border-width: 5px;
+}
+  
+.card-front-cj{
+    width: 200px;
+    height: 300px;
+    background-image: url('/public/AboutUsImages/try.jpg');
+    background-size: cover;
+    position: absolute;
+    align-items: last baseline;
+    text-align: center;
+}
+
+.card-back-cj {
+    width: 200px;
+    height: 300px;
+    background-image: url('/public/AboutUsImages/chinesepattern.png');
+    background-size: cover;
+    background-position: center;
+    transform: rotateY(180deg);
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.card-front-lexter, .card-back-lexter {
+    width: 200px;
+    height: 300px;
+    backface-visibility: hidden;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    color: white;
+    border-radius: 10px;
+    border: solid;
+    border-color: black;
+    border-width: 5px;
+}
+  
+.card-front-lexter{
+    width: 200px;
+    height: 300px;
+    background-image: url('/public/AboutUsImages/try.jpg');
+    background-size: cover;
+    position: absolute;
+    align-items: last baseline;
+    text-align: center;
+}
+
+.card-back-lexter {
+    width: 200px;
+    height: 300px;
+    background-image: url('/public/AboutUsImages/chinesepattern.png');
+    background-size: cover;
+    background-position: center;
+    transform: rotateY(180deg);
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.card-front-jenie, .card-back-jenie {
+    width: 200px;
+    height: 300px;
+    backface-visibility: hidden;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    color: white;
+    border-radius: 10px;
+    border: solid;
+    border-color: black;
+    border-width: 5px;
+}
+  
+.card-front-jenie{
+    width: 200px;
+    height: 300px;
+    background-image: url('/public/AboutUsImages/try.jpg');
+    background-size: cover;
+    position: absolute;
+    align-items: last baseline;
+    text-align: center;
+}
+
+.card-back-jenie {
+    width: 200px;
+    height: 300px;
+    background-image: url('/public/AboutUsImages/chinesepattern.png');
+    background-size: cover;
+    background-position: center;
+    transform: rotateY(180deg);
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.card-front-julianna, .card-back-julianna {
+    width: 200px;
+    height: 300px;
+    backface-visibility: hidden;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    color: white;
+    border-radius: 10px;
+    border: solid;
+    border-color: black;
+    border-width: 5px;
+}
+  
+.card-front-julianna {
+    width: 200px;
+    height: 300px;
+    background-image: url('/public/AboutUsImages/try.jpg');
+    background-size: cover;
+    position: absolute;
+    align-items: last baseline;
+    text-align: center;
+}
+
+.card-back-julianna {
+    width: 200px;
+    height: 300px;
+    background-image: url('/public/AboutUsImages/chinesepattern.png');
+    background-size: cover;
+    background-position: center;
+    transform: rotateY(180deg);
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 
 @media only screen and (max-width:768px) {
@@ -55,7 +305,6 @@
         width: 90%;
         margin-left: auto;
         margin-right: auto;
-        border-radius: 5px;
         border-radius: 15px;
     }
 
@@ -64,24 +313,26 @@
     }
 
     .devcontents {
+        text-align: center;
         font-size: smaller;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .devpic {
+    .card-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
+        perspective: 1000px;
+        margin-top: auto;
+        margin-bottom: auto;
     }
 
-    .devindiv {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: auto;
-        width: 70%;
-        margin-bottom: 5%;
-        box-shadow: 5px 5px 5px grey;
-        background-image: linear-gradient(to right, #ff5e62,  #ff9966);
+    .card {
+        margin-bottom: 20px;
+        transform-style: preserve-3d;
+        transition: transform 1s ease-in-out;
     }
 }
-

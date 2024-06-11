@@ -1,10 +1,38 @@
-import React from 'react';
-//import {Link} from 'react-router-dom';
+import React, { useState } from 'react';
 import './DevInfo.css';
 import Header from '../components/header';
 import { TypeAnimation } from 'react-type-animation';
+import { FaFacebook } from "react-icons/fa";
 
 function DevInfo() {
+
+    const [AngeloisFlipped, setAngeloIsFlipped] = useState(false);
+    const [RimuelisFlipped, setRimuelIsFlipped] = useState(false);
+    const [CJisFlipped, setCJIsFlipped] = useState(false);
+    const [LexterisFlipped, setLexterIsFlipped] = useState(false);
+    const [JenieisFlipped, setJenieIsFlipped] = useState(false);
+    const [JuliannaisFlipped, setJuliannaIsFlipped] = useState(false);
+    
+
+    const handleAngeloCardClick = () => {
+    setAngeloIsFlipped(!AngeloisFlipped);
+    };
+    const handleRimuelCardClick = () => {
+    setRimuelIsFlipped(!RimuelisFlipped);
+    };
+    const handleCJCardClick = () => {
+    setCJIsFlipped(!CJisFlipped);
+    };
+    const handleLexterCardClick = () => {
+    setLexterIsFlipped(!LexterisFlipped);
+    };
+    const handleJenieCardClick = () => {
+    setJenieIsFlipped(!JenieisFlipped);
+    };
+    const handleJuliannaCardClick = () => {
+    setJuliannaIsFlipped(!JuliannaisFlipped);
+    };
+
     return(
         <>
             {/* header */}
@@ -16,8 +44,8 @@ function DevInfo() {
                 </div>
                 <div className='devcontents'>
                     <h3>
-                        Just a happy group of students from Pamantasan ng Lungsod ng Maynila.
-                        Achieving the best of everything, pursuing good dreams, and God knows what else...
+                        Just a happy group of students from Pamantasan ng Lungsod ng Maynila,
+                        achieving the best of everything, pursuing good dreams, and God knows what else...
                     </h3>
                 </div>
             </div>
@@ -37,42 +65,92 @@ function DevInfo() {
                 </div>
             </div>
 
-            <div className='devpic'>
-                {/* Angelo Tancioco */}
-                <div className='devindiv'>
-                    <img src='./AboutUsImages/try.jpg' alt='Angelo'></img>
-                    <h3>Angelo Tancioco</h3>
+            <div className="card-container">
+                <div className={`card ${AngeloisFlipped ? 'flip' : ''}`} onClick={handleAngeloCardClick}>
+                    <div className="card-front-angelo">
+                        <h4>Angelo Tancioco</h4>
+                    </div>
+                    <div className="card-back-angelo">
+                        <div className='card-back-contact'>
+                            <h3>short description...</h3>
+                            <a href="https://www.facebook.com/tanchyy">
+                                Follow me on <FaFacebook />
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 
-                {/* Rimuel Canada */}
-                <div className='devindiv'>
-                    <img src='./AboutUsImages/try.jpg' alt='Rimuel'></img>
-                    <h3>Rimuel Canada</h3>
-                </div>
                 
-                {/* CJ Defita */}
-                <div className='devindiv'>
-                    <img src='./AboutUsImages/try.jpg' alt='CJ'></img>
-                    <h3>CJ Defita</h3>
+                <div className={`card ${RimuelisFlipped ? 'flip' : ''}`} onClick={handleRimuelCardClick}>
+                    <div className="card-front-rimuel">
+                        <h4>Rimuel Canada</h4>
+                    </div>
+                    <div className="card-back-rimuel">
+                    <div className='card-back-contact'>
+                            <h3>short description...</h3>
+                            <a href="https://www.facebook.com/rimuel.canada.33">
+                                Follow me on <FaFacebook />
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                {/* Lexter Apuada */}
-                <div className='devindiv'>
-                    <img src='./AboutUsImages/try.jpg' alt='Lexter'></img>
-                    <h3>Lexter Apuada</h3>
+                <div className={`card ${CJisFlipped ? 'flip' : ''}`} onClick={handleCJCardClick}>
+                    <div className="card-front-cj">
+                        <h4>CJ Defita</h4>
+                    </div>
+                    <div className="card-back-cj">
+                    <div className='card-back-contact'>
+                            <h3>short description...</h3>
+                            <a href="https://www.facebook.com/cj.defita">
+                                Follow me on <FaFacebook />
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                {/* Jenie Tadena */}
-                <div className='devindiv'>
-                    <img src='./AboutUsImages/try.jpg' alt='Jenie'></img>
-                    <h3>Jenie Tadena</h3>
+                <div className={`card ${LexterisFlipped ? 'flip' : ''}`} onClick={handleLexterCardClick}>
+                    <div className="card-front-lexter">
+                        <h4>Lexter Apuada</h4>
+                    </div>
+                    <div className="card-back-lexter">
+                    <div className='card-back-contact'>
+                            <h3>short description...</h3>
+                            <a href="https://www.facebook.com/yuna.shin.3192">
+                                Follow me on <FaFacebook />
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                {/* Julianna Miranda */}
-                <div className='devindiv'>
-                    <img src='./AboutUsImages/try.jpg' alt='Julianna'></img>
-                    <h3>Julianna Miranda</h3>
+                <div className={`card ${JenieisFlipped ? 'flip' : ''}`} onClick={handleJenieCardClick}>
+                    <div className="card-front-jenie">
+                        <h4>Jenie Tadena</h4>
+                    </div>
+                    <div className="card-back-jenie">
+                    <div className='card-back-contact'>
+                            <h3>short description...</h3>
+                            <a href="https://www.facebook.com/Jeniebean53">
+                                Follow me on <FaFacebook />
+                            </a>
+                        </div>
+                    </div>
                 </div>
+
+                <div className={`card ${JuliannaisFlipped ? 'flip' : ''}`} onClick={handleJuliannaCardClick}>
+                    <div className="card-front-julianna">
+                        <h4>Julianna</h4>
+                    </div>
+                    <div className="card-back-julianna">
+                    <div className='card-back-contact'>
+                            <h3>short description...</h3>
+                            <a href="https://www.facebook.com/julsmiranda27">
+                                Follow me on <FaFacebook />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </>
     )
