@@ -55,7 +55,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/api/signup/', formData);
+      const response = await axios.post('https://192.168.100.90:8000/api/signup/', formData);
       if (response.status === 201) {
         console.log('User signed up successfully!');
         setSuccessMessage('Sign up Successful!');

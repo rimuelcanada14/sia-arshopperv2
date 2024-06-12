@@ -25,10 +25,14 @@ SECRET_KEY = 'django-insecure-$tvoe_(bia4g&qt0vg!fw52^1c#173d16pljvs12q4+yl*@!4t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.100.90', 'localhost', '127.0.0.1']
 
 
 # Application definition
+
+# SECURE_SSL_REDIRECT = True
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 INSTALLED_APPS = [
     'jazzmin',
@@ -42,6 +46,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'djangoapi',
     'rest_framework.authtoken',
+    'sslserver',
 ]
 
 AUTHENTICATION_BACKENDS = [
