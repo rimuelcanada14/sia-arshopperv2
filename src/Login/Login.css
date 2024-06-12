@@ -143,3 +143,40 @@ button.login-submit:hover{
     margin-top: 1.5em;
     font-weight: bold;
 }
+.popup {
+    position: fixed;
+    background-color: rgba(233,103,96);
+    border-radius: 10px;
+    z-index: 1000;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    width: 18em;
+    max-width: 20em;
+    animation: moveFromTop 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    bottom: 32em;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 1.5em;
+}
+.popup-text{
+    color: white;
+}
+.ekis{
+    font-size: 2em;
+    position: absolute;
+    margin-left: -7.3em;
+    margin-top: -.1em;
+    color: white
+}
+.ekisR{
+    font-size: 2em;
+    position: absolute;
+    margin-top: -.1em;
+    margin-left: 7.3em;
+    color: white
+}

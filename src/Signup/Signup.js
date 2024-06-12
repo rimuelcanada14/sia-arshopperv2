@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FaMobileRetro, FaUser, FaLock, FaLockOpen, FaNotesMedical  } from "react-icons/fa6";
+import { FcApproval } from "react-icons/fc";
 import {Link, useNavigate} from 'react-router-dom';
 import './Signup.css';
 import Header from '../components/header';
@@ -19,6 +20,7 @@ const Signup = () => {
   });
 
   const [passErr, setPassError] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
   const Redirection = useNavigate('');
   const [mobileErr, setMobileError] = useState('');
 
@@ -56,9 +58,12 @@ const Signup = () => {
       const response = await axios.post('http://localhost:8000/api/signup/', formData);
       if (response.status === 201) {
         console.log('User signed up successfully!');
-        Redirection('/');
+        setSuccessMessage('Sign up Successful!');
 
-        // Redirect to login page or perform other actions
+        setTimeout(() => {
+          Redirection('/');
+        }, 2000); 
+       
       } else {
         console.error('Failed to sign up');
       }
@@ -186,7 +191,6 @@ const Signup = () => {
               </div>
               
             <div className='signup-low'>
-
               {mobileErr && 
               <div className="popup">
                 <RxCrossCircled className='ekis'/>
@@ -205,9 +209,17 @@ const Signup = () => {
                 <RxCrossCircled className='ekis-passR'/>
               </div>}
 
+              {successMessage && 
+              <div className="popup-success">
+                <FcApproval className = "signup-check"/>
+                  <div className="success-text">
+                    {successMessage}
+                  </div>
+                  <FcApproval className = "signup-checkR"/>
+              </div>}
+
               <button type="submit" className = "signup-submit">SIGN UP</button>
             </div>
-
           </form>
         </div>
       </div>

@@ -1,20 +1,21 @@
 import React from 'react';
-import { useState} from 'react';
+import { useState, useEffect} from 'react';
 import axios from 'axios';
 import { FaMobileRetro, FaUnlockKeyhole } from "react-icons/fa6";
 import {Link, useNavigate} from 'react-router-dom';
 import './Login.css';
 import Header from '../components/header';
 import { TypeAnimation } from 'react-type-animation';
-
+import { RxCrossCircled } from "react-icons/rx"
 
 
 const Login = () => {
     const[mobile_Number, setMobile_Number] = useState('');
     const[password, setpassword] = useState('');
-    const[token, setToken] = useState(null);
-    const[error, setError] = useState(null);
+    const[setToken] = useState(null);
+    const[setError] = useState(null);
     const redirect = useNavigate();
+    const[credErr, setCredErr] = useState('');
     
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -31,6 +32,7 @@ const Login = () => {
         } catch (error) {
             console.error('Error:', error.response.data);  // Log the error response for debugging
             setError('Invalid credentials');
+            setCredErr('Invalid Credentials');
             setToken(null);
         }
     };
@@ -41,6 +43,13 @@ const Login = () => {
             setMobile_Number(value);
         }
     };
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setCredErr('');
+        }, 3000);
+    
+        return () => clearTimeout(timer);
+      }, [credErr]);
         
   return (
     <>
@@ -70,9 +79,6 @@ const Login = () => {
                     <button type="submit" className = "login-submit">LOG IN</button>
                     <p>New User?<Link to ="/signup" className = "login-signup">Sign Up</Link></p>
                 </form>
-                {error && <p style={{color: "red"}}>{error}</p>}
-                {token && <p>Logged In: {token} </p>}
-                {console.log({token})}
             </div>
 
             <div className = "login-type">
@@ -95,11 +101,17 @@ const Login = () => {
                 repeat={Infinity}
                 />
             </div>
+
+            {credErr && 
+            <div className="popup">
+                <RxCrossCircled className='ekis-pass'/>
+                  <div className="popup-text">
+                    {credErr}
+                  </div>
+                <RxCrossCircled className='ekis-passR'/>
+            </div>}
         </div>
-      
     </>
-    
   );
 }
-
 export default Login;
