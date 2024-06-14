@@ -100,6 +100,7 @@ class AddProduct(models.Model):
     ingredients = models.TextField()
     nutritional_facts = models.TextField()
     image = models.ImageField(upload_to='djangoapi/ProductImage')
+    barcode = models.CharField(max_length=13, null=True)
     
     def __str__(self):
         return self.name

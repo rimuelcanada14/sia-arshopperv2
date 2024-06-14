@@ -9,8 +9,9 @@ function Beverages() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-      axios.get('http://localhost:8000/api/products/')
+      axios.get('https://localhost:8000/api/products/')
       .then(response => {
+        console.log(response.data);
         setProducts(response.data);
       })
       .catch(error => {
@@ -24,6 +25,7 @@ function Beverages() {
         SecondaryLabel: 'PHP ' + product.price,
         to: '',
         imageUrl: product.image,
+
       }));
 
     return (

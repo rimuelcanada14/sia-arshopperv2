@@ -46,5 +46,5 @@ class AuthSerializer(serializers.Serializer):
 class DisplayProdSerializer(serializers.ModelSerializer):
     class Meta:
         model = AddProduct
-        fields = ['id', 'name', 'price', 'ingredients', 'nutritional_facts', 'image']
+        fields = ['id', 'name', 'price', 'ingredients', 'nutritional_facts', 'image', 'barcode']
     

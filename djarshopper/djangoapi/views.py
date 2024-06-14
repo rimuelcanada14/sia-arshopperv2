@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from rest_framework import status
 from .models import AddProduct
+from django.shortcuts import get_object_or_404
 
 
 class UserCreateView(generics.CreateAPIView):
@@ -26,3 +27,8 @@ class ProductView(generics.ListAPIView):
     queryset = AddProduct.objects.all()
     serializer_class = DisplayProdSerializer
 
+class ProductDetailView(APIView):
+    def get(self, request, barcode, format=None):
+        product = get_object_or_404(AddProduct, barcode=barcode)
+        serializer = DisplayProdSerializer(product)
+        return Response(serializer.data)

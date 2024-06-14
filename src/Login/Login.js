@@ -23,7 +23,7 @@ const Login = () => {
                 password: password
             };
             console.log('Request Data:', requestData);  // Log the request data for debugging
-            const response = await axios.post('https://192.168.100.90:8000/api/login/', requestData);
+            const response = await axios.post('https://localhost:8000/api/login/', requestData);
             setToken(response.data.token);
             setError(null);
             redirect('/Home');

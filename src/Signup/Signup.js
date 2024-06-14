@@ -65,13 +65,13 @@ const Signup = () => {
     }
   
     try {
-      const response = await axios.post('https://192.168.100.90:8000/api/signup/', formData);
+      const response = await axios.post('https://localhost:8000/api/signup/', formData);
       if (response.status === 201) {
         console.log('User signed up successfully!');
         setSuccessMessage('Sign up Successful!');
   
         setTimeout(() => {
-          Redirection('/home');
+          Redirection('/');
         }, 2000);
   
       } else {
