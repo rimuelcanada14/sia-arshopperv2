@@ -4,22 +4,22 @@ body {
   font-family: "Poppins";
   margin: 0;
 }
-.signup-header{
+.illness-header{
     position: sticky;
     top: 0;
     z-index: 1;
 }
-.signup-page{
+.illness-page{
     align-items: center;
     margin: 0 auto;
 }
-.signup-title{
+.illness-title{
     text-align: center;
     font-size: 50px;
     margin-bottom: -5%;
     margin-top: .5em;
 }
-.signup-container{
+.illness-container{
     font-family: "Poppins";
     background-color: #FCF3A6;
     margin: 5%;
@@ -34,120 +34,32 @@ body {
     text-align: center;
     margin-bottom: 1em;
 }
-.signup-categories{
-    text-align: left;
+.illness-categories{
+    text-align: center;
     font-size: 17px;
     margin-bottom: 0em;
     font-family: "Poppins";
 }
-.signup-user{
+.illness-health{
     position: relative;
 }
-.signup-icon-user {
-    position: absolute;
-    top: .6em;
-    left: .5em;
-    font-size: 1.5em;
-}
-input[type="text"],
-select {
-    width: 100%;
-    margin: 1px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-sizing: border-box;
-    font-family: Poppins;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-      0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 15px;
-}
-#signup-input-user{
-    padding-left: 50px;
-    font-size: 15px;
-}
-.signup-mobile{
-    position: relative;
-}
-.signup-icon-mobile {
-    position: absolute;
-    top: .7em;
-    left: .5em;
-    font-size: 1.5em;
-}
-.signup-p-mobile{
-    position: absolute;
-    top: .15em;
-    left: 3.1em;
-    font-size: 15px;
-}
-input[type="number"],
-select {
-    width: 100%;
-    margin: 1px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-sizing: border-box;
-    font-family: Poppins;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-      0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 15px;
-}
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-#signup-input-mobile{
-    padding-left: 80px;
-    font-size: 15px;
-}
-.signup-pass{
-    position: relative;
-}
-.signup-icon-pass {
+.illness-icon-health {
     position: absolute;
     top: .65em;
     left: .5em;
     font-size: 1.5em;
 }
-input[type="password"],
-select {
-    width: 100%;
-    margin: 1px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-sizing: border-box;
-    font-family: Poppins;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-      0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 15px;
-}
-#signup-input-pass{
+#illness-input-health{
     padding-left: 50px;
     font-size: 15px;
+    margin-bottom: 1em;
 }
-.signup-health{
-    position: relative;
-}
-.signup-icon-health {
-    position: absolute;
-    top: .65em;
-    left: .5em;
-    font-size: 1.5em;
-}
-#signup-input-health{
-    padding-left: 50px;
-    font-size: 15px;
-}
-.signup-low{
+.illness-low{
     text-align: center;
     font-size: 15.5px;
     text-decoration: none;
 }
-.signup-submit{
+.illness-submit{
     padding: .5em;
     background-color: #E96760;
     border-radius: 5px;
@@ -165,20 +77,9 @@ select {
     margin-bottom: 1em;
     font-family: Poppins;
 }
-.signup-submit:hover{
+.illness-submit:hover{
     background-color: #b9524c;
 }
-.signup-login{
-    margin-left: 5px;
-    text-decoration: none;
-    color:#E96760;
-    text-align: center;
-}
-.signup-login:hover{
-    color: #b9524c;
-    text-decoration: underline;
-}
-
 /* same with login.js */
 .popup { 
     position: fixed;
@@ -266,18 +167,7 @@ select {
     margin-top: -.1em;
     margin-left: 7.3em;
 }
-.butt{
-    justify-content: center;
-}
-button.illness-button {
-    background-color: transparent;
-    justify-content: center;
-    box-shadow: none;
-    font-family: Poppins;
-    color: #b9524c;
-    margin: 0 auto;
-    margin-bottom: 1em;
-}
+
 @keyframes moveFromTop {
     0% {
       transform: translateY(-100%);

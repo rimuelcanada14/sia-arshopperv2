@@ -46,6 +46,48 @@ class SignUp(models.Model):
         ],
         default='no'
     )
+    illness = models.CharField(
+        max_length=50,
+        choices=[
+            ('respiratory', 'Respiratory Infections'),
+            ('hypertension', 'Hypertension'),
+            ('uti', 'Urinary Tract Infection'),
+            ('animal', 'Animal Bites'),
+            ('skin', 'Skin Diseases'),
+            ('pneumonia', 'Pneumonia'),
+            ('diarrhea', 'Diarrhea'),
+            ('null', ''),
+        ],
+        default='null'
+    )
+    illness2 = models.CharField(
+        max_length=50,
+        choices=[
+            ('respiratory', 'Respiratory Infections'),
+            ('hypertension', 'Hypertension'),
+            ('uti', 'Urinary Tract Infection'),
+            ('animal', 'Animal Bites'),
+            ('skin', 'Skin Diseases'),
+            ('pneumonia', 'Pneumonia'),
+            ('diarrhea', 'Diarrhea'),
+            ('null2', ''),
+        ],
+        default='null2'
+    )
+    illness3 = models.CharField(
+        max_length=50,
+        choices=[
+            ('respiratory', 'Respiratory Infections'),
+            ('hypertension', 'Hypertension'),
+            ('uti', 'Urinary Tract Infection'),
+            ('animal', 'Animal Bites'),
+            ('skin', 'Skin Diseases'),
+            ('pneumonia', 'Pneumonia'),
+            ('diarrhea', 'Diarrhea'),
+            ('null3', ''),
+        ],
+        default='null'
+    )
     user = models.OneToOneField(LoginUser, on_delete=models.CASCADE, default=1)  # Add a default value for initial migration
 
     def __str__(self):
