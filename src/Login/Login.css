@@ -16,7 +16,10 @@ body {
 }
 .login-container{
     font-family: "Poppins";
-    background-color: #FCF3A6;
+    background-image: url("logochipattls.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     margin: 5%;
     border-radius: 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),

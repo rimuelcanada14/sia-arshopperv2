@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import SignUp, LoginUser, AddProduct
-from django.contrib.auth.hashers import make_password  
+from django.contrib.auth.hashers import make_password
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth import authenticate
 
@@ -41,10 +41,26 @@ class AuthSerializer(serializers.Serializer):
 
         data['user'] = user
         return data
-# serializer for displaying products
 
+# serializer for displaying products
 class DisplayProdSerializer(serializers.ModelSerializer):
     class Meta:
         model = AddProduct
         fields = ['id', 'name', 'price', 'ingredients', 'nutritional_facts', 'image', 'barcode']
-    
+
+# serializer for updating user details
+class UpdateUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SignUp
+        fields = ['firstName', 'lastName', 'mobile_number', 'healthComplication', 'illness', 'illness2', 'illness3']
+
+    def update(self, instance, validated_data):
+        instance.firstName = validated_data.get('firstName', instance.firstName)
+        instance.lastName = validated_data.get('lastName', instance.lastName)
+        instance.mobile_number = validated_data.get('mobile_number', instance.mobile_number)
+        instance.healthComplication = validated_data.get('healthComplication', instance.healthComplication)
+        instance.illness = validated_data.get('illness', instance.illness)
+        instance.illness2 = validated_data.get('illness2', instance.illness2)
+        instance.illness3 = validated_data.get('illness3', instance.illness3)
+        instance.save()
+        return instance

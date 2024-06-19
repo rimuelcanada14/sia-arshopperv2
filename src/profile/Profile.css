@@ -1,7 +1,9 @@
 .profile-container{
     display: flex;
     flex-direction: column;
-    
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: .5em;
 }
 
 .profile-icon {
@@ -10,38 +12,183 @@
     justify-content: center;
     height: 145px;
     width: 145px;
+    margin-top: 1em;
 }
 
 .profile-btn {
     position: relative;
     margin: 12px 0;
-    margin-right: 10px;
-    border-radius: 20px;
-    height: 3.5em;
+    border-radius: 30px;
+    height: 6.5em;
+    padding-left: 2em;
+    padding-right: 2em;
     font-family: Poppins;
-    background-color: #FCF3A6;
-    width: 95%;
+    background-image: url("logochipattls.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    max-width: 100%;
     color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border: solid;
+    border-color: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);    
+}
+.profile-categories{
+    position: absolute;
+    font-size: 29px;
     text-align: center;
-    font-weight: bold;
-    font-size: 35px;
-    
+    top: 0.5em;
+    left: 3em;
+}
+.profile-btn-icon{
+    position: absolute;
+    top: .3em;
+    left: .2em;  
+    font-size: 65px;
+    color: black;
+}
+.profile-name{
+    text-align: center;
+    margin-bottom: -.1em;
+    margin-top: 0em;
+}
+#profile-marg{
+    margin-bottom: 6em;
+}
+.info-title{
+    position: relative;
+    text-align: center;
+}
+.info-btn{
+    position: relative;
+    margin: 12px 0;
+    border-radius: 30px;
+    padding-left: 2em;
+    padding-right: 2em;
+    font-family: Poppins;
+    background-image: url("logochipattls.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    max-width: 100%;
+    color: black;
+    border: solid;
+    border-color: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+}
+.info-categories{
+    margin-bottom: -1em;
+}
+.info-edit{
+    padding: .5em;
+    background-color: #E96760;
+    border-radius: 5px;
+    padding-left: 2em;
+    padding-right: 2em;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bolder;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: .5em;
+    margin-bottom: 1em;
+    font-family: Poppins;
 }
 
-.profile-btn-icon-left {
-    height: 100%;
-    justify-content: left;
+
+
+
+
+
+
+
+/*Modal CSS*/
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
-    align-items: left;
-}
-
-.profile-categories {
-    padding: 8.5% 0%;   
-}
-
-.profile-btn-icon-right {
-    height: 100%;
-}
+    justify-content: center;
+    align-items: center;
+  }
+  .edit-input{
+    text-transform: uppercase;
+  }
+  #edit-input-num{
+    text-transform: uppercase;
+    padding-left: 3.7em;
+    font-size: 15px;
+  }
+  .modal {
+    position: relative;
+    margin: 12px 0;
+    border-radius: 30px;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    font-family: Poppins;
+    max-width: 100%;
+    color: black;
+    border: solid;
+    border-color: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+    background-color: aliceblue;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #E96760;
+    box-shadow: none;
+  }
+  
+  .modal-content {
+    margin-top: 20px;
+  }
+  .modal-title{
+    text-align: center;
+  }
+  .button-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+  }
+  .modal-submit{
+    padding: .5em;
+    background-color: #E96760;
+    border-radius: 5px;
+    padding-left: 2em;
+    padding-right: 2em;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bolder;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: .5em;
+    margin-bottom: 1em;
+    font-family: Poppins;
+  }
+  .modal-num{
+    position: absolute;
+    top: 18.1em;
+    left: 2.8em;
+    font-size: 15px;
+  }

@@ -14,21 +14,25 @@ const Login = () => {
     const [error, setError] = useState(null);
     const redirect = useNavigate();
     const [credErr, setCredErr] = useState('');
-    
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const requestData = {
-                mobile_number: parseInt(mobileNumber, 10),  // Ensure the mobile number is an integer
+                mobile_number: parseInt(mobileNumber, 10),
                 password: password
             };
-            console.log('Request Data:', requestData);  // Log the request data for debugging
-            const response = await axios.post('https://localhost:8000/api/login/', requestData);
-            setToken(response.data.token);
+            const response = await axios.post('https://192.168.100.90:8000/api/login/', requestData);  // Change URL to localhost for development
+            const token = response.data.token;
+            setToken(token);
             setError(null);
+
+            // Store mobile number in local storage
+            localStorage.setItem('mobileNumber', mobileNumber);
+
             redirect('/Home');
         } catch (error) {
-            console.error('Error:', error.response?.data || error.message);  // Log the error response for debugging
+            console.error('Error:', error.response?.data || error.message);
             setError('Invalid credentials');
             setCredErr('Invalid Credentials');
             setToken(null);
@@ -49,7 +53,7 @@ const Login = () => {
     
         return () => clearTimeout(timer);
     }, [credErr]);
-        
+
     return (
         <>
             <div>

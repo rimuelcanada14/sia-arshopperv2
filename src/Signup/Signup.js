@@ -29,12 +29,17 @@ const Signup = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-
+    let updatedValue = value;
+  
+    if (name === 'firstName' || name === 'lastName') {
+      updatedValue = value.toUpperCase();
+    }
+  
+    setFormData({ ...formData, [name]: updatedValue });
+  
     if (name === 'password' || name === 'confirmPassword') {
       setPassError('');
-    }
-    else if (name === 'mobile_number') {
+    } else if (name === 'mobile_number') {
       if (!value.startsWith('9') || value.length !== 10) {
         setMobileError('');
       } else {
@@ -42,30 +47,37 @@ const Signup = () => {
       }
     }
   };
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
   
-    if (formData.password !== formData.confirmPassword) {
+    // Convert first name and last name to uppercase before submitting
+    const uppercaseFormData = {
+      ...formData,
+      firstName: formData.firstName.toUpperCase(),
+      lastName: formData.lastName.toUpperCase()
+    };
+  
+    if (uppercaseFormData.password !== uppercaseFormData.confirmPassword) {
       setPassError('Passwords do not match');
       setMobileError('');
       return;
-    } else if (!formData.mobile_number.startsWith('9') || formData.mobile_number.length !== 10) {
+    } else if (!uppercaseFormData.mobile_number.startsWith('9') || uppercaseFormData.mobile_number.length !== 10) {
       setMobileError('Invalid Mobile Number');
       setPassError('');
       return;
-    } else if (formData.healthComplication === 'yes' && formData.illness === 'null') {
+    } else if (uppercaseFormData.healthComplication === 'yes' && uppercaseFormData.illness === 'null') {
       setPassError('Select a Complication');
       setMobileError('');
       return;
-    } else if (formData.illness === formData.illness2 || formData.illness === formData.illness3 || formData.illness2 === formData.illness3) {
+    } else if (uppercaseFormData.illness === uppercaseFormData.illness2 || uppercaseFormData.illness === uppercaseFormData.illness3 || uppercaseFormData.illness2 === uppercaseFormData.illness3) {
       setPassError('Duplicate Complication');
       setMobileError('');
       return;
     }
   
     try {
-      const response = await axios.post('https://localhost:8000/api/signup/', formData);
+      const response = await axios.post('https://192.168.100.90:8000/api/signup/', uppercaseFormData);
       if (response.status === 201) {
         console.log('User signed up successfully!');
         setSuccessMessage('Sign up Successful!');
@@ -129,6 +141,7 @@ const Signup = () => {
                 value={formData.firstName}
                 onChange={handleChange}
                 required
+                className="input-uppercase"
               />
             </div>
 
@@ -143,6 +156,7 @@ const Signup = () => {
                 value={formData.lastName}
                 onChange={handleChange}
                 required
+                className="input-uppercase"
               />
             </div>
 
@@ -233,6 +247,7 @@ const Signup = () => {
               {/* Additional illness fields */}
               {showIllness2 && (
                 <>
+                
                   <p className="illness-categories">Enter Health Complication 2</p>
                     <div className="illness-health">
                       <FaNotesMedical className="illness-icon-health" />
@@ -252,6 +267,7 @@ const Signup = () => {
                         <option value="null2" hidden></option>
                       </select>
                     </div>
+                
                 </>
                         )}
               {showIllness3 && (
@@ -261,7 +277,7 @@ const Signup = () => {
                       <FaNotesMedical className="illness-icon-health" />
                       <select
                         name="illness3"
-                        id="illness-input-health"
+                        id="illness-input-health3"
                         onChange={handleChange}
                         value={formData.illness3}
                       >
