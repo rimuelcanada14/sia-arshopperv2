@@ -1,8 +1,9 @@
 from rest_framework import serializers
+from django.contrib.auth.hashers import check_password, make_password
+from django.contrib.auth.models import User
 from .models import SignUp, LoginUser, AddProduct
-from django.contrib.auth.hashers import make_password
-from django.utils.translation import gettext_lazy as _
 from django.contrib.auth import authenticate
+from django.utils.translation import gettext_lazy as _
 
 class SignUpSerializer(serializers.ModelSerializer):
     class Meta:
@@ -22,7 +23,6 @@ class SignUpSerializer(serializers.ModelSerializer):
         signup = SignUp.objects.create(user=login_user, **validated_data)
         return signup
 
-#for login serializer
 class AuthSerializer(serializers.Serializer):
     mobile_number = serializers.IntegerField()
     password = serializers.CharField()
@@ -42,13 +42,11 @@ class AuthSerializer(serializers.Serializer):
         data['user'] = user
         return data
 
-# serializer for displaying products
 class DisplayProdSerializer(serializers.ModelSerializer):
     class Meta:
         model = AddProduct
         fields = ['id', 'name', 'price', 'ingredients', 'nutritional_facts', 'image', 'barcode']
 
-# serializer for updating user details
 class UpdateUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = SignUp
@@ -64,3 +62,13 @@ class UpdateUserSerializer(serializers.ModelSerializer):
         instance.illness3 = validated_data.get('illness3', instance.illness3)
         instance.save()
         return instance
+
+class ChangePasswordSerializer(serializers.Serializer):
+    currentPassword = serializers.CharField(write_only=True)
+    newPassword = serializers.CharField(write_only=True)
+    confirmNewPassword = serializers.CharField(write_only=True)
+
+    def validate(self, data):
+        if data['newPassword'] != data['confirmNewPassword']:
+            raise serializers.ValidationError("New passwords do not match")
+        return data

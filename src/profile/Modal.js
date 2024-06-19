@@ -10,10 +10,9 @@ const Modal = ({ show, children, onClose }) => {
 
   return (
     <div className="modal-overlay">
-      <div className="modal">
+      <div className="modal-container">
         <button className="modal-close" onClick={onClose}>
          <IoIosCloseCircle />
-          
         </button>
         <div className="modal-content">{children}</div>
       </div>

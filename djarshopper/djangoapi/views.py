@@ -2,9 +2,12 @@ from rest_framework import generics, status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
+from rest_framework.decorators import api_view
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.hashers import check_password
+from django.contrib.auth.models import User
 from .models import SignUp, AddProduct
-from .serializers import SignUpSerializer, AuthSerializer, DisplayProdSerializer, UpdateUserSerializer
+from .serializers import SignUpSerializer, AuthSerializer, DisplayProdSerializer, UpdateUserSerializer, ChangePasswordSerializer
 
 class UserCreateView(generics.CreateAPIView):
     queryset = SignUp.objects.all()
@@ -56,3 +59,24 @@ class UserDetailView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['POST'])
+def change_password(request, mobile_number):
+    try:
+        user = SignUp.objects.get(mobile_number=mobile_number)
+    except SignUp.DoesNotExist:
+        return Response({"error": "User not found"}, status=status.HTTP_404_NOT_FOUND)
+
+    serializer = ChangePasswordSerializer(data=request.data)
+    if serializer.is_valid():
+        current_password = serializer.validated_data['currentPassword']
+        new_password = serializer.validated_data['newPassword']
+
+        if not user.user.check_password(current_password):
+            return Response({"error": "Current password is incorrect"}, status=status.HTTP_400_BAD_REQUEST)
+
+        user.user.set_password(new_password)
+        user.user.save()
+        return Response({"message": "Password changed successfully"}, status=status.HTTP_200_OK)
+    
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
