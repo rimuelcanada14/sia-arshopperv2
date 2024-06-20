@@ -45,7 +45,7 @@ function ProfileInfo() {
       };
       fetchUserDetails();
     }
-  }, [setError]);
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -143,10 +143,10 @@ function ProfileInfo() {
       {user && <h1 className="profile-name">{user.firstName.toUpperCase()} {user.lastName.toUpperCase()}</h1>}
       <div className='profile-container'>
         <div className='info-btn'>
-          <h1 className='info-title'>CHANGE INFORMATION</h1>
+          <h1 className='info-title'>PERSONAL INFORMATION</h1>
           {user && <h4 className='info-categories'>FIRST NAME: &emsp; &emsp;&emsp;{user.firstName.toUpperCase()}</h4>}
           {user && <h4 className='info-categories'>LAST NAME: &emsp;&emsp;&emsp;&ensp;{user.lastName.toUpperCase()}</h4>}
-          {user && <h4 className='info-categories1'>MOBILE NUMBER: &emsp;+63 &nbsp;{user.mobile_number}</h4>}
+          {user && <h4 className='info-categories1'>MOBILE NUMBER: &emsp;0{user.mobile_number}</h4>}
           <button onClick={handleEditClick} className="info-edit">EDIT INFORMATION</button>
           <button onClick={handlePasswordChangeClick} className="info-pass">CHANGE PASSWORD</button>
         </div>

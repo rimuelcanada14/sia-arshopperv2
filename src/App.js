@@ -10,7 +10,8 @@ import {
 import Login from './Login/Login';
 import Signup from './Signup/Signup';
 import Profile from './profile/Profile';
-import ProfileInfo from './profile/info';
+import ProfileInfo from './profile/ProfileInfo';
+import ProfileHealth from './profile/ProfileHealth';
 import Category from './Category/Categories';
 import Home from './Home/Home';
 import Beverages from './Category/Beverages';
@@ -37,6 +38,7 @@ const router =createBrowserRouter(
       <Route path = "wayfinding" element={<Wayfinding />}></Route>
       <Route path = "Barcodescan" element ={<Barcodescan/>}></Route>
       <Route path = "profile-info" element={<ProfileInfo />}></Route>
+      <Route path = "profile-health" element={<ProfileHealth />}></Route>
     </Route>
   )
 )

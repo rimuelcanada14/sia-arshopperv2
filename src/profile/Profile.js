@@ -50,7 +50,7 @@ function Profile() {
               <h1 className='profile-categories'>LIKES</h1>
             </div>
           </Link>
-          <Link>
+          <Link to = "/profile-health">
             <div className='profile-btn' id="profile-marg">
               <FaHeartbeat className="profile-btn-icon" />
               <h1 className='profile-categories'>HEALTH STATUS</h1>

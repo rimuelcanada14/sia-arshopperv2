@@ -34,7 +34,7 @@ const Signup = () => {
     let updatedValue = value;
   
     if (name === 'firstName' || name === 'lastName') {
-        updatedValue = value.replace(/[^A-Za-z]/ig, '');
+        updatedValue = value.replace(/[^A-Za-zÑñ]/ig, '');
     }
     if (name === 'firstName' || name === 'lastName') {
         updatedValue = updatedValue.toUpperCase();
