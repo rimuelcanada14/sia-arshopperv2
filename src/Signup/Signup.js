@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FaMobileRetro, FaUser, FaLock, FaLockOpen, FaNotesMedical } from "react-icons/fa6";
 import { FcApproval } from "react-icons/fc";
+import { RxCrossCircled } from "react-icons/rx";
 import { Link, useNavigate } from 'react-router-dom';
 import './Signup.css';
 import Header from '../components/header';
-import { RxCrossCircled } from "react-icons/rx";
+
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -24,6 +25,7 @@ const Signup = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const Redirection = useNavigate('');
   const [mobileErr, setMobileError] = useState('');
+  const [duplicateMobileError, setDuplicateMobileError] = useState('');
   const [showIllness2, setShowIllness2] = useState(false);
   const [showIllness3, setShowIllness3] = useState(false);
 
@@ -32,22 +34,24 @@ const Signup = () => {
     let updatedValue = value;
   
     if (name === 'firstName' || name === 'lastName') {
-      updatedValue = value.toUpperCase();
+        updatedValue = value.replace(/[^A-Za-z]/ig, '');
+    }
+    if (name === 'firstName' || name === 'lastName') {
+        updatedValue = updatedValue.toUpperCase();
     }
   
     setFormData({ ...formData, [name]: updatedValue });
   
     if (name === 'password' || name === 'confirmPassword') {
-      setPassError('');
+        setPassError('');
     } else if (name === 'mobile_number') {
-      if (!value.startsWith('9') || value.length !== 10) {
-        setMobileError('');
-      } else {
-        setMobileError('');
-      }
+        if (!value.startsWith('9') || value.length !== 10) {
+            setMobileError('');
+        } else {
+            setMobileError('');
+        }
     }
-  };
-  
+};
   const handleSubmit = async (e) => {
     e.preventDefault();
   
@@ -81,27 +85,31 @@ const Signup = () => {
       if (response.status === 201) {
         console.log('User signed up successfully!');
         setSuccessMessage('Sign up Successful!');
-  
+
         setTimeout(() => {
           Redirection('/');
         }, 2000);
-  
+
       } else {
         console.error('Failed to sign up');
       }
     } catch (error) {
-      console.error('Failed to sign up', error);
+      if (error.response && error.response.status === 409) {
+        console.error('Mobile number exists');
+      } else {
+        setDuplicateMobileError('Mobile number exists', error);
+      }
     }
   };
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setPassError('');
       setMobileError('');
+      setDuplicateMobileError('')
     }, 3000);
 
     return () => clearTimeout(timer);
-  }, [passErr, mobileErr]);
+  }, [passErr, mobileErr, duplicateMobileError]);
 
   const Inputlimiter = (e) => {
     const { name, value } = e.target;
@@ -312,6 +320,15 @@ const Signup = () => {
                 {mobileErr}
               </div>
               <RxCrossCircled className='ekisR' />
+            </div>}
+
+          {duplicateMobileError &&
+            <div className="popup">
+              <RxCrossCircled className='ekis-pass' />
+              <div className="popup-text">
+                {duplicateMobileError}
+              </div>
+              <RxCrossCircled className='ekis-passR' />
             </div>}
 
           {passErr &&

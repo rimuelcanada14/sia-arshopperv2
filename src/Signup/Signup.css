@@ -185,7 +185,7 @@ select {
     text-decoration: underline;
 }
 
-/* same with login.js */
+/* same with login.js and info.js */
 .popup { 
     position: fixed;
     background-color: rgba(233,103,96);
@@ -205,6 +205,8 @@ select {
     right: 0;
     margin: auto;
     height: 1.5em;
+    border: 2px solid rgb(255, 80, 71); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0,); 
 }
 .popup-text{
     color: white;

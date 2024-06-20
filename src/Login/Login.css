@@ -51,7 +51,7 @@ body {
 }
 .login-p-mobile{
     position: absolute;
-    top: 1.85em;
+    top: 1.87em;
     left: 3.1em;
     font-size: 15px;
 }
@@ -146,6 +146,7 @@ button.login-submit:hover{
     margin-top: 1.5em;
     font-weight: bold;
 }
+
 .popup {
     position: fixed;
     background-color: rgba(233,103,96);
@@ -165,6 +166,8 @@ button.login-submit:hover{
     right: 0;
     margin: auto;
     height: 1.5em;
+    border: 2px solid rgb(255, 80, 71); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0,); 
 }
 .popup-text{
     color: white;

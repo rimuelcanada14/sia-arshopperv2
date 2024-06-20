@@ -11,6 +11,11 @@ class SignUpSerializer(serializers.ModelSerializer):
         fields = ['id', 'firstName', 'lastName', 'password', 'mobile_number', 'healthComplication', 'illness', 'illness2', 'illness3']
         extra_kwargs = {'password': {'write_only': True}}
 
+    def validate_mobile_number(self, value):
+        if not str(value).isdigit():
+            raise serializers.ValidationError("Mobile number must contain only digits.")
+        return value
+
     def create(self, validated_data):
         password = validated_data.pop('password')
         validated_data['password'] = make_password(password)
@@ -32,8 +37,7 @@ class AuthSerializer(serializers.Serializer):
         password = data.get('password')
 
         if mobile_number and password:
-            user = authenticate(request=self.context.get('request'), mobile_number=mobile_number, password=password)
-
+            user = authenticate(request=self.context.get('request'), username=mobile_number, password=password)
             if user is None:
                 raise serializers.ValidationError(_('Unable to login, please check credentials'), code='authorization')
         else:
@@ -41,6 +45,7 @@ class AuthSerializer(serializers.Serializer):
 
         data['user'] = user
         return data
+
 
 class DisplayProdSerializer(serializers.ModelSerializer):
     class Meta:
@@ -51,6 +56,11 @@ class UpdateUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = SignUp
         fields = ['firstName', 'lastName', 'mobile_number', 'healthComplication', 'illness', 'illness2', 'illness3']
+
+    def validate_mobile_number(self, value):
+        if not str(value).isdigit():
+            raise serializers.ValidationError("Mobile number must contain only digits.")
+        return value
 
     def update(self, instance, validated_data):
         instance.firstName = validated_data.get('firstName', instance.firstName)

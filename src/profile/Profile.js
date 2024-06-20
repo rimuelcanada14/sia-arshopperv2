@@ -10,8 +10,7 @@ import { Link } from 'react-router-dom';
 
 function Profile() {
   const [user, setUser] = useState(null);
-  const [error, setError] = useState(null);
-  const [showPopup, setShowPopup] = useState(false);
+  const [setError] = useState(null);
 
   useEffect(() => {
       const mobileNumber = localStorage.getItem('mobileNumber');
@@ -20,10 +19,6 @@ function Profile() {
               try {
                   const response = await axios.get(`https://192.168.100.90:8000/api/user-details/${mobileNumber}/`);
                   setUser(response.data);
-                  setShowPopup(true); // Show popup when user details are fetched successfully
-                  setTimeout(() => {
-                      setShowPopup(false); // Hide popup after 2 seconds
-                  }, 2000);
               } catch (error) {
                   console.error('Failed to fetch user details', error);
                   setError(error);
@@ -31,7 +26,7 @@ function Profile() {
           };
           fetchUserDetails();
       }
-  }, []);
+  }, [setError]);
 
   return (
     <>

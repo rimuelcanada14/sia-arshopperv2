@@ -4,17 +4,20 @@ import './Profile.css';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import Modal from './Modal';
+import { FcApproval } from "react-icons/fc";
+import { RxCrossCircled } from "react-icons/rx";
 
 function ProfileInfo() {
   const [user, setUser] = useState(null);
-  const [error, setError] = useState(null);
+  const [setError] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [isChangingPassword, setIsChangingPassword] = useState(false);
+  const [passwordMismatch, setPasswordMismatch] = useState(false);
+  const [incorrectCurrentPassword, setIncorrectCurrentPassword] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
-    mobile_number: '',
     currentPassword: '',
     newPassword: '',
     confirmNewPassword: ''
@@ -26,19 +29,15 @@ function ProfileInfo() {
       const fetchUserDetails = async () => {
         try {
           const response = await axios.get(`https://192.168.100.90:8000/api/user-details/${mobileNumber}/`);
-          setUser(response.data);
+          const userData = response.data;
+          setUser(userData);
           setFormData({
-            firstName: response.data.firstName,
-            lastName: response.data.lastName,
-            mobile_number: response.data.mobile_number,
+            firstName: userData.firstName.toUpperCase(),
+            lastName: userData.lastName.toUpperCase(),
             currentPassword: '',
             newPassword: '',
             confirmNewPassword: ''
           });
-          setShowPopup(true);
-          setTimeout(() => {
-            setShowPopup(false);
-          }, 2000);
         } catch (error) {
           console.error('Failed to fetch user details', error);
           setError(error);
@@ -46,11 +45,12 @@ function ProfileInfo() {
       };
       fetchUserDetails();
     }
-  }, []);
+  }, [setError]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value.toUpperCase() });
+    const updatedValue = value.replace(/[^A-Za-zÑñ]/ig, '');
+    setFormData({ ...formData, [name]: updatedValue });
   };
 
   const handleEditClick = () => {
@@ -60,9 +60,11 @@ function ProfileInfo() {
   const handleCancelClick = () => {
     setIsEditing(false);
     setFormData({
-      firstName: user.firstName,
-      lastName: user.lastName,
-      mobile_number: user.mobile_number
+      firstName: user.firstName.toUpperCase(),
+      lastName: user.lastName.toUpperCase(),
+      currentPassword: '',
+      newPassword: '',
+      confirmNewPassword: ''
     });
   };
 
@@ -83,7 +85,10 @@ function ProfileInfo() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`https://192.168.100.90:8000/api/user-details/${user.mobile_number}/`, formData);
+      const response = await axios.put(`https://192.168.100.90:8000/api/user-details/${user.mobile_number}/`, {
+        firstName: formData.firstName.toUpperCase(),
+        lastName: formData.lastName.toUpperCase(),
+      });
       console.log('Response:', response);
       setUser(response.data);
       setIsEditing(false);
@@ -99,6 +104,13 @@ function ProfileInfo() {
 
   const handlePasswordSubmit = async (e) => {
     e.preventDefault();
+    if (formData.newPassword !== formData.confirmNewPassword) {
+      setPasswordMismatch(true);
+      setTimeout(() => {
+        setPasswordMismatch(false);
+      }, 2000);
+      return;
+    }
     try {
       const response = await axios.post(`https://192.168.100.90:8000/api/change-password/${user.mobile_number}/`, {
         currentPassword: formData.currentPassword,
@@ -112,22 +124,29 @@ function ProfileInfo() {
         setShowPopup(false);
       }, 2000);
     } catch (error) {
-      console.error('Failed to change password', error);
-      setError(error);
+      if (error.response && error.response.status === 400) {
+        setIncorrectCurrentPassword(true);
+        setTimeout(() => {
+          setIncorrectCurrentPassword(false);
+        }, 2000);
+      } else {
+        console.error('Failed to change password', error);
+        setError(error);
+      }
     }
   };
 
   return (
     <>
-      <Header header="INFORMATION" headerright="ICHI MART" headersub="©" className='profile-header' />
+      <Header header={<a href="/profile" className="beverages-back">BACK</a>} headerright="INFORMATION" />
       <img className='profile-icon' src='ProfileImage/profile.png' alt='profileimage'></img>
-      {user && <h1 className="profile-name">{user.firstName} {user.lastName}</h1>}
+      {user && <h1 className="profile-name">{user.firstName.toUpperCase()} {user.lastName.toUpperCase()}</h1>}
       <div className='profile-container'>
         <div className='info-btn'>
           <h1 className='info-title'>CHANGE INFORMATION</h1>
-          {user && <h4 className='info-categories'>FIRST NAME: {user.firstName}</h4>}
-          {user && <h4 className='info-categories'>LAST NAME: {user.lastName}</h4>}
-          {user && <h4 className='info-categories1'>MOBILE NUMBER: {user.mobile_number}</h4>}
+          {user && <h4 className='info-categories'>FIRST NAME: &emsp; &emsp;&emsp;{user.firstName.toUpperCase()}</h4>}
+          {user && <h4 className='info-categories'>LAST NAME: &emsp;&emsp;&emsp;&ensp;{user.lastName.toUpperCase()}</h4>}
+          {user && <h4 className='info-categories1'>MOBILE NUMBER: &emsp;+63 &nbsp;{user.mobile_number}</h4>}
           <button onClick={handleEditClick} className="info-edit">EDIT INFORMATION</button>
           <button onClick={handlePasswordChangeClick} className="info-pass">CHANGE PASSWORD</button>
         </div>
@@ -144,11 +163,6 @@ function ProfileInfo() {
             <label>Last Name</label>
             <input type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} id='edit-input'/>
           </div>
-          <div>
-            <label>Mobile Number</label>
-            <p className='modal-num'>+63</p>
-            <input type="text" name="mobile_number" value={formData.mobile_number} onChange={handleInputChange} id='edit-input-num'/>
-          </div>
           <button type="submit" className='modal-submit'>SAVE</button>
         </form>
       </Modal>
@@ -156,7 +170,7 @@ function ProfileInfo() {
       <Modal show={isChangingPassword} onClose={handlePasswordCancelClick}>
         <form onSubmit={handlePasswordSubmit}>
           <div>
-          <h1>CHANGE<br/>PASSWORD</h1>
+            <h1>CHANGE<br/>PASSWORD</h1>
             <label>Current Password</label>
             <input type="password" name="currentPassword" value={formData.currentPassword} onChange={handleInputChange} id="edit-input-pass" />
           </div>
@@ -171,6 +185,34 @@ function ProfileInfo() {
           <button type="submit" className='modal-submit'>SAVE</button>
         </form>
       </Modal>
+      
+
+      {passwordMismatch && 
+        <div className="info-popup">
+          <RxCrossCircled className='info-ekis-pass' />
+          <div className='popup-text'>
+            Passwords do not match
+          </div>
+          <RxCrossCircled className='info-ekis-passR' />
+        </div>}
+
+      {incorrectCurrentPassword && 
+        <div className="info-popup">
+          <RxCrossCircled className='info-ekis-pass' />
+          <div className ='popup-text'>
+            Incorrect Current Password
+          </div>
+          <RxCrossCircled className='info-ekis-passR' />
+        </div>}
+
+      {showPopup && 
+        <div className="info-popup-success">
+          <FcApproval className="info-check" />
+          <div>
+            Changes saved!
+          </div>
+          <FcApproval className="info-checkR" />
+        </div>}
       <Footer className='profile-footer' />
     </>
   );

@@ -22,7 +22,7 @@ const Login = () => {
                 mobile_number: parseInt(mobileNumber, 10),
                 password: password
             };
-            const response = await axios.post('https://192.168.100.90:8000/api/login/', requestData);  // Change URL to localhost for development
+            const response = await axios.post(`https://192.168.100.90:8000/api/login/`, requestData);  // Change URL to localhost for development
             const token = response.data.token;
             setToken(token);
             setError(null);
