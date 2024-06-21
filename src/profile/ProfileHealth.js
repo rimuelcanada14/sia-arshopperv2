@@ -6,6 +6,8 @@ import Footer from '../components/footer';
 import Modal from './Modal';
 import { FcApproval } from "react-icons/fc";
 import { RxCrossCircled } from "react-icons/rx";
+import { Link } from 'react-router-dom';
+
 
 function ProfileHealth() {
   const [user, setUser] = useState(null);
@@ -97,7 +99,7 @@ function ProfileHealth() {
 
   return (
     <>
-      <Header header={<a href="/profile" className="beverages-back">BACK</a>} headersub="&nbsp;" headerright="HEALTH STATUS" />
+      <Header header={<Link to ="/profile" className="beverages-back">BACK</Link>} headersub="&nbsp;" headerright="HEALTH STATUS" />
       <img className='profile-icon' src='ProfileImage/profile.png' alt='profileimage'></img>
       {user && <h1 className="profile-name">{user.firstName.toUpperCase()} {user.lastName.toUpperCase()}</h1>}
       <div className='profile-container'>

@@ -1,6 +1,7 @@
 import React from 'react';
 import './History.css';
 import Header from '../components/header';
+import {Link} from 'react-router-dom';
 
 
 function History() {
@@ -9,8 +10,7 @@ function History() {
     <> 
     
         <div className='ichiInfo-text-header'>
-            <Header header={<a href = "/AboutUs" className="history-back">BACK</a>} headerright="ABOUT US" 
-                    headersub={<a href = "/AboutUs" className="history-sub">h</a>}/>
+            <Header header={<Link to ="/aboutus" className="beverages-back">BACK</Link>} headersub="&nbsp;" headerright="ABOUT US" />
         </div>
 
         <div className="ichi-about-header">

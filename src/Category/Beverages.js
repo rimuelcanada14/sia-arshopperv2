@@ -30,7 +30,7 @@ function Beverages() {
 
     return (
       <div>
-        <Header header={<a href="/category" className="beverages-back">BACK</a>} headerright="BEVERAGES" />
+        <Header header={<Link to ="/category" className="beverages-back">BACK</Link>} headersub="&nbsp;" headerright="BEVERAGES" />
         {/* <h1 className="category-header-text"><MdOutlineArrowBackIosNew  className="cetegory-back-button"/>Category</h1> */}
         
         <div>

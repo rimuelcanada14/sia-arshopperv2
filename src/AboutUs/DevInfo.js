@@ -3,6 +3,7 @@ import './DevInfo.css';
 import Header from '../components/header';
 import { TypeAnimation } from 'react-type-animation';
 import { FaFacebook } from "react-icons/fa";
+import {Link} from 'react-router-dom';
 
 function DevInfo() {
 
@@ -36,7 +37,7 @@ function DevInfo() {
     return(
         <>
             {/* header */}
-            <Header className='devinfo-header' header={<a href = "/home" className="category-back">BACK</a>} headerright="DEVELOPERS" />
+            <Header header={<Link to ="/aboutus" className="beverages-back">BACK</Link>} headersub="&nbsp;" headerright="DEVELOPERS" />
 
             <div className='devcard'>
                 <div className='devheader'>

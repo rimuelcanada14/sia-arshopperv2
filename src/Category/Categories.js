@@ -33,7 +33,7 @@ function Category() {
     
     return (
       <div>
-            <Header header={<a href = "/home" className="category-back">BACK</a>} headerright="CATEGORIES" />
+            <Header header={<Link to ="/home" className="beverages-back">BACK</Link>} headersub="&nbsp;" headerright="CATEGORIES" />
         
         
         <div>

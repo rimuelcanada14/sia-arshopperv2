@@ -1,3 +1,4 @@
+// Login.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FaMobileRetro, FaUnlockKeyhole } from "react-icons/fa6";
@@ -5,15 +6,16 @@ import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 import Header from '../components/header';
 import { TypeAnimation } from 'react-type-animation';
-import { RxCrossCircled } from "react-icons/rx"
+import { RxCrossCircled } from "react-icons/rx";
+import { useAuth } from '../AuthContext';
 
 const Login = () => {
     const [mobileNumber, setMobileNumber] = useState('');
     const [password, setPassword] = useState('');
-    const [token, setToken] = useState(null);
     const [error, setError] = useState(null);
-    const redirect = useNavigate();
+    const navigate = useNavigate();
     const [credErr, setCredErr] = useState('');
+    const { login } = useAuth();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -24,18 +26,17 @@ const Login = () => {
             };
             const response = await axios.post(`https://192.168.100.90:8000/api/login/`, requestData);  // Change URL to localhost for development
             const token = response.data.token;
-            setToken(token);
+            login(token);
             setError(null);
 
             // Store mobile number in local storage
             localStorage.setItem('mobileNumber', mobileNumber);
 
-            redirect('/Home');
+            navigate('/home');
         } catch (error) {
             console.error('Error:', error.response?.data || error.message);
             setError('Invalid credentials');
             setCredErr('Invalid Credentials');
-            setToken(null);
         }
     };
 
@@ -87,7 +88,7 @@ const Login = () => {
                     <TypeAnimation
                         sequence={[
                             'I love you', 3000, 
-                            '愛してる', 3000,
+                            '愛してる', 3000,                            
                             'Mahal kita', 3000,
                             '사랑해요', 3000,
                             'Te quiero', 3000,
@@ -119,3 +120,5 @@ const Login = () => {
 };
 
 export default Login;
+
+                           
