@@ -24,6 +24,7 @@ import History from './AboutUs/History';
 import Wayfinding from './Wayfinding/Wayfinding';
 import Barcodescan from './Barcodescan/Barcodescan';
 import DevInfo from './AboutUs/DevInfo';
+import JunkFoods from './Category/JunkFoods';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -41,6 +42,7 @@ const router = createBrowserRouter(
       <Route path="profile-info" element={<ProtectedRoute element={<ProfileInfo />} />} />
       <Route path="profile-health" element={<ProtectedRoute element={<ProfileHealth />} />} />
       <Route path="beverages" element={<ProtectedRoute element={<Beverages />} />} />
+      <Route path="junkfoods" element={<ProtectedRoute element={<JunkFoods />} />} />
     </Route>
   )
 );

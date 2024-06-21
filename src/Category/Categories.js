@@ -22,7 +22,7 @@ function Category() {
     
       const categoryButtons = [
         {label: 'Beverages', to: '/beverages'},
-        {label: 'Junk Food', to: '/snacks'},
+        {label: 'Junk Foods', to: '/junkfoods'},
         {label: 'Ice Cream', to: 'hairproduct'},
         {label: 'Frozen Goods', to: 'dairyproduct'},
         {label: 'Pastry', to: '/beverages'},
