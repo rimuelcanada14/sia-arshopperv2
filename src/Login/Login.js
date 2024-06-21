@@ -8,6 +8,7 @@ import Header from '../components/header';
 import { TypeAnimation } from 'react-type-animation';
 import { RxCrossCircled } from "react-icons/rx";
 import { useAuth } from '../AuthContext';
+import Zesto from '../ARModels/Zesto';
 
 const Login = () => {
     const [mobileNumber, setMobileNumber] = useState('');
@@ -115,6 +116,10 @@ const Login = () => {
                     </div>
                 }
             </div>
+
+            
+            <Zesto />
+            
         </>
     );
 };
