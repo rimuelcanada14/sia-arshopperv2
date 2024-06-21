@@ -50,9 +50,9 @@ admin.site.register(LoginUser, UserAdmin)
 #this is for fetching data from the database to display products
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'ingredients', 'nutritional_facts', 'price', 'barcode')
+    list_display = ('name', 'category','price', 'barcode', 'ingredients', 'nutritional_facts',)
     search_fields = ('name',)
-    list_filter = ('price',)
+    list_filter = ('price', 'category')
 
 admin.site.register(AddProduct, ProductAdmin)
 

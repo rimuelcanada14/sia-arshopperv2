@@ -22,13 +22,18 @@ function Category() {
     
       const categoryButtons = [
         {label: 'Beverages', to: '/beverages'},
-        {label: 'Snacks', to: '/snacks'},
-        {label: 'Hair Products', to: 'hairproduct'},
-        {label: 'Dairy Products', to: 'dairyproduct'},
-        {label: 'Beverages', to: '/beverages'},
-        {label: 'Snacks', to: '/snacks'},
-        {label: 'Hair Products', to: 'hairproduct'},
-        {label: 'Add Margin', to: 'addmargin', categoryBottom: true},
+        {label: 'Junk Food', to: '/snacks'},
+        {label: 'Ice Cream', to: 'hairproduct'},
+        {label: 'Frozen Goods', to: 'dairyproduct'},
+        {label: 'Pastry', to: '/beverages'},
+        {label: 'Noodles/Pasta', to: '/snacks'},
+        {label: 'Instant Noodles', to: 'hairproduct'},
+        {label: 'Nibbles', to: 'hairproduct'},
+        {label: 'Coffee/Milk', to: 'hairproduct'},
+        {label: 'Biscuits', to: 'hairproduct'},
+        {label: 'Candies', to: 'hairproduct'},
+        {label: 'Liquor/Wines', to: 'hairproduct'},
+        {label: 'Canned Goods', to: 'addmargin', categoryBottom: true},
       ];
     
     return (

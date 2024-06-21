@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Permis
 
 # Handles the validation for the login
 class MyLoginManager(BaseUserManager):
+   
     def create_user(self, mobile_number, password=None, **extra_fields):
         if not mobile_number:
             raise ValueError('The Mobile Number field must be set')
@@ -19,6 +20,7 @@ class MyLoginManager(BaseUserManager):
 
 # For the login 
 class LoginUser(AbstractBaseUser, PermissionsMixin):
+   
     username = None
     mobile_number = models.BigIntegerField(unique=True)
     is_active = models.BooleanField(default=True)
@@ -35,6 +37,7 @@ class LoginUser(AbstractBaseUser, PermissionsMixin):
     
 # This is for the creation of new users
 class SignUp(models.Model):
+  
     firstName = models.CharField(max_length=100)
     lastName = models.CharField(max_length=100)
     mobile_number = models.BigIntegerField(null=True, blank=True)
@@ -96,12 +99,31 @@ class SignUp(models.Model):
 
 # CRUD for the admin panel
 class AddProduct(models.Model):
+    
+    CATEGORY_CHOICES = [
+        ('beverages', 'Beverages'),
+        ('junk food', 'Junk Food'),
+        ('ice cream', 'Ice Cream'),
+        ('frozen goods', 'Frozen Goods'),
+        ('pastry', 'Pastry'),
+        ('noodles/pasta', 'Noodles/Pasta'),
+        ('instant noodles', 'Instant Noodles'),
+        ('nibbles', 'Nibbles'),
+        ('coffee/milk', 'Coffee/Milk'),
+        ('biscuits', 'Biscuits'),
+        ('candies', 'Candies'),
+        ('liqour/wines', 'Liqour/Wines'),
+        ('canned goods', 'Canned Goods'),
+    ]    
+    
     name = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     ingredients = models.TextField()
     nutritional_facts = models.TextField()
     image = models.ImageField(upload_to='djangoapi/ProductImage')
     barcode = models.CharField(max_length=13, null=True)
+    category = models.CharField(max_length=50, null=True, choices=CATEGORY_CHOICES)
+    
     
     def __str__(self):
         return self.name

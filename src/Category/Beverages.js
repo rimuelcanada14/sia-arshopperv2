@@ -9,7 +9,7 @@ function Beverages() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-      axios.get('https://localhost:8000/api/products/')
+      axios.get('https://localhost:8000/api/products/beverages/')
       .then(response => {
         console.log(response.data);
         setProducts(response.data);

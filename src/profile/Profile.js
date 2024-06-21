@@ -17,7 +17,7 @@ function Profile() {
       if (mobileNumber) {
           const fetchUserDetails = async () => {
               try {
-                  const response = await axios.get(`https://192.168.100.90:8000/api/user-details/${mobileNumber}/`);
+                  const response = await axios.get(`https://localhost:8000/api/user-details/${mobileNumber}/`);
                   setUser(response.data);
               } catch (error) {
                   console.error('Failed to fetch user details', error);

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-$tvoe_(bia4g&qt0vg!fw52^1c#173d16pljvs12q4+yl*@!4t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.13', 'localhost', '127.0.0.1', '192.168.100.90', '172.20.100.144']
+ALLOWED_HOSTS = ['192.168.1.13', 'localhost', '127.0.0.1', '192.168.100.90', ]
 
 
 # Application definition
@@ -83,15 +83,13 @@ JAZZMIN_UI_TWEAKS = {
 #PAG TINANGGAL MO COMMENT NITO MAKIKITA MO UI PREVIEWER NG LIBRARY SA ADMIN
 # JAZZMIN_SETTINGS["show_ui_builder"] = True
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
     'https://localhost:3000',
-    'https://192.168.1.13:3000',
     'https://localhost:8000',
-    'https://192.168.1.13:8000'
 ]
-
+CORS_ALLOW_CREDENTIALS = True
 # SECURE_SSL_REDIRECT = True
 
 REST_FRAMEWORK = {

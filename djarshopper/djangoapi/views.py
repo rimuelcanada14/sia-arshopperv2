@@ -33,6 +33,12 @@ class ProductDetailView(APIView):
         serializer = DisplayProdSerializer(product)
         return Response(serializer.data)
 
+class BeveragesView(generics.ListAPIView):
+    serializer_class = DisplayProdSerializer
+    
+    def get_queryset(self):
+        return AddProduct.objects.filter(category='Beverages')
+    
 class UserDetailView(APIView):
     def get(self, request, mobile_number, format=None):
         try:
