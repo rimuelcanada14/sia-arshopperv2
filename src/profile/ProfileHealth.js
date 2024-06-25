@@ -25,7 +25,7 @@ function ProfileHealth() {
     respiratory: "Respiratory Infections",
     hypertension: "Hypertension",
     uti: "Urinary Tract Infection",
-    animal: "Animal Bites",
+    diabetes: "Diabetes",
     skin: "Skin Diseases",
     pneumonia: "Pneumonia",
     diarrhea: "Diarrhea"
@@ -122,7 +122,7 @@ function ProfileHealth() {
                   <option value="respiratory">Respiratory Infections</option>
                   <option value="hypertension">Hypertension</option>
                   <option value="uti">Urinary Tract Infection</option>
-                  <option value="animal">Animal Bites</option>
+                  <option value="diabetes">Diabetes</option>
                   <option value="skin">Skin Diseases</option>
                   <option value="pneumonia">Pneumonia</option>
                   <option value="diarrhea">Diarrhea</option>
@@ -134,7 +134,7 @@ function ProfileHealth() {
                   <option value="respiratory">Respiratory Infections</option>
                   <option value="hypertension">Hypertension</option>
                   <option value="uti">Urinary Tract Infection</option>
-                  <option value="animal">Animal Bites</option>
+                  <option value="diabetes">Diabetes</option>
                   <option value="skin">Skin Diseases</option>
                   <option value="pneumonia">Pneumonia</option>
                   <option value="diarrhea">Diarrhea</option>
@@ -146,7 +146,7 @@ function ProfileHealth() {
                   <option value="respiratory">Respiratory Infections</option>
                   <option value="hypertension">Hypertension</option>
                   <option value="uti">Urinary Tract Infection</option>
-                  <option value="animal">Animal Bites</option>
+                  <option value="diabetes">Diabetes</option>
                   <option value="skin">Skin Diseases</option>
                   <option value="pneumonia">Pneumonia</option>
                   <option value="diarrhea">Diarrhea</option>

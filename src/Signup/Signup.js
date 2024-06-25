@@ -81,7 +81,7 @@ const Signup = () => {
     }
   
     try {
-      const response = await axios.post('https://localhost:8000/api/signup/', uppercaseFormData);
+      const response = await axios.post('https://192.168.1.17:8000/api/signup/', uppercaseFormData);
       if (response.status === 201) {
         console.log('User signed up successfully!');
         setSuccessMessage('Sign up Successful!');
@@ -268,7 +268,7 @@ const Signup = () => {
                         <option value="respiratory">Respiratory Infections</option>
                         <option value="hypertension">Hypertension</option>
                         <option value="uti">Urinary Tract Infection</option>
-                        <option value="animal">Animal Bites</option>
+                        <option value="diabetes">Diabetes</option>
                         <option value="skin">Skin Diseases</option>
                         <option value="pneumonia">Pneumonia</option>
                         <option value="diarrhea">Diarrhea</option>
@@ -292,7 +292,7 @@ const Signup = () => {
                         <option value="respiratory">Respiratory Infections</option>
                         <option value="hypertension">Hypertension</option>
                         <option value="uti">Urinary Tract Infection</option>
-                        <option value="animal">Animal Bites</option>
+                        <option value="diabetes">Diabetes</option>
                         <option value="skin">Skin Diseases</option>
                         <option value="pneumonia">Pneumonia</option>
                         <option value="diarrhea">Diarrhea</option>

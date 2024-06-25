@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import ModelBuilder from './ModelBuilder.js';
 
-const CokeCan = () => {
+const CokeCom = () => {
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
@@ -22,4 +22,4 @@ const CokeCan = () => {
   );
 };
 
-export default CokeCan;
+export default CokeCom;

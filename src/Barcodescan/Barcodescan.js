@@ -4,21 +4,26 @@ import './Barcodescan.css';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import Border from './border.png';
-// import CokeGif from './coke.gif';
-// import Zesto from './zesto.png';
-import 'aframe';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+import ModelBuilder from '../ARModels/ModelBuilder.js';
+import { Link } from 'react-router-dom';
+import Modal from '../profile/Modal'; // Import the Modal component
 import axios from 'axios';
+
+let isScanned = false;
 
 const BarcodeScanner = () => {
   const [scannedCode, setScannedCode] = useState(null);
   const [message, setMessage] = useState('');
-  const [product, setProduct] = useState(null);
+  const [showCokeCan, setShowCokeCan] = useState(false);
+  const [showPineApple, setShowPineApple] = useState(false);
+  const [showModal, setShowModal] = useState(false); // State for modal visibility
   const scannerRef = useRef(null);
-  const arSceneRef = useRef(null); 
+  const [product, setProduct] = useState(null);
 
   useEffect(() => {
     const codeReader = new BrowserMultiFormatReader();
-    let isScanned = false;
 
     const scanBarcode = async () => {
       if (!isScanned && scannerRef.current) {
@@ -28,12 +33,13 @@ const BarcodeScanner = () => {
             const code = result.getText();
             setScannedCode(code);
             try {
-              const response = await axios.get(`https://192.168.1.13:8000/api/products/${code}/`); //ibahin nyo yung ip address dito para magamit nyo scanner
+              const response = await axios.get(`https://192.168.1.17:8000/api/products/${code}/`); //ibahin nyo yung ip address dito para magamit nyo scanner
               if(response.status === 200){
                 const data = response.data;
                 setProduct(data);
                 setMessage(data.name);
-                // displayAR(data);
+                setShowCokeCan(data.barcode === '051111407592');
+                setShowPineApple(data.barcode === '9780201379624');
               } else {
                 setProduct(null);
                 setMessage('Product not found!');
@@ -43,85 +49,49 @@ const BarcodeScanner = () => {
                 setMessage(`Error fetching product:` + error.message);
               } 
             }
-            // else if (err) {
-            //   console.error('Barcode scanning error', err);
-            //   setMessage('Error Scanning barcode');
-            // }
-            // if (code === '051111407592') {
-            //   setMessage('Johnsons Baby Powder');
-            //   displayAR('red', 'box', code); 
-            // } else if (code === '9780201379624') {
-            //   setMessage('Book');
-            //   displayAR('blue', 'sphere', code); 
-            // } else {
-            //   setMessage('Scan again');
-            // }
+
         });
       }
     };
+
     scanBarcode();
+
     return () => {
-      codeReader.reset();
+      // Clean up code if needed
     };
   }, [scannerRef]);
 
-  // Function to display AR content
-  // const displayAR = (color, shape, code) => {
-  //   // Clear previous AR content if any
-  //   arSceneRef.current.innerHTML = '';
-
-  //   const arScene = document.createElement('a-scene');
-  //   let arElement;
-
-  //   if (code === '051111407592') {
-      
-  //     arElement = document.createElement('a-image');
-  //     arElement.setAttribute('src', CokeGif);
-  //     arElement.setAttribute('position', '0 1.6 -3');
-  //     arElement.setAttribute('height', '2');
-  //     arElement.setAttribute('width', '2');
-  //   } else if (code === '9780201379624') {
-      
-  //     arElement = document.createElement('a-image');
-  //     arElement.setAttribute('src', Zesto);
-  //     arElement.setAttribute('position', '0 1.6 -3');
-  //     arElement.setAttribute('height', '2');
-  //     arElement.setAttribute('width', '2');
-  //   } else {
-      
-  //     switch (shape) {
-  //       case 'box':
-  //         arElement = document.createElement('a-box');
-  //         break;
-  //       case 'sphere':
-  //         arElement = document.createElement('a-sphere');
-  //         break;
-  //       case 'cylinder':
-  //         arElement = document.createElement('a-cylinder');
-  //         break;
-  //       case 'cone':
-  //         arElement = document.createElement('a-cone');
-  //         break;
-  //       default:
-  //         arElement = document.createElement('a-box');
-  //     }
-
-  //     arElement.setAttribute('position', '0 0 -5');
-  //     arElement.setAttribute('color', color);
-  //   }
-
-  //   arScene.appendChild(arElement);
-    
-  //   // Append AR scene to the container
-  //   arSceneRef.current.appendChild(arScene);
-  // };
-
-  // Function to reset the scanner
   const resetScanner = () => {
     setScannedCode(null);
     setMessage('');
-    arSceneRef.current.innerHTML = ''; // Clear AR scene
+    setShowCokeCan(false);
+    setShowPineApple(false);
+    isScanned = false;
   };
+
+  // Function to open the modal
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  // Function to close the modal
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+  // Modal content
+  const modalContent = product ?(
+    <div>
+      <h2 className='barcode-title'>Product<br/>Information</h2>
+      <p>Product Name: <br/>{product.name}</p>
+      <p>Price: <br/>₱{product.price}</p>
+      <p>Ingredients: <br/>{product.ingredients}</p>
+      <p>Nutritional Facts: <br/>{product.nutritional_facts}</p>
+      <p>Barcode: <br/>{product.barcode}</p>
+    </div>
+  ):(
+    <p>Loading...</p>
+  );
 
   return (
     <>
@@ -135,35 +105,52 @@ const BarcodeScanner = () => {
             <img src={Border} alt="Scanner Border" className="border-image" />
             <video ref={scannerRef} className="scanner-video" />
             <div className="horizontal-line"></div>
-            {/* AR Scene Container positioned within scanner-container */}
-            <div className="ar-scene-container" ref={arSceneRef}></div>
+            <div className="ar-scene-container">
+              {scannedCode && (
+                <Canvas style={{ height: '50vh', width: '100vw', position: 'absolute' }}>
+                  <ambientLight intensity={1.5} />
+                  <directionalLight position={[5, 5, 5]} />
+                  {showCokeCan && (
+                    <ModelBuilder path="/CokeCan.glb" position={[0, 0, -5]} />
+                  )}
+                  {showPineApple && (
+                    <ModelBuilder path="/ZestoPineApple.glb" position={[0, 0, -8]} />
+                  )}
+                  <OrbitControls
+                    enableZoom={true}
+                    minDistance={5}
+                    maxDistance={7}
+                    enablePan={true}
+                  />
+                </Canvas>
+              )}
+            </div>
           </div>
         </div>
       </div>
 
-      <div className='title-container'>
-        <div>
-          <h3 className='scanner-title'>Scanned Barcode Details</h3>
-          <p className='scanned-code'>{scannedCode}</p>
-          <p className='message'>{message}</p>
-          {product && (
-            <div>
-              <p>Product Name: {product.name}</p>
-              <p>Product Price: {product.price}</p>
-            </div>
-          )}
-        </div>
-      </div>
 
-      {/* Button to scan again */}
       {scannedCode && (
         <div className="button-container">
-          <button onClick={resetScanner} className="scan-again-button">Scan Again</button>
+          <button className="show-info" onClick={openModal}>
+            Show Information
+          </button>
+
+          <Link to="/barcodescan" className="scan-again" onClick={resetScanner}>
+            Scan Again
+          </Link>
+          
         </div>
       )}
 
+      {/* Modal */}
+        <Modal show={showModal} onClose={closeModal} >
+          {modalContent}
+        </Modal>
+      
+
       <div>
-        <Footer />
+        <Footer onResetScanner={resetScanner}/>
       </div>
     </>
   );

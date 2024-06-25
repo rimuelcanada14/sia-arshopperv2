@@ -29,7 +29,7 @@ function ProfileInfo() {
     if (mobileNumber) {
       const fetchUserDetails = async () => {
         try {
-          const response = await axios.get(`https://localhost:8000/api/user-details/${mobileNumber}/`);
+          const response = await axios.get(`https://192.168.1.17:8000/api/user-details/${mobileNumber}/`);
           const userData = response.data;
           setUser(userData);
           setFormData({
@@ -50,9 +50,18 @@ function ProfileInfo() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    const updatedValue = value.replace(/[^A-Za-zÑñ]/ig, '');
+    let updatedValue;
+  
+    // Allowing only alphabetical characters for first name and last name
+    if (name === "firstName" || name === "lastName") {
+      updatedValue = value.replace(/[^A-Za-zÑñ]/ig, ''); // Allow only a-z and A-Z
+    } else {
+      updatedValue = value; // For other inputs, keep the original value
+    }
+  
     setFormData({ ...formData, [name]: updatedValue });
   };
+  
 
   const handleEditClick = () => {
     setIsEditing(true);
@@ -86,7 +95,7 @@ function ProfileInfo() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`https://localhost:8000/api/user-details/${user.mobile_number}/`, {
+      const response = await axios.put(`https://192.168.1.17:8000/api/user-details/${user.mobile_number}/`, {
         firstName: formData.firstName.toUpperCase(),
         lastName: formData.lastName.toUpperCase(),
       });
@@ -113,7 +122,7 @@ function ProfileInfo() {
       return;
     }
     try {
-      const response = await axios.post(`https://192.168.100.90:8000/api/change-password/${user.mobile_number}/`, {
+      const response = await axios.post(`https://192.168.1.17:8000/api/change-password/${user.mobile_number}/`, {
         currentPassword: formData.currentPassword,
         newPassword: formData.newPassword,
         confirmNewPassword: formData.confirmNewPassword

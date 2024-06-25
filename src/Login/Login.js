@@ -9,7 +9,7 @@ import { TypeAnimation } from 'react-type-animation';
 import { RxCrossCircled } from "react-icons/rx";
 import { useAuth } from '../AuthContext';
 import Zesto from '../ARModels/Zesto';
-import CokeCan from '../ARModels/CokeCan';
+import CokeCan from '../ARModels/CokeCom';
 
 const Login = () => {
     const [mobileNumber, setMobileNumber] = useState('');
@@ -26,7 +26,7 @@ const Login = () => {
                 mobile_number: parseInt(mobileNumber, 10),
                 password: password
             };
-            const response = await axios.post(`https://localhost:8000/api/login/`, requestData);  // Change URL to localhost for development
+            const response = await axios.post(`https://192.168.1.17:8000/api/login/`, requestData);  // Change URL to localhost for development
             const token = response.data.token;
             login(token);
             setError(null);

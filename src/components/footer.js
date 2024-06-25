@@ -5,17 +5,17 @@ import { FaUserCircle } from 'react-icons/fa';
 import { AiFillHome } from "react-icons/ai";
 import { RiLogoutCircleLine } from "react-icons/ri";
 
-const Footer = () => {
+const Footer = ({ onResetScanner }) => {
     return (
         <div className="footer">
           <ul className='footer-icons'>
-            <Link to="/Profile">
-              <FaUserCircle className='footer-icon'/>
+            <Link to="/Profile" onClick={onResetScanner}>
+              <FaUserCircle className='footer-icon' />
             </Link>
-            <Link to="/Home">
+            <Link to="/Home" onClick={onResetScanner}>
               <AiFillHome className='footer-icon' />
             </Link>
-            <Link to ="/">
+            <Link to ="/" onClick={onResetScanner}>
               <RiLogoutCircleLine className='footer-icon' />
             </Link>
           </ul>
