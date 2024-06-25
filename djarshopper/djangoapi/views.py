@@ -45,6 +45,25 @@ class JunkFoodsView(generics.ListAPIView):
     def get_queryset(self):
         return AddProduct.objects.filter(category='junk food')
     
+class IceCreamView(generics.ListAPIView):
+    serializer_class = DisplayProdSerializer
+    
+    def get_queryset(self):
+        return AddProduct.objects.filter(category='ice cream')
+    
+class FrozenGoodsView(generics.ListAPIView):
+    serializer_class = DisplayProdSerializer
+    
+    def get_queryset(self):
+        return AddProduct.objects.filter(category='frozen goods')
+    
+class PastryView(generics.ListAPIView):
+    serializer_class = DisplayProdSerializer
+    
+    def get_queryset(self):
+        return AddProduct.objects.filter(category='pastry')
+
+
 class UserDetailView(APIView):
     def get(self, request, mobile_number, format=None):
         try:

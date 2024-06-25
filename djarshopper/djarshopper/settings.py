@@ -49,6 +49,10 @@ INSTALLED_APPS = [
     'sslserver',
 ]
 
+SSL_CERT = 'cert.pem'
+SSL_KEY = 'key.pem'
+
+
 AUTHENTICATION_BACKENDS = [
     'djangoapi.authentication.MobileNumberBackend',
     'django.contrib.auth.backends.ModelBackend',
