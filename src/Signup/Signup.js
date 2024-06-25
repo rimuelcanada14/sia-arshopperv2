@@ -244,7 +244,7 @@ const Signup = () => {
                   <option value="respiratory">Respiratory Infections</option>
                   <option value="hypertension">Hypertension</option>
                   <option value="uti">Urinary Tract Infection</option>
-                  <option value="animal">Animal Bites</option>
+                  <option value="diabetes">Diabetes</option>
                   <option value="skin">Skin Diseases</option>
                   <option value="pneumonia">Pneumonia</option>
                   <option value="diarrhea">Diarrhea</option>
