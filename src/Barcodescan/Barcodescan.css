@@ -108,22 +108,31 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 6;
 }
 .button-container{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin-top: 2em;
+  justify-content: center;
+}
+.button-left{
+  display: flex;
+  flex-direction: column;
+  margin-right: 1em;
+}
+.button-right{
+  display: flex;
+  flex-direction: column;
 }
 .scan-again{
   z-index: 90;
   padding: .5em;
   background-color: #E96760;
   border-radius: 5px;
-  padding-left: 3.7em;
-  padding-right: 3.7em;
+  padding-left: 1em;
+  padding-right: 1em;
   color: white;
-  font-size: 20px;
+  font-size: 17px;
   text-decoration: none;
   font-weight: bolder;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
@@ -138,10 +147,10 @@
   padding: .5em;
   background-color: #E96760;
   border-radius: 5px;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
+  padding-left: .7em;
+  padding-right: .7em;
   color: white;
-  font-size: 20px;
+  font-size: 17px;
   text-decoration: none;
   font-weight: bolder;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
@@ -150,4 +159,85 @@
   margin-top: 1em;
   font-family: Poppins;
   text-transform: uppercase;
+}
+.show-reco{
+  z-index: 90;
+  padding: .5em;
+  background-color: #E96760;
+  border-radius: 5px;
+  padding-left: 1em;
+  padding-right: 1em;
+  color: white;
+  font-size: 17px;
+  text-decoration: none;
+  font-weight: bolder;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 0 auto;
+  margin-top: 1em;
+  font-family: Poppins;
+  text-transform: uppercase;
+}
+.td-button{
+  z-index: 90;
+  padding: .5em;
+  background-color: #E96760;
+  border-radius: 5px;
+  padding-left: 1.8em;
+  padding-right: 1.8em;
+  color: white;
+  font-size: 17px;
+  text-decoration: none;
+  font-weight: bolder;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 0 auto;
+  margin-top: 1em;
+  font-family: Poppins;
+  text-transform: uppercase;
+}
+.modal-container-b {
+  position: relative;
+  border-radius: 30px;
+  font-family: Poppins;
+  max-width: 100%;
+  color: black;
+  border: solid;
+  border-color: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+  0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+  background-image: url("logochiprofls.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin-left: 1em;
+  margin-right: 1em;
+  z-index: 100;
+  max-height: 30em;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  padding-top: 1em;
+}
+
+.model-modal-content {
+  animation: bounce 0.5s infinite alternate;
+  z-index: 100;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+.td-title{
+  font-size: 30px;
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }

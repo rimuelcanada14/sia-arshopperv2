@@ -8,8 +8,10 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import ModelBuilder from '../ARModels/ModelBuilder.js';
 import { Link } from 'react-router-dom';
-import Modal from '../profile/Modal'; // Import the Modal component
+import Modal from '../profile/ProfileModal';
+import TDModal from './BarcodeModal';
 import axios from 'axios';
+
 
 let isScanned = false;
 
@@ -18,9 +20,11 @@ const BarcodeScanner = () => {
   const [message, setMessage] = useState('');
   const [showCokeCan, setShowCokeCan] = useState(false);
   const [showPineApple, setShowPineApple] = useState(false);
-  const [showModal, setShowModal] = useState(false); // State for modal visibility
+  const [showModal, setShowModal] = useState(false);
+  const [show3DModelModal, setShow3DModelModal] = useState(false);
   const scannerRef = useRef(null);
   const [product, setProduct] = useState(null);
+  const arSceneRef = useRef(null);
 
   useEffect(() => {
     const codeReader = new BrowserMultiFormatReader();
@@ -29,31 +33,32 @@ const BarcodeScanner = () => {
       if (!isScanned && scannerRef.current) {
         codeReader.decodeFromVideoDevice(null, scannerRef.current, async (result, err) => {
           if (result) {
-            isScanned = true; // Set the flag to true to prevent multiple scans
+            isScanned = true;
             const code = result.getText();
             setScannedCode(code);
+            
             try {
-              const response = await axios.get(`https://192.168.1.17:8000/api/products/${code}/`); //ibahin nyo yung ip address dito para magamit nyo scanner
-              if(response.status === 200){
+              const response = await axios.get(`https://192.168.100.90:8000/api/products/${code}/`);
+              if (response.status === 200) {
                 const data = response.data;
                 setProduct(data);
                 setMessage(data.name);
                 setShowCokeCan(data.barcode === '051111407592');
                 setShowPineApple(data.barcode === '9780201379624');
+                displayAR('https://192.168.100.90:8000/api/products/${product.image}/');
               } else {
                 setProduct(null);
                 setMessage('Product not found!');
-              } 
-              } catch(error){
-                console.error('Error fetching product:', error);
-                setMessage(`Error fetching product:` + error.message);
-              } 
+              }
+            } catch (error) {
+              console.error('Error fetching product:', error);
+              setMessage(`Error fetching product: ${error.message}`);
             }
-
+          }
         });
       }
     };
-
+    
     scanBarcode();
 
     return () => {
@@ -67,20 +72,54 @@ const BarcodeScanner = () => {
     setShowCokeCan(false);
     setShowPineApple(false);
     isScanned = false;
+
+    if (arSceneRef.current) {
+      arSceneRef.current.innerHTML = '';
+    }
+    console.clear();
   };
 
-  // Function to open the modal
   const openModal = () => {
     setShowModal(true);
   };
 
-  // Function to close the modal
   const closeModal = () => {
     setShowModal(false);
   };
 
-  // Modal content
-  const modalContent = product ?(
+  const open3DModelModal = () => {
+    setShow3DModelModal(true);
+  };
+
+  const close3DModelModal = () => {
+    setShow3DModelModal(false);
+  };
+
+  const displayAR = (barcode) => {
+    // Clear previous AR content if any
+    if (!arSceneRef.current) return;
+  
+    arSceneRef.current.innerHTML = '';
+  
+    // Create a new A-Frame scene
+    const arScene = document.createElement('a-scene');
+  
+    //Display product image as AR content
+    const arElement = document.createElement('a-image');
+    arElement.setAttribute('src', `https://192.168.100.90:8000${product.image}`); // Set the image URL here
+    arElement.setAttribute('position', '0 1.6 -3'); // Example position
+    arElement.setAttribute('height', '2'); // Example height
+    arElement.setAttribute('width', '2'); // Example width
+  
+    // Append the AR element to the scene
+    arScene.appendChild(arElement);
+    arSceneRef.current.appendChild(arScene);
+  };
+  
+  
+  
+
+  const modalContent = product ? (
     <div>
       <h2 className='barcode-title'>Product<br/>Information</h2>
       <p>Product Name: <br/>{product.name}</p>
@@ -88,11 +127,35 @@ const BarcodeScanner = () => {
       <p>Ingredients: <br/>{product.ingredients}</p>
       <p>Nutritional Facts: <br/>{product.nutritional_facts}</p>
       <p>Barcode: <br/>{product.barcode}</p>
+      <img src={`https://192.168.100.90:8000${product.image}`} alt={`${product.name}`} />
     </div>
-  ):(
+  ) : (
     <p>Loading...</p>
   );
 
+  const modelModalContent = (
+    <>
+    <div className="model-modal-content">
+      <Canvas style={{ height: '70vh', width: '100vw', zIndex:'100'}}>
+        <ambientLight intensity={1.5} />
+        <directionalLight position={[5, 5, 5]} />
+        {showCokeCan && (
+          <ModelBuilder path="/CokeCan.glb" position={[0, 0, -5]} />
+        )}
+        {showPineApple && (
+          <ModelBuilder path="/ZestoPineApple.glb" position={[0, 0, -8]} />
+        )}
+        <OrbitControls
+          enableZoom={true}
+          minDistance={5}
+          maxDistance={7}
+          enablePan={true}
+        />
+      </Canvas>
+    </div>
+    </>
+        );
+  
   return (
     <>
       <div>
@@ -105,52 +168,46 @@ const BarcodeScanner = () => {
             <img src={Border} alt="Scanner Border" className="border-image" />
             <video ref={scannerRef} className="scanner-video" />
             <div className="horizontal-line"></div>
-            <div className="ar-scene-container">
-              {scannedCode && (
-                <Canvas style={{ height: '50vh', width: '100vw', position: 'absolute' }}>
-                  <ambientLight intensity={1.5} />
-                  <directionalLight position={[5, 5, 5]} />
-                  {showCokeCan && (
-                    <ModelBuilder path="/CokeCan.glb" position={[0, 0, -5]} />
-                  )}
-                  {showPineApple && (
-                    <ModelBuilder path="/ZestoPineApple.glb" position={[0, 0, -8]} />
-                  )}
-                  <OrbitControls
-                    enableZoom={true}
-                    minDistance={5}
-                    maxDistance={7}
-                    enablePan={true}
-                  />
-                </Canvas>
-              )}
-            </div>
+            <div className="ar-scene-container" ref={arSceneRef} />
           </div>
         </div>
       </div>
 
-
       {scannedCode && (
         <div className="button-container">
-          <button className="show-info" onClick={openModal}>
-            Show Information
-          </button>
+          <div className='button-left'>
+            <button className="show-info" onClick={openModal}>
+              Information
+            </button>
 
-          <Link to="/barcodescan" className="scan-again" onClick={resetScanner}>
-            Scan Again
-          </Link>
-          
+            <Link to="/barcodescan" className="scan-again" onClick={resetScanner}>
+              Scan Again
+            </Link>
+          </div>
+
+          <div className='button-right'>
+            <Link to="" className="show-reco">
+              other items
+            </Link>
+
+            <button className="td-button" onClick={open3DModelModal}>
+              3D Model
+            </button>
+          </div>
         </div>
       )}
 
-      {/* Modal */}
-        <Modal show={showModal} onClose={closeModal} >
-          {modalContent}
-        </Modal>
-      
+      <Modal show={showModal} onClose={closeModal}>
+        {modalContent}
+      </Modal>
+
+      <TDModal show={show3DModelModal} onClose={close3DModelModal}>
+      <h2 className='td-title'>3D MODEL</h2>
+        {modelModalContent}
+      </TDModal>
 
       <div>
-        <Footer onResetScanner={resetScanner}/>
+        <Footer onResetScanner={resetScanner} onDisplayAR={displayAR}/>
       </div>
     </>
   );

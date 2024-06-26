@@ -3,7 +3,7 @@ import axios from 'axios';
 import './Profile.css';
 import Header from '../components/header';
 import Footer from '../components/footer';
-import Modal from './Modal';
+import Modal from './ProfileModal';
 import { FcApproval } from "react-icons/fc";
 import { RxCrossCircled } from "react-icons/rx";
 import { Link } from 'react-router-dom';
@@ -29,7 +29,7 @@ function ProfileInfo() {
     if (mobileNumber) {
       const fetchUserDetails = async () => {
         try {
-          const response = await axios.get(`https://192.168.1.17:8000/api/user-details/${mobileNumber}/`);
+          const response = await axios.get(`https://192.168.100.90:8000/api/user-details/${mobileNumber}/`);
           const userData = response.data;
           setUser(userData);
           setFormData({
@@ -95,7 +95,7 @@ function ProfileInfo() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`https://192.168.1.17:8000/api/user-details/${user.mobile_number}/`, {
+      const response = await axios.put(`https://192.168.100.90:8000/api/user-details/${user.mobile_number}/`, {
         firstName: formData.firstName.toUpperCase(),
         lastName: formData.lastName.toUpperCase(),
       });
@@ -122,7 +122,7 @@ function ProfileInfo() {
       return;
     }
     try {
-      const response = await axios.post(`https://192.168.1.17:8000/api/change-password/${user.mobile_number}/`, {
+      const response = await axios.post(`https://192.168.100.90:8000/api/change-password/${user.mobile_number}/`, {
         currentPassword: formData.currentPassword,
         newPassword: formData.newPassword,
         confirmNewPassword: formData.confirmNewPassword

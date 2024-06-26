@@ -3,7 +3,7 @@ import axios from 'axios';
 import './Profile.css';
 import Header from '../components/header';
 import Footer from '../components/footer';
-import Modal from './Modal';
+import Modal from './ProfileModal';
 import { FcApproval } from "react-icons/fc";
 import { RxCrossCircled } from "react-icons/rx";
 import { Link } from 'react-router-dom';
