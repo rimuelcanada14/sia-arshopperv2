@@ -20,7 +20,7 @@ function AboutUs() {
     return (
     <>
         <div className='aboutus-header'>
-          <Header header={<Link to ="/home" className="beverages-back">BACK</Link>} headersub="&nbsp;" headerright="ABOUT US" />
+          <Header header={<Link to ="/home" className="products-back">BACK</Link>} headersub="&nbsp;" headerright="ABOUT US" />
         </div>
         
         <div>

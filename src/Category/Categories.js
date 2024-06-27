@@ -4,6 +4,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './Categories.css';
 import Header from '../components/header';
+import Footer from '../components/footer';
+
 
 
 function Category() {
@@ -46,19 +48,18 @@ function Category() {
     
     return (
       <div>
-            <Header header={<Link to ="/home" className="beverages-back">BACK</Link>} headersub="&nbsp;" headerright="CATEGORIES" />
-        
-        
-        <div>
+        <Header header={<Link to ="/home" className="products-back">BACK</Link>} headersub="&nbsp;" headerright="CATEGORIES" />
+
+        <div className='category-container'>
           {categoryButtons.map((button, index) => (
             <Link key={index} to={button.to}>
-              <br></br>
-                 <button className={`categoryButtons ${button.categoryBottom ? 'categoryBottom' : ''}`}>
-                    {button.label}
-                </button>
+                <button className={`categoryButtons ${button.categoryBottom ? 'categoryBottom' : ''}`}>
+                  {button.label}
+                </button>                 
             </Link>
           ))}
         </div>
+        <Footer />
       </div>
     );
   }

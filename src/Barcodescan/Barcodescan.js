@@ -7,13 +7,11 @@ import Border from './border.png';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import ModelBuilder from '../ARModels/ModelBuilder.js';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Modal from '../profile/ProfileModal';
 import TDModal from './BarcodeModal';
 import axios from 'axios';
 import 'aframe';
-
-let isScanned = false;
 
 const BarcodeScanner = () => {
   const [scannedCode, setScannedCode] = useState(null);
@@ -25,58 +23,65 @@ const BarcodeScanner = () => {
   const scannerRef = useRef(null);
   const [product, setProduct] = useState(null);
   const arSceneRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
-    const codeReader = new BrowserMultiFormatReader();
+    let codeReader = null;
 
-    const scanBarcode = async () => {
-      if (!isScanned && scannerRef.current) {
-        codeReader.decodeFromVideoDevice(null, scannerRef.current, async (result, err) => {
-          if (result) {
-            isScanned = true;
-            const code = result.getText();
-            setScannedCode(code);
-
-            try {
-              const response = await axios.get(`https://192.168.100.90:8000/api/products/${code}/`);
-              if (response.status === 200) {
-                const data = response.data;
-                setProduct(data);
-                setMessage(data.name);
-                setShowCokeCan(data.barcode === '051111407592');
-                setShowPineApple(data.barcode === '9780201379624');
-                displayAR(data.image);
-              } else {
-                setProduct(null);
-                setMessage('Product not found!');
-              }
-            } catch (error) {
-              console.error('Error fetching product:', error);
-              setMessage(`Error fetching product: ${error.message}`);
+    const initializeScanner = () => {
+      codeReader = new BrowserMultiFormatReader();
+      codeReader.decodeFromVideoDevice(null, scannerRef.current, async (result, err) => {
+        if (result) {
+          const code = result.getText();
+          setScannedCode(code);
+          try {
+            const response = await axios.get(`https://192.168.100.90:8000/api/products/${code}/`);
+            if (response.status === 200) {
+              const data = response.data;
+              setProduct(data);
+              setMessage(data.name);
+              setShowCokeCan(data.barcode === '051111407592');
+              setShowPineApple(data.barcode === '9780201379624');
+              displayAR(data.image);
+            } else {
+              setProduct(null);
+              setMessage('Product not found!');
             }
+          } catch (error) {
+            console.error('Error fetching product:', error);
+            setMessage(`Error fetching product: ${error.message}`);
           }
-        });
+        }
+      });
+    };
+
+    const stopScanner = () => {
+      if (codeReader) {
+        codeReader.reset();
+        codeReader.stopContinuousDecode();
+        codeReader = null;
       }
     };
 
-    scanBarcode();
+    if (location.pathname === '/barcodescan') {
+      initializeScanner();
+    } else {
+      stopScanner();
+    }
 
     return () => {
-      // Clean up code if needed
+      stopScanner();
     };
-  }, [scannerRef]);
+  }, [location]);
 
   const resetScanner = () => {
     setScannedCode(null);
     setMessage('');
     setShowCokeCan(false);
     setShowPineApple(false);
-    isScanned = false;
-
     if (arSceneRef.current) {
       arSceneRef.current.innerHTML = '';
     }
-    console.clear();
   };
 
   const openModal = () => {
@@ -96,16 +101,13 @@ const BarcodeScanner = () => {
   };
 
   const displayAR = (imagePath) => {
-    // Clear previous AR content if any
     if (!arSceneRef.current) return;
 
     arSceneRef.current.innerHTML = '';
 
-    // Create a new A-Frame scene
     const arScene = document.createElement('a-scene');
     arScene.setAttribute('embedded', 'true');
 
-    // Display product image as AR content
     const arElement = document.createElement('a-image');
     const imageUrl = `https://192.168.100.90:8000${imagePath}`;
     
@@ -114,7 +116,6 @@ const BarcodeScanner = () => {
     arElement.setAttribute('height', '2');
     arElement.setAttribute('width', '2');
 
-    // Append the AR element to the scene
     arScene.appendChild(arElement);
     arSceneRef.current.appendChild(arScene);
   };
@@ -122,7 +123,7 @@ const BarcodeScanner = () => {
   const modalContent = product ? (
     <div>
       <h2 className='barcode-title'>Product<br/>Information</h2>
-      <p>Product Name: <br/>{product.name}</p>
+      <p>Product Name: <br/>{message}</p>
       <p>Price: <br/>₱{product.price}</p>
       <p>Ingredients: <br/>{product.ingredients}</p>
       <p>Nutritional Facts: <br/>{product.nutritional_facts}</p>
@@ -166,7 +167,7 @@ const BarcodeScanner = () => {
         <div className="scanner-container">
           <div className="scanner-border">
             <img src={Border} alt="Scanner Border" className="border-image" />
-            <video ref={scannerRef} className="scanner-video" />
+            {location.pathname === '/barcodescan' && <video ref={scannerRef} className="scanner-video" />}
             <div className="horizontal-line"></div>
             <div className="ar-scene-container" ref={arSceneRef} />
           </div>

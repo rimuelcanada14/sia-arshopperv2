@@ -1,60 +1,36 @@
-.category-header-text {
-    position: relative;
-    text-align: center;
-    font-size: 40px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.category-header {
-    position: sticky;
-    top: 0;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    text-align: center;
-    color: white;
-    z-index: 1;
-    width: 100%;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-.categoryButtons {
-    width:80%;
+.category-container{
+    width: 85%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    font-size: 32px;
+    margin-top: .5em;
+}
+.categoryButtons {
+    width: 100%;
+    display: flex;
+    font-size: 25px;
     border-radius: 20px;
-    background-image: url("chinesepattern.png");
+    background-image: url("hfchipattpt.png");
     background-size: cover;
     background-position: center;
-    height: 2.5em;
-    text-align: center;
-    margin-top: 10px;
+    background-attachment: fixed;
+    height: 3.2em;
+    max-height: 3.2em;
     font-family: Poppins;
     font-weight: bold;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 0.5em;
     border: solid;
     border-color: black;
-}
-.categoryButtons:hover {
-    color:#E44138;
-    color:white;
-    background-color: #E44138; opacity: 80%;
-    border: 1px solid #FBF08F;
-}
-
-button {
     text-decoration: none;
-    border: none;
-    display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 5px 5px 5px gray;
-    color: white;
-
 }
-
 a {
     text-decoration: none;
 
@@ -63,5 +39,5 @@ a {
     color: white;
 }
 .categoryBottom{
-    margin-bottom: 10em;
+    margin-bottom: 3em;
 }
