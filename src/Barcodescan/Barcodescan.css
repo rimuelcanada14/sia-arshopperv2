@@ -103,18 +103,22 @@
 }
 
 .ar-scene-container {
-  position: absolute; /* Position the AR scene container absolutely */
+  position: fixed; /* Cover the entire viewport */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 10; /* Higher than other elements */
 }
-.button-container{
+
+.button-container {
   display: flex;
   flex-direction: row;
   margin-top: 2em;
   justify-content: center;
+  z-index: 5; /* Lower than .ar-scene-container */
 }
+
 .button-left{
   display: flex;
   flex-direction: column;
@@ -222,6 +226,15 @@
 .model-modal-content {
   animation: bounce 0.5s infinite alternate;
   z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensure the modal content takes full height */
+}
+
+.canvas-container {
+  height: 70vh; /* Set height of the canvas container */
+  width: 100%; /* Ensure full width */
 }
 
 @keyframes bounce {

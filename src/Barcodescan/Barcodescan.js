@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 import Modal from '../profile/ProfileModal';
 import TDModal from './BarcodeModal';
 import axios from 'axios';
-
+import 'aframe';
 
 let isScanned = false;
 
@@ -36,7 +36,7 @@ const BarcodeScanner = () => {
             isScanned = true;
             const code = result.getText();
             setScannedCode(code);
-            
+
             try {
               const response = await axios.get(`https://192.168.100.90:8000/api/products/${code}/`);
               if (response.status === 200) {
@@ -45,7 +45,7 @@ const BarcodeScanner = () => {
                 setMessage(data.name);
                 setShowCokeCan(data.barcode === '051111407592');
                 setShowPineApple(data.barcode === '9780201379624');
-                displayAR('https://192.168.100.90:8000/api/products/${product.image}/');
+                displayAR(data.image);
               } else {
                 setProduct(null);
                 setMessage('Product not found!');
@@ -58,7 +58,7 @@ const BarcodeScanner = () => {
         });
       }
     };
-    
+
     scanBarcode();
 
     return () => {
@@ -95,29 +95,29 @@ const BarcodeScanner = () => {
     setShow3DModelModal(false);
   };
 
-  const displayAR = (barcode) => {
+  const displayAR = (imagePath) => {
     // Clear previous AR content if any
     if (!arSceneRef.current) return;
-  
+
     arSceneRef.current.innerHTML = '';
-  
+
     // Create a new A-Frame scene
     const arScene = document.createElement('a-scene');
-  
-    //Display product image as AR content
+    arScene.setAttribute('embedded', 'true');
+
+    // Display product image as AR content
     const arElement = document.createElement('a-image');
-    arElement.setAttribute('src', `https://192.168.100.90:8000${product.image}`); // Set the image URL here
-    arElement.setAttribute('position', '0 1.6 -3'); // Example position
-    arElement.setAttribute('height', '2'); // Example height
-    arElement.setAttribute('width', '2'); // Example width
-  
+    const imageUrl = `https://192.168.100.90:8000${imagePath}`;
+    
+    arElement.setAttribute('src', imageUrl);
+    arElement.setAttribute('position', '0 2 -3');
+    arElement.setAttribute('height', '2');
+    arElement.setAttribute('width', '2');
+
     // Append the AR element to the scene
     arScene.appendChild(arElement);
     arSceneRef.current.appendChild(arScene);
   };
-  
-  
-  
 
   const modalContent = product ? (
     <div>
@@ -134,27 +134,27 @@ const BarcodeScanner = () => {
   );
 
   const modelModalContent = (
-    <>
     <div className="model-modal-content">
-      <Canvas style={{ height: '70vh', width: '100vw', zIndex:'100'}}>
-        <ambientLight intensity={1.5} />
-        <directionalLight position={[5, 5, 5]} />
-        {showCokeCan && (
-          <ModelBuilder path="/CokeCan.glb" position={[0, 0, -5]} />
-        )}
-        {showPineApple && (
-          <ModelBuilder path="/ZestoPineApple.glb" position={[0, 0, -8]} />
-        )}
-        <OrbitControls
-          enableZoom={true}
-          minDistance={5}
-          maxDistance={7}
-          enablePan={true}
-        />
-      </Canvas>
+      <div className="canvas-container">
+        <Canvas style={{ height: '70vh', width: '100%', zIndex: '100' }}>
+          <ambientLight intensity={1.5} />
+          <directionalLight position={[5, 5, 5]} />
+          {showCokeCan && (
+            <ModelBuilder path="/CokeCan.glb" position={[0, 0, -5]} />
+          )}
+          {showPineApple && (
+            <ModelBuilder path="/ZestoPineApple.glb" position={[0, 0, -8]} />
+          )}
+          <OrbitControls
+            enableZoom={true}
+            minDistance={5}
+            maxDistance={7}
+            enablePan={true}
+          />
+        </Canvas>
+      </div>
     </div>
-    </>
-        );
+  );
   
   return (
     <>
@@ -202,12 +202,12 @@ const BarcodeScanner = () => {
       </Modal>
 
       <TDModal show={show3DModelModal} onClose={close3DModelModal}>
-      <h2 className='td-title'>3D MODEL</h2>
+        <h2 className='td-title'>3D MODEL</h2>
         {modelModalContent}
       </TDModal>
 
       <div>
-        <Footer onResetScanner={resetScanner} onDisplayAR={displayAR}/>
+        <Footer onResetScanner={resetScanner} />
       </div>
     </>
   );
