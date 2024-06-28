@@ -62,6 +62,108 @@ class PastryView(generics.ListAPIView):
     
     def get_queryset(self):
         return AddProduct.objects.filter(category='pastry')
+    
+class WaterView(generics.ListAPIView):
+    serializer_class = DisplayProdSerializer
+    
+    def get_queryset(self):
+        return AddProduct.objects.filter(category='water')
+    
+class CondimentsView(generics.ListAPIView):
+    serializer_class = DisplayProdSerializer
+    
+    def get_queryset(self):
+        return AddProduct.objects.filter(category='condiments')
+    
+class NoodlesPastaView(generics.ListAPIView):
+    serializer_class = DisplayProdSerializer
+    
+    def get_queryset(self):
+        return AddProduct.objects.filter(category='noodlespasta')
+    
+class InstantNoodlesView(generics.ListAPIView):
+    serializer_class = DisplayProdSerializer
+    
+    def get_queryset(self):
+        return AddProduct.objects.filter(category='instantnoodles')
+
+class PowderedJuiceView(generics.ListAPIView):
+    serializer_class = DisplayProdSerializer
+    
+    def get_queryset(self):
+        return AddProduct.objects.filter(category='powderedjuice')
+
+class OilSectionView(generics.ListAPIView):
+    serializer_class = DisplayProdSerializer
+    
+    def get_queryset(self):
+        return AddProduct.objects.filter(category='oilsection')
+
+class BreadSpreadView(generics.ListAPIView):
+    serializer_class = DisplayProdSerializer
+    
+    def get_queryset(self):
+        return AddProduct.objects.filter(category='breadspread')
+    
+class CannedGoodsView(generics.ListAPIView):
+    serializer_class = DisplayProdSerializer
+    
+    def get_queryset(self):
+        return AddProduct.objects.filter(category='cannedgoods')
+
+class NibblesView(generics.ListAPIView):
+    serializer_class = DisplayProdSerializer
+    
+    def get_queryset(self):
+        return AddProduct.objects.filter(category='nibbles')
+
+class CoffeeMilkView(generics.ListAPIView):
+    serializer_class = DisplayProdSerializer
+    
+    def get_queryset(self):
+        return AddProduct.objects.filter(category='coffeemilk')
+    
+class BiscuitsView(generics.ListAPIView):
+    serializer_class = DisplayProdSerializer
+    
+    def get_queryset(self):
+        return AddProduct.objects.filter(category='biscuits')
+    
+class CandiesView(generics.ListAPIView):
+    serializer_class = DisplayProdSerializer
+    
+    def get_queryset(self):
+        return AddProduct.objects.filter(category='candies')
+    
+class ChocolatesView(generics.ListAPIView):
+    serializer_class = DisplayProdSerializer
+    
+    def get_queryset(self):
+        return AddProduct.objects.filter(category='Chocolates')
+    
+class LiquorWinesView(generics.ListAPIView):
+    serializer_class = DisplayProdSerializer
+    
+    def get_queryset(self):
+        return AddProduct.objects.filter(category='liquorwines')
+    
+class PartyUtensilsView(generics.ListAPIView):
+    serializer_class = DisplayProdSerializer
+    
+    def get_queryset(self):
+        return AddProduct.objects.filter(category='partyutensils')
+    
+class ToiletriesView(generics.ListAPIView):
+    serializer_class = DisplayProdSerializer
+    
+    def get_queryset(self):
+        return AddProduct.objects.filter(category='toiletries')
+    
+class DiswashingLaundryView(generics.ListAPIView):
+    serializer_class = DisplayProdSerializer
+    
+    def get_queryset(self):
+        return AddProduct.objects.filter(category='diswashinglaundry')
 
 
 class UserDetailView(APIView):

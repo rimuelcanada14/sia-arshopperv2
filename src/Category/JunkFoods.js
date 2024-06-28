@@ -7,7 +7,7 @@ function JunkFoods () {
 
     return (
         <ProductFetcher apiUrl={apiUrl}>
-            <ProductRenderer categoryTitle="Junk Foods"/>
+            <ProductRenderer categoryTitle="JUNK FOODS"/>
         </ProductFetcher>
     );
 }

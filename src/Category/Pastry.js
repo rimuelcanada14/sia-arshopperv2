@@ -7,7 +7,7 @@ function Pastry () {
 
     return (
         <ProductFetcher apiUrl={apiUrl}>
-            <ProductRenderer categoryTitle="Pastry"/>
+            <ProductRenderer categoryTitle="PASTRY"/>
         </ProductFetcher>
     );
 }

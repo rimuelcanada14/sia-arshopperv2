@@ -7,7 +7,7 @@ function IceCream () {
 
   return (
       <ProductFetcher apiUrl={apiUrl}> 
-        <ProductRenderer categoryTitle="Ice Cream" /> 
+        <ProductRenderer categoryTitle="ICE CREAM" /> 
       </ProductFetcher>
     );
 }
