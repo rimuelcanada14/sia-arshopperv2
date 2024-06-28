@@ -92,12 +92,8 @@ CORS_ORIGIN_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
     'https://localhost:3000',
     'https://localhost:8000',
-    'https://192.168.1.17:3000',
-    'https://192.168.1.17:8000',
-    'https://192.168.100.90:3000',
-    'https://192.168.100.90:8000',
-    'https://192.168.100.134:3000',
-    'https://192.168.100.134:8000',
+    'https://192.168.1.14:8000',
+    'https://192.168.1.14:3000',
 ]
 CORS_ALLOW_CREDENTIALS = True
 # SECURE_SSL_REDIRECT = True
@@ -191,4 +187,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
