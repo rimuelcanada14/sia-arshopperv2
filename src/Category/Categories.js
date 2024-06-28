@@ -44,8 +44,7 @@ function Category() {
         {label: 'Liquor/Wines', to: '/liquorwines'},
         {label: 'Party Utensils', to: '/partyutensils'},
         {label: 'Toiletries', to: '/toiletries'},
-        {label: 'Diswashing/Laundry', to: '/diswashinglaundry'},
-        {label: 'Addmargin', to: 'addmargin', categoryBottom: true},
+        {label: 'Diswashing/Laundry', to: '/diswashinglaundry', categoryBottom: true},
       ];
     
     return (

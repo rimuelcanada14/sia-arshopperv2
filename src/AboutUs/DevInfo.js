@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './DevInfo.css';
 import Header from '../components/header';
+import Footer from '../components/footer';
 import { TypeAnimation } from 'react-type-animation';
 import { FaFacebook } from "react-icons/fa";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function DevInfo() {
 
@@ -13,36 +14,35 @@ function DevInfo() {
     const [LexterisFlipped, setLexterIsFlipped] = useState(false);
     const [JenieisFlipped, setJenieIsFlipped] = useState(false);
     const [JuliannaisFlipped, setJuliannaIsFlipped] = useState(false);
-    
 
     const handleAngeloCardClick = () => {
-    setAngeloIsFlipped(!AngeloisFlipped);
+        setAngeloIsFlipped(!AngeloisFlipped);
     };
     const handleRimuelCardClick = () => {
-    setRimuelIsFlipped(!RimuelisFlipped);
+        setRimuelIsFlipped(!RimuelisFlipped);
     };
     const handleCJCardClick = () => {
-    setCJIsFlipped(!CJisFlipped);
+        setCJIsFlipped(!CJisFlipped);
     };
     const handleLexterCardClick = () => {
-    setLexterIsFlipped(!LexterisFlipped);
+        setLexterIsFlipped(!LexterisFlipped);
     };
     const handleJenieCardClick = () => {
-    setJenieIsFlipped(!JenieisFlipped);
+        setJenieIsFlipped(!JenieisFlipped);
     };
     const handleJuliannaCardClick = () => {
-    setJuliannaIsFlipped(!JuliannaisFlipped);
+        setJuliannaIsFlipped(!JuliannaisFlipped);
     };
 
-    return(
+    return (
         <>
             {/* header */}
-            <Header header={<Link to ="/aboutus" className="products-back">BACK</Link>} headersub="&nbsp;" headerright="DEVELOPERS" />
+            <Header header={<Link to="/aboutus" className="products-back">BACK</Link>} headersub="&nbsp;" headerright="DEVELOPERS" />
             <div className='devcard'>
                 <div className='devheader'>
                     <h1>iloveyou.vbs</h1>
                 </div>
-                
+
                 <div className='devcontents'>
                     <h3>
                         Just a happy group of students from Pamantasan ng Lungsod ng Maynila,
@@ -56,7 +56,7 @@ function DevInfo() {
                     <h1>
                         <TypeAnimation
                             sequence={[
-                                'Meet the Team',3000,
+                                'Meet the Team', 3000,
                                 '认识团队', 3000,
                             ]}
                             repeat={Infinity}
@@ -66,13 +66,11 @@ function DevInfo() {
             </div>
 
             <div className="card-container">
-
                 <div className={`card ${AngeloisFlipped ? 'flip' : ''}`} onClick={handleAngeloCardClick}>
                     <div className="card-front-angelo">
                         <h4>Angelo Tancioco</h4>
                     </div>
-                    
-                    <div className="card-back-angelo">
+                    <div className="card-back">
                         <div className='card-back-contact'>
                             <h3>short description...</h3>
                             <a href="https://www.facebook.com/tanchyy" target="_blank" rel="noopener noreferrer">
@@ -81,14 +79,12 @@ function DevInfo() {
                         </div>
                     </div>
                 </div>
-                
-                
+
                 <div className={`card ${RimuelisFlipped ? 'flip' : ''}`} onClick={handleRimuelCardClick}>
                     <div className="card-front-rimuel">
                         <h4>Rimuel Canada</h4>
                     </div>
-
-                    <div className="card-back-rimuel">
+                    <div className="card-back">
                         <div className='card-back-contact'>
                             <h3>short description...</h3>
                             <a href="https://www.facebook.com/rimuel.canada.33" target="_blank" rel="noopener noreferrer">
@@ -102,8 +98,7 @@ function DevInfo() {
                     <div className="card-front-cj">
                         <h4>CJ Defita</h4>
                     </div>
-
-                    <div className="card-back-cj">
+                    <div className="card-back">
                         <div className='card-back-contact'>
                             <h3>short description...</h3>
                             <a href="https://www.facebook.com/cj.defita" target="_blank" rel="noopener noreferrer">
@@ -117,8 +112,8 @@ function DevInfo() {
                     <div className="card-front-lexter">
                         <h4>Lexter Apuada</h4>
                     </div>
-                    <div className="card-back-lexter">
-                    <div className='card-back-contact'>
+                    <div className="card-back">
+                        <div className='card-back-contact'>
                             <h3>short description...</h3>
                             <a href="https://www.facebook.com/yuna.shin.3192" target="_blank" rel="noopener noreferrer">
                                 Follow me on <FaFacebook />
@@ -131,10 +126,10 @@ function DevInfo() {
                     <div className="card-front-jenie">
                         <h4>Jenie Tadena</h4>
                     </div>
-                    <div className="card-back-jenie">
-                    <div className='card-back-contact'>
+                    <div className="card-back">
+                        <div className='card-back-contact'>
                             <h3>short description...</h3>
-                            <a href="https://www.facebook.com/Jeniebean53">
+                            <a href="https://www.facebook.com/Jeniebean53" target="_blank" rel="noopener noreferrer">
                                 Follow me on <FaFacebook />
                             </a>
                         </div>
@@ -143,19 +138,20 @@ function DevInfo() {
 
                 <div className={`card ${JuliannaisFlipped ? 'flip' : ''}`} onClick={handleJuliannaCardClick}>
                     <div className="card-front-julianna">
-                        <h4>Julianna</h4>
+                        <h4>Julianna Angelene Miranda</h4>
                     </div>
-                    <div className="card-back-julianna">
-                    <div className='card-back-contact'>
+                    <div className="card-back">
+                        <div className='card-back-contact'>
                             <h3>short description...</h3>
-                            <a href="https://www.facebook.com/julsmiranda27">
+                            <a href="https://www.facebook.com/julsmiranda27" target="_blank" rel="noopener noreferrer">
                                 Follow me on <FaFacebook />
                             </a>
                         </div>
                     </div>
                 </div>
-
             </div>
+
+            <Footer />
         </>
     )
 }
