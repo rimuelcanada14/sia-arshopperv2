@@ -10,7 +10,7 @@ function History() {
     <> 
     
         <div className='ichiInfo-text-header'>
-            <Header header={<Link to ="/aboutus" className="beverages-back">BACK</Link>} headersub="&nbsp;" headerright="ABOUT US" />
+            <Header header={<Link to ="/aboutus" className="products-back">BACK</Link>} headersub="&nbsp;" headerright="ABOUT US" />
         </div>
 
         <div className="ichi-about-header">

@@ -37,12 +37,12 @@ function DevInfo() {
     return(
         <>
             {/* header */}
-            <Header header={<Link to ="/aboutus" className="beverages-back">BACK</Link>} headersub="&nbsp;" headerright="DEVELOPERS" />
-
+            <Header header={<Link to ="/aboutus" className="products-back">BACK</Link>} headersub="&nbsp;" headerright="DEVELOPERS" />
             <div className='devcard'>
                 <div className='devheader'>
                     <h1>iloveyou.vbs</h1>
                 </div>
+                
                 <div className='devcontents'>
                     <h3>
                         Just a happy group of students from Pamantasan ng Lungsod ng Maynila,
@@ -50,8 +50,7 @@ function DevInfo() {
                     </h3>
                 </div>
             </div>
-            
-            {/* individual content */}
+
             <div className='devcard'>
                 <div className='devheader'>
                     <h1>
@@ -67,14 +66,16 @@ function DevInfo() {
             </div>
 
             <div className="card-container">
+
                 <div className={`card ${AngeloisFlipped ? 'flip' : ''}`} onClick={handleAngeloCardClick}>
                     <div className="card-front-angelo">
                         <h4>Angelo Tancioco</h4>
                     </div>
+                    
                     <div className="card-back-angelo">
                         <div className='card-back-contact'>
                             <h3>short description...</h3>
-                            <a href="https://www.facebook.com/tanchyy">
+                            <a href="https://www.facebook.com/tanchyy" target="_blank" rel="noopener noreferrer">
                                 Follow me on <FaFacebook />
                             </a>
                         </div>
@@ -86,10 +87,11 @@ function DevInfo() {
                     <div className="card-front-rimuel">
                         <h4>Rimuel Canada</h4>
                     </div>
+
                     <div className="card-back-rimuel">
-                    <div className='card-back-contact'>
+                        <div className='card-back-contact'>
                             <h3>short description...</h3>
-                            <a href="https://www.facebook.com/rimuel.canada.33">
+                            <a href="https://www.facebook.com/rimuel.canada.33" target="_blank" rel="noopener noreferrer">
                                 Follow me on <FaFacebook />
                             </a>
                         </div>
@@ -100,10 +102,11 @@ function DevInfo() {
                     <div className="card-front-cj">
                         <h4>CJ Defita</h4>
                     </div>
+
                     <div className="card-back-cj">
-                    <div className='card-back-contact'>
+                        <div className='card-back-contact'>
                             <h3>short description...</h3>
-                            <a href="https://www.facebook.com/cj.defita">
+                            <a href="https://www.facebook.com/cj.defita" target="_blank" rel="noopener noreferrer">
                                 Follow me on <FaFacebook />
                             </a>
                         </div>
@@ -117,7 +120,7 @@ function DevInfo() {
                     <div className="card-back-lexter">
                     <div className='card-back-contact'>
                             <h3>short description...</h3>
-                            <a href="https://www.facebook.com/yuna.shin.3192">
+                            <a href="https://www.facebook.com/yuna.shin.3192" target="_blank" rel="noopener noreferrer">
                                 Follow me on <FaFacebook />
                             </a>
                         </div>
