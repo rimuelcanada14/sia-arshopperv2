@@ -148,15 +148,17 @@ function ProfileInfo() {
 
   return (
     <>
-      <Header header={<Link to ="/profile" className="beverages-back">BACK</Link>} headerright="INFORMATION" />
+      <Header header={<Link to ="/profile" className="products-back">BACK</Link>} headerright="INFORMATION" />
       <img className='profile-icon' src='ProfileImage/profile.png' alt='profileimage'></img>
       {user && <h1 className="profile-name">{user.firstName.toUpperCase()} {user.lastName.toUpperCase()}</h1>}
       <div className='profile-container'>
         <div className='info-btn'>
           <h1 className='info-title'>PERSONAL INFORMATION</h1>
-          {user && <h4 className='info-categories'>FIRST NAME: &emsp; &emsp;&emsp;{user.firstName.toUpperCase()}</h4>}
-          {user && <h4 className='info-categories'>LAST NAME: &emsp;&emsp;&emsp;&ensp;{user.lastName.toUpperCase()}</h4>}
-          {user && <h4 className='info-categories1'>MOBILE NUMBER: &emsp;0{user.mobile_number}</h4>}
+          <div className="info-container">
+            {user && <h4 className='info-categories'>FIRST NAME: &emsp; &emsp;&emsp;{user.firstName.toUpperCase()}</h4>}
+            {user && <h4 className='info-categories'>LAST NAME: &emsp;&emsp;&emsp;&ensp;{user.lastName.toUpperCase()}</h4>}
+            {user && <h4 className='info-categories1'>MOBILE NUMBER: &emsp;0{user.mobile_number}</h4>}
+          </div>
           <button onClick={handleEditClick} className="info-edit">EDIT INFORMATION</button>
           <button onClick={handlePasswordChangeClick} className="info-pass">CHANGE PASSWORD</button>
         </div>
@@ -192,7 +194,10 @@ function ProfileInfo() {
             <label>Confirm New Password</label>
             <input type="password" name="confirmNewPassword" value={formData.confirmNewPassword} onChange={handleInputChange} />
           </div>
-          <button type="submit" className='modal-submit'>SAVE</button>
+          <div className="modal-button-save">
+            <button type="submit" className='modal-submit'>SAVE</button>
+          </div>
+          
         </form>
       </Modal>
       

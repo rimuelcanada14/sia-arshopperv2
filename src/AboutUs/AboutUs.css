@@ -1,37 +1,35 @@
-.aboutUs-header-text {
-    position: relative;
-    text-align: center;
-    font-size: 40px;
+.aboutus-container{
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-left: auto;
     margin-right: auto;
+    margin-top: .5em;
+    height: 65vh;
 }
-
 .aboutus-sub{
     visibility: hidden;
 }
-
 .aboutUsButtons {
     background-image: url("logochipattls.png");
-    justify-content: center;
+    width: 100%;
+    display: flex;
+    font-size: 25px;
+    border-radius: 20px;
+    height: 5.2em;
+    max-height: 5.2em;
+    font-family: Poppins;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 3em;
     border: solid;
     border-color: black;
-    margin-bottom: .30em;
-    margin-left: auto;
-    margin-right: auto; 
-    margin-top: 49.1px;
-    font-family: Poppins;
-    flex-direction: column;
-    font-weight: bold;
-    font-size: 29px;
-    width:92%;
-    color: black;
-    height: 5em;
-    display: flex;
-    border-radius: 20px;
-    margin-bottom: -45px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
-                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
 }  
 

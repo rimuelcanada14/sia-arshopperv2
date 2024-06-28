@@ -23,10 +23,9 @@ function AboutUs() {
           <Header header={<Link to ="/home" className="products-back">BACK</Link>} headersub="&nbsp;" headerright="ABOUT US" />
         </div>
         
-        <div>
+        <div className = "aboutus-container">
           {aboutUsButtons.map ((button, index) => (
           <Link key={index} to={button.to}>
-            <br></br>
             <button className={`aboutUsButtons`}>
               {button.label}
             </button>

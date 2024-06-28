@@ -99,7 +99,7 @@ function ProfileHealth() {
 
   return (
     <>
-      <Header header={<Link to ="/profile" className="beverages-back">BACK</Link>} headersub="&nbsp;" headerright="HEALTH STATUS" />
+      <Header header={<Link to ="/profile" className="products-back">BACK</Link>} headersub="&nbsp;" headerright="HEALTH STATUS" />
       <img className='profile-icon' src='ProfileImage/profile.png' alt='profileimage'></img>
       {user && <h1 className="profile-name">{user.firstName.toUpperCase()} {user.lastName.toUpperCase()}</h1>}
       <div className='profile-container'>

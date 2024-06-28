@@ -62,8 +62,9 @@
     text-align: center;
 }
 .info-btn{
+  display: flex;
+  flex-direction: column;
     position: relative;
-    margin: 12px 0;
     border-radius: 30px;
     padding-left: 1.3em;
     padding-right: 1.3em;
@@ -78,9 +79,15 @@
     border-color: black;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
     0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 .info-categories{
     margin-bottom: -1em;
+    text-align: left;
+    justify-content: left;
 }
 .info-edit{
     padding: .5em;
@@ -114,7 +121,7 @@
       0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-left: auto;
   margin-right: auto;
-  margin-top: .5em;
+  margin-top: -.2em;
   margin-bottom: 1em;
   font-family: Poppins;
 }
@@ -313,3 +320,11 @@
 .health-categories{
   text-align: center;
 }
+.modal-submit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .modal-button-save{
+
+} */
