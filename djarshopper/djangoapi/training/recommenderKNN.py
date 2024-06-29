@@ -105,7 +105,7 @@ import re
 df = pd.read_csv('Training_Test2.csv')
 
 # Display first few rows of the dataset
-selected_rows_df = df.iloc[10:16]
+selected_rows_df = df.iloc[10:24]
 print(selected_rows_df)
 # Function to parse 'NutritionalFacts' and extract numeric values
 def parse_nutritional_facts(nutritional_facts_str):
@@ -151,13 +151,13 @@ def get_recommendations(product_features):
 # Example usage:
 # Assuming we want to get recommendations based on the nutritional facts of a product
 product_features = pd.DataFrame([{
-    'Calories': 50,
-    'TotalFat': 5,
-    'SatFat': 2,
+    'Calories': 150,
+    'TotalFat': 12,
+    'SatFat': 7,
     'TransFat': 0,
     'Cholesterol': 0,
-    'Sodium': 50,
-    'TCarbs': 19,
+    'Sodium': 30,
+    'TCarbs': 10,
     'DietFbr': 2,
     'Tsugar': 2,
 }], columns=numeric_features)
@@ -165,5 +165,3 @@ product_features = pd.DataFrame([{
 recommendations = get_recommendations(product_features)
 print("Recommended products:")
 print(recommendations)
-
-
