@@ -72,7 +72,6 @@ function DevInfo() {
                     </div>
                     <div className="card-back">
                         <div className='card-back-contact'>
-                            <h3>short description...</h3>
                             <a href="https://www.facebook.com/tanchyy" target="_blank" rel="noopener noreferrer">
                                 Follow me on <FaFacebook />
                             </a>
@@ -86,7 +85,6 @@ function DevInfo() {
                     </div>
                     <div className="card-back">
                         <div className='card-back-contact'>
-                            <h3>short description...</h3>
                             <a href="https://www.facebook.com/rimuel.canada.33" target="_blank" rel="noopener noreferrer">
                                 Follow me on <FaFacebook />
                             </a>
@@ -100,7 +98,6 @@ function DevInfo() {
                     </div>
                     <div className="card-back">
                         <div className='card-back-contact'>
-                            <h3>short description...</h3>
                             <a href="https://www.facebook.com/cj.defita" target="_blank" rel="noopener noreferrer">
                                 Follow me on <FaFacebook />
                             </a>
@@ -114,7 +111,6 @@ function DevInfo() {
                     </div>
                     <div className="card-back">
                         <div className='card-back-contact'>
-                            <h3>short description...</h3>
                             <a href="https://www.facebook.com/yuna.shin.3192" target="_blank" rel="noopener noreferrer">
                                 Follow me on <FaFacebook />
                             </a>
@@ -128,7 +124,6 @@ function DevInfo() {
                     </div>
                     <div className="card-back">
                         <div className='card-back-contact'>
-                            <h3>short description...</h3>
                             <a href="https://www.facebook.com/Jeniebean53" target="_blank" rel="noopener noreferrer">
                                 Follow me on <FaFacebook />
                             </a>
@@ -138,11 +133,10 @@ function DevInfo() {
 
                 <div className={`card ${JuliannaisFlipped ? 'flip' : ''}`} onClick={handleJuliannaCardClick}>
                     <div className="card-front-julianna">
-                        <h4>Julianna Angelene Miranda</h4>
+                        <h4>Julianna Miranda</h4>
                     </div>
                     <div className="card-back">
                         <div className='card-back-contact'>
-                            <h3>short description...</h3>
                             <a href="https://www.facebook.com/julsmiranda27" target="_blank" rel="noopener noreferrer">
                                 Follow me on <FaFacebook />
                             </a>
