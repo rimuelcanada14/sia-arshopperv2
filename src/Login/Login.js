@@ -24,7 +24,7 @@ const Login = () => {
                 mobile_number: parseInt(mobileNumber, 10),
                 password: password
             };
-            const response = await axios.post(`https://localhost:8000/api/login/`, requestData);  // Change URL to localhost for development
+            const response = await axios.post(`https://192.168.100.90:8000/api/login/`, requestData);  // Change URL to localhost for development
             const token = response.data.token;
             login(token);
             setError(null);
@@ -78,7 +78,7 @@ const Login = () => {
                             <FaUnlockKeyhole className="login-icon-pass" />
                         </div>
                         
-                        <p><Link to="/signup" className="login-forgot">Forgot Password</Link></p>
+                        {/* <p><Link to="/signup" className="login-forgot">Forgot Password</Link></p> */}
                         <button type="submit" className="login-submit">LOG IN</button>
                         <p>New User? <Link to="/signup" className="login-signup">Sign Up</Link></p>
                     </form>

@@ -90,7 +90,7 @@ class SignUp(models.Model):
             ('diarrhea', 'Diarrhea'),
             ('null3', ''),
         ],
-        default='null'
+        default='null3'
     )
     user = models.OneToOneField(LoginUser, on_delete=models.CASCADE)
 

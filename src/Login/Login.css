@@ -127,6 +127,7 @@ button.login-submit{
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 0 auto;
     font-family: Poppins;
+    margin-top: 1em;
 }
 button.login-submit:hover{
     background-color: #b9524c;
