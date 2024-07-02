@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import UserCreateView, LoginView, ProductView, ProductDetailView, UserDetailView, change_password, BeveragesView, JunkFoodsView, IceCreamView, FrozenGoodsView, PastryView, WaterView, CondimentsView, NoodlesPastaView, InstantNoodlesView, PowderedJuiceView, OilSectionView, BreadSpreadView, CannedGoodsView, NibblesView, CoffeeMilkView, BiscuitsView, CandiesView, ChocolatesView, LiquorWinesView, PartyUtensilsView, ToiletriesView, DiswashingLaundryView
+from .views import UserCreateView, LoginView, ProductView, ProductDetailView, UserDetailView, change_password, BeveragesView, JunkFoodsView, IceCreamView, FrozenGoodsView, PastryView, WaterView, CondimentsView, NoodlesPastaView, InstantNoodlesView, PowderedJuiceView, OilSectionView, BreadSpreadView, CannedGoodsView, NibblesView, CoffeeMilkView, BiscuitsView, CandiesView, ChocolatesView, LiquorWinesView, PartyUtensilsView, ToiletriesView, DiswashingLaundryView, toggle_like_product
                                               
                                             
 
@@ -32,4 +32,5 @@ urlpatterns = [
     path('diswashinglaundry/', DiswashingLaundryView.as_view(), name='diswashinglaundry'),
     path('user-details/<str:mobile_number>/', UserDetailView.as_view(), name='user-details'),
     path('change-password/<str:mobile_number>/', change_password, name='change-password'),
+    path('products/<int:product_id>/like/', toggle_like_product, name='toggle_like_product'),
 ]

@@ -2,7 +2,8 @@ from rest_framework import generics, status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth.models import User
@@ -29,6 +30,11 @@ class ProductView(generics.ListAPIView):
 
 class ProductDetailView(APIView):
     def get(self, request, barcode, format=None):
+        product = get_object_or_404(AddProduct, barcode=barcode)
+        serializer = DisplayProdSerializer(product)
+        return Response(serializer.data)
+
+    def post(self, request, barcode, format=None):
         product = get_object_or_404(AddProduct, barcode=barcode)
         serializer = DisplayProdSerializer(product)
         return Response(serializer.data)
@@ -178,6 +184,7 @@ class UserDetailView(APIView):
                 'illness': user.illness,
                 'illness2': user.illness2,
                 'illness3': user.illness3,
+                'liked_products': [product.name for product in user.user.liked_products.all()]
             }
             return Response(user_data, status=status.HTTP_200_OK)
         except SignUp.DoesNotExist:
@@ -192,6 +199,35 @@ class UserDetailView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class ToggleLikeProduct(APIView):
+    def post(self, request, product_id, format=None):
+        try:
+            product = get_object_or_404(AddProduct, id=product_id)
+            user = get_object_or_404(SignUp, mobile_number=request.user.mobile_number)
+            
+            # Check if the product is already liked
+            if product in user.user.liked_products.all():
+                user.user.liked_products.remove(product)
+                return Response({'message': 'Product unliked successfully.'}, status=status.HTTP_200_OK)
+            else:
+                user.user.liked_products.add(product)
+                return Response({'message': 'Product liked successfully.'}, status=status.HTTP_200_OK)
+        except SignUp.DoesNotExist:
+            return Response({'error': 'User not found.'}, status=status.HTTP_404_NOT_FOUND)
+        except AddProduct.DoesNotExist:
+            return Response({'error': 'Product not found.'}, status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+class ToggleLikeProduct(APIView):
+    def post(self, request, product_id, format=None):
+        serializer = ToggleLikeProductSerializer(data={'product_id': product_id}, context={'request': request})
+        if serializer.is_valid():
+            response = serializer.save()
+            return Response(response, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 @api_view(['POST'])
 def change_password(request, mobile_number):
@@ -213,3 +249,23 @@ def change_password(request, mobile_number):
         return Response({"message": "Password changed successfully"}, status=status.HTTP_200_OK)
     
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['POST'])
+def toggle_like_product(request, product_id):
+    mobile_number = request.data.get('mobileNumber')
+    if not mobile_number:
+        return Response({'error': 'Mobile number is required'}, status=status.HTTP_400_BAD_REQUEST)
+
+    try:
+        user = SignUp.objects.get(mobile_number=mobile_number)
+    except SignUp.DoesNotExist:
+        return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+    
+    product = get_object_or_404(AddProduct, id=product_id)
+
+    if product in user.liked_products.all():
+        user.liked_products.remove(product)
+        return Response({'message': 'Product unliked'}, status=status.HTTP_200_OK)
+    else:
+        user.liked_products.add(product)
+        return Response({'message': 'Product liked'}, status=status.HTTP_200_OK)
