@@ -132,7 +132,7 @@ class AddProduct(models.Model):
     image = models.ImageField(upload_to='djangoapi/ProductImage')
     barcode = models.CharField(max_length=13, null=True)
     category = models.CharField(max_length=50, null=True, choices=CATEGORY_CHOICES)
-    
+    liked_by = models.ManyToManyField(SignUp, related_name='liked_products', blank=True)
     
     def __str__(self):
         return self.name

@@ -35,12 +35,12 @@ const BarcodeScanner = () => {
           const code = result.getText();
           setScannedCode(code);
           try {
-            const response = await axios.get(`https://192.168.100.90:8000/api/products/${code}/`);
+            const response = await axios.get(`https://192.168.1.17:8000/api/products/${code}/`);
             if (response.status === 200) {
               const data = response.data;
               setProduct(data);
               setMessage(data.name);
-              setShowCokeCan(data.barcode === '051111407592');
+              setShowCokeCan(data.barcode === '51111407592');
               setShowPineApple(data.barcode === '9780201379624');
               displayAR(data.image);
             } else {
@@ -109,7 +109,7 @@ const BarcodeScanner = () => {
     arScene.setAttribute('embedded', 'true');
 
     const arElement = document.createElement('a-image');
-    const imageUrl = `https://192.168.100.90:8000${imagePath}`;
+    const imageUrl = `https://192.168.1.17:8000${imagePath}`;
     
     arElement.setAttribute('src', imageUrl);
     arElement.setAttribute('position', '0 2 -3');
@@ -128,7 +128,7 @@ const BarcodeScanner = () => {
       <p>Ingredients: <br/>{product.ingredients}</p>
       <p>Nutritional Facts: <br/>{product.nutritional_facts}</p>
       <p>Barcode: <br/>{product.barcode}</p>
-      <img src={`https://192.168.100.90:8000${product.image}`} alt={`${product.name}`} />
+      <img src={`https://192.168.1.17:8000${product.image}`} alt={`${product.name}`} />
     </div>
   ) : (
     <p>Loading...</p>
