@@ -44,3 +44,38 @@
     align-items: center;
 
 }
+.like-container{
+    height: 100%;
+    font-size: 50px;
+    margin-left: .5em;
+}
+.like-button{
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    font-size: 20px;
+    color: #E96760;
+    text-align: center;
+}
+.popup-like{
+        position: fixed;
+        background-color: rgb(231, 255, 190);
+        border-radius: 10px;
+        z-index: 1000;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        width: 18em;
+        max-width: 20em;
+        animation: moveFromTop 0.5s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        bottom: 32em;
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: 1.5em;
+        border: solid;
+        border-color: black;
+}

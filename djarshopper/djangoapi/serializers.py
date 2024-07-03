@@ -29,11 +29,13 @@ class DisplayProdSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'price', 'ingredients', 'nutritional_facts', 'image', 'barcode']
 
 class SignUpSerializer(serializers.ModelSerializer):
-    liked_products = DisplayProdSerializer(many=True, read_only=True)
+    password = serializers.CharField(write_only=True)  # Include password field
+
+    liked_products = serializers.PrimaryKeyRelatedField(many=True, queryset=AddProduct.objects.all(), required=False)
 
     class Meta:
         model = SignUp
-        fields = ['id', 'firstName', 'lastName', 'mobile_number', 'healthComplication', 'illness', 'illness2', 'illness3', 'liked_products']
+        fields = ['id', 'firstName', 'lastName', 'mobile_number', 'healthComplication', 'illness', 'illness2', 'illness3', 'liked_products', 'password']  # Include 'password' here
         extra_kwargs = {'password': {'write_only': True}}
 
     def validate_mobile_number(self, value):
@@ -42,18 +44,27 @@ class SignUpSerializer(serializers.ModelSerializer):
         return value
 
     def create(self, validated_data):
-        password = validated_data.pop('password')
-        liked_products = validated_data.pop('liked_products', [])
+        password = validated_data.pop('password')  # Retrieve and remove 'password' from validated_data
+        liked_products = validated_data.pop('liked_products', [])  # Handle liked_products if needed
+
+        # Hash the password before saving
         validated_data['password'] = make_password(password)
 
+        # Create a new LoginUser with hashed password
         login_user = LoginUser.objects.create_user(
             mobile_number=validated_data['mobile_number'],
-            password=password
+            password=password  # Use the original password here if needed
         )
 
+        # Create SignUp instance linked to the LoginUser
         signup = SignUp.objects.create(user=login_user, **validated_data)
+
+        # Set liked_products for the user if provided
         signup.user.liked_products.set(liked_products)
+
         return signup
+
+    
 class UpdateUserSerializer(serializers.ModelSerializer):
     liked_products = serializers.PrimaryKeyRelatedField(many=True, queryset=AddProduct.objects.all(), required=False)
 

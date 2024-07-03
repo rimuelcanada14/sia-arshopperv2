@@ -16,9 +16,9 @@ const Footer = ({ onResetScanner }) => {
           <Link to="/Home" onClick={onResetScanner}>
             <AiFillHome className='footer-icon' />
           </Link>
-          <Link to ="/" onClick={onResetScanner}>
+          <a href = "/" onClick={onResetScanner}>
             <RiLogoutCircleLine className='footer-icon' />
-          </Link>
+          </a>
         </ul>
         </div>
     )
