@@ -37,17 +37,16 @@
 .products-img {
     width: 7.5em; 
     height: auto; 
-    margin-left: 1em;
+    margin-right: .1em;
 }
 .products-label {
     flex: 1;
     align-items: center;
-
 }
 .like-container{
     height: 100%;
     font-size: 50px;
-    margin-left: .5em;
+    margin-left: .2em;
 }
 .like-button{
     justify-content: center;
@@ -58,24 +57,37 @@
     text-align: center;
 }
 .popup-like{
-        position: fixed;
-        background-color: rgb(231, 255, 190);
-        border-radius: 10px;
-        z-index: 1000;
-        padding-top: 1em;
-        padding-bottom: 1em;
-        width: 18em;
-        max-width: 20em;
-        animation: moveFromTop 0.5s ease-in-out;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        top: 0;
-        bottom: 32em;
-        left: 0;
-        right: 0;
-        margin: auto;
-        height: 1.5em;
-        border: solid;
-        border-color: black;
+    position: fixed;
+    background-color: rgb(231, 255, 190);
+    border-radius: 10px;
+    z-index: 1000;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    width: 12em;
+    max-width: 14em;
+    animation: moveFromTop 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    bottom: 32em;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 1.5em;
+    border: solid;
+    border-color: black;
+}
+.no-products-liked{
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    top: 40%;
+    font-size: 1.5em;
+    font-family: Poppins;
+    margin: 0 auto;
+    margin-left: auto;
+}
+.nope{
+    font-size: 2em;
 }

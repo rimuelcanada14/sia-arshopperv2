@@ -14,6 +14,7 @@ import Login from './Login/Login';
 import Signup from './Signup/Signup';
 import Profile from './profile/Profile';
 import ProfileInfo from './profile/ProfileInfo';
+import ProfileLiked from './profile/ProfileLiked';
 import ProfileHealth from './profile/ProfileHealth';
 import Category from './Category/Categories';
 import Home from './Home/Home';
@@ -59,6 +60,7 @@ const router = createBrowserRouter(
       <Route path="home" element={<ProtectedRoute element={<Home />} />} />
       <Route path="profile" element={<ProtectedRoute element={<Profile />} />} />
       <Route path="profile-info" element={<ProtectedRoute element={<ProfileInfo />} />} />
+      <Route path="profile-liked" element={<ProtectedRoute element={<ProfileLiked />} />} />
       <Route path="profile-health" element={<ProtectedRoute element={<ProfileHealth />} />} />
       <Route path="beverages" element={<ProtectedRoute element={<Beverages />} />} />
       <Route path="junkfoods" element={<ProtectedRoute element={<JunkFoods />} />} />

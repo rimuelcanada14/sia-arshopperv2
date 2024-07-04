@@ -17,7 +17,7 @@ function Profile() {
       if (mobileNumber) {
           const fetchUserDetails = async () => {
               try {
-                  const response = await axios.get(`https://192.168.1.17:8000/api/user-details/${mobileNumber}/`);
+                  const response = await axios.get(`https://192.168.100.90:8000/api/user-details/${mobileNumber}/`);
                   setUser(response.data);
               } catch (error) {
                   console.error('Failed to fetch user details', error);
@@ -44,7 +44,7 @@ function Profile() {
               <h1 className='profile-categories'>INFORMATION</h1>
             </div>
           </Link>
-          <Link to ="">
+          <Link to ="/profile-liked">
             <div className='profile-btn'>
               <AiFillLike className="profile-btn-icon" />
               <h1 className='profile-categories'>LIKES</h1>

@@ -16,7 +16,7 @@ function ProductRenderer({ products, categoryTitle }) {
   }, []);
 
   const handleLike = async (productId) => {
-    const mobileNumber = localStorage.getItem('mobileNumber'); // Assuming the mobile number is stored in local storage
+    const mobileNumber = localStorage.getItem('mobileNumber');
   
     try {
       const response = await axios.post(`https://192.168.100.90:8000/api/products/${productId}/like/`, {
@@ -26,10 +26,8 @@ function ProductRenderer({ products, categoryTitle }) {
         const updatedLikedProducts = likedProducts.includes(productId)
           ? likedProducts.filter((id) => id !== productId)
           : [...likedProducts, productId];
-
+  
         setLikedProducts(updatedLikedProducts);
-        localStorage.setItem('likedProducts', JSON.stringify(updatedLikedProducts)); // Save to local storage
-
         setPopupMessage(response.data.message);
         setTimeout(() => {
           setPopupMessage('');
@@ -43,6 +41,7 @@ function ProductRenderer({ products, categoryTitle }) {
       }, 2000); // Clear popup message after 2 seconds
     }
   };
+  
   
   return (
     <div>
@@ -62,7 +61,7 @@ function ProductRenderer({ products, categoryTitle }) {
                       handleLike(product.id);
                     }}
                   >
-                    {likedProducts.includes(product.id) ?  <FaHeart className='unlike-heart' /> : <FaRegHeart className='like-heart' />}
+                    {likedProducts.includes(product.id) ? <FaHeart className='unlike-heart' /> : <FaRegHeart className='like-heart' />}
                   </button>
                 </div>
               </button>

@@ -171,7 +171,6 @@ class DiswashingLaundryView(generics.ListAPIView):
     def get_queryset(self):
         return AddProduct.objects.filter(category='diswashinglaundry')
 
-
 class UserDetailView(APIView):
     def get(self, request, mobile_number, format=None):
         try:
@@ -228,6 +227,20 @@ class ToggleLikeProduct(APIView):
             return Response(response, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+class LikedProductsView(APIView):
+    def get(self, request):
+        mobile_number = request.query_params.get('mobile_number')
+        if not mobile_number:
+            return Response({'error': 'Mobile number is required'}, status=status.HTTP_400_BAD_REQUEST)
+        
+        try:
+            user = SignUp.objects.get(mobile_number=mobile_number)
+        except SignUp.DoesNotExist:
+            return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+        
+        liked_products = user.liked_products.all()  # Fetch liked products
+        serializer = DisplayProdSerializer(liked_products, many=True)
+        return Response(serializer.data)
 
 @api_view(['POST'])
 def change_password(request, mobile_number):
@@ -269,3 +282,5 @@ def toggle_like_product(request, product_id):
     else:
         user.liked_products.add(product)
         return Response({'message': 'Product liked'}, status=status.HTTP_200_OK)
+
+
