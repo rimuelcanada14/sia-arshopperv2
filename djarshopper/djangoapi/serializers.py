@@ -26,7 +26,7 @@ class AuthSerializer(serializers.Serializer):
 class DisplayProdSerializer(serializers.ModelSerializer):
     class Meta:
         model = AddProduct
-        fields = ['id', 'name', 'price', 'ingredients', 'nutritional_facts', 'image', 'barcode']
+        fields = ['id', 'name', 'price', 'ingredients', 'nutritional_facts', 'image', 'barcode', 'glb_file', 'location']
 
 class SignUpSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)  # Include password field

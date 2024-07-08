@@ -41,19 +41,18 @@ function ProductRenderer({ products, categoryTitle }) {
       }, 2000); // Clear popup message after 2 seconds
     }
   };
-  
-  
+
   return (
     <div>
       <Header header={<Link to="/category" className="products-back">BACK</Link>} headersub="&nbsp;" headerright={categoryTitle} />
       <div className='product-container'>
         {products.map((product, index) => (
           <div key={index}>
-            <Link to={product.name}>
+            <Link to = "/product-location">
               <button className="product-buttons">
                 <img className="products-img" src={product.image} alt={product.name} />
                 <span className="products-label">{product.name}<br />PHP {product.price}</span>
-                <div className = "like-container">
+                <div className="like-container">
                   <button
                     className={`like-button ${likedProducts.includes(product.id) ? 'liked' : ''}`}
                     onClick={(e) => {

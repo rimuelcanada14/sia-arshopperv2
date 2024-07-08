@@ -45,6 +45,7 @@ import LiquorWines from './Category/LiquorWines';
 import PartyUtensils from './Category/PartyUtensils';
 import Toiletries from './Category/Toiletries';
 import DiswashingLaundry from './Category/DiswashingLaundry';
+import LocationRenderer from './components/LocationRenderer';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -59,6 +60,7 @@ const router = createBrowserRouter(
       <Route path="Barcodescan" element={<ProtectedRoute element={<Barcodescan />} />} />
       <Route path="home" element={<ProtectedRoute element={<Home />} />} />
       <Route path="profile" element={<ProtectedRoute element={<Profile />} />} />
+      <Route path="product-location" element={<ProtectedRoute element={<LocationRenderer />} />} />
       <Route path="profile-info" element={<ProtectedRoute element={<ProfileInfo />} />} />
       <Route path="profile-liked" element={<ProtectedRoute element={<ProfileLiked />} />} />
       <Route path="profile-health" element={<ProtectedRoute element={<ProfileHealth />} />} />

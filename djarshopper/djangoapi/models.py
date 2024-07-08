@@ -66,6 +66,8 @@ class AddProduct(models.Model):
         ('diswashing/laundry', 'Diswashing/Laundry'),   
     ]    
     
+    LOCATION_CHOICES = [(str(i), str(i)) for i in range(1, 23)]  # Dropdown with numbers 1 to 22
+
     name = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     ingredients = models.TextField()
@@ -73,6 +75,8 @@ class AddProduct(models.Model):
     image = models.ImageField(upload_to='djangoapi/ProductImage')
     barcode = models.CharField(max_length=13, null=True)
     category = models.CharField(max_length=50, null=True, choices=CATEGORY_CHOICES)
+    glb_file = models.FileField(upload_to='djangoapi/GLBFiles', null=True, blank=True, help_text='Upload a .glb file')
+    location = models.CharField(max_length=2, choices=LOCATION_CHOICES, null=True, blank=True)
     
     def __str__(self):
         return self.name
