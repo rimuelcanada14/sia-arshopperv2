@@ -4,11 +4,14 @@ from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth.models import User
 from .models import SignUp, AddProduct
 from .serializers import SignUpSerializer, AuthSerializer, DisplayProdSerializer, UpdateUserSerializer, ChangePasswordSerializer
+
+def home(request):
+    return render(request, 'home.html')
 
 class UserCreateView(generics.CreateAPIView):
     queryset = SignUp.objects.all()

@@ -6,7 +6,7 @@ import Footer from '../components/footer';
 import Border from './border.png';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import ModelBuilder from '../ARModels/ModelBuilder.js';
+import ModelBuilder from '../3DModels/ModelBuilder.js';
 import { Link, useLocation } from 'react-router-dom';
 import Modal from '../profile/ProfileModal';
 import TDModal from './BarcodeModal';
@@ -34,7 +34,7 @@ const BarcodeScanner = () => {
           const code = result.getText();
           setScannedCode(code);
           try {
-            const response = await axios.get(`https://192.168.100.90:8000/api/products/${code}/`);
+            const response = await axios.get(`https://192.168.100.7:8000/api/products/${code}/`);
             if (response.status === 200) {
               const data = response.data;
               setProduct(data);
@@ -107,7 +107,7 @@ const BarcodeScanner = () => {
     arScene.setAttribute('embedded', 'true');
 
     const arElement = document.createElement('a-image');
-    const imageUrl = `https://192.168.100.90:8000${imagePath}`;
+    const imageUrl = `https://192.168.100.7:8000${imagePath}`;
     
     arElement.setAttribute('src', imageUrl);
     arElement.setAttribute('position', '0 2 -3');
@@ -125,7 +125,7 @@ const modelModalContent = (
         <ambientLight intensity={1.5} />
         <directionalLight position={[5, 5, 5]} />
         {glbFile && (
-          <ModelBuilder path={`https://192.168.100.90:8000${product.glb_file}`} position={[0, 0, -5]} />
+          <ModelBuilder path={`https://192.168.100.7:8000${product.glb_file}`} position={[0, 0, -5]} />
         )}
         <OrbitControls
           enableZoom={true}
@@ -189,7 +189,7 @@ const modelModalContent = (
               <p>Ingredients: <br/>{product.ingredients}</p>
               <p>Nutritional Facts: <br/>{product.nutritional_facts}</p>
               <p>Barcode: <br/>{product.barcode}</p>
-              <img src={`https://192.168.100.90:8000${product.image}`} alt={`${product.name}`} />
+              <img src={`https://192.168.100.7:8000${product.image}`} alt={`${product.name}`} />
             </>
           )}
         </div>

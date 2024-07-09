@@ -36,7 +36,7 @@ function ProfileHealth() {
     if (mobileNumber) {
       const fetchUserDetails = async () => {
         try {
-          const response = await axios.get(`https://192.168.100.90:8000/api/user-details/${mobileNumber}/`);
+          const response = await axios.get(`https://192.168.100.7:8000/api/user-details/${mobileNumber}/`);
           const userData = response.data;
           setUser(userData);
           setFormData({
@@ -79,7 +79,7 @@ function ProfileHealth() {
       return;
     }
     try {
-      const response = await axios.put(`https://192.168.100.90:8000/api/user-details/${user.mobile_number}/`, {
+      const response = await axios.put(`https://192.168.100.7:8000/api/user-details/${user.mobile_number}/`, {
         illness: formData.illness,
         illness2: formData.illness2,
         illness3: formData.illness3

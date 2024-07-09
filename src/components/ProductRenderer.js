@@ -19,7 +19,7 @@ function ProductRenderer({ products, categoryTitle }) {
     const mobileNumber = localStorage.getItem('mobileNumber');
   
     try {
-      const response = await axios.post(`https://192.168.100.90:8000/api/products/${productId}/like/`, {
+      const response = await axios.post(`https://192.168.100.7:8000/api/products/${productId}/like/`, {
         mobileNumber: mobileNumber,
       });
       if (response.status === 200) {

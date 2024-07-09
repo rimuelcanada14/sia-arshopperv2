@@ -19,7 +19,7 @@ function Home() {
         if (mobileNumber) {
             const fetchUserDetails = async () => {
                 try {
-                    const response = await axios.get(`https://192.168.100.90:8000/api/user-details/${mobileNumber}/`);
+                    const response = await axios.get(`https://192.168.100.7:8000/api/user-details/${mobileNumber}/`);
                     setUser(response.data);
                     setShowPopup(true); // Show popup when user details are fetched successfully
                     setTimeout(() => {

@@ -3,7 +3,7 @@ import ProductFetcher from '../components/ProductFetcher';
 import ProductRenderer from '../components/ProductRenderer';
 
 function JunkFoods () {
-    const apiUrl = 'https://localhost:8000/api/junkfoods/';
+    const apiUrl = 'https://192.168.100.7:8000/api/junkfoods/';
 
     return (
         <ProductFetcher apiUrl={apiUrl}>
