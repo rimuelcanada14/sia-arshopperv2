@@ -46,13 +46,35 @@ class UserAdmin(BaseUserAdmin):
     get_illness3.admin_order_field = 'signup__illness'
     get_illness3.short_description = '3rd Illness'
 
+    def change_view(self, request, object_id, form_url='', extra_context=None):
+        if extra_context is None:
+            extra_context = {}
+        extra_context['show_save_and_continue'] = False
+        return super().change_view(request, object_id, form_url, extra_context=extra_context)
+
+    def add_view(self, request, form_url='', extra_context=None):
+        if extra_context is None:
+            extra_context = {}
+        extra_context['show_save_and_continue'] = False
+        return super().add_view(request, form_url, extra_context=extra_context)
+
 admin.site.register(LoginUser, UserAdmin)
-#this is for fetching data from the database to display products
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'category','price', 'barcode', 'ingredients', 'nutritional_facts',)
+    list_display = ('name', 'category', 'price', 'barcode', 'ingredients', 'nutritional_facts',)
     search_fields = ('name',)
     list_filter = ('price', 'category')
 
-admin.site.register(AddProduct, ProductAdmin)
+    def change_view(self, request, object_id, form_url='', extra_context=None):
+        if extra_context is None:
+            extra_context = {}
+        extra_context['show_save_and_continue'] = False
+        return super().change_view(request, object_id, form_url, extra_context=extra_context)
 
+    def add_view(self, request, form_url='', extra_context=None):
+        if extra_context is None:
+            extra_context = {}
+        extra_context['show_save_and_continue'] = False
+        return super().add_view(request, form_url, extra_context=extra_context)
+
+admin.site.register(AddProduct, ProductAdmin)
