@@ -8,6 +8,57 @@ from django.contrib.auth.hashers import check_password
 from django.contrib.auth.models import User
 from .models import SignUp, AddProduct
 from .serializers import SignUpSerializer, AuthSerializer, DisplayProdSerializer, UpdateUserSerializer, ChangePasswordSerializer
+from .training.TrainingWithHealthStatus import get_recommendations_with_healthiness
+import pandas as pd
+import numpy as np
+from django.http import JsonResponse
+import os
+
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# CSV_PATH = os.path.join(BASE_DIR, 'djangoapi', 'training', 'TrainingTest2.csv')
+
+# df = pd.read_csv(CSV_PATH)
+
+# def get_product_recommendations(request, barcode):
+#     product = get_object_or_404(AddProduct, barcode=barcode)
+#     health_conditions = request.GET.get('health_conditions', '').split(',')
+    
+#     product_features = {
+#         'ProductName': [product.name],
+#         'Calories': [product.calories],
+#         'TotalFat': [product.total_fat],
+#         'SatFat': [product.sat_fat],
+#         'TransFat': [product.trans_fat],
+#         'Cholesterol': [product.cholesterol],
+#         'Sodium': [product.sodium],
+#         'TCarbs': [product.t_carbs],
+#         'DietFbr': [product.diet_fbr],
+#         'Tsugar': [product.tsugar],
+#     }
+
+#     recommendations = get_recommendations_with_healthiness(product_features, health_conditions)
+
+#     # Convert recommendations to JSON serializable format
+#     recommended_products = recommendations.to_dict('records')
+
+#     return JsonResponse({'recommendations': recommended_products})
+
+@api_view(['POST'])
+def recommend_healthier_alternative(request):
+    
+    try:
+        product_nutritional_facts = request.data.get('nutritional_facts', {})
+        conditions = request.query_params.get('conditions', None)  # Optional query parameter for health conditions
+
+        # Call your recommendation function
+        recommendations = get_recommendations_with_healthiness(product_nutritional_facts, conditions)
+
+        # Serialize recommendations using Django serializer
+        serializer = DisplayProdSerializer(recommendations, many=True)
+        return Response(serializer.data)
+
+    except Exception as e:
+        return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
 class UserCreateView(generics.CreateAPIView):
     queryset = SignUp.objects.all()
@@ -213,3 +264,4 @@ def change_password(request, mobile_number):
         return Response({"message": "Password changed successfully"}, status=status.HTTP_200_OK)
     
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
