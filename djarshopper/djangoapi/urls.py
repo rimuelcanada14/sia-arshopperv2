@@ -33,5 +33,5 @@ urlpatterns = [
     path('diswashinglaundry/', DiswashingLaundryView.as_view(), name='diswashinglaundry'),
     path('user-details/<str:mobile_number>/', UserDetailView.as_view(), name='user-details'),
     path('change-password/<str:mobile_number>/', change_password, name='change-password'),
-    path('api/recommendations/', views.recommend_healthier_alternatives, name='recommend_healthier_alternatives'),
+    # path('api/recommendations/', views.recommend_healthier_alternatives, name='recommend_healthier_alternatives'),
 ]
