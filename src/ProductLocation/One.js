@@ -1,5 +1,6 @@
 import React from 'react';
-import One from '../3DModels/1';
+import ModelOne from '../3DModels/ModelOne';
+import Legend from './Legend';
 import Header from '../components/header';
 import './Wayfinding.css'
 
@@ -12,7 +13,8 @@ const OneLoc = () => {
 
       <div>
         <h1 className = "way-legend">LEGEND:</h1>
-        <One />
+        <Legend />
+        <ModelOne />
       </div>
     </>
     

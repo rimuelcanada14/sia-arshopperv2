@@ -1,3 +1,104 @@
 .way-legend{
     text-align: center;
 }
+.legend-container {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    font-size: 11.6px;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .legend-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .icon-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .legend-text, .legend-subtext {
+    margin: 0;
+  }
+  
+  /* left column */
+  .junk-food {
+    color: #E01D25;
+  }
+  .ice-cream{
+    color: #FAFF04;
+  }
+  .frozen{
+    color: #BFB1B1;
+  }
+  .pastry{
+    color: #CF8616;
+  }
+  .beverages{
+   color: #90CAED; 
+  }
+  .laundry{
+    color: #8C52FF; 
+  }
+  .water {
+    color: #009DF8;
+  }
+
+/* middle column */
+  .condiments {
+    color: #D89199;
+  }
+  .noodles{
+    color: #D1AD17;
+  }
+  .powdered{
+    color: #DA6C1E;
+  }
+  .instant{
+    color: #84FC05;
+  }
+  .oil{
+    color: #7AABB4;
+  }
+  .canned{
+    color: #5AA64B;
+  }
+  .nibbles{
+    color: #FD9BFF;
+  }
+  .choco{
+    color: #786464
+  }
+  
+  /* right column */
+  .spread {
+    color: #D7004B;
+  }
+  .coffee{
+    color: #979180;
+  }
+  .utensils{
+    color: #8EB6C9;
+  }
+  .toiletries{
+    color: #004AAD;
+  }
+  .biscuits{
+    color: #C5A176;
+  }
+  .candies{
+    color: #BC6889;
+  }
+  .liquor{
+    color: black;
+  }
+
+  
+  
+  
