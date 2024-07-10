@@ -134,5 +134,8 @@ class AddProduct(models.Model):
     category = models.CharField(max_length=50, null=True, choices=CATEGORY_CHOICES)
     liked_by = models.ManyToManyField(SignUp, related_name='liked_products', blank=True)
     
+    class Meta:
+        verbose_name = "Product"
+    
     def __str__(self):
         return self.name
