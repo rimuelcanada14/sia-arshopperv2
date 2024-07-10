@@ -1,19 +1,54 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from .models import LoginUser, AddProduct
-from .forms import UserChangeForm, UserCreationForm
+from django import forms
+from django.contrib.auth.forms import ReadOnlyPasswordHashField
+from .models import LoginUser, AddProduct, SignUp
+from .forms import UserCreationForm, UserChangeForm
+
+class UserCreationForm(forms.ModelForm):
+    password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
+    password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput)
+
+    class Meta:
+        model = LoginUser
+        fields = ('mobile_number',)
+
+    def clean_password2(self):
+        password1 = self.cleaned_data.get("password1")
+        password2 = self.cleaned_data.get("password2")
+        if password1 and password2 and password1 != password2:
+            raise forms.ValidationError("Passwords don't match")
+        return password2
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.set_password(self.cleaned_data["password1"])
+        if commit:
+            user.save()
+        return user
+
+class UserChangeForm(forms.ModelForm):
+    password = ReadOnlyPasswordHashField()
+
+    class Meta:
+        model = LoginUser
+        fields = ('mobile_number', 'password', 'is_active', 'is_staff', 'is_superuser')
+
+    def clean_password(self):
+        return self.initial["password"]
 
 class UserAdmin(BaseUserAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
 
-    list_display = ('mobile_number', 'get_first_name', 'get_last_name', 'get_illness', 'get_illness2', 'get_illness3', 'is_staff', )
+    list_display = ('mobile_number', 'get_first_name', 'get_last_name', 'get_illness', 'get_illness2', 'get_illness3', 'is_staff')
     search_fields = ('mobile_number', 'signup__firstName', 'signup__lastName', 'signup__illness')
     ordering = ('mobile_number',)
     fieldsets = (
         (None, {'fields': ('mobile_number', 'password')}),
-        ('Permissions', {'fields': ('is_staff', 'user_permissions')}),
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser')}),
     )
+    readonly_fields = ('get_first_name', 'get_last_name', 'get_illness', 'get_illness2', 'get_illness3')
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
@@ -45,6 +80,23 @@ class UserAdmin(BaseUserAdmin):
         return obj.signup.illness3
     get_illness3.admin_order_field = 'signup__illness'
     get_illness3.short_description = '3rd Illness'
+
+    def get_form(self, request, obj=None, **kwargs):
+        form = super().get_form(request, obj, **kwargs)
+        if obj:
+            form.base_fields['password'].help_text = (
+                "Raw passwords are not stored, so there is no way to see this user's password, "
+                "but you can change the password using <a href='../password/'>this form</a>."
+            )
+        else:
+            form.base_fields['password1'] = forms.CharField(label='Password', widget=forms.PasswordInput)
+            form.base_fields['password2'] = forms.CharField(label='Password confirmation', widget=forms.PasswordInput)
+        return form
+
+    def save_model(self, request, obj, form, change):
+        if 'password1' in form.cleaned_data and form.cleaned_data['password1']:
+            obj.set_password(form.cleaned_data['password1'])
+        super().save_model(request, obj, form, change)
 
     def change_view(self, request, object_id, form_url='', extra_context=None):
         if extra_context is None:
