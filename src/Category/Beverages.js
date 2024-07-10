@@ -3,7 +3,7 @@ import ProductFetcher from '../components/ProductFetcher';
 import ProductRenderer from '../components/ProductRenderer';
 
 function Beverages () {
-  const apiUrl = 'https://192.168.100.7:8000/api/beverages/';
+  const apiUrl = 'https://localhost:8000/api/beverages/';
 
   return (
       <ProductFetcher apiUrl={apiUrl}>

@@ -42,6 +42,11 @@ class ProductDetailView(APIView):
         serializer = DisplayProdSerializer(product)
         return Response(serializer.data)
 
+class ProductLocationView(APIView):
+    def get(self, request, product_id, format=None):
+        product = get_object_or_404(AddProduct, id=product_id)
+        return Response({'location': product.location}, status=status.HTTP_200_OK)
+
 class BeveragesView(generics.ListAPIView):
     serializer_class = DisplayProdSerializer
     

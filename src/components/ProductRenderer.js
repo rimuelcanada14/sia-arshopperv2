@@ -19,7 +19,7 @@ function ProductRenderer({ products, categoryTitle }) {
     const mobileNumber = localStorage.getItem('mobileNumber');
   
     try {
-      const response = await axios.post(`https://192.168.100.7:8000/api/products/${productId}/like/`, {
+      const response = await axios.post(`https://localhost:8000/api/products/${productId}/like/`, {
         mobileNumber: mobileNumber,
       });
       if (response.status === 200) {
@@ -42,13 +42,27 @@ function ProductRenderer({ products, categoryTitle }) {
     }
   };
 
+  const getRedirectPath = (location) => {
+    switch (location) {
+      case '1':
+        return '/aisleone';
+      case '2':
+        return '/aisletwo';
+      case '17':
+        return '/aisle17';
+      default:
+        return '/';
+    }
+  };
+
   return (
     <div>
       <Header header={<Link to="/category" className="products-back">BACK</Link>} headersub="&nbsp;" headerright={categoryTitle} />
       <div className='product-container'>
         {products.map((product, index) => (
           <div key={index}>
-            <Link to = "/product-location">
+            {/* Product button */}
+            <Link to={getRedirectPath(product.location)}>
               <button className="product-buttons">
                 <img className="products-img" src={product.image} alt={product.name} />
                 <span className="products-label">{product.name}<br />PHP {product.price}</span>
