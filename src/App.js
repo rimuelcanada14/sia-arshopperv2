@@ -45,14 +45,35 @@ import LiquorWines from './Category/LiquorWines';
 import PartyUtensils from './Category/PartyUtensils';
 import Toiletries from './Category/Toiletries';
 import DiswashingLaundry from './Category/DiswashingLaundry';
-import LocationRenderer from './components/LocationRenderer';
+
+import One from './ProductLocation/One';
+import Two from './ProductLocation/Two';
+import Three from './ProductLocation/Three';
+import Four from './ProductLocation/Four';
+import Five from './ProductLocation/Five';
+import Six from './ProductLocation/Six';
+import Seven from './ProductLocation/Seven';
+import Eight from './ProductLocation/Eight';
+import Nine from './ProductLocation/Nine';
+import Ten from './ProductLocation/Ten';
+import Eleven from './ProductLocation/Eleven';
+import Twelve from './ProductLocation/Twelve';
+import Thirteen from './ProductLocation/Thirteen';
+import Fourteen from './ProductLocation/Fourteen';
+import Fifteen from './ProductLocation/Fifteen';
+import Sixteen from './ProductLocation/Sixteen';
+import Seventeen from './ProductLocation/Seventeen';
+import Eighteen from './ProductLocation/Eighteen';
+import Nineteen from './ProductLocation/Nineteen';
+import Twenty from './ProductLocation/Twenty';
+import TwentyOne from './ProductLocation/TwentyOne';
+import TwentyTwo from './ProductLocation/TwentyTwo';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/">
       <Route index element={<Login />} />
       <Route path="signup" element={<Signup />} />
-      <Route path="product-location" element={<LocationRenderer />} />
       <Route path="category" element={<ProtectedRoute element={<Category />} />} />
       <Route path="AboutUs" element={<ProtectedRoute element={<AboutUs />} />} />
       <Route path="history" element={<ProtectedRoute element={<History />} />} />
@@ -61,7 +82,6 @@ const router = createBrowserRouter(
       <Route path="Barcodescan" element={<ProtectedRoute element={<Barcodescan />} />} />
       <Route path="home" element={<ProtectedRoute element={<Home />} />} />
       <Route path="profile" element={<ProtectedRoute element={<Profile />} />} />
-      {/* <Route path="product-location" element={<ProtectedRoute element={<LocationRenderer />} />} /> */}
       <Route path="profile-info" element={<ProtectedRoute element={<ProfileInfo />} />} />
       <Route path="profile-liked" element={<ProtectedRoute element={<ProfileLiked />} />} />
       <Route path="profile-health" element={<ProtectedRoute element={<ProfileHealth />} />} />
@@ -87,6 +107,29 @@ const router = createBrowserRouter(
       <Route path="partyutensils" element={<ProtectedRoute element={<PartyUtensils />} />} />
       <Route path="toiletries" element={<ProtectedRoute element={<Toiletries />} />} />
       <Route path="diswashinglaundry" element={<ProtectedRoute element={<DiswashingLaundry />} />} />
+
+      <Route path="1" element={<ProtectedRoute element={<One />} />} />
+      <Route path="2" element={<ProtectedRoute element={<Two />} />} />
+      <Route path="3" element={<ProtectedRoute element={<Three />} />} />
+      <Route path="4" element={<ProtectedRoute element={<Four />} />} />
+      <Route path="5" element={<ProtectedRoute element={<Five />} />} />
+      <Route path="6" element={<ProtectedRoute element={<Six />} />} />
+      <Route path="7" element={<ProtectedRoute element={<Seven />} />} />
+      <Route path="8" element={<ProtectedRoute element={<Eight />} />} />
+      <Route path="9" element={<ProtectedRoute element={<Nine />} />} />
+      <Route path="10" element={<ProtectedRoute element={<Ten />} />} />
+      <Route path="11" element={<ProtectedRoute element={<Eleven />} />} />
+      <Route path="12" element={<ProtectedRoute element={<Twelve />} />} />
+      <Route path="13" element={<ProtectedRoute element={<Thirteen />} />} />
+      <Route path="14" element={<ProtectedRoute element={<Fourteen />} />} />
+      <Route path="15" element={<ProtectedRoute element={<Fifteen />} />} />
+      <Route path="16" element={<ProtectedRoute element={<Sixteen />} />} />
+      <Route path="17" element={<ProtectedRoute element={<Seventeen />} />} />
+      <Route path="18" element={<ProtectedRoute element={<Eighteen />} />} />
+      <Route path="19" element={<ProtectedRoute element={<Nineteen />} />} />
+      <Route path="20" element={<ProtectedRoute element={<Twenty />} />} />
+      <Route path="21" element={<ProtectedRoute element={<TwentyOne />} />} />
+      <Route path="22" element={<ProtectedRoute element={<TwentyTwo />} />} />
     </Route>
   )
 );
