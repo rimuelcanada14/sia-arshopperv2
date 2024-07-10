@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Site{% endblock %}</title>
+</head>
+
+<body>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <script>
+        function openLogin() {
+            window.location.href = 'https://192.168.100.7:3000';
+        }
+        function openSignup() {
+            window.location.href = 'https://192.168.100.7:3000/signup';
+        }
+    </script>
+</body>
+</html>

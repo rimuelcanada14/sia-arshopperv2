@@ -7,7 +7,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import './Signup.css';
 import Header from '../components/header';
 
-
 const Signup = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -34,34 +33,45 @@ const Signup = () => {
     let updatedValue = value;
   
     if (name === 'firstName' || name === 'lastName') {
-        updatedValue = value.replace(/[^A-Za-zÑñ]/ig, '');
-    }
-    if (name === 'firstName' || name === 'lastName') {
-        updatedValue = updatedValue.toUpperCase();
+      updatedValue = value.replace(/[^A-Za-zÑñ]/ig, '');
+      updatedValue = updatedValue.toUpperCase();
     }
   
-    setFormData({ ...formData, [name]: updatedValue });
+    // Handle healthComplication change
+    if (name === 'healthComplication' && value === 'no') {
+      setFormData({
+        ...formData,
+        [name]: value,
+        illness: 'null',
+        illness2: 'null2',
+        illness3: 'null3',
+      });
+      setShowIllness2(false);
+      setShowIllness3(false);
+    } else {
+      setFormData({ ...formData, [name]: updatedValue });
+    }
   
     if (name === 'password' || name === 'confirmPassword') {
-        setPassError('');
+      setPassError('');
     } else if (name === 'mobile_number') {
-        if (!value.startsWith('9') || value.length !== 10) {
-            setMobileError('');
-        } else {
-            setMobileError('');
-        }
+      if (!value.startsWith('9') || value.length !== 10) {
+        setMobileError('Invalid Mobile Number');
+      } else {
+        setMobileError('');
+      }
     }
-};
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    // Convert first name and last name to uppercase before submitting
+
     const uppercaseFormData = {
       ...formData,
       firstName: formData.firstName.toUpperCase(),
-      lastName: formData.lastName.toUpperCase()
+      lastName: formData.lastName.toUpperCase(),
     };
-  
+
     if (uppercaseFormData.password !== uppercaseFormData.confirmPassword) {
       setPassError('Passwords do not match');
       setMobileError('');
@@ -74,14 +84,18 @@ const Signup = () => {
       setPassError('Select a Complication');
       setMobileError('');
       return;
-    } else if (uppercaseFormData.illness === uppercaseFormData.illness2 || uppercaseFormData.illness === uppercaseFormData.illness3 || uppercaseFormData.illness2 === uppercaseFormData.illness3) {
+    } else if (
+      uppercaseFormData.illness === uppercaseFormData.illness2 ||
+      uppercaseFormData.illness === uppercaseFormData.illness3 ||
+      uppercaseFormData.illness2 === uppercaseFormData.illness3
+    ) {
       setPassError('Duplicate Complication');
       setMobileError('');
       return;
     }
-  
+
     try {
-      const response = await axios.post('https://192.168.100.90:8000/api/signup/', uppercaseFormData);
+      const response = await axios.post('https://localhost:8000/api/signup/', uppercaseFormData);
       if (response.status === 201) {
         console.log('User signed up successfully!');
         setSuccessMessage('Sign up Successful!');
@@ -89,29 +103,30 @@ const Signup = () => {
         setTimeout(() => {
           Redirection('/');
         }, 2000);
-
       } else {
         console.error('Failed to sign up');
       }
     } catch (error) {
       if (error.response && error.response.status === 409) {
         console.error('Mobile number exists');
+        setDuplicateMobileError('Mobile number exists');
       } else {
-        setDuplicateMobileError('Mobile number exists', error);
+        console.error('An error occurred:', error);
       }
     }
   };
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setPassError('');
       setMobileError('');
-      setDuplicateMobileError('')
+      setDuplicateMobileError('');
     }, 3000);
 
     return () => clearTimeout(timer);
   }, [passErr, mobileErr, duplicateMobileError]);
 
-  const Inputlimiter = (e) => {
+  const InputLimiter = (e) => {
     const { name, value } = e.target;
     if (value.length <= 10) {
       setFormData({ ...formData, [name]: value });
@@ -124,6 +139,16 @@ const Signup = () => {
 
   const addIllness3 = () => {
     setShowIllness3(true);
+  };
+
+  const removeIllness2 = () => {
+    setFormData({ ...formData, illness2: 'null2' });
+    setShowIllness2(false);
+  };
+
+  const removeIllness3 = () => {
+    setFormData({ ...formData, illness3: 'null3' });
+    setShowIllness3(false);
   };
 
   const showIllnessContainer = formData.healthComplication === 'yes';
@@ -180,7 +205,7 @@ const Signup = () => {
                 maxLength="10"
                 pattern="9[0-9]{9}"
                 value={formData.mobile_number}
-                onChange={Inputlimiter}
+                onChange={InputLimiter}
                 required
               />
             </div>
@@ -228,8 +253,7 @@ const Signup = () => {
 
             <p>Already have an account?<Link to="/" className="signup-login">Login</Link></p>
           </div>
-          
-          {/* Conditionally render the illness container */}
+
           {showIllnessContainer && (
             <div className="illness-container">
               <p className="illness-categories">Enter Health Complication</p>
@@ -252,109 +276,108 @@ const Signup = () => {
                 </select>
               </div>
 
-              {/* Additional illness fields */}
               {showIllness2 && (
                 <>
-                
                   <p className="illness-categories">Enter Health Complication 2</p>
-                    <div className="illness-health">
-                      <FaNotesMedical className="illness-icon-health" />
-                      <select
-                        name="illness2"
-                        id="illness-input-health"
-                        onChange={handleChange}
-                        value={formData.illness2}
-                      >
-                        <option value="respiratory">Respiratory Infections</option>
-                        <option value="hypertension">Hypertension</option>
-                        <option value="uti">Urinary Tract Infection</option>
-                        <option value="diabetes">Diabetes</option>
-                        <option value="skin">Skin Diseases</option>
-                        <option value="pneumonia">Pneumonia</option>
-                        <option value="diarrhea">Diarrhea</option>
-                        <option value="null2" hidden></option>
-                      </select>
-                    </div>
-                
+                  <div className="illness-health">
+                    <FaNotesMedical className="illness-icon-health" />
+                    <select
+                      name="illness2"
+                      id="illness-input-health"
+                      onChange={handleChange}
+                      value={formData.illness2}
+                    >
+                      <option value="respiratory">Respiratory Infections</option>
+                      <option value="hypertension">Hypertension</option>
+                      <option value="uti">Urinary Tract Infection</option>
+                      <option value="diabetes">Diabetes</option>
+                      <option value="skin">Skin Diseases</option>
+                      <option value="pneumonia">Pneumonia</option>
+                      <option value="diarrhea">Diarrhea</option>
+                      <option value="null2" hidden></option>
+                    </select>
+                  </div>
+                  <button type="button" onClick={removeIllness2} className="illness-button remove-button">Remove Illness 2</button>
                 </>
-                        )}
+              )}
+
               {showIllness3 && (
                 <>
                   <p className="illness-categories">Enter Health Complication 3</p>
-                    <div className="illness-health">
-                      <FaNotesMedical className="illness-icon-health" />
-                      <select
-                        name="illness3"
-                        id="illness-input-health3"
-                        onChange={handleChange}
-                        value={formData.illness3}
-                      >
-                        <option value="respiratory">Respiratory Infections</option>
-                        <option value="hypertension">Hypertension</option>
-                        <option value="uti">Urinary Tract Infection</option>
-                        <option value="diabetes">Diabetes</option>
-                        <option value="skin">Skin Diseases</option>
-                        <option value="pneumonia">Pneumonia</option>
-                        <option value="diarrhea">Diarrhea</option>
-                        <option value="null3" hidden></option>
-                      </select>
-                    </div>
+                  <div className="illness-health">
+                    <FaNotesMedical className="illness-icon-health" />
+                    <select
+                      name="illness3"
+                      id="illness-input-health3"
+                      onChange={handleChange}
+                      value={formData.illness3}
+                    >
+                      <option value="respiratory">Respiratory Infections</option>
+                      <option value="hypertension">Hypertension</option>
+                      <option value="uti">Urinary Tract Infection</option>
+                      <option value="diabetes">Diabetes</option>
+                      <option value="skin">Skin Diseases</option>
+                      <option value="pneumonia">Pneumonia</option>
+                      <option value="diarrhea">Diarrhea</option>
+                      <option value="null3" hidden></option>
+                    </select>
+                  </div>
+                  <button type="button" onClick={removeIllness3} className="illness-button remove-button">Remove Illness 3</button>
                 </>
               )}
-            
-              {showIllnessContainer && !showIllness2 && (
+
+              {showIllnessContainer && !showIllness2 && formData.illness !== 'null' && (
                 <button type="button" onClick={addIllness2} className="illness-button">Add Another Illness</button>
               )}
-              {showIllnessContainer && showIllness2 && !showIllness3 && (
+              {showIllnessContainer && showIllness2 && !showIllness3 && formData.illness2 !== 'null2' && (
                 <button type="button" onClick={addIllness3} className="illness-button">Add Another Illness</button>
               )}
             </div>
           )}
 
-        {/* Error and success message components */}
-        <div className='signup-low'>
-          {mobileErr &&
-            <div className="popup">
-              <RxCrossCircled className='ekis' />
-              <div className="popup-text">
-                {mobileErr}
-              </div>
-              <RxCrossCircled className='ekisR' />
-            </div>}
+          <div className='signup-low'>
+            {mobileErr &&
+              <div className="popup">
+                <RxCrossCircled className='ekis' />
+                <div className="popup-text">
+                  {mobileErr}
+                </div>
+                <RxCrossCircled className='ekisR' />
+              </div>}
 
-          {duplicateMobileError &&
-            <div className="popup">
-              <RxCrossCircled className='ekis-pass' />
-              <div className="popup-text">
-                {duplicateMobileError}
-              </div>
-              <RxCrossCircled className='ekis-passR' />
-            </div>}
+            {duplicateMobileError &&
+              <div className="popup">
+                <RxCrossCircled className='ekis-pass' />
+                <div className="popup-text">
+                  {duplicateMobileError}
+                </div>
+                <RxCrossCircled className='ekis-passR' />
+              </div>}
 
-          {passErr &&
-            <div className="popup">
-              <RxCrossCircled className='ekis-pass' />
-              <div className="popup-text">
-                {passErr}
-              </div>
-              <RxCrossCircled className='ekis-passR' />
-            </div>}
+            {passErr &&
+              <div className="popup">
+                <RxCrossCircled className='ekis-pass' />
+                <div className="popup-text">
+                  {passErr}
+                </div>
+                <RxCrossCircled className='ekis-passR' />
+              </div>}
 
-          {successMessage &&
-            <div className="popup-success">
-              <FcApproval className="signup-check" />
-              <div className="success-text">
-                {successMessage}
-              </div>
-              <FcApproval className="signup-checkR" />
-            </div>}
+            {successMessage &&
+              <div className="popup-success">
+                <FcApproval className="signup-check" />
+                <div className="success-text">
+                  {successMessage}
+                </div>
+                <FcApproval className="signup-checkR" />
+              </div>}
 
-        <button type="submit" className="signup-submit">SIGN UP</button>
+            <button type="submit" className="signup-submit">SIGN UP</button>
+          </div>
+        </form>
       </div>
-    </form>
-  </div>
-</div>
-);
+    </div>
+  );
 };
 
 export default Signup;

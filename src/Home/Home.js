@@ -19,7 +19,7 @@ function Home() {
         if (mobileNumber) {
             const fetchUserDetails = async () => {
                 try {
-                    const response = await axios.get(`https://192.168.1.17:8000/api/user-details/${mobileNumber}/`);
+                    const response = await axios.get(`https://localhost:8000/api/user-details/${mobileNumber}/`);
                     setUser(response.data);
                     setShowPopup(true); // Show popup when user details are fetched successfully
                     setTimeout(() => {
@@ -65,7 +65,7 @@ function Home() {
                     <Link to ="/category">
                         <div className='home-icon'>
                             <ImSearch className="icon" />
-                            <h1 className='home-categories'>SEARCH</h1>
+                            <h1 className='home-categories'>FIND</h1>
                         </div>
                     </Link>
 

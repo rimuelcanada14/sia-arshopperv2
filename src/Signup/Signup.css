@@ -285,7 +285,6 @@ button.illness-button {
     color: #b9524c;
     margin: 0 auto;
     margin-bottom: 1em;
-    margin-top: 1em;
 }
 @keyframes moveFromTop {
     0% {
@@ -341,6 +340,7 @@ button.illness-button {
 #illness-input-health{
     padding-left: 50px;
     font-size: 15px;
+    margin-bottom: 1em;
 }
 #illness-input-health3{
     padding-left: 50px;

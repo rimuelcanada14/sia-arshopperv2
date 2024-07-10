@@ -6,7 +6,7 @@ import Footer from '../components/footer';
 import Border from './border.png';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import ModelBuilder from '../ARModels/ModelBuilder.js';
+import ModelBuilder from '../3DModels/ModelBuilder.js';
 import { Link, useLocation } from 'react-router-dom';
 import Modal from '../profile/ProfileModal';
 import TDModal from './BarcodeModal';
@@ -16,12 +16,11 @@ import 'aframe';
 const BarcodeScanner = () => {
   const [scannedCode, setScannedCode] = useState(null);
   const [message, setMessage] = useState('');
-  const [showCokeCan, setShowCokeCan] = useState(false);
-  const [showPineApple, setShowPineApple] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [show3DModelModal, setShow3DModelModal] = useState(false);
   const scannerRef = useRef(null);
   const [product, setProduct] = useState(null);
+  const [glbFile, setGlbFile] = useState(null); // State to store .glb file path
   const arSceneRef = useRef(null);
   const location = useLocation();
 
@@ -35,13 +34,12 @@ const BarcodeScanner = () => {
           const code = result.getText();
           setScannedCode(code);
           try {
-            const response = await axios.get(`https://192.168.1.17:8000/api/products/${code}/`);
+            const response = await axios.get(`https://localhost:8000/api/products/${code}/`);
             if (response.status === 200) {
               const data = response.data;
               setProduct(data);
               setMessage(data.name);
-              setShowCokeCan(data.barcode === '51111407592');
-              setShowPineApple(data.barcode === '9780201379624');
+              setGlbFile(data.glb_file); // Set the .glb file path
               displayAR(data.image);
             } else {
               setProduct(null);
@@ -77,11 +75,11 @@ const BarcodeScanner = () => {
   const resetScanner = () => {
     setScannedCode(null);
     setMessage('');
-    setShowCokeCan(false);
-    setShowPineApple(false);
     if (arSceneRef.current) {
       arSceneRef.current.innerHTML = '';
     }
+    setProduct(null);
+    setGlbFile(null);
   };
 
   const openModal = () => {
@@ -109,7 +107,7 @@ const BarcodeScanner = () => {
     arScene.setAttribute('embedded', 'true');
 
     const arElement = document.createElement('a-image');
-    const imageUrl = `https://192.168.1.17:8000${imagePath}`;
+    const imageUrl = `https://localhost:8000${imagePath}`;
     
     arElement.setAttribute('src', imageUrl);
     arElement.setAttribute('position', '0 2 -3');
@@ -120,42 +118,25 @@ const BarcodeScanner = () => {
     arSceneRef.current.appendChild(arScene);
   };
 
-  const modalContent = product ? (
-    <div>
-      <h2 className='barcode-title'>Product<br/>Information</h2>
-      <p>Product Name: <br/>{message}</p>
-      <p>Price: <br/>₱{product.price}</p>
-      <p>Ingredients: <br/>{product.ingredients}</p>
-      <p>Nutritional Facts: <br/>{product.nutritional_facts}</p>
-      <p>Barcode: <br/>{product.barcode}</p>
-      <img src={`https://192.168.1.17:8000${product.image}`} alt={`${product.name}`} />
+const modelModalContent = (
+  <div className="model-modal-content">
+    <div className="canvas-container">
+      <Canvas style={{ height: '70vh', width: '100%', zIndex: '100' }}>
+        <ambientLight intensity={1.5} />
+        <directionalLight position={[5, 5, 5]} />
+        {glbFile && (
+          <ModelBuilder path={`https://localhost:8000${product.glb_file}`} position={[0, 0, -5]} />
+        )}
+        <OrbitControls
+          enableZoom={true}
+          minDistance={5}
+          maxDistance={7}
+          enablePan={true}
+        />
+      </Canvas>
     </div>
-  ) : (
-    <p>Loading...</p>
-  );
-
-  const modelModalContent = (
-    <div className="model-modal-content">
-      <div className="canvas-container">
-        <Canvas style={{ height: '70vh', width: '100%', zIndex: '100' }}>
-          <ambientLight intensity={1.5} />
-          <directionalLight position={[5, 5, 5]} />
-          {showCokeCan && (
-            <ModelBuilder path="/CokeCan.glb" position={[0, 0, -5]} />
-          )}
-          {showPineApple && (
-            <ModelBuilder path="/ZestoPineApple.glb" position={[0, 0, -8]} />
-          )}
-          <OrbitControls
-            enableZoom={true}
-            minDistance={5}
-            maxDistance={7}
-            enablePan={true}
-          />
-        </Canvas>
-      </div>
-    </div>
-  );
+  </div>
+);
   
   return (
     <>
@@ -199,7 +180,19 @@ const BarcodeScanner = () => {
       )}
 
       <Modal show={showModal} onClose={closeModal}>
-        {modalContent}
+        <div>
+          <h2 className='barcode-title'>Product<br/>Information</h2>
+          <p>Product Name: <br/>{message}</p>
+          {product && (
+            <>
+              <p>Price: <br/>₱{product.price}</p>
+              <p>Ingredients: <br/>{product.ingredients}</p>
+              <p>Nutritional Facts: <br/>{product.nutritional_facts}</p>
+              <p>Barcode: <br/>{product.barcode}</p>
+              <img src={`https://localhost:8000${product.image}`} alt={`${product.name}`} />
+            </>
+          )}
+        </div>
       </Modal>
 
       <TDModal show={show3DModelModal} onClose={close3DModelModal}>

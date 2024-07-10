@@ -1,8 +1,13 @@
 from django.urls import path
-from .views import UserCreateView, LoginView, ProductView, ProductDetailView, UserDetailView, change_password, BeveragesView, JunkFoodsView, IceCreamView, FrozenGoodsView, PastryView, WaterView, CondimentsView, NoodlesPastaView, InstantNoodlesView
-from .views import PowderedJuiceView, OilSectionView, BreadSpreadView, CannedGoodsView, NibblesView, CoffeeMilkView, BiscuitsView, CandiesView, ChocolatesView, LiquorWinesView, PartyUtensilsView, ToiletriesView, DiswashingLaundryView
-from . import views                                              
-                                            
+from .views import (
+    UserCreateView, LoginView, ProductView, ProductDetailView, LikedProductsView,
+    UserDetailView, change_password, BeveragesView, JunkFoodsView, IceCreamView,
+    FrozenGoodsView, PastryView, WaterView, CondimentsView, NoodlesPastaView,
+    InstantNoodlesView, PowderedJuiceView, OilSectionView, BreadSpreadView,
+    CannedGoodsView, NibblesView, CoffeeMilkView, BiscuitsView, CandiesView,
+    ChocolatesView, LiquorWinesView, PartyUtensilsView, ToiletriesView,
+    DiswashingLaundryView, toggle_like_product, ProductLocationView
+)
 
 urlpatterns = [
     path('signup/', UserCreateView.as_view(), name='signup'),
@@ -33,5 +38,7 @@ urlpatterns = [
     path('diswashinglaundry/', DiswashingLaundryView.as_view(), name='diswashinglaundry'),
     path('user-details/<str:mobile_number>/', UserDetailView.as_view(), name='user-details'),
     path('change-password/<str:mobile_number>/', change_password, name='change-password'),
-    # path('api/recommendations/', views.recommend_healthier_alternatives, name='recommend_healthier_alternatives'),
+    path('products/<int:product_id>/like/', toggle_like_product, name='toggle_like_product'),
+    path('liked-products/', LikedProductsView.as_view(), name='liked-products'),
+    path('products/<int:product_id>/location/', ProductLocationView.as_view(), name='product_location'),
 ]

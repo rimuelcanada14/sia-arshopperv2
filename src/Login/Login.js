@@ -24,7 +24,7 @@ const Login = () => {
                 mobile_number: parseInt(mobileNumber, 10),
                 password: password
             };
-            const response = await axios.post(`https://192.168.1.17:8000/api/login/`, requestData);  // Change URL to localhost for development
+            const response = await axios.post(`https://localhost:8000/api/login/`, requestData);  // Change URL to localhost for development
             const token = response.data.token;
             login(token);
             setError(null);
@@ -115,7 +115,6 @@ const Login = () => {
                     </div>
                 }
             </div>
-            
         </>
     );
 };

@@ -14,6 +14,7 @@ import Login from './Login/Login';
 import Signup from './Signup/Signup';
 import Profile from './profile/Profile';
 import ProfileInfo from './profile/ProfileInfo';
+import ProfileLiked from './profile/ProfileLiked';
 import ProfileHealth from './profile/ProfileHealth';
 import Category from './Category/Categories';
 import Home from './Home/Home';
@@ -44,12 +45,14 @@ import LiquorWines from './Category/LiquorWines';
 import PartyUtensils from './Category/PartyUtensils';
 import Toiletries from './Category/Toiletries';
 import DiswashingLaundry from './Category/DiswashingLaundry';
+import LocationRenderer from './components/LocationRenderer';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/">
       <Route index element={<Login />} />
       <Route path="signup" element={<Signup />} />
+      <Route path="product-location" element={<LocationRenderer />} />
       <Route path="category" element={<ProtectedRoute element={<Category />} />} />
       <Route path="AboutUs" element={<ProtectedRoute element={<AboutUs />} />} />
       <Route path="history" element={<ProtectedRoute element={<History />} />} />
@@ -58,7 +61,9 @@ const router = createBrowserRouter(
       <Route path="Barcodescan" element={<ProtectedRoute element={<Barcodescan />} />} />
       <Route path="home" element={<ProtectedRoute element={<Home />} />} />
       <Route path="profile" element={<ProtectedRoute element={<Profile />} />} />
+      {/* <Route path="product-location" element={<ProtectedRoute element={<LocationRenderer />} />} /> */}
       <Route path="profile-info" element={<ProtectedRoute element={<ProfileInfo />} />} />
+      <Route path="profile-liked" element={<ProtectedRoute element={<ProfileLiked />} />} />
       <Route path="profile-health" element={<ProtectedRoute element={<ProfileHealth />} />} />
       <Route path="beverages" element={<ProtectedRoute element={<Beverages />} />} />
       <Route path="junkfoods" element={<ProtectedRoute element={<JunkFoods />} />} />
