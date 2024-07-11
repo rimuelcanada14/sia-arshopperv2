@@ -1,10 +1,24 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './History.css';
 import Header from '../components/header';
 import {Link} from 'react-router-dom';
 
 
 function History() {
+
+    useEffect(() => {
+        const handleBeforeUnload = (event) => {
+            event.preventDefault();
+            event.returnValue = '';
+        };
+
+        window.addEventListener('beforeunload', handleBeforeUnload);
+
+        return () => {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+        };
+    }, []);
+
 
     return(
     <> 

@@ -21,7 +21,6 @@ import Home from './Home/Home';
 import Beverages from './Category/Beverages';
 import AboutUs from './AboutUs/AboutUs';
 import History from './AboutUs/History';
-import Wayfinding from './Wayfinding/Wayfinding';
 import Barcodescan from './Barcodescan/Barcodescan';
 import DevInfo from './AboutUs/DevInfo';
 import JunkFoods from './Category/JunkFoods';
@@ -78,7 +77,6 @@ const router = createBrowserRouter(
       <Route path="AboutUs" element={<ProtectedRoute element={<AboutUs />} />} />
       <Route path="history" element={<ProtectedRoute element={<History />} />} />
       <Route path="devinfo" element={<ProtectedRoute element={<DevInfo />} />} />
-      <Route path="wayfinding" element={<ProtectedRoute element={<Wayfinding />} />} />
       <Route path="Barcodescan" element={<ProtectedRoute element={<Barcodescan />} />} />
       <Route path="home" element={<ProtectedRoute element={<Home />} />} />
       <Route path="profile" element={<ProtectedRoute element={<Profile />} />} />

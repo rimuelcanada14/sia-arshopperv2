@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect }from 'react';
 import {Link} from 'react-router-dom';
 import './AboutUs.css';
 import Header from '../components/header';
@@ -8,7 +8,18 @@ import Footer from '../components/footer';
     
 function AboutUs() {
 
+  useEffect(() => {
+    const handleBeforeUnload = (event) => {
+        event.preventDefault();
+        event.returnValue = '';
+    };
 
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+        window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+}, []);
 
     const aboutUsButtons = [
       {label: 'History of the Store', to: '/History'},

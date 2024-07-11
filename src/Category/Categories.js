@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // import { useState, useEffect } from 'react';
 // import axios from 'axios';
 import {Link} from 'react-router-dom';
@@ -21,7 +21,19 @@ function Category() {
     //     });
     // }, []);
 
-    
+    useEffect(() => {
+      const handleBeforeUnload = (event) => {
+          event.preventDefault();
+          event.returnValue = '';
+      };
+
+      window.addEventListener('beforeunload', handleBeforeUnload);
+
+      return () => {
+          window.removeEventListener('beforeunload', handleBeforeUnload);
+      };
+  }, []);
+
       const categoryButtons = [
         {label: 'Beverages', to: '/beverages'},
         {label: 'Junk Foods', to: '/junkfoods'},

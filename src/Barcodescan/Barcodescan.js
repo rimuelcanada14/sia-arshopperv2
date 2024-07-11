@@ -25,6 +25,19 @@ const BarcodeScanner = () => {
   const location = useLocation();
 
   useEffect(() => {
+    const handleBeforeUnload = (event) => {
+        event.preventDefault();
+        event.returnValue = '';
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+        window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, []);
+
+  useEffect(() => {
     let codeReader = null;
 
     const initializeScanner = () => {
@@ -34,7 +47,7 @@ const BarcodeScanner = () => {
           const code = result.getText();
           setScannedCode(code);
           try {
-            const response = await axios.get(`https://localhost:8000/api/products/${code}/`);
+            const response = await axios.get(`https://192.168.100.7:8000/api/products/${code}/`);
             if (response.status === 200) {
               const data = response.data;
               setProduct(data);
@@ -107,7 +120,7 @@ const BarcodeScanner = () => {
     arScene.setAttribute('embedded', 'true');
 
     const arElement = document.createElement('a-image');
-    const imageUrl = `https://localhost:8000${imagePath}`;
+    const imageUrl = `https://192.168.100.7:8000${imagePath}`;
     
     arElement.setAttribute('src', imageUrl);
     arElement.setAttribute('position', '0 2 -3');
@@ -121,11 +134,11 @@ const BarcodeScanner = () => {
 const modelModalContent = (
   <div className="model-modal-content">
     <div className="canvas-container">
-      <Canvas style={{ height: '70vh', width: '100%', zIndex: '100' }}>
+      <Canvas style={{ height: '100vh', width: '100%', zIndex: '100' }}>
         <ambientLight intensity={1.5} />
         <directionalLight position={[5, 5, 5]} />
         {glbFile && (
-          <ModelBuilder path={`https://localhost:8000${product.glb_file}`} position={[0, 0, -5]} />
+          <ModelBuilder path={`https://192.168.100.7:8000${product.glb_file}`} position={[0, 3, -5]} />
         )}
         <OrbitControls
           enableZoom={true}
@@ -189,14 +202,15 @@ const modelModalContent = (
               <p>Ingredients: <br/>{product.ingredients}</p>
               <p>Nutritional Facts: <br/>{product.nutritional_facts}</p>
               <p>Barcode: <br/>{product.barcode}</p>
-              <img src={`https://localhost:8000${product.image}`} alt={`${product.name}`} />
+              <img src={`https://192.168.100.7:8000${product.image}`} alt={`${product.name}`} />
             </>
           )}
         </div>
       </Modal>
 
       <TDModal show={show3DModelModal} onClose={close3DModelModal}>
-        <h2 className='td-title'>3D MODEL</h2>
+        <h2 className='td-title'>3D MODEL <p className='subtext'>USE TWO FINGERS TO NAVIGATE</p></h2>
+        
         {modelModalContent}
       </TDModal>
 

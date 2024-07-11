@@ -27,6 +27,19 @@ function ProfileLiked({ }) {
     fetchLikedProducts();
   }, []);
 
+  useEffect(() => {
+    const handleBeforeUnload = (event) => {
+        event.preventDefault();
+        event.returnValue = '';
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+        window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+}, []);
+
   const handleLike = async (productId) => {
     const mobileNumber = localStorage.getItem('mobileNumber');
   

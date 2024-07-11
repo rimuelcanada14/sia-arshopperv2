@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './DevInfo.css';
 import Header from '../components/header';
 import Footer from '../components/footer';
@@ -33,6 +33,18 @@ function DevInfo() {
     const handleJuliannaCardClick = () => {
         setJuliannaIsFlipped(!JuliannaisFlipped);
     };
+    useEffect(() => {
+        const handleBeforeUnload = (event) => {
+            event.preventDefault();
+            event.returnValue = '';
+        };
+
+        window.addEventListener('beforeunload', handleBeforeUnload);
+
+        return () => {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+        };
+    }, []);
 
     return (
         <>

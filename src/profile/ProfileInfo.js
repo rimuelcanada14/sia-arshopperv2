@@ -48,6 +48,19 @@ function ProfileInfo() {
     }
   }, []);
 
+  useEffect(() => {
+    const handleBeforeUnload = (event) => {
+        event.preventDefault();
+        event.returnValue = '';
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+        window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+}, []);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     let updatedValue;
