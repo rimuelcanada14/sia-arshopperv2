@@ -18,9 +18,11 @@ const BarcodeScanner = () => {
   const [message, setMessage] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [show3DModelModal, setShow3DModelModal] = useState(false);
+  const [showRecoModal, setShowRecoModal] = useState(false);
+  const [recommendations, setRecommendations] = useState([]);
   const scannerRef = useRef(null);
   const [product, setProduct] = useState(null);
-  const [glbFile, setGlbFile] = useState(null); // State to store .glb file path
+  const [glbFile, setGlbFile] = useState(null);
   const arSceneRef = useRef(null);
   const location = useLocation();
 
@@ -47,12 +49,12 @@ const BarcodeScanner = () => {
           const code = result.getText();
           setScannedCode(code);
           try {
-            const response = await axios.get(`https://192.168.100.7:8000/api/products/${code}/`);
+            const response = await axios.get(`https://192.168.1.46:8000/api/products/${code}/`);
             if (response.status === 200) {
               const data = response.data;
               setProduct(data);
               setMessage(data.name);
-              setGlbFile(data.glb_file); // Set the .glb file path
+              setGlbFile(data.glb_file);
               displayAR(data.image);
             } else {
               setProduct(null);
@@ -95,6 +97,48 @@ const BarcodeScanner = () => {
     setGlbFile(null);
   };
 
+  const fetchRecommendations = async (productFeatures, conditions, category) => {
+    console.log('Fetching recommendations for:', productFeatures, conditions, category);
+
+    try {
+      const response = await axios.post('https://192.168.1.46:8000/api/recommendations/', {
+        product_features: productFeatures,
+        conditions: conditions,
+        category: category,
+      });
+
+      console.log('Response:', response);
+
+      if (response.status === 200) {
+        const recommendations = response.data;
+        console.log('Recommendations:', recommendations);
+        setRecommendations(recommendations);
+        setShowRecoModal(true);
+      } else {
+        console.error('Unexpected status code:', response.status);
+      }
+    } catch (error) {
+      console.error('Error fetching recommendations:', error);
+    }
+  };
+
+  const handleShowRecommendations = () => {
+    const productFeatures = {
+      TotalFat: 5,
+      SatFat: 0,
+      TransFat: 0,
+      Sodium: 2,
+      TCarbs: 15,
+      Tsugar: 15,
+      DietFbr: 5,
+    };
+
+    const conditions = ['hypertension'];
+    const category = 'Condiments';
+
+    fetchRecommendations(productFeatures, conditions, category);
+  };
+
   const openModal = () => {
     setShowModal(true);
   };
@@ -111,6 +155,10 @@ const BarcodeScanner = () => {
     setShow3DModelModal(false);
   };
 
+  const closeRecoModal = () => {
+    setShowRecoModal(false);
+  };
+
   const displayAR = (imagePath) => {
     if (!arSceneRef.current) return;
 
@@ -120,8 +168,8 @@ const BarcodeScanner = () => {
     arScene.setAttribute('embedded', 'true');
 
     const arElement = document.createElement('a-image');
-    const imageUrl = `https://192.168.100.7:8000${imagePath}`;
-    
+    const imageUrl = `https://192.168.1.46:8000${imagePath}`;
+
     arElement.setAttribute('src', imageUrl);
     arElement.setAttribute('position', '0 2 -3');
     arElement.setAttribute('height', '2');
@@ -131,26 +179,37 @@ const BarcodeScanner = () => {
     arSceneRef.current.appendChild(arScene);
   };
 
-const modelModalContent = (
-  <div className="model-modal-content">
-    <div className="canvas-container">
-      <Canvas style={{ height: '100vh', width: '100%', zIndex: '100' }}>
-        <ambientLight intensity={1.5} />
-        <directionalLight position={[5, 5, 5]} />
-        {glbFile && (
-          <ModelBuilder path={`https://192.168.100.7:8000${product.glb_file}`} position={[0, 3, -5]} />
-        )}
-        <OrbitControls
-          enableZoom={true}
-          minDistance={5}
-          maxDistance={7}
-          enablePan={true}
-        />
-      </Canvas>
+  const modelModalContent = (
+    <div className="model-modal-content">
+      <div className="canvas-container">
+        <Canvas style={{ height: '70vh', width: '100%', zIndex: '100' }}>
+          <ambientLight intensity={1.5} />
+          <directionalLight position={[5, 5, 5]} />
+          {glbFile && (
+            <ModelBuilder path={`https://192.168.1.46:8000${product.glb_file}`} position={[0, 0, -5]} />
+          )}
+          <OrbitControls
+            enableZoom={true}
+            minDistance={5}
+            maxDistance={7}
+            enablePan={true}
+          />
+        </Canvas>
+      </div>
     </div>
-  </div>
-);
-  
+  );
+
+  const renderRecommendations = () => {
+    console.log('Rendering recommendations:', recommendations); // Debug log to check recommendations state
+    return recommendations.map((recommendation, index) => (
+      <div key={index} className="recommendation-item">
+        <h4>{recommendation.ProductName}</h4>
+        <p>Price: ₱{recommendation.Price}</p>
+        <p>Dietary Fiber: {recommendation.DietFbr}g</p>
+      </div>
+    ));
+  };
+
   return (
     <>
       <div>
@@ -181,9 +240,9 @@ const modelModalContent = (
           </div>
 
           <div className='button-right'>
-            <Link to="" className="show-reco">
-              other items
-            </Link>
+            <button className="show-reco" onClick={handleShowRecommendations}>
+              Recommendations
+            </button>
 
             <button className="td-button" onClick={open3DModelModal}>
               3D Model
@@ -202,7 +261,6 @@ const modelModalContent = (
               <p>Ingredients: <br/>{product.ingredients}</p>
               <p>Nutritional Facts: <br/>{product.nutritional_facts}</p>
               <p>Barcode: <br/>{product.barcode}</p>
-              <img src={`https://192.168.100.7:8000${product.image}`} alt={`${product.name}`} />
             </>
           )}
         </div>
@@ -213,6 +271,11 @@ const modelModalContent = (
         
         {modelModalContent}
       </TDModal>
+
+      <Modal show={showRecoModal} onClose={closeRecoModal}>
+        <h2 className="barcode-title">Recommendations</h2>
+        {renderRecommendations()}
+      </Modal>
 
       <div>
         <Footer onResetScanner={resetScanner} />

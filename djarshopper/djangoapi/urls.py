@@ -6,7 +6,8 @@ from .views import (
     InstantNoodlesView, PowderedJuiceView, OilSectionView, BreadSpreadView,
     CannedGoodsView, NibblesView, CoffeeMilkView, BiscuitsView, CandiesView,
     ChocolatesView, LiquorWinesView, PartyUtensilsView, ToiletriesView,
-    DiswashingLaundryView, toggle_like_product, ProductLocationView
+    DiswashingLaundryView, toggle_like_product, ProductLocationView,
+    RecommendationView
 )
 
 urlpatterns = [
@@ -41,4 +42,6 @@ urlpatterns = [
     path('products/<int:product_id>/like/', toggle_like_product, name='toggle_like_product'),
     path('liked-products/', LikedProductsView.as_view(), name='liked-products'),
     path('products/<int:product_id>/location/', ProductLocationView.as_view(), name='product_location'),
+    path('recommendations/', RecommendationView.as_view(), name='recommendations'),
+
 ]

@@ -78,6 +78,10 @@ class AddProduct(models.Model):
     glb_file = models.FileField(upload_to='djangoapi/GLBFiles', null=True, blank=True, help_text='Upload a .glb file')
     location = models.CharField(max_length=2, choices=LOCATION_CHOICES, null=True, blank=True)
     
+    class Meta:
+        verbose_name = "Product"  # Singular name
+        verbose_name_plural = "Products"  # Plural name
+        
     def __str__(self):
         return self.name
 
@@ -141,8 +145,7 @@ class SignUp(models.Model):
     user = models.OneToOneField(LoginUser, on_delete=models.CASCADE)
     liked_products = models.ManyToManyField(AddProduct, related_name='liked_by_users', blank=True)
     
-    class Meta:
-        verbose_name = "Product"
+    
     
     def __str__(self):
         return f'{self.firstName} {self.lastName} - {self.mobile_number}'
