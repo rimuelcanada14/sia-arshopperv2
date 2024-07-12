@@ -3,9 +3,10 @@ import Legend from './Legend';
 import Header from '../components/header';
 import './Wayfinding.css'
 import React, {useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const FourLoc = () => {
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleBeforeUnload = (event) => {
@@ -22,7 +23,11 @@ const FourLoc = () => {
   return (
     <>
       <div>
-        <Header header={<Link to ="/category" className="products-back">BACK</Link>} headersub="&nbsp;" headerright="LOCATION" />
+        <Header
+          header={<button onClick={() => navigate(-1)} className="products-back">BACK</button>}
+          headersub="&nbsp;"
+          headerright="LOCATION"
+        />
       </div>
 
       <div>
