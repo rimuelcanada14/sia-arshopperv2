@@ -12,7 +12,7 @@ def get_recommendations_with_healthiness(df, product_features, conditions=None, 
 
     df['NutritionalFacts'] = df['NutritionalFacts'].fillna('').astype(str)
     nutritional_facts_df = df['NutritionalFacts'].apply(parse_nutritional_facts).apply(pd.Series)
-    df_combined = pd.concat([df[['Categories', 'ProductName', 'Price', 'NutritionalFacts']], nutritional_facts_df], axis=1)
+    df_combined = pd.concat([df[['Categories', 'ProductName', 'Price', 'ImagePath', 'NutritionalFacts']], nutritional_facts_df], axis=1)
     numeric_features = nutritional_facts_df.columns.tolist()
     unnecessary_columns = ['Iron', 'Calorie', 'Carbohydrate', 'VitA', 'Iodine', 'VitC', 'Protein', 'Calcium']
     numeric_features = [col for col in numeric_features if col not in unnecessary_columns]
@@ -31,25 +31,25 @@ def get_recommendations_with_healthiness(df, product_features, conditions=None, 
     if conditions:
         for condition in conditions:
             if condition == 'diabetes' and 'Tsugar' in recommended_products.columns:
-                recommended_products = recommended_products[['ProductName', 'Price', 'Categories', 'NutritionalFacts', 'Tsugar']]
+                recommended_products = recommended_products[['ProductName', 'Price', 'Categories', 'NutritionalFacts', 'ImagePath', 'Tsugar']]
                 recommended_products = recommended_products.sort_values(by='Tsugar')
             elif condition == 'gastrointestinal' and 'DietFbr' in recommended_products.columns:
-                recommended_products = recommended_products[['ProductName', 'Price', 'Categories', 'NutritionalFacts', 'DietFbr']]
+                recommended_products = recommended_products[['ProductName', 'Price', 'Categories', 'NutritionalFacts', 'ImagePath', 'DietFbr']]
                 recommended_products = recommended_products.sort_values(by='DietFbr', ascending=False)
             elif condition == 'hypertension' and 'Sodium' in recommended_products.columns:
-                recommended_products = recommended_products[['ProductName', 'Price', 'Categories', 'NutritionalFacts', 'Sodium']]
+                recommended_products = recommended_products[['ProductName', 'Price', 'Categories', 'NutritionalFacts', 'ImagePath', 'Sodium']]
                 recommended_products = recommended_products.sort_values(by='Sodium')
             elif condition == 'uti' and all(col in recommended_products.columns for col in ['Tsugar', 'DietFbr']):
-                recommended_products = recommended_products[['ProductName', 'Price', 'Categories', 'NutritionalFacts', 'Tsugar', 'DietFbr']]
+                recommended_products = recommended_products[['ProductName', 'Price', 'Categories', 'NutritionalFacts', 'ImagePath', 'Tsugar', 'DietFbr']]
                 recommended_products = recommended_products.sort_values(by=['Tsugar', 'DietFbr'])
             elif condition == 'skin diseases' and 'TotalFat' in recommended_products.columns:
-                recommended_products = recommended_products[['ProductName', 'Price', 'Categories', 'NutritionalFacts', 'TotalFat']]
+                recommended_products = recommended_products[['ProductName', 'Price', 'Categories', 'NutritionalFacts', 'ImagePath', 'TotalFat']]
                 recommended_products = recommended_products.sort_values(by='TotalFat', ascending=False)
             elif condition == 'liver diseases' and all(col in recommended_products.columns for col in ['Tsugar', 'Sodium']):
-                recommended_products = recommended_products[['ProductName', 'Price', 'Categories', 'NutritionalFacts', 'Tsugar', 'Sodium']]
+                recommended_products = recommended_products[['ProductName', 'Price', 'Categories', 'NutritionalFacts', 'ImagePath', 'Tsugar', 'Sodium']]
                 recommended_products = recommended_products.sort_values(by=['Tsugar', 'Sodium'])
             elif condition == 'kidney diseases' and 'Sodium' in recommended_products.columns:
-                recommended_products = recommended_products[['ProductName', 'Price', 'Categories', 'NutritionalFacts', 'Sodium']]
+                recommended_products = recommended_products[['ProductName', 'Price', 'Categories', 'NutritionalFacts', 'ImagePath', 'Sodium']]
                 recommended_products = recommended_products.sort_values(by='Sodium')
 
     if category:
@@ -60,12 +60,12 @@ def get_recommendations_with_healthiness(df, product_features, conditions=None, 
         similar_products = similar_products[similar_products['Categories'] == category].head(3)
         for col in numeric_features:
             similar_products[col] = original_values.loc[similar_products.index, col]
-        return similar_products[['Categories', 'ProductName', 'Price', 'NutritionalFacts']]
+        return similar_products[['Categories', 'ProductName', 'Price', 'NutritionalFacts', 'ImagePath']]
 
     recommended_products = recommended_products.head(3)
     for col in numeric_features:
         recommended_products[col] = original_values.loc[recommended_products.index, col]
-    final_recommendations = recommended_products[['Categories', 'ProductName', 'Price']].copy()
+    final_recommendations = recommended_products[['Categories', 'ProductName', 'Price', 'ImagePath']].copy()
     if 'diabetes' in conditions and 'Tsugar' in recommended_products.columns:
         final_recommendations['Tsugar'] = recommended_products['Tsugar']
     if 'hypertension' in conditions and 'DietFbr' in recommended_products.columns:

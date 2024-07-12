@@ -261,3 +261,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.img-reco {
+  width: 13em;
+  height: 0.auto;
+}

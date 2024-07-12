@@ -1,4 +1,7 @@
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
+
 from .views import (
     UserCreateView, LoginView, ProductView, ProductDetailView, LikedProductsView,
     UserDetailView, change_password, BeveragesView, JunkFoodsView, IceCreamView,
@@ -44,4 +47,5 @@ urlpatterns = [
     path('products/<int:product_id>/location/', ProductLocationView.as_view(), name='product_location'),
     path('recommendations/', RecommendationView.as_view(), name='recommendations'),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

@@ -206,6 +206,7 @@ const BarcodeScanner = () => {
         <h4>{recommendation.ProductName}</h4>
         <p>Price: ₱{recommendation.Price}</p>
         <p>Dietary Fiber: {recommendation.DietFbr}g</p>
+        <img src={`https://192.168.1.46:8000/media/${recommendation.ImagePath}`} alt={recommendation.ProductName} className='img-reco' />
       </div>
     ));
   };

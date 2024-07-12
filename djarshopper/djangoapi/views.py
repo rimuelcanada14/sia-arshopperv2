@@ -17,18 +17,18 @@ from django.conf import settings
 class RecommendationView(APIView):
     def post(self, request):
         try:
-            file_path = os.path.join(settings.BASE_DIR, 'djangoapi', 'Dataset.csv')
+            file_path = os.path.join(settings.BASE_DIR, 'djangoapi', 'DatasetWithPic.csv')
             print(f"Attempting to read CSV from path: {file_path}")
             df = pd.read_csv(file_path)
 
             product_features = request.data.get('product_features')
             conditions = request.data.get('conditions')
             category = request.data.get('category')
-        
+
             recommendations = get_recommendations_with_healthiness(df, product_features, conditions, category)
-        
+
             return Response(recommendations.to_dict(orient='records'), status=status.HTTP_200_OK)
-        
+
         except Exception as e:
             print(f"Error reading CSV file: {str(e)}")
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
