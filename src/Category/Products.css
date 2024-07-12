@@ -31,8 +31,12 @@
     align-items: center;
     justify-content: center;
 }
-.products-back {
+button.products-back {
     color: white;
+    background-color: transparent;
+    font-family: 'Poppins';
+    font-size: 25.6px;
+    font-weight: bold;
 }
 .products-img {
     width: 7.5em; 
