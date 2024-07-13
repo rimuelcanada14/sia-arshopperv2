@@ -23,7 +23,7 @@ function AboutUs() {
 
     const aboutUsButtons = [
       {label: 'History of the Store', to: '/History'},
-      {label: 'Developers Information', to: '/DevInfo'},
+      {label: "Developers' Information", to: '/DevInfo'},
     ];
     
   
@@ -33,7 +33,7 @@ function AboutUs() {
         <div className='aboutus-header'>
           <Header header={<Link to ="/home" className="products-back">BACK</Link>} headersub="&nbsp;" headerright="ABOUT US" />
         </div>
-        
+
         <div className = "aboutus-container">
           {aboutUsButtons.map ((button, index) => (
           <Link key={index} to={button.to}>

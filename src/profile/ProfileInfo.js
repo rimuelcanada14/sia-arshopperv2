@@ -172,12 +172,12 @@ function ProfileInfo() {
             {user && <h4 className='info-categories'>LAST NAME: &emsp;&emsp;&emsp;&ensp;{user.lastName.toUpperCase()}</h4>}
             {user && <h4 className='info-categories1'>MOBILE NUMBER: &emsp;0{user.mobile_number}</h4>}
           </div>
-          <button onClick={handleEditClick} className="info-edit">EDIT INFORMATION</button>
+          {/* <button onClick={handleEditClick} className="info-edit">EDIT INFORMATION</button> */}
           <button onClick={handlePasswordChangeClick} className="info-pass">CHANGE PASSWORD</button>
         </div>
       </div>
 
-      <Modal show={isEditing} onClose={handleCancelClick}>
+      {/* <Modal show={isEditing} onClose={handleCancelClick}>
         <form onSubmit={handleSubmit}>
           <div>
             <h1>EDIT<br/>INFORMATION</h1>
@@ -190,7 +190,7 @@ function ProfileInfo() {
           </div>
           <button type="submit" className='modal-submit'>SAVE</button>
         </form>
-      </Modal>
+      </Modal> */}
 
       <Modal show={isChangingPassword} onClose={handlePasswordCancelClick}>
         <form onSubmit={handlePasswordSubmit}>

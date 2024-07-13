@@ -91,7 +91,6 @@ function Home() {
                     <FcApproval className="signup-checkR" />
                 </div>
             )}
-            {error && <p>Failed to load user details: {error.message}</p>}
         </>
     );
 }

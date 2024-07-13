@@ -241,9 +241,9 @@ const BarcodeScanner = () => {
           </div>
 
           <div className='button-right'>
-            <button className="show-reco" onClick={handleShowRecommendations}>
+            {/* <button className="show-reco" onClick={handleShowRecommendations}>
               Recommendations
-            </button>
+            </button> */}
 
             <button className="td-button" onClick={open3DModelModal}>
               3D Model
