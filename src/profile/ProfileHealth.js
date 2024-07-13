@@ -36,7 +36,7 @@ function ProfileHealth() {
     if (mobileNumber) {
       const fetchUserDetails = async () => {
         try {
-          const response = await axios.get(`https://localhost:8000/api/user-details/${mobileNumber}/`);
+          const response = await axios.get(`https://192.168.1.46:8000/api/user-details/${mobileNumber}/`);
           const userData = response.data;
           setUser(userData);
           setFormData({
@@ -92,7 +92,7 @@ function ProfileHealth() {
       return;
     }
     try {
-      const response = await axios.put(`https://localhost:8000/api/user-details/${user.mobile_number}/`, {
+      const response = await axios.put(`https://192.168.1.46:8000/api/user-details/${user.mobile_number}/`, {
         illness: formData.illness,
         illness2: formData.illness2,
         illness3: formData.illness3
@@ -132,37 +132,37 @@ function ProfileHealth() {
             <h1>EDIT<br/>INFORMATION</h1>
             <label>Health Complication 1</label>
             <select name="illness" value={formData.illness} onChange={handleInputChange}>
-                  <option value="respiratory">Respiratory Infections</option>
+                  <option value="kidney diseases">Kidney Diseases</option>
                   <option value="hypertension">Hypertension</option>
                   <option value="uti">Urinary Tract Infection</option>
                   <option value="diabetes">Diabetes</option>
                   <option value="skin">Skin Diseases</option>
-                  <option value="pneumonia">Pneumonia</option>
-                  <option value="diarrhea">Diarrhea</option>
+                  <option value="gastrointestinal">Gastrointestinal Diseases</option>
+                  <option value="liver diseases">Liver Diseases</option>
                   <option value="null">NONE</option>
             </select>
 
             <label>Health Complication 2</label>
             <select name="illness2" value={formData.illness2} onChange={handleInputChange}>
-                  <option value="respiratory">Respiratory Infections</option>
+                  <option value="kidney diseases">Kidney Diseases</option>
                   <option value="hypertension">Hypertension</option>
                   <option value="uti">Urinary Tract Infection</option>
                   <option value="diabetes">Diabetes</option>
                   <option value="skin">Skin Diseases</option>
-                  <option value="pneumonia">Pneumonia</option>
-                  <option value="diarrhea">Diarrhea</option>
+                  <option value="gastrointestinal">Gastrointestinal Diseases</option>
+                  <option value="liver diseases">Liver Diseases</option>
                   <option value="null2">NONE</option>
             </select>
 
             <label>Health Complication 3</label>
             <select name="illness3" value={formData.illness3} onChange={handleInputChange}>
-                  <option value="respiratory">Respiratory Infections</option>
+                  <option value="kidney diseases">Kidney Diseases</option>
                   <option value="hypertension">Hypertension</option>
                   <option value="uti">Urinary Tract Infection</option>
                   <option value="diabetes">Diabetes</option>
                   <option value="skin">Skin Diseases</option>
-                  <option value="pneumonia">Pneumonia</option>
-                  <option value="diarrhea">Diarrhea</option>
+                  <option value="gastrointestinal">Gastrointestinal Diseases</option>
+                  <option value="liver diseases">Liver Diseases</option>
                   <option value="null3">NONE</option>
             </select>
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { FaMobileRetro, FaUser, FaLock, FaLockOpen, FaNotesMedical } from "react-icons/fa6";
+import { FaMobileRetro, FaUser, FaLock, FaLockOpen } from "react-icons/fa6";
 import { FcApproval } from "react-icons/fc";
 import { RxCrossCircled } from "react-icons/rx";
 import { Link, useNavigate } from 'react-router-dom';
@@ -95,7 +95,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await axios.post('https://localhost:8000/api/signup/', uppercaseFormData);
+      const response = await axios.post('https://192.168.1.46:8000/api/signup/', uppercaseFormData);
       if (response.status === 201) {
         console.log('User signed up successfully!');
         setSuccessMessage('Sign up Successful!');
@@ -239,7 +239,6 @@ const Signup = () => {
 
             <p className="signup-categories">Health Complications</p>
             <div className="signup-health">
-              <FaNotesMedical className="signup-icon-health" />
               <select
                 name="healthComplication"
                 id="signup-input-health"
@@ -258,20 +257,19 @@ const Signup = () => {
             <div className="illness-container">
               <p className="illness-categories">Enter Health Complication</p>
               <div className="illness-health">
-                <FaNotesMedical className="illness-icon-health" />
                 <select
                   name="illness"
                   id="illness-input-health"
                   onChange={handleChange}
                   value={formData.illness}
                 >
-                  <option value="respiratory">Respiratory Infections</option>
+                  <option value="kidney diseases">Kidney Diseases</option>
                   <option value="hypertension">Hypertension</option>
                   <option value="uti">Urinary Tract Infection</option>
                   <option value="diabetes">Diabetes</option>
                   <option value="skin">Skin Diseases</option>
-                  <option value="pneumonia">Pneumonia</option>
-                  <option value="diarrhea">Diarrhea</option>
+                  <option value="gastrointestinal">Gastrointestinal Diseases</option>
+                  <option value="liver diseases">Liver Diseases</option>
                   <option value="null" hidden></option>
                 </select>
               </div>
@@ -280,20 +278,19 @@ const Signup = () => {
                 <>
                   <p className="illness-categories">Enter Health Complication 2</p>
                   <div className="illness-health">
-                    <FaNotesMedical className="illness-icon-health" />
                     <select
                       name="illness2"
                       id="illness-input-health"
                       onChange={handleChange}
                       value={formData.illness2}
                     >
-                      <option value="respiratory">Respiratory Infections</option>
-                      <option value="hypertension">Hypertension</option>
-                      <option value="uti">Urinary Tract Infection</option>
-                      <option value="diabetes">Diabetes</option>
-                      <option value="skin">Skin Diseases</option>
-                      <option value="pneumonia">Pneumonia</option>
-                      <option value="diarrhea">Diarrhea</option>
+                     <option value="kidney diseases">Kidney Diseases</option>
+                     <option value="hypertension">Hypertension</option>
+                     <option value="uti">Urinary Tract Infection</option>
+                     <option value="diabetes">Diabetes</option>
+                     <option value="skin">Skin Diseases</option>
+                     <option value="gastrointestinal">Gastrointestinal Diseases</option>
+                     <option value="liver diseases">Liver Diseases</option>
                       <option value="null2" hidden></option>
                     </select>
                   </div>
@@ -305,20 +302,19 @@ const Signup = () => {
                 <>
                   <p className="illness-categories">Enter Health Complication 3</p>
                   <div className="illness-health">
-                    <FaNotesMedical className="illness-icon-health" />
                     <select
                       name="illness3"
                       id="illness-input-health3"
                       onChange={handleChange}
                       value={formData.illness3}
                     >
-                      <option value="respiratory">Respiratory Infections</option>
+                      <option value="kidney diseases">Kidney Diseases</option>
                       <option value="hypertension">Hypertension</option>
                       <option value="uti">Urinary Tract Infection</option>
                       <option value="diabetes">Diabetes</option>
                       <option value="skin">Skin Diseases</option>
-                      <option value="pneumonia">Pneumonia</option>
-                      <option value="diarrhea">Diarrhea</option>
+                      <option value="gastrointestinal">Gastrointestinal Diseases</option>
+                      <option value="liver diseases">Liver Diseases</option>
                       <option value="null3" hidden></option>
                     </select>
                   </div>
