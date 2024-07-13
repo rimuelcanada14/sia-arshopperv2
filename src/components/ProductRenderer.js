@@ -17,17 +17,19 @@ function ProductRenderer({ products, categoryTitle }) {
 
   const handleLike = async (productId) => {
     const mobileNumber = localStorage.getItem('mobileNumber');
-  
+
     try {
-      const response = await axios.post(`https://localhost:8000/api/products/${productId}/like/`, {
+      const response = await axios.post(`https://192.168.1.46:8000/api/products/${productId}/like/`, {
         mobileNumber: mobileNumber,
       });
       if (response.status === 200) {
         const updatedLikedProducts = likedProducts.includes(productId)
           ? likedProducts.filter((id) => id !== productId)
           : [...likedProducts, productId];
-  
+
         setLikedProducts(updatedLikedProducts);
+        localStorage.setItem('likedProducts', JSON.stringify(updatedLikedProducts)); // Update local storage
+
         setPopupMessage(response.data.message);
         setTimeout(() => {
           setPopupMessage('');
