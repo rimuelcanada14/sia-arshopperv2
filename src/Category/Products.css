@@ -38,6 +38,12 @@ button.products-back {
     font-size: 25.6px;
     font-weight: bold;
 }
+
+.products-back {
+
+    color: white;
+    
+}
 .products-img {
     width: 7.5em; 
     height: auto; 
