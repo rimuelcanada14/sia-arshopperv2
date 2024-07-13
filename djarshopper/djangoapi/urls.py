@@ -1,7 +1,4 @@
 from django.urls import path
-from django.conf import settings
-from django.conf.urls.static import static
-
 from .views import (
     UserCreateView, LoginView, ProductView, ProductDetailView, LikedProductsView,
     UserDetailView, change_password, BeveragesView, JunkFoodsView, IceCreamView,
@@ -9,8 +6,8 @@ from .views import (
     InstantNoodlesView, PowderedJuiceView, OilSectionView, BreadSpreadView,
     CannedGoodsView, NibblesView, CoffeeMilkView, BiscuitsView, CandiesView,
     ChocolatesView, LiquorWinesView, PartyUtensilsView, ToiletriesView,
-    DiswashingLaundryView, toggle_like_product, ProductLocationView,
-    RecommendationView
+    DiswashingLaundryView, add_to_liked_products, remove_from_liked_products,
+    ProductLocationView
 )
 
 urlpatterns = [
@@ -42,10 +39,8 @@ urlpatterns = [
     path('diswashinglaundry/', DiswashingLaundryView.as_view(), name='diswashinglaundry'),
     path('user-details/<str:mobile_number>/', UserDetailView.as_view(), name='user-details'),
     path('change-password/<str:mobile_number>/', change_password, name='change-password'),
-    path('products/<int:product_id>/like/', toggle_like_product, name='toggle_like_product'),
+    path('products/<int:product_id>/like/', add_to_liked_products, name='add_to_liked_products'),
+    path('products/<int:product_id>/unlike/', remove_from_liked_products, name='remove_from_liked_products'),
     path('liked-products/', LikedProductsView.as_view(), name='liked-products'),
     path('products/<int:product_id>/location/', ProductLocationView.as_view(), name='product_location'),
-    path('recommendations/', RecommendationView.as_view(), name='recommendations'),
-
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
+]

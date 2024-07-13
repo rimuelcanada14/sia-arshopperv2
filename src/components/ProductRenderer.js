@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import axios from 'axios';
-import { FaHeart, FaRegHeart } from 'react-icons/fa'; // Import FontAwesome icons
+import { FaPlus } from 'react-icons/fa'; // Import FontAwesome icons
 
 function ProductRenderer({ products, categoryTitle }) {
   const [likedProducts, setLikedProducts] = useState([]);
@@ -17,19 +17,15 @@ function ProductRenderer({ products, categoryTitle }) {
 
   const handleLike = async (productId) => {
     const mobileNumber = localStorage.getItem('mobileNumber');
-
+  
     try {
-      const response = await axios.post(`https://192.168.1.46:8000/api/products/${productId}/like/`, {
+      const response = await axios.post(`https://localhost:8000/api/products/${productId}/like/`, {
         mobileNumber: mobileNumber,
       });
       if (response.status === 200) {
-        const updatedLikedProducts = likedProducts.includes(productId)
-          ? likedProducts.filter((id) => id !== productId)
-          : [...likedProducts, productId];
-
+        const updatedLikedProducts = [...likedProducts, productId];
+  
         setLikedProducts(updatedLikedProducts);
-        localStorage.setItem('likedProducts', JSON.stringify(updatedLikedProducts)); // Update local storage
-
         setPopupMessage(response.data.message);
         setTimeout(() => {
           setPopupMessage('');
@@ -103,7 +99,7 @@ function ProductRenderer({ products, categoryTitle }) {
           <div key={index}>
             {/* Product button */}
             <Link to={getRedirectPath(product.location)}>
-              <button className="product-buttons">
+            <button className="product-buttons">
                 <img className="products-img" src={product.image} alt={product.name} />
                 <span className="products-label">{product.name}<br />PHP {product.price}</span>
                 <div className="like-container">
@@ -114,7 +110,7 @@ function ProductRenderer({ products, categoryTitle }) {
                       handleLike(product.id);
                     }}
                   >
-                    {likedProducts.includes(product.id) ? <FaHeart className='unlike-heart' /> : <FaRegHeart className='like-heart' />}
+                    <FaPlus className='like-heart' />
                   </button>
                 </div>
               </button>

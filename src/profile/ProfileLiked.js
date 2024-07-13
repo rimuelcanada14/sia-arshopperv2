@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import axios from 'axios';
-import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import { FaTimes } from "react-icons/fa";
 
-function ProfileLiked({ }) {
+function ProfileLiked() {
   const [likedProducts, setLikedProducts] = useState([]);
   const [popupMessage, setPopupMessage] = useState('');
 
@@ -27,52 +27,32 @@ function ProfileLiked({ }) {
     fetchLikedProducts();
   }, []);
 
-  useEffect(() => {
-    const handleBeforeUnload = (event) => {
-        event.preventDefault();
-        event.returnValue = '';
-    };
-
-    window.addEventListener('beforeunload', handleBeforeUnload);
-
-    return () => {
-        window.removeEventListener('beforeunload', handleBeforeUnload);
-    };
-}, []);
-
-  const handleLike = async (productId) => {
+  const handleUnlike = async (productId) => {
     const mobileNumber = localStorage.getItem('mobileNumber');
   
     try {
-      const response = await axios.post(`https://localhost:8000/api/products/${productId}/like/`, {
+      const response = await axios.post(`https://localhost:8000/api/products/${productId}/unlike/`, {
         mobileNumber: mobileNumber,
       });
       if (response.status === 200) {
-        // Check if productId is already in likedProducts
-        const isLiked = likedProducts.some((product) => product.id === productId);
+        // Remove the unliked product from the likedProducts state
+        const updatedLikedProducts = likedProducts.filter((product) => product.id !== productId);
   
-        // Update likedProducts based on like/unlike action
-        if (isLiked) {
-          const updatedLikedProducts = likedProducts.filter((product) => product.id !== productId);
-          setLikedProducts(updatedLikedProducts);
-        } else {
-          const updatedLikedProducts = [...likedProducts, response.data]; // assuming response.data contains product info
-          setLikedProducts(updatedLikedProducts);
-        }
-  
+        setLikedProducts(updatedLikedProducts);
         setPopupMessage(response.data.message);
         setTimeout(() => {
           setPopupMessage('');
         }, 2000); // Clear popup message after 2 seconds
       }
     } catch (error) {
-      console.error('Failed to like/unlike the product:', error);
-      setPopupMessage('Failed to like/unlike the product');
+      console.error('Failed to unlike the product:', error);
+      setPopupMessage('Failed to unlike the product');
       setTimeout(() => {
         setPopupMessage('');
       }, 2000); // Clear popup message after 2 seconds
     }
   };
+  
   const getRedirectPath = (location) => {
     switch (location) {
       case '1':
@@ -136,18 +116,18 @@ function ProfileLiked({ }) {
           likedProducts.map((product, index) => (
             <div key={index}>
               <Link to={getRedirectPath(product.location)}>
-                <button className="product-buttons">
+              <button className="product-buttons">
                   <img className="products-img" src={`https://localhost:8000${product.image}`} alt={product.name} />
                   <span className="products-label">{product.name}<br />PHP {product.price}</span>
                   <div className="like-container">
                     <button
-                      className={`like-button ${likedProducts.includes(product.id) ? 'liked' : ''}`}
+                      className={`like-button`}
                       onClick={(e) => {
-                        e.preventDefault(); // Prevent navigation when clicking the like button
-                        handleLike(product.id);
+                        e.preventDefault(); // Prevent navigation when clicking the unlike button
+                        handleUnlike(product.id);
                       }}
                     >
-                      {likedProducts.includes(product.id) ? <FaRegHeart className='like-heart' /> : <FaHeart className='unlike-heart' /> }
+                      <FaTimes className='like-heart' />
                     </button>
                   </div>
                 </button>

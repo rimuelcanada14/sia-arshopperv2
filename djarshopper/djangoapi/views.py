@@ -295,7 +295,26 @@ def change_password(request, mobile_number):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['POST'])
-def toggle_like_product(request, product_id):
+def add_to_liked_products(request, product_id):
+    mobile_number = request.data.get('mobileNumber')
+    if not mobile_number:
+        return Response({'error': 'Mobile number is required'}, status=status.HTTP_400_BAD_REQUEST)
+
+    try:
+        user = SignUp.objects.get(mobile_number=mobile_number)
+    except SignUp.DoesNotExist:
+        return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+    
+    product = get_object_or_404(AddProduct, id=product_id)
+
+    if product in user.liked_products.all():
+        return Response({'message': 'Product already liked'}, status=status.HTTP_200_OK)
+    else:
+        user.liked_products.add(product)
+        return Response({'message': 'Product liked'}, status=status.HTTP_200_OK)
+
+@api_view(['POST'])
+def remove_from_liked_products(request, product_id):
     mobile_number = request.data.get('mobileNumber')
     if not mobile_number:
         return Response({'error': 'Mobile number is required'}, status=status.HTTP_400_BAD_REQUEST)
@@ -313,5 +332,6 @@ def toggle_like_product(request, product_id):
     else:
         user.liked_products.add(product)
         return Response({'message': 'Product liked'}, status=status.HTTP_200_OK)
+
 
 

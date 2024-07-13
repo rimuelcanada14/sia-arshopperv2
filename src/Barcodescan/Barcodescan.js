@@ -49,7 +49,7 @@ const BarcodeScanner = () => {
           const code = result.getText();
           setScannedCode(code);
           try {
-            const response = await axios.get(`https://192.168.1.46:8000/api/products/${code}/`);
+            const response = await axios.get(`https://localhost:8000/api/products/${code}/`);
             if (response.status === 200) {
               const data = response.data;
               setProduct(data);
