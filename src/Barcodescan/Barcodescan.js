@@ -49,7 +49,7 @@ const BarcodeScanner = () => {
           const code = result.getText();
           setScannedCode(code);
           try {
-            const response = await axios.get(`https://localhost:8000/api/products/${code}/`);
+            const response = await axios.get(`https://api-arshopper.ngrok.app/api/products/${code}/`);
             if (response.status === 200) {
               const data = response.data;
               setProduct(data);
@@ -101,7 +101,7 @@ const BarcodeScanner = () => {
     console.log('Fetching recommendations for:', productFeatures, conditions, category);
 
     try {
-      const response = await axios.post('https://192.168.1.46:8000/api/recommendations/', {
+      const response = await axios.post('https://api-arshopper.ngrok.app/api/recommendations/', {
         product_features: productFeatures,
         conditions: conditions,
         category: category,
@@ -168,7 +168,7 @@ const BarcodeScanner = () => {
     arScene.setAttribute('embedded', 'true');
 
     const arElement = document.createElement('a-image');
-    const imageUrl = `https://192.168.1.46:8000${imagePath}`;
+    const imageUrl = `https://api-arshopper.ngrok.app${imagePath}`;
 
     arElement.setAttribute('src', imageUrl);
     arElement.setAttribute('position', '0 2 -3');
@@ -186,7 +186,7 @@ const BarcodeScanner = () => {
           <ambientLight intensity={1.5} />
           <directionalLight position={[5, 5, 5]} />
           {glbFile && (
-            <ModelBuilder path={`https://192.168.1.46:8000${product.glb_file}`} position={[0, 0, -5]} />
+            <ModelBuilder path={`https://api-arshopper.ngrok.app${product.glb_file}`} position={[0, 0, -5]} />
           )}
           <OrbitControls
             enableZoom={true}
@@ -206,7 +206,7 @@ const BarcodeScanner = () => {
         <h4>{recommendation.ProductName}</h4>
         <p>Price: ₱{recommendation.Price}</p>
         <p>Dietary Fiber: {recommendation.DietFbr}g</p>
-        <img src={`https://192.168.1.46:8000/media/${recommendation.ImagePath}`} alt={recommendation.ProductName} className='img-reco' />
+        <img src={`https://api-arshopper.ngrok.app/media/${recommendation.ImagePath}`} alt={recommendation.ProductName} className='img-reco' />
       </div>
     ));
   };

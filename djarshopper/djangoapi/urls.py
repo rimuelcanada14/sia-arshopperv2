@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.urls import path
 from .views import (
     UserCreateView, LoginView, ProductView, ProductDetailView, LikedProductsView,
@@ -11,6 +12,7 @@ from .views import (
 )
 
 urlpatterns = [
+    path('test/',  lambda request: HttpResponse("Hello World", content_type="text/plain"), name='test'),
     path('signup/', UserCreateView.as_view(), name='signup'),
     path('login/', LoginView.as_view(), name='login'),
     path('products/', ProductView.as_view(), name='products'),
