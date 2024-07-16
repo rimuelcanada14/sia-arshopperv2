@@ -74,7 +74,13 @@ class BeveragesView(generics.ListAPIView):
     serializer_class = DisplayProdSerializer
     
     def get_queryset(self):
-        return AddProduct.objects.filter(category='beverages')
+        filteredProducts = AddProduct.objects.filter(category='beverages')
+        
+        # for product in filteredProducts:
+        #     product.image = product.image.url
+            
+        return filteredProducts
+            
 
 class JunkFoodsView(generics.ListAPIView):
     serializer_class = DisplayProdSerializer

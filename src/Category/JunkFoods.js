@@ -4,7 +4,7 @@ import ProductRenderer from '../components/ProductRenderer';
 import { useEffect } from 'react';
 
 function JunkFoods () {
-    const apiUrl = 'https://localhost:8000/api/junkfoods/';
+    const apiUrl = 'https://api-arshopper.ngrok.app/api/junkfoods/';
 
     useEffect(() => {
         const handleBeforeUnload = (event) => {

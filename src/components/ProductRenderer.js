@@ -19,7 +19,7 @@ function ProductRenderer({ products, categoryTitle }) {
     const mobileNumber = localStorage.getItem('mobileNumber');
   
     try {
-      const response = await axios.post(`https://localhost:8000/api/products/${productId}/like/`, {
+      const response = await axios.post(`https://api-arshopper.ngrok.app/api/products/${productId}/like/`, {
         mobileNumber: mobileNumber,
       });
       if (response.status === 200) {
@@ -100,7 +100,7 @@ function ProductRenderer({ products, categoryTitle }) {
             {/* Product button */}
             <Link to={getRedirectPath(product.location)}>
             <button className="product-buttons">
-                <img className="products-img" src={product.image} alt={product.name} />
+                <img className="products-img" src={`https://api-arshopper.ngrok.app${("/media" + product.image.split("/media")[1])}`} alt={product.name} />
                 <span className="products-label">{product.name}<br />PHP {product.price}</span>
                 <div className="like-container">
                   <button
