@@ -25,6 +25,9 @@ const BarcodeScanner = () => {
   const [glbFile, setGlbFile] = useState(null);
   const arSceneRef = useRef(null);
   const location = useLocation();
+  const [userIllness, setUserIllness] = useState('');
+  const [scannedNutriFact, setScannedNutriFact] = useState('');
+  const [scannedCategory, setScannedCategory] = useState('');
 
   useEffect(() => {
     const handleBeforeUnload = (event) => {
@@ -55,6 +58,8 @@ const BarcodeScanner = () => {
               setProduct(data);
               setMessage(data.name);
               setGlbFile(data.glb_file);
+              setScannedNutriFact(data.nutritional_facts || '');
+              setScannedCategory(data.category || '');
               displayAR(data.image);
             } else {
               setProduct(null);
@@ -96,7 +101,6 @@ const BarcodeScanner = () => {
     setProduct(null);
     setGlbFile(null);
   };
-
   const fetchRecommendations = async (productFeatures, conditions, category) => {
     console.log('Fetching recommendations for:', productFeatures, conditions, category);
 
@@ -122,22 +126,42 @@ const BarcodeScanner = () => {
     }
   };
 
+  
+
   const handleShowRecommendations = () => {
-    const productFeatures = {
-      TotalFat: 5,
+    let productFeatures = {
+      TotalFat: 0,
       SatFat: 0,
       TransFat: 0,
-      Sodium: 2,
-      TCarbs: 15,
-      Tsugar: 15,
-      DietFbr: 5,
+      Sodium: 0,
+      TCarbs: 0,
+      Tsugar: 0,
+      DietFbr: 0,
     };
 
-    const conditions = ['hypertension'];
-    const category = 'Condiments';
+   // Set product features based on scanned nutrient facts
+   if (scannedNutriFact) {
+    // Assuming scannedNutriFact is an object with keys matching productFeatures
+    productFeatures = {
+      TotalFat: scannedNutriFact.TotalFat || 0,
+      SatFat: scannedNutriFact.SatFat || 0,
+      TransFat: scannedNutriFact.TransFat || 0,
+      Sodium: scannedNutriFact.Sodium || 0,
+      TCarbs: scannedNutriFact.TCarbs || 0,
+      Tsugar: scannedNutriFact.Tsugar || 0,
+      DietFbr: scannedNutriFact.DietFbr || 0,
+    };
+  }
 
-    fetchRecommendations(productFeatures, conditions, category);
-  };
+  // Use actual conditions based on user's illness
+  const conditions = userIllness ? [userIllness] : [];
+
+  // Use actual category based on scanned product
+  const category = scannedCategory || 'Default Category';
+
+  fetchRecommendations(productFeatures, conditions, category);
+};
+
 
   const openModal = () => {
     setShowModal(true);
@@ -201,14 +225,21 @@ const BarcodeScanner = () => {
 
   const renderRecommendations = () => {
     console.log('Rendering recommendations:', recommendations); // Debug log to check recommendations state
-    return recommendations.map((recommendation, index) => (
-      <div key={index} className="recommendation-item">
-        <h4>{recommendation.ProductName}</h4>
-        <p>Price: ₱{recommendation.Price}</p>
-        <p>Dietary Fiber: {recommendation.DietFbr}g</p>
-        <img src={`https://api-arshopper.ngrok.app/media/${recommendation.ImagePath}`} alt={recommendation.ProductName} className='img-reco' />
-      </div>
-    ));
+    return (
+      <>
+        <h2 className="barcode-title">Recommendations</h2>
+        <p>Your Illness: {userIllness.illness1}, {userIllness.illness2}, {userIllness.illness3}</p>
+        <p>Scanned Nutritional Facts: {scannedNutriFact}</p>
+        <p>Scanned Category: {scannedCategory}</p>
+        {recommendations.map((recommendation, index) => (
+          <div key={index} className="recommendation-item">
+            <h4>{recommendation.ProductName}</h4>
+            <p>Price: ₱{recommendation.Price}</p>
+            <img src={`https://api-arshopper.ngrok.app/media/${recommendation.ImagePath}`} alt={recommendation.ProductName} className='img-reco' />
+          </div>
+        ))}
+      </>
+    );
   };
 
   return (
@@ -241,9 +272,9 @@ const BarcodeScanner = () => {
           </div>
 
           <div className='button-right'>
-            {/* <button className="show-reco" onClick={handleShowRecommendations}>
+            <button className="show-reco" onClick={handleShowRecommendations}>
               Recommendations
-            </button> */}
+            </button>
 
             <button className="td-button" onClick={open3DModelModal}>
               3D Model
@@ -274,7 +305,6 @@ const BarcodeScanner = () => {
       </TDModal>
 
       <Modal show={showRecoModal} onClose={closeRecoModal}>
-        <h2 className="barcode-title">Recommendations</h2>
         {renderRecommendations()}
       </Modal>
 

@@ -4,7 +4,7 @@ import ProductRenderer from '../components/ProductRenderer';
 import React, {useEffect} from 'react';
 
 function Beverages () {
-  const apiUrl = 'https://localhost:8000/api/beverages/';
+  const apiUrl = 'https://api-arshopper.ngrok.app/api/beverages/';
 
   useEffect(() => {
     const handleBeforeUnload = (event) => {

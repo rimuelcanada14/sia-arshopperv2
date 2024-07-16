@@ -13,7 +13,7 @@ function ProfileLiked() {
     const fetchLikedProducts = async () => {
       try {
         const mobileNumber = localStorage.getItem('mobileNumber');
-        const response = await axios.get('https://localhost:8000/api/liked-products/', {
+        const response = await axios.get('https://api-arshopper.ngrok.app/api/liked-products/', {
           params: {
             mobile_number: mobileNumber
           }
@@ -31,7 +31,7 @@ function ProfileLiked() {
     const mobileNumber = localStorage.getItem('mobileNumber');
   
     try {
-      const response = await axios.post(`https://localhost:8000/api/products/${productId}/unlike/`, {
+      const response = await axios.post(`https://api-arshopper.ngrok.app/api/products/${productId}/unlike/`, {
         mobileNumber: mobileNumber,
       });
       if (response.status === 200) {
@@ -117,7 +117,7 @@ function ProfileLiked() {
             <div key={index}>
               <Link to={getRedirectPath(product.location)}>
               <button className="product-buttons">
-                  <img className="products-img" src={`https://localhost:8000${product.image}`} alt={product.name} />
+                  <img className="products-img" src={`https://api-arshopper.ngrok.app${product.image}`} alt={product.name} />
                   <span className="products-label">{product.name}<br />PHP {product.price}</span>
                   <div className="like-container">
                     <button

@@ -103,13 +103,13 @@ class SignUp(models.Model):
     illness = models.CharField(
         max_length=50,
         choices=[
-            ('kidney diseases', 'Kidney Diseases'),
+            ('kidney', 'Kidney Diseases'),
             ('hypertension', 'Hypertension'),
             ('uti', 'Urinary Tract Infection'),
             ('diabetes', 'Diabetes'),
             ('skin', 'Skin Diseases'),
             ('gastrointestinal', 'Gastrointestinal Diseases'),
-            ('liver diseases', 'Liver Diseases'),
+            ('liver', 'Liver Diseases'),
             ('null', ''),
         ],
         default='null'
@@ -117,13 +117,13 @@ class SignUp(models.Model):
     illness2 = models.CharField(
         max_length=50,
         choices=[
-            ('kidney diseases', 'Kidney Diseases'),
+            ('kidney', 'Kidney Diseases'),
             ('hypertension', 'Hypertension'),
             ('uti', 'Urinary Tract Infection'),
             ('diabetes', 'Diabetes'),
             ('skin', 'Skin Diseases'),
             ('gastrointestinal', 'Gastrointestinal Diseases'),
-            ('liver diseases', 'Liver Diseases'),
+            ('liver', 'Liver Diseases'),
             ('null2', ''),
         ],
         default='null2'
@@ -131,13 +131,13 @@ class SignUp(models.Model):
     illness3 = models.CharField(
         max_length=50,
         choices=[
-            ('kidney diseases', 'Kidney Diseases'),
+            ('kidney', 'Kidney Diseases'),
             ('hypertension', 'Hypertension'),
             ('uti', 'Urinary Tract Infection'),
             ('diabetes', 'Diabetes'),
             ('skin', 'Skin Diseases'),
             ('gastrointestinal', 'Gastrointestinal Diseases'),
-            ('liver diseases', 'Liver Diseases'),
+            ('liver', 'Liver Diseases'),
             ('null3', ''),
         ],
         default='null3'

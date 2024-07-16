@@ -95,7 +95,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await axios.post('https://192.168.1.46:8000/api/signup/', uppercaseFormData);
+      const response = await axios.post('https://api-arshopper.ngrok.app/api/signup/', uppercaseFormData);
       if (response.status === 201) {
         console.log('User signed up successfully!');
         setSuccessMessage('Sign up Successful!');
@@ -263,13 +263,13 @@ const Signup = () => {
                   onChange={handleChange}
                   value={formData.illness}
                 >
-                  <option value="kidney diseases">Kidney Diseases</option>
+                  <option value="kidney">Kidney Diseases</option>
                   <option value="hypertension">Hypertension</option>
                   <option value="uti">Urinary Tract Infection</option>
                   <option value="diabetes">Diabetes</option>
                   <option value="skin">Skin Diseases</option>
                   <option value="gastrointestinal">Gastrointestinal Diseases</option>
-                  <option value="liver diseases">Liver Diseases</option>
+                  <option value="liver">Liver Diseases</option>
                   <option value="null" hidden></option>
                 </select>
               </div>
@@ -284,13 +284,13 @@ const Signup = () => {
                       onChange={handleChange}
                       value={formData.illness2}
                     >
-                     <option value="kidney diseases">Kidney Diseases</option>
+                     <option value="kidney">Kidney Diseases</option>
                      <option value="hypertension">Hypertension</option>
                      <option value="uti">Urinary Tract Infection</option>
                      <option value="diabetes">Diabetes</option>
                      <option value="skin">Skin Diseases</option>
                      <option value="gastrointestinal">Gastrointestinal Diseases</option>
-                     <option value="liver diseases">Liver Diseases</option>
+                     <option value="liver">Liver Diseases</option>
                       <option value="null2" hidden></option>
                     </select>
                   </div>
@@ -308,13 +308,13 @@ const Signup = () => {
                       onChange={handleChange}
                       value={formData.illness3}
                     >
-                      <option value="kidney diseases">Kidney Diseases</option>
+                      <option value="kidney">Kidney Diseases</option>
                       <option value="hypertension">Hypertension</option>
                       <option value="uti">Urinary Tract Infection</option>
                       <option value="diabetes">Diabetes</option>
                       <option value="skin">Skin Diseases</option>
                       <option value="gastrointestinal">Gastrointestinal Diseases</option>
-                      <option value="liver diseases">Liver Diseases</option>
+                      <option value="liver">Liver Diseases</option>
                       <option value="null3" hidden></option>
                     </select>
                   </div>

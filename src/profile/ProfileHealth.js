@@ -22,13 +22,13 @@ function ProfileHealth() {
   const [duplicateIllnessError, setDuplicateIllnessError] = useState('');
   const illnessOptions = {
     null: "NONE",
-    respiratory: "Respiratory Infections",
-    hypertension: "Hypertension",
-    uti: "Urinary Tract Infection",
-    diabetes: "Diabetes",
-    skin: "Skin Diseases",
-    pneumonia: "Pneumonia",
-    diarrhea: "Diarrhea"
+    kidney: "KIDNEY DISEASES",
+    hypertension: "HYPERTENSION",
+    uti: "URINARY TRACT INFECTION",
+    diabetes: "DIABETES",
+    skin: "SKIN DISEASES",
+    gastrointestinal: "GASTROINTESTINAL DISEASES",
+    liver: "LIVER DISEASES"
   };
 
   useEffect(() => {
@@ -36,7 +36,7 @@ function ProfileHealth() {
     if (mobileNumber) {
       const fetchUserDetails = async () => {
         try {
-          const response = await axios.get(`https://192.168.1.46:8000/api/user-details/${mobileNumber}/`);
+          const response = await axios.get(`https://api-arshopper.ngrok.app/api/user-details/${mobileNumber}/`);
           const userData = response.data;
           setUser(userData);
           setFormData({
@@ -92,7 +92,7 @@ function ProfileHealth() {
       return;
     }
     try {
-      const response = await axios.put(`https://192.168.1.46:8000/api/user-details/${user.mobile_number}/`, {
+      const response = await axios.put(`https://api-arshopper.ngrok.app/api/user-details/${user.mobile_number}/`, {
         illness: formData.illness,
         illness2: formData.illness2,
         illness3: formData.illness3
@@ -119,9 +119,9 @@ function ProfileHealth() {
         <div className='info-btn'>
           <h1 className='info-title'>HEALTH STATUS</h1>
           {user && user.illness === 'null' && user.illness2 === 'null2' && user.illness3 === 'null3' && <h4 className='health-categories'>NO HEALTH COMPLICATION WAS SET</h4>}
-          {user && user.illness !== 'null' && <h4 className='health-categories'>HEALTH COMPLICATION: <br/> {illnessOptions[user.illness].toUpperCase()} </h4>}
-          {user && user.illness2 !== 'null2' && <h4 className='health-categories'>HEALTH COMPLICATION: <br/> {illnessOptions[user.illness2].toUpperCase()} </h4>}
-          {user && user.illness3 !== 'null3' && <h4 className='health-categories'>HEALTH COMPLICATION: <br/> {illnessOptions[user.illness3].toUpperCase()}</h4>}
+          {user && user.illness !== 'null' && <h4 className='health-categories'>HEALTH COMPLICATION: <br/> {illnessOptions[user.illness]} </h4>}
+          {user && user.illness2 !== 'null2' && <h4 className='health-categories'>HEALTH COMPLICATION: <br/> {illnessOptions[user.illness2]} </h4>}
+          {user && user.illness3 !== 'null3' && <h4 className='health-categories'>HEALTH COMPLICATION: <br/> {illnessOptions[user.illness3]}</h4>}
           <button onClick={handleEditClick} className="info-edit">EDIT HEALTH STATUS</button>
         </div>
       </div>
@@ -132,37 +132,37 @@ function ProfileHealth() {
             <h1>EDIT<br/>INFORMATION</h1>
             <label>Health Complication 1</label>
             <select name="illness" value={formData.illness} onChange={handleInputChange}>
-                  <option value="kidney diseases">Kidney Diseases</option>
+                  <option value="kidney">Kidney Diseases</option>
                   <option value="hypertension">Hypertension</option>
                   <option value="uti">Urinary Tract Infection</option>
                   <option value="diabetes">Diabetes</option>
                   <option value="skin">Skin Diseases</option>
                   <option value="gastrointestinal">Gastrointestinal Diseases</option>
-                  <option value="liver diseases">Liver Diseases</option>
+                  <option value="liver">Liver Diseases</option>
                   <option value="null">NONE</option>
             </select>
 
             <label>Health Complication 2</label>
             <select name="illness2" value={formData.illness2} onChange={handleInputChange}>
-                  <option value="kidney diseases">Kidney Diseases</option>
+                  <option value="kidney">Kidney Diseases</option>
                   <option value="hypertension">Hypertension</option>
                   <option value="uti">Urinary Tract Infection</option>
                   <option value="diabetes">Diabetes</option>
                   <option value="skin">Skin Diseases</option>
                   <option value="gastrointestinal">Gastrointestinal Diseases</option>
-                  <option value="liver diseases">Liver Diseases</option>
+                  <option value="liver">Liver Diseases</option>
                   <option value="null2">NONE</option>
             </select>
 
             <label>Health Complication 3</label>
             <select name="illness3" value={formData.illness3} onChange={handleInputChange}>
-                  <option value="kidney diseases">Kidney Diseases</option>
+                  <option value="kidney">Kidney Diseases</option>
                   <option value="hypertension">Hypertension</option>
                   <option value="uti">Urinary Tract Infection</option>
                   <option value="diabetes">Diabetes</option>
                   <option value="skin">Skin Diseases</option>
                   <option value="gastrointestinal">Gastrointestinal Diseases</option>
-                  <option value="liver diseases">Liver Diseases</option>
+                  <option value="liver">Liver Diseases</option>
                   <option value="null3">NONE</option>
             </select>
 

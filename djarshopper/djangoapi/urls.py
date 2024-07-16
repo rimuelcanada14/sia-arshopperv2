@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.urls import path
 from .views import (
-    UserCreateView, LoginView, ProductView, ProductDetailView, LikedProductsView,
+    RecommendationView, UserCreateView, LoginView, ProductView, ProductDetailView, LikedProductsView,
     UserDetailView, change_password, BeveragesView, JunkFoodsView, IceCreamView,
     FrozenGoodsView, PastryView, WaterView, CondimentsView, NoodlesPastaView,
     InstantNoodlesView, PowderedJuiceView, OilSectionView, BreadSpreadView,
@@ -10,6 +10,8 @@ from .views import (
     DiswashingLaundryView, add_to_liked_products, remove_from_liked_products,
     ProductLocationView
 )
+# from . import views
+
 
 urlpatterns = [
     path('test/',  lambda request: HttpResponse("Hello World", content_type="text/plain"), name='test'),
@@ -45,4 +47,7 @@ urlpatterns = [
     path('products/<int:product_id>/unlike/', remove_from_liked_products, name='remove_from_liked_products'),
     path('liked-products/', LikedProductsView.as_view(), name='liked-products'),
     path('products/<int:product_id>/location/', ProductLocationView.as_view(), name='product_location'),
+    path('recommendations/', RecommendationView.as_view(), name='recommendations'),
+    # path('api/get_user_illnesses/', views.get_user_illnesses, name='get_user_illnesses'),
+
 ]

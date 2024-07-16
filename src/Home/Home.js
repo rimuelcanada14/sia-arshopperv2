@@ -19,7 +19,7 @@ function Home() {
         if (mobileNumber) {
             const fetchUserDetails = async () => {
                 try {
-                    const response = await axios.get(`https://localhost:8000/api/user-details/${mobileNumber}/`);
+                    const response = await axios.get(`https://api-arshopper.ngrok.app/api/user-details/${mobileNumber}/`);
                     setUser(response.data);
                     setShowPopup(true); // Show popup when user details are fetched successfully
                     setTimeout(() => {
