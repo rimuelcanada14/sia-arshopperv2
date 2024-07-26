@@ -86,19 +86,19 @@ class JunkFoodsView(generics.ListAPIView):
     serializer_class = DisplayProdSerializer
     
     def get_queryset(self):
-        return AddProduct.objects.filter(category='junk food')
+        return AddProduct.objects.filter(category='junkfood')
     
 class IceCreamView(generics.ListAPIView):
     serializer_class = DisplayProdSerializer
     
     def get_queryset(self):
-        return AddProduct.objects.filter(category='ice cream')
+        return AddProduct.objects.filter(category='icecream')
     
 class FrozenGoodsView(generics.ListAPIView):
     serializer_class = DisplayProdSerializer
     
     def get_queryset(self):
-        return AddProduct.objects.filter(category='frozen goods')
+        return AddProduct.objects.filter(category='frozengoods')
     
 class PastryView(generics.ListAPIView):
     serializer_class = DisplayProdSerializer
@@ -164,7 +164,7 @@ class CoffeeMilkView(generics.ListAPIView):
     serializer_class = DisplayProdSerializer
     
     def get_queryset(self):
-        return AddProduct.objects.filter(category='coffeemilk')
+        return AddProduct.objects.filter(category='coffee/milk')
     
 class BiscuitsView(generics.ListAPIView):
     serializer_class = DisplayProdSerializer
@@ -182,7 +182,7 @@ class ChocolatesView(generics.ListAPIView):
     serializer_class = DisplayProdSerializer
     
     def get_queryset(self):
-        return AddProduct.objects.filter(category='Chocolates')
+        return AddProduct.objects.filter(category='chocolates')
     
 class LiquorWinesView(generics.ListAPIView):
     serializer_class = DisplayProdSerializer
@@ -314,10 +314,10 @@ def add_to_liked_products(request, product_id):
     product = get_object_or_404(AddProduct, id=product_id)
 
     if product in user.liked_products.all():
-        return Response({'message': 'Product already liked'}, status=status.HTTP_200_OK)
+        return Response({'message': 'Product already added'}, status=status.HTTP_200_OK)
     else:
         user.liked_products.add(product)
-        return Response({'message': 'Product liked'}, status=status.HTTP_200_OK)
+        return Response({'message': 'Product added'}, status=status.HTTP_200_OK)
 
 @api_view(['POST'])
 def remove_from_liked_products(request, product_id):
@@ -334,10 +334,10 @@ def remove_from_liked_products(request, product_id):
 
     if product in user.liked_products.all():
         user.liked_products.remove(product)
-        return Response({'message': 'Product unliked'}, status=status.HTTP_200_OK)
+        return Response({'message': 'Product removed'}, status=status.HTTP_200_OK)
     else:
         user.liked_products.add(product)
-        return Response({'message': 'Product liked'}, status=status.HTTP_200_OK)
+        return Response({'message': 'Product added'}, status=status.HTTP_200_OK)
 
 
 

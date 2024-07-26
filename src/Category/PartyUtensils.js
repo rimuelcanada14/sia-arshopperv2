@@ -6,7 +6,7 @@ import ProductFetcher from '../components/ProductFetcher';
 import ProductRenderer from '../components/ProductRenderer';
 
 function PartyUtensils () {
-    const apiUrl = 'https://localhost:8000/api/partyutensils/';
+    const apiUrl = 'https://api-arshopper.ngrok.app/api/partyutensils/';
 
     useEffect(() => {
         const handleBeforeUnload = (event) => {

@@ -4,7 +4,7 @@ import ProductRenderer from '../components/ProductRenderer';
 import { useEffect } from 'react';
 
 function FrozenGoods () {
-  const apiUrl = 'https://localhost:8000/api/frozengoods/'; // eto papalitan 
+  const apiUrl = 'https://api-arshopper.ngrok.app/api/frozengoods/'; // eto papalitan 
 
   useEffect(() => {
     const handleBeforeUnload = (event) => {

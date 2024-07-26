@@ -6,7 +6,7 @@ import ProductFetcher from '../components/ProductFetcher';
 import ProductRenderer from '../components/ProductRenderer';
 
 function InstantNoodles () {
-    const apiUrl = 'https://localhost:8000/api/instantnoodles/';
+    const apiUrl = 'https://api-arshopper.ngrok.app/api/instantnoodles/';
 
     useEffect(() => {
         const handleBeforeUnload = (event) => {

@@ -31,14 +31,14 @@ const BarcodeScanner = () => {
 
   useEffect(() => {
     const handleBeforeUnload = (event) => {
-        event.preventDefault();
-        event.returnValue = '';
+      event.preventDefault();
+      event.returnValue = '';
     };
 
     window.addEventListener('beforeunload', handleBeforeUnload);
 
     return () => {
-        window.removeEventListener('beforeunload', handleBeforeUnload);
+      window.removeEventListener('beforeunload', handleBeforeUnload);
     };
   }, []);
 
@@ -101,21 +101,17 @@ const BarcodeScanner = () => {
     setProduct(null);
     setGlbFile(null);
   };
-  const fetchRecommendations = async (productFeatures, conditions, category) => {
-    console.log('Fetching recommendations for:', productFeatures, conditions, category);
 
+  const fetchRecommendations = async (productFeatures, conditions, category) => {
     try {
       const response = await axios.post('https://api-arshopper.ngrok.app/api/recommendations/', {
         product_features: productFeatures,
         conditions: conditions,
         category: category,
       });
-
-      console.log('Response:', response);
-
+  
       if (response.status === 200) {
         const recommendations = response.data;
-        console.log('Recommendations:', recommendations);
         setRecommendations(recommendations);
         setShowRecoModal(true);
       } else {
@@ -126,23 +122,8 @@ const BarcodeScanner = () => {
     }
   };
 
-  
-
   const handleShowRecommendations = () => {
-    let productFeatures = {
-      TotalFat: 0,
-      SatFat: 0,
-      TransFat: 0,
-      Sodium: 0,
-      TCarbs: 0,
-      Tsugar: 0,
-      DietFbr: 0,
-    };
-
-   // Set product features based on scanned nutrient facts
-   if (scannedNutriFact) {
-    // Assuming scannedNutriFact is an object with keys matching productFeatures
-    productFeatures = {
+    const productFeatures = {
       TotalFat: scannedNutriFact.TotalFat || 0,
       SatFat: scannedNutriFact.SatFat || 0,
       TransFat: scannedNutriFact.TransFat || 0,
@@ -151,17 +132,12 @@ const BarcodeScanner = () => {
       Tsugar: scannedNutriFact.Tsugar || 0,
       DietFbr: scannedNutriFact.DietFbr || 0,
     };
-  }
-
-  // Use actual conditions based on user's illness
-  const conditions = userIllness ? [userIllness] : [];
-
-  // Use actual category based on scanned product
-  const category = scannedCategory || 'Default Category';
-
-  fetchRecommendations(productFeatures, conditions, category);
-};
-
+  
+    const conditions = userIllness ? [userIllness] : [];
+    const category = scannedCategory || 'Default Category';
+  
+    fetchRecommendations(productFeatures, conditions, category);
+  };
 
   const openModal = () => {
     setShowModal(true);
@@ -210,26 +186,34 @@ const BarcodeScanner = () => {
           <ambientLight intensity={1.5} />
           <directionalLight position={[5, 5, 5]} />
           {glbFile && (
-            <ModelBuilder path={`https://api-arshopper.ngrok.app${product.glb_file}`} position={[0, 0, -5]} />
+            <ModelBuilder
+              path={`https://api-arshopper.ngrok.app${product.glb_file}`}
+              position={[0, 0, 0]} // Adjust the position if necessary
+              scale={[1.5, 1.5, 1.5]} // Adjust the scale to make the model larger
+            />
           )}
           <OrbitControls
             enableZoom={true}
-            minDistance={5}
-            maxDistance={7}
+            minDistance={0.5} // Allow closer zoom
+            maxDistance={5} // Allow further zoom out
             enablePan={true}
           />
         </Canvas>
       </div>
     </div>
   );
+  
 
   const renderRecommendations = () => {
-    console.log('Rendering recommendations:', recommendations); // Debug log to check recommendations state
+    if (!recommendations.length) {
+      return <p>No recommendations found.</p>;
+    }
+
     return (
       <>
         <h2 className="barcode-title">Recommendations</h2>
         <p>Your Illness: {userIllness.illness1}, {userIllness.illness2}, {userIllness.illness3}</p>
-        <p>Scanned Nutritional Facts: {scannedNutriFact}</p>
+        <p>Scanned Nutritional Facts: {JSON.stringify(scannedNutriFact)}</p>
         <p>Scanned Category: {scannedCategory}</p>
         {recommendations.map((recommendation, index) => (
           <div key={index} className="recommendation-item">
@@ -272,9 +256,9 @@ const BarcodeScanner = () => {
           </div>
 
           <div className='button-right'>
-            <button className="show-reco" onClick={handleShowRecommendations}>
+            {/* <button className="show-reco" onClick={handleShowRecommendations}>
               Recommendations
-            </button>
+            </button> */}
 
             <button className="td-button" onClick={open3DModelModal}>
               3D Model

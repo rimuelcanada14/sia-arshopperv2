@@ -69,6 +69,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.common.CommonMiddleware',
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://api-arshopper.ngrok.app',
+]
+
 JAZZMIN_SETTINGS = {
     'usermenu_links': [{"name": "Support", "url": "https://github.com/farridav/django-jazzmin/issues", "new_window": True},],
 

@@ -6,7 +6,7 @@ import ProductFetcher from '../components/ProductFetcher';
 import ProductRenderer from '../components/ProductRenderer';
 
 function BreadSpread () {
-    const apiUrl = 'https://localhost:8000/api/breadspread/';
+    const apiUrl = 'https://api-arshopper.ngrok.app/api/breadspread/';
 
     useEffect(() => {
         const handleBeforeUnload = (event) => {

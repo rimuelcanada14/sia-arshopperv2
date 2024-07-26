@@ -231,7 +231,6 @@
   align-items: center;
   height: 100%; /* Ensure the modal content takes full height */
 }
-
 .canvas-container {
   height: 70vh; /* Set height of the canvas container */
   width: 100%; /* Ensure full width */
@@ -265,4 +264,29 @@
 .img-reco {
   width: 13em;
   height: 0.auto;
+}
+.barcode-content{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1em;
+}
+.scan-again-not{
+  z-index: 90;
+  padding: .5em;
+  background-color: #E96760;
+  border-radius: 5px;
+  padding-left: 1em;
+  padding-right: 1em;
+  color: white;
+  font-size: 17px;
+  text-decoration: none;
+  font-weight: bolder;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 0 auto;
+  margin-top: 1em;
+  font-family: Poppins;
+  text-transform: uppercase;
+
 }

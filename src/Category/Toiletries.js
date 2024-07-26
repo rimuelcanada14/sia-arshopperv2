@@ -6,7 +6,7 @@ import ProductFetcher from '../components/ProductFetcher';
 import ProductRenderer from '../components/ProductRenderer';
 
 function Toiletries () {
-    const apiUrl = 'https://localhost:8000/api/toiletries/';
+    const apiUrl = 'https://api-arshopper.ngrok.app/api/toiletries/';
 
     useEffect(() => {
         const handleBeforeUnload = (event) => {

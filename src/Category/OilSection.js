@@ -5,7 +5,7 @@ import ProductFetcher from '../components/ProductFetcher';
 import ProductRenderer from '../components/ProductRenderer';
 
 function OilSection () {
-    const apiUrl = 'https://localhost:8000/api/oilsection/';
+    const apiUrl = 'https://api-arshopper.ngrok.app/api/oilsection/';
 
     useEffect(() => {
         const handleBeforeUnload = (event) => {

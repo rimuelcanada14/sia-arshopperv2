@@ -6,7 +6,7 @@ import ProductFetcher from '../components/ProductFetcher';
 import ProductRenderer from '../components/ProductRenderer';
 
 function CoffeeMilk () {
-    const apiUrl = 'https://localhost:8000/api/coffeemilk/';
+    const apiUrl = 'https://api-arshopper.ngrok.app/api/coffeemilk/';
 
     useEffect(() => {
         const handleBeforeUnload = (event) => {

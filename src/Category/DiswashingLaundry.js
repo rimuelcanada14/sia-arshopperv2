@@ -6,7 +6,7 @@ import ProductFetcher from '../components/ProductFetcher';
 import ProductRenderer from '../components/ProductRenderer';
 
 function DiswashingLaundry () {
-    const apiUrl = 'https://localhost:8000/api/diswashinglaundry/';
+    const apiUrl = 'https://api-arshopper.ngrok.app/api/diswashinglaundry/';
 
     useEffect(() => {
         const handleBeforeUnload = (event) => {

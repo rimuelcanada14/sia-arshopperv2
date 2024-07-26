@@ -6,7 +6,7 @@ import ProductFetcher from '../components/ProductFetcher';
 import ProductRenderer from '../components/ProductRenderer';
 
 function CannedGoods () {
-    const apiUrl = 'https://localhost:8000/api/cannedgoods/';
+    const apiUrl = 'https://api-arshopper.ngrok.app/api/cannedgoods/';
 
     useEffect(() => {
         const handleBeforeUnload = (event) => {

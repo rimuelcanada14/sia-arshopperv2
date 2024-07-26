@@ -4,7 +4,7 @@ import ProductRenderer from '../components/ProductRenderer';
 import { useEffect } from 'react';
 
 function Pastry () {
-    const apiUrl = 'https://localhost:8000/api/pastry/';
+    const apiUrl = 'https://api-arshopper.ngrok.app/api/pastry/';
 
     useEffect(() => {
         const handleBeforeUnload = (event) => {

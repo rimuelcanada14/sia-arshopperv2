@@ -6,7 +6,7 @@ import ProductFetcher from '../components/ProductFetcher';
 import ProductRenderer from '../components/ProductRenderer';
 
 function LiquorWines () {
-    const apiUrl = 'https://localhost:8000/api/liquorwines/';
+    const apiUrl = 'https://api-arshopper.ngrok.app/api/liquorwines/';
 
     useEffect(() => {
         const handleBeforeUnload = (event) => {

@@ -6,7 +6,7 @@ import ProductFetcher from '../components/ProductFetcher';
 import ProductRenderer from '../components/ProductRenderer';
 
 function Water () {
-    const apiUrl = 'https://localhost:8000/api/water/';
+    const apiUrl = 'https://api-arshopper.ngrok.app/api/water/';
 
     useEffect(() => {
         const handleBeforeUnload = (event) => {

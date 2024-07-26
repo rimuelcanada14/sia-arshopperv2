@@ -6,7 +6,7 @@ import ProductFetcher from '../components/ProductFetcher';
 import ProductRenderer from '../components/ProductRenderer';
 
 function PowderedJuice () {
-    const apiUrl = 'https://localhost:8000/api/powderedjuice/';
+    const apiUrl = 'https://api-arshopper.ngrok.app/api/powderedjuice/';
 
     useEffect(() => {
         const handleBeforeUnload = (event) => {

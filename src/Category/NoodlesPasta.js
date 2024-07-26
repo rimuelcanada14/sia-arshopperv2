@@ -6,7 +6,7 @@ import ProductFetcher from '../components/ProductFetcher';
 import ProductRenderer from '../components/ProductRenderer';
 
 function NoodlesPasta () {
-    const apiUrl = 'https://localhost:8000/api/noodlespasta/';
+    const apiUrl = 'https://api-arshopper.ngrok.app/api/noodlespasta/';
 
     useEffect(() => {
         const handleBeforeUnload = (event) => {
