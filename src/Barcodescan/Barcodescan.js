@@ -245,9 +245,7 @@ const BarcodeScanner = () => {
       <div key={index} className="recommendation-item">
         <h4>{recommendation.ProductName}</h4>
         <p>Price: ₱{recommendation.Price}</p>
-        <img src={`https://api-arshopper.ngrok.app/media/${recommendation.ImagePath}`} alt={recommendation.ProductName} className='img-reco' />
-        {recommendation.Tsugar && <p>Sugar Content: {recommendation.Tsugar}</p>}
-        {recommendation.DietFbr && <p>Dietary Fiber: {recommendation.DietFbr}</p>}
+        <p>Nutritional Facts: {recommendation.NutritionalFacts}</p>
       </div>
     ));
   };
