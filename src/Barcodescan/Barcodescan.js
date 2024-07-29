@@ -10,8 +10,11 @@ import ModelBuilder from '../3DModels/ModelBuilder.js';
 import { Link, useLocation } from 'react-router-dom';
 import Modal from '../profile/ProfileModal';
 import TDModal from './BarcodeModal';
+import RecoModal from './RecoModal';
 import axios from 'axios';
 import 'aframe';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
 
 const BarcodeScanner = () => {
   const [scannedCode, setScannedCode] = useState(null);
@@ -240,18 +243,40 @@ const BarcodeScanner = () => {
   );
 
   const renderRecommendations = () => {
-    console.log('Rendering recommendations:', recommendations); // Debug log to check recommendations state
-    return recommendations.map((recommendation, index) => (
-      <div key={index} className="recommendation-item">
-        <h4>{recommendation.ProductName}</h4>
-        <p>Price: ₱{recommendation.Price}</p>
-        <p>Nutritional Facts: {recommendation.NutritionalFacts}</p>
-      </div>
-    ));
+    return (
+      <>
+      <h2 className = "reco-title">OTHER ITEMS</h2>
+      <Swiper
+        spaceBetween={50}
+        slidesPerView={1}
+        modules={[Pagination]}
+        pagination={{ clickable: true }}
+        onSlideChange={() => console.log('slide change')}
+        onSwiper={(swiper) => console.log(swiper)}
+      >
+        {recommendations.map((recommendation, index) => (
+          
+          <SwiperSlide key={index}>
+            
+            <div className="recommendation-item">
+              <h4 className='reco-content'>{recommendation.ProductName}</h4>
+              <p className='reco-content'>Price: ₱{recommendation.Price}</p>
+              <p className='reco-content-down'>Nutritional Facts: {recommendation.NutritionalFacts}</p>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      </>
+      
+    );
   };
+  
+  
 
   return (
     <>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
       <div>
         <Header header="ARShopper" headerright="ICHI MART" headersub="©" />
       </div>
@@ -281,7 +306,7 @@ const BarcodeScanner = () => {
 
           <div className='button-right'>
             <button className="show-reco" onClick={handleShowRecommendations}>
-              Recommendations
+              OTHER ITEMS
             </button>
 
             <button className="td-button" onClick={open3DModelModal}>
@@ -312,10 +337,9 @@ const BarcodeScanner = () => {
         {modelModalContent}
       </TDModal>
 
-      <Modal show={showRecoModal} onClose={closeRecoModal}>
-        <h2 className="barcode-title">Recommendations</h2>
+      <RecoModal show={showRecoModal} onClose={closeRecoModal}>
         {renderRecommendations()}
-      </Modal>
+      </RecoModal>
 
       <div>
         <Footer onResetScanner={resetScanner} />

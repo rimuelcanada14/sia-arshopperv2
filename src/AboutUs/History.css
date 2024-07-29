@@ -5,7 +5,20 @@
     margin-left: auto;
     margin-right: auto;
 }
-
+.devcard-his {
+    width: 80%;
+    border-radius: 15px;
+    background-image: url("logochipattls.png");
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid;
+    border-color: black;
+    margin-top: 1em;
+    margin-bottom: 6em;
+    padding: .8em;
+}
 .history-sub{
     visibility: hidden;
 }

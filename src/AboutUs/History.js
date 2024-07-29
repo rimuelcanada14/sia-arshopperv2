@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import './History.css';
 import Header from '../components/header';
+import Footer from '../components/footer';
 import {Link} from 'react-router-dom';
 import { TypeAnimation } from 'react-type-animation';
 
@@ -24,9 +25,7 @@ function History() {
     return(
     <> 
     
-        <div className='ichiInfo-text-header'>
             <Header header={<Link to ="/aboutus" className="products-back">BACK</Link>} headersub="&nbsp;" headerright="ABOUT US" />
-        </div>
 
         <div className='devcard'>
                 <div className='devheader'>
@@ -48,7 +47,7 @@ function History() {
                 <img src='./HistoryImage/Ichilogo.png' alt="AboutUs" className="adjust"/>
             </div>
 
-            <div className='devcard'>
+            <div className='devcard-his'>
                 <div className='devheader'>
                     <h1>ICHI MART</h1>
                 </div>
@@ -65,16 +64,8 @@ function History() {
                 </div>
             </div>
         <div> 
-            
+         <Footer/>
         </div>
-
-        
-
-
-
-
-
-
     </>   
     )
 }

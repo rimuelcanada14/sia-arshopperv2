@@ -222,6 +222,29 @@
   overflow-x: hidden;
   padding-top: 1em;
 }
+.modal-container-c {
+  position: relative;
+  border-radius: 30px;
+  font-family: Poppins;
+  max-width: 100%;
+  color: black;
+  border: solid;
+  border-color: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+  0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+  background-image: url("logochiprofls.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin-left: 1em;
+  margin-right: 1em;
+  z-index: 100;
+  max-height: 31em;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  padding-top: 1em;
+  text-align: center;
+}
 
 .model-modal-content {
   animation: bounce 0.5s infinite alternate;
@@ -268,7 +291,6 @@
 .barcode-content{
   justify-content: center;
   align-items: center;
-  text-align: center;
   margin-bottom: 1em;
 }
 .scan-again-not{
@@ -289,4 +311,31 @@
   font-family: Poppins;
   text-transform: uppercase;
 
+}
+h2.reco-title {
+  margin-bottom: 0.2em;
+
+}
+.reco-content{
+  text-align: center;
+}
+.reco-content-down{
+  text-align: center;
+}
+.recommendation-item{
+  padding-left: .6em;
+  padding-right: .6em;
+  padding-bottom: .6em;
+}
+.modal-content-reco{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-pagination-bullet {
+  background-color: #000; /* Default bullet color */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ff6347; /* Active bullet color */
 }

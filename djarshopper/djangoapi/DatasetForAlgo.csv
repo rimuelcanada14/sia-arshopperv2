@@ -4,6 +4,7 @@ Beverages,BlueSpotHoneyDewSoyBeanDrink 100-ml,28,"Filtered Water, Soya Bean, Sug
 Beverages,BlueSpotChocolateSoyBeanDrink 100-ml,28,"Filtered Water, Soya Bean, Sugar, Artificial Chocolate Flavour and Artificial Food Colour (E150d)","Calories(43), TotalFat(0.5g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(8.4g), DietFbr(0g), Tsugar(4.2g), Protein(1.1g), VitA(0%), VitC(0%), Calcium(0%), Iron(0%)",Diabetes
 Beverages,BlueSpotOriginalSoyBeanDrink 100-ml,28,"Filtered Water, Soya Bean, Sugar, Artificial Pandan Flavouring.","Calories(43), TotalFat(0.9g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(6.0g), DietFbr(0g), Tsugar(3.4g), Protein(1.3g), VitA(0%), VitC(0%), Calcium(0%), Iron(0%)",Diabetes
 Beverages,DevonDaleAustrallianDairyFullCreamPureMilk 1-Liter,116,Full Cream Milk,"Calories(158), TotalFat(8.5g), SatFat(5.8g), TransFat(0.5g), Cholesterol(0g), Sodium(0.113g), TCarbs(12.0g), DietFbr(0g), Tsugar(12.0g), Protein(8.3g), VitA(0%), VitC(0%), Calcium(0%), Iron(0%)","Hypertension, Diabetes"
+Beverages,RedBullSupremeEnergyDrink 150-ml,36,"Water, Sucrose, Citric Acid (Acidity Regulator), Taurine,  Sodium Bicarbonate (Artificial flavor), Inositol, Cholinne Bitartrate, Lysine, Sodium Benzoate (Preservative), Nicotinamide, Tartrazine (Color), Pyridozine Hydrochloride (VitaminB6), Cyanocobatamin(vitaminB12)","Calories(110), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0.17g), TCarbs(26g), DietFbr(0g), Tsugar(24g), Protein(1g), VitB12(40%), VitB6(60%), Niacin(100%)","Hypertension, Diabetes"
 Beverages,B'lueVitaBoostOrangeFlavor 500-ml,39,"Water, Sugar, Acidity Regulators (Citric Acid, Glacial Acetic Acid, DL-MalicAcid), Natural and Nature Identical Flavours, VitaminC (Sodium Ascorbic, Ascorbic Acid), Vitamin Premix (sweetener (Sucralose), Vitamin B3, Disodium EDTA, Vitamin B6, Vitamin B12)","Calories(40), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0.17g), TCarbs(3g), DietFbr(0g), Tsugar(24g), Protein(0g), VitC(30%), VitB3(15%), VitB6(15%), VitB12(15%)","Hypertension, Diabetes"
 Beverages,B'lueVitaBoostCalamansiFlavor 500-ml,39,"Water, Sugar, Acidity Regulators (Citric Acid, Glacial Acetic Acid, DL-MalicAcid), Natural and Nature Identical Flavours, VitaminC (Sodium Ascorbic, Ascorbic Acid), Vitamin Premix (sweetener (Sucralose), Vitamin B3, Disodium EDTA, Vitamin B6, Vitamin B12)","Calories(40), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0.17g), TCarbs(3g), DietFbr(0g), Tsugar(24g), Protein(0g), VitC(30%), VitB3(15%), VitB6(15%), VitB12(15%)","Hypertension, Diabetes"
 Beverages,B'lueVitaBoostAppleFlavor 500-ml,39,"Water, Sugar, Acidity Regulators (Citric Acid, Glacial Acetic Acid, DL-MalicAcid), Natural and Nature Identical Flavours, VitaminC (Sodium Ascorbic, Ascorbic Acid), Vitamin Premix (sweetener (Sucralose), Vitamin B3, Disodium EDTA, Vitamin B6, Vitamin B12)","Calories(40), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0.17g), TCarbs(3g), DietFbr(0g), Tsugar(24g), Protein(0g), VitC(30%), VitB3(15%), VitB6(15%), VitB12(15%)","Hypertension, Diabetes"
@@ -375,8 +376,8 @@ BreadSpread,MagnoliaCheezeSpreadCheddar 120-g,123,"Water, Cheese, Vegetable Oil,
 BreadSpread,CheezeWhizPimiento 210-g ,93,"Water, Natural Cheese, Coconut Oil, Skim Milk, Powder, Glucose, Syrup, Emulsifer, Milk Proteins, Preservatives, Food a, Pimiento, Sugar, Modified Food Starch, Spices, Natural Color, Vitamins.","Calories(280), TotalFat(22g), SatFat(16g), TransFat(1g), Cholesterol(0.017g), Sodium(1.5g), TCarbs(11g), DietFbr(1g), Tsugar(8g), Protein(10g), VitA(45%),  VitaD(20%), VitB2(0), Calcium (15%), Phosphorus (35%)","Hypertension, Kidney Diseases"
 BreadSpread,CheezeWhizPimiento 440-g,142,"Water, Natural Cheese, Coconut Oil, Skim Milk, Powder, Glucose, Syrup, Emulsifer, Milk Proteins, Preservatives, Food a, Pimiento, Sugar, Modified Food Starch, Spices, Natural Color, Vitamins.","Calories(280), TotalFat(22g), SatFat(16g), TransFat(1g), Cholesterol(0.017g), Sodium(1.5g), TCarbs(11g), DietFbr(1g), Tsugar(8g), Protein(10g), VitA(45%),  VitaD(20%), VitB2(0), Calcium (15%), Phosphorus (35%)","Hypertension, Kidney Diseases"
 BreadSpread,MagnoliaCheezeSpreadCheddar 480-g,200,"Water, Cheese, Vegetable Oil, Buttermilk Powder, Milk Proteins, Disodium Phosphate as Emulsifying Agent, Iodized Salt, Sugar, Citric Acid and Lactic Acid as Acidulants, Flavors and Spices, Potassium Sorbate and Nisin as Preservatives, Color, Propylene Glycol, BHA and Propyl Gallate as Antioxidant, Zinc, Sulfate, Vitamins A, B1, B2 and D3","Calories(90), TotalFat(7g), SatFat(4.5g), TransFat(0g), Cholesterol(0.010g), Sodium(0.055g), TCarbs(2g), DietFbr(0g), Tsugar(2g), Protein(4g), VitA(54%),  VitaB1(100%), VitB2(100%), VitD3 (100%), Calcium (15%), Phosphorus (47%), Zinc (40%)","Hypertension, Kidney Diseases"
-CannedGoods,FoundersFruitCocktail 825g,240,,,Diabetes
-CannedGoods,DelimondoBranchStyleCornedBeef 380-g,135,,,"Hypertension, Kidney Diseases"
+CannedGoods,FoundersFruitCocktail 825g,240,"Pineapple, Papaya, and Cherries, preserved in syrup made from Water, Sugar, and Citric Acid​","Calories (150), Total Fat (0.2g), Sat Fat (0g), Trans Fat (0g), Cholesterol (0g), Sodium (0.013g), T Carbs (40g), Diet Fbr (4g), T Sugar (37g), Protein (1g), Vit A (3%), Vit B1 (3%), Vit B2 (3%), Vit D3 (0%), Calcium (1%), Phosphorus (4%), Zinc (2%)​",Diabetes
+CannedGoods,DelimondoBranchStyleCornedBeef 380-g,135,"Cooked Beef (72%), Water, Iodized Salt, Sugar, Phosphates (Stabilizer), Select Spices, Monosodium Glutamate (Flavor Enhancer), Sodium Erythorbate (Antioxidant), Sodium Nitrite ","Calories (320), Total Fat (25 g), Saturated Fat (10 g), Trans Fat (0 g), Cholesterol (70 mg), Sodium (900 mg), Total Carbohydrates (2 g), Dietary Fiber (0 g), Total Sugars (0 g), Protein (22 g), Vitamin A (0%), Vitamin B1 (10%), Vitamin B2 (10%), Vitamin D3 (0%), Calcium (2%), Phosphorus (15%), Zinc (20%)","Hypertension, Kidney Diseases"
 CannedGoods,CDOKarneNorteClassicgGuisado 100-g,94,"CookedBeef, BeefBroth, SoyProtein, IodizedSalt, Spices, NatureIdenticalFlavors, SodiumTripolyphosphate(WaterBindingAgent), SodiumErythorbate(ColorRetentionAgent) And SodiumNitrite(ColorRetentionAgent) ,Contains:Soy, Cereals, and Milk","Calories(58), TotalFat(2g), SatFat(1g), TransFat(0g), Cholesterol(0.003g), Sodium(0.348g), TCarbs(4g), DietFbr(2g), Tsugar(1g), TProtein(6g), (VitA(0%), VitE(0%), VitC(0%), Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
 CannedGoods,DocannedStarPremiumLuncheonMeatRichInProteinOriginalChicken 340-g,90,"ChickenBreastMeat, Water, Cornstarch, Salt, Sugar, Spices","Calories(0), TotalFat(12.2g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0.785g), TCarbs(9.3g), DietFbr(0g), Tsugar(0g), TProtein(12.2g), (VitA(0%), VitE(0%), VitC(0%), Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
 CannedGoods,CDOLuncheonMeatChineseStyle 220-g,132,"Beef and Pork, PoultryMeat, Water, SoyProtein, IodizedSalt, Spices, Sugar, Msg(FlavorEnhancer), Phosphate(WaterBindingAgent), SodiumNitrite(ColorRetentionAgent), And Red#40(Colorant), Contains:Soy","Calories(120), TotalFat(8g), SatFat(1g), TransFat(0g), Cholesterol(0g), Sodium(0.414g), TCarbs(7g), DietFbr(2g), Tsugar(0g), TProtein(5g), (VitA(0%), VitE(0%), VitC(0%), Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
@@ -420,28 +421,28 @@ CannedGoods,SanmarinoBrandChiliCornedTuna 100-g,96,"Tuna Flakes, Soy Protein Con
 CannedGoods,SanMarinoBrandCornedTuna 85-g,86,"Tuna Flakes, Soy Protein Concentrate, Soya Oil, Iodized Salt, Nature-Identical Flavors And Spices And Chili , Contains: Fish, Soy, Cereals And Egg","Calories(93), TotalFat(5g), SatFat(0g), TransFat(0g), Cholesterol(0.01g), Sodium(0.396g), TCarbs(5g), DietFbr(2g), Tsugar(1g), Protein(7g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)",Hypertension
 CannedGoods,LigoSince1954SardinesInTomatoSauce 425-g,240,"Sardines, Tomato Sauce Which Is Made From Tomato Paste And Water, Modified Cornstarch, Iodized Salt(Salt+Potassium Iodate), Sugar,Onion Powder,GarlicPowder, Contains: Fish","Calories(60), TotalFat(2.5g), SatFat(1g), TransFat(0g), Cholesterol(0.015g), Sodium(0.410g), TCarbs(3g), DietFbr(0g), Tsugar(2g), Protein(6g), VitA(6%), VitC(0%),Calcium(15%), Iron(6%)",Hypertension
 CannedGoods,LigoSince1954SardinesInTomatoSauceChiliAdded 425-g,220,"Sardines, Tomato Sauce Which is Made From Tomato Paste And Water, Modified Cornstarch, Iodized Salt(Salt+Potassium Iodate), Sugar,Onion Powder,GarlicPowder, Chili, Contains: Fish","Calories(60), TotalFat(2.5g), SatFat(1g), TransFat(0g), Cholesterol(0.015g), Sodium(0.410g), TCarbs(3g), DietFbr(0g), Tsugar(2g), Protein(6g), VitA(6%), VitC(0%),Calcium(15%), Iron(6%)",Hypertension
-CannedGoods,555SardinesInTomatoSauce 425-g,,"Sardines, Tomato Sauce [Water, Tomato Paste, Thickeners (modified Tapioca Starch, Guar Gum)], Sugar, Iodized Salt, And Oleoresin Paprika Extract ( Colorant), Contains: Fish","Calories(50), TotalFat(2g), SatFat(1.5g), TransFat(0g), Omega-3 (0.735g)Cholesterol(0.025g), Sodium(0.241g), TCarbs(2g), DietFbr(0g), Tsugar(0g), Protein(6g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%), Phosphorus (20%), VitD(142%), Iodine(37%), Selenium (45%)",Hypertension
-CannedGoods,555HotSardinesInTomatoSauce 425-g,,"Sardines, Tomato Sauce ( Water, Tomato Paste), Iodized Salt, Xanthan Gum (Thickener), MSG (Flavor Enhancer), Oleoresin Paprika (Colorant) And Chili Powder, Contains: Fish","(Calories(50), TotalFat(2g), SatFat(1g), TransFat(0g), Omega-3 (0.735g), DHA (0.241g) Cholesterol(0.023g), Sodium(0.244g), TCarbs(2g), DietFbr(0g), Tsugar(0g), Protein(6g), Phosphorus (20%), VitD (142%), Iodine (37%), Selenium (37%), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)",Hypertension
-CannedGoods,555TunaSizzlingSisig 155-g,,"Tuna, Flakes And Soy Protein Concentrate, Water, Spices (Includes Onion And Chili), Soya Oil, Seasonings, Sugar, Iodized Salt, Thickeners (CornStarch, Modified Tapioca Starch), MSG (Flavor Enhancer), Vinegar, And Citric Acid (Acidulant), Contains: Fish, Soy, And May Contain Traces Of Milk, Wheat, And Sulphites","Calories(85), TotalFat(5g), SatFat(1g), TransFat(0g), Cholesterol(0.003g), Sodium(0.422g), TCarbs(5g), DietFbr(2g), Tsugar(2g), Protein(5g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)",Hypertension
-CannedGoods,555SizzlingDElightsSisig 155-g,,"Pork, Beef, And Poultry Meat, Water, Vinegar, Soy Protein, Soy Sauce ( Water, SoyBean Extract, Flour, Iodized Salt, Caramel [Food Color], And Sodium Benzoate [ Preservative], Iodized Salt, Spices, Flavors, And Monosodium Glutamate (Flavor Enhancer).","Calories(120), TotalFat(8g), SatFat(3g), TransFat(0g), Cholesterol(0.031g), Sodium(0.359g), TCarbs(3g), DietFbr(1g), Tsugar(1g), Protein(8g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)",Hypertension
-CannedGoods,ArgentinaSpicySisig 155-g,,"Pork, Pork Liver, Soy Protein, Spices (Contains Chili) And Seasonings, Sugar, Iodized Salt, MSG (Flavor Enhancer) And Vinegar, Contains: Soy","Calories(140), TotalFat(10g), SatFat(6g), TransFat(0g), Cholesterol(0.050g), Sodium(0.470g), TCarbs(4g), DietFbr(1g), Tsugar(2g), Protein(8g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)",Hypertension
-CannedGoods,StarCornedBeefChunkyCheese 150-g,,"Cooked Beef, Beef Broth, Cheese (Water, Vegetable Oils [Coconut Oil And/or Palm, Starch, Milk Protein, Vinegar, Sodium Phosphates And Monoglyceride [ Emulsifying Agents], Cheese Maltodextrin, ButterMilk Powder, Rennet Casein, Iodized Salt, Flavors, Citric Acid [ Acidulant], Natural Colors [Beta-Carotene], And Potassium Sorbate [ Preservative], Soy Protein, Flavor, Erythorbate ( Reducing Agent), Soium Phosphates ( Acidity Regulator), Natural And Rtificial Colors (Annatto, Erythrosine), Vitamins ( Vitamins A, D3,B1,B6,B12), And Sodium Nitrite (Color retention agent), Contains: Milk, Soy, Wheat (Gluten) And Sulphites","Calories(95), TotalFat(7g), SatFat(4g), TransFat(0g), Cholesterol(0.012g), Sodium(0.321g), TCarbs(3g), DietFbr(1g), Tsugar(1g), Protein(5g), VitA(29%), VitB1, (31%), VitB6 (103%), VitB12(117%),VitD3(78%) VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
-CannedGoods,StarCarneNorte 150-g,,"Cooked Beef, Beef Broth, Soy Protein, Spices, Flavors, Sugar, Iodized Salt, Carrageenan (Stabilizer), MonoSodium Glutamate (Flavor Enhancer), Sodium Phosphates (Acidity Regulator), Sodium Erythorbate ( Reducing Agent), Sodium Nitrite ( Color Retention Agent), Natural And Artificial Food Colors ( Annatto, Erythorosine), And Vitamins (VItamin A, D3, B1, B6, B12), Contains: Milk, Soy, And Sulphites","Calories(99), TotalFat(7g), SatFat(4g), TransFat(0g), Cholesterol(0.007g), Sodium(0.498g), TCarbs(5g), DietFbr(2g), Tsugar(2g), Protein(4g), VitA(29%), VitB1 (87%), VitB6 (148%), VitB12 (82%), VitD3 (24%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
-CannedGoods,PureFoodsCornedBeef 150-g,,"Cooked Beef, Beef Broth, Iodized Salt, Sugar, Monosodium Glutamate (Flavor Enhancer), Sodium Phosphate (Acidity Regulator), Flavors Sodium Nitrite (Color Retention Agent), And Soium Erythorbate, Contains: Milk","Calories(99), TotalFat(7g), SatFat(4g), TransFat(0g), Cholesterol(0.024g), Sodium(0.286g), TCarbs(1g), DietFbr(1g), Tsugar(1g), Protein(8g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
-CannedGoods,PureFoodsCornedBeef 210-g,,"Cooked Beef, Beef Broth, Iodized Salt, Sugar, Monosodium Glutamate (Flavor Enhancer), Sodium Phosphate (Acidity Regulator), Flavors Sodium Nitrite (Color Retention Agent), And Soium Erythorbate, Contains: Milk","Calories(99), TotalFat(7g), SatFat(4g), TransFat(0g), Cholesterol(0.024g), Sodium(0.286g), TCarbs(1g), DietFbr(1g), Tsugar(1g), Protein(8g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
-CannedGoods,PureFoodsCornedBeef 380-g,,"Cooked Beef, Beef Broth, Iodized Salt, Sugar, Monosodium Glutamate (Flavor Enhancer), Sodium Phosphate (Acidity Regulator), Flavors Sodium Nitrite (Color Retention Agent), And Soium Erythorbate, Contains: Milk","Calories(99), TotalFat(7g), SatFat(4g), TransFat(0g), Cholesterol(0.024g), Sodium(0.286g), TCarbs(1g), DietFbr(1g), Tsugar(1g), Protein(8g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
-CannedGoods,ArgentinaReady-To-UseGinilingGroundPorkMix 250-g,,"Cooked Pork And Broth, Soy Protein Concentrate, Vegetable Oil, Pork Seasonings [MSG (Flavor Enhancer), Natural Pork Flavor, Nature-Identical Pork Flavor], Iodized Salt, Starch And Sugar, Contains: Soy","Calories(95), TotalFat(6g), SatFat(3g), TransFat(0g), Cholesterol(0.003g), Sodium(0.530g), TCarbs(3g), DietFbr(3g), Tsugar(1g), Protein(7g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
-CannedGoods,PureFoodsViennaSausage 230-g,,"Poultry Meat And Pork, Water, Starch, Soy, Protein, Iodized Salt, Sugar, Natural Flavors, Milk, Powder, Spices, Sodium Phosphate (Acidity Regulator), Monosodium Glutamate (Flavor Enhancer), Carrageenan (Stabalizer), Sodium Erythorbate (Reducing Agent), And Sodium Nitrite (Color Retention Agent), Contains: Milk, Soy, Wheat (Gluten), Mustard, And Sulphites","Calories(59), TotalFat(7g), SatFat(3g), TransFat(0g), Cholesterol(0.025g), Sodium(0.630g), TCarbs(4g), DietFbr(1g), Tsugar(1g), Protein(5g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
-CannedGoods,CdoHomeStyleLiverSpread 85-g,,"Pork Liver, Poultry Meat, Beef And Pork, Cereals, Soy Protein, Spices, Iodized Salt, MSG (Flavor Enhancer) And Nature- Identical Flavors, Contains: Milk Cereals And Soy","Calories(97), TotalFat(5g), SatFat(1g), TransFat(0g), Cholesterol(0.024g), Sodium(0.401g), TCarbs(9g), DietFbr(1g), Tsugar(4g), Protein(4g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Liver Diseases"
-CannedGoods,AgentinaLiverSpread 85-g,,"Pork Liver, Pork Fat, Broth, Vegetable, Protein, BreadCrumbs (Derived From Wheat), Skimmed Milk, Starch, Iodized Salt, Sugar, Spices, Seasonings (Natural And Nature Identical Flavors), MSG (Flavors Enhancer), Sodium Tripolyphosphate (Water Retention Agent), Sodium Nitrite ( Color Retention Agent) And Caramel Color (Coloring Agent), Contains: Soy, Milk, Wheat","Calories(110), TotalFat(6g), SatFat(2.5g), TransFat(0g), Cholesterol(0.050g), Sodium(0.390g), TCarbs(8g), DietFbr(1g), Tsugar(6g), Protein(6g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Liver Diseases"
-CannedGoods,RenoBrandLiverSpread 85-g,,"pork livers offals and trimmings, poultry meat, cereals, vegetable oil and protein, sugar, iodized salt, spices, monosodium glutamate, and sodium nitrate, Contains: Meat, Wheat, Soy","Calories(69), TotalFat(3g), SatFat(1g), TransFat(0g), Cholesterol(0.014g), Sodium(0.194g), TCarbs(7g), DietFbr(1g), Tsugar(3g), Protein(3g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Liver Diseases"
-CannedGoods,PureFoodsLiverSpread,,"Pork,Beef,And Poultry Meat, Pork Liver Or Beef Liver, Water, Starch, Wheat Flour, Sugar, Iodized Salt, Soy Protein, Spices, Monosodium Glutamate (Flavor Enhancer), Flavor And Sodium Nitrite (Color Retention Agent), Contains: Milk, Soy, Wheat (Gluten), And Sulphites","Calories(88), TotalFat(5g), SatFat(3g), TransFat(0g), Cholesterol(0.032g), Sodium(0.409g), TCarbs(5g), DietFbr(1g), Tsugar(1g), Protein(5g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Liver Diseases"
-CannedGoods,CDOBeefLoaf 150-g,,"Poultry meat, Cereals, Soy protein, Iodized salt, Spices, Phosphate (Water Binding agent) and Sodium Nitrite (Color Retention Agent), Contains: Cereals And Soy","Calories(82), TotalFat(2g), SatFat(3g), TransFat(0g), Cholesterol(0.032g), Sodium(0.453g), TCarbs(12g), DietFbr(2g), Tsugar(1g), Protein(4g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
-CannedGoods,ArgentinaHot&SpicyBeefLoaf 150 -g,,"Beef Meat And Beef Fat And Mechanically Separated Chicken, Water, Soy, Soy Protein, CornStarch, Iodized Salt, Sugar, Spices, Beef Seasoning (Natural And Nature-Identical Beef Flavors), MSG (Flavor Enhancer), Sodium Tripolyphosphate ( Water Retention Agent), Chili Sodium Nitrite (Color Retention Agent) And Sodium Erythorbate ( Antioxidant), Contains: Soy","Calories(85), TotalFat(4g), SatFat(2g), TransFat(0g), Cholesterol(0.025g), Sodium(0.500g), TCarbs(9g), DietFbr(1g), Tsugar(2g), Protein(3g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
-CannedGoods,ArgentinaMeatLoaf 150-g,,"Mechanically Seperated Chicken, Water, Soy Protein, CornStarch, Sugar, Iodized Salt, Spices, MSG (Flavor Enhancer), Sodium Erythorbate ( Antioxidant), Phosphates (Water Retention Agent) And Sodium Nitrite ( Color Retention Agent), Contains: Soy","Calories(80), TotalFat(3g), SatFat(1g), TransFat(0g), Cholesterol(0.010g), Sodium(0.570g), TCarbs(12g), DietFbr(1g), Tsugar(1g), Protein(2g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
-CannedGoods,SpamLite 340 -g,,"Pork, Mechanically Separated chicken, Water, Modified Potato Starch, Salt, Sugar, Sodium Nitrite (Preservative)","Calories(104), TotalFat(7.7g), SatFat(2.8g), TransFat(0.07g), Cholesterol(0.0395g), Sodium(0.415g), TCarbs(1.7g), DietFbr(0g), Tsugar(0.8g), Protein(7g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
-CannedGoods,Spam 340-g,,"Pork, Mechanically Separated chicken, Water, Modified Potato Starch, Salt, Sugar, Sodium Nitrite (Preservative)","Calories(177), TotalFat(16g), SatFat(6g), TransFat(0.08g), Cholesterol(0.042g), Sodium(0.560g), TCarbs(1.3g), DietFbr(0g), Tsugar(0.7g), Protein(7g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
-CannedGoods,CDOKarneNorteClassicgGuisado 100-g,,"CookedBeef, BeefBroth, SoyProtein, IodizedSalt, Spices, NatureIdenticalFlavors, SodiumTripolyphosphate(WaterBindingAgent), SodiumErythorbate(ColorRetentionAgent) And SodiumNitrite(ColorRetentionAgent) ,Contains:Soy, Cereals, and Milk","Calories(130), TotalFat(8.5g), SatFat(1.5g), TransFat(0g), Cholesterol(0g), Sodium(0.560g), TCarbs(2g), DietFbr(0g), Tsugar(1g), Protein(8g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
+CannedGoods,555SardinesInTomatoSauce 425-g,90,"Sardines, Tomato Sauce [Water, Tomato Paste, Thickeners (modified Tapioca Starch, Guar Gum)], Sugar, Iodized Salt, And Oleoresin Paprika Extract ( Colorant), Contains: Fish","Calories(50), TotalFat(2g), SatFat(1.5g), TransFat(0g), Omega-3 (0.735g)Cholesterol(0.025g), Sodium(0.241g), TCarbs(2g), DietFbr(0g), Tsugar(0g), Protein(6g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%), Phosphorus (20%), VitD(142%), Iodine(37%), Selenium (45%)",Hypertension
+CannedGoods,555HotSardinesInTomatoSauce 425-g,90,"Sardines, Tomato Sauce ( Water, Tomato Paste), Iodized Salt, Xanthan Gum (Thickener), MSG (Flavor Enhancer), Oleoresin Paprika (Colorant) And Chili Powder, Contains: Fish","(Calories(50), TotalFat(2g), SatFat(1g), TransFat(0g), Omega-3 (0.735g), DHA (0.241g) Cholesterol(0.023g), Sodium(0.244g), TCarbs(2g), DietFbr(0g), Tsugar(0g), Protein(6g), Phosphorus (20%), VitD (142%), Iodine (37%), Selenium (37%), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)",Hypertension
+CannedGoods,555TunaSizzlingSisig 155-g,35,"Tuna, Flakes And Soy Protein Concentrate, Water, Spices (Includes Onion And Chili), Soya Oil, Seasonings, Sugar, Iodized Salt, Thickeners (CornStarch, Modified Tapioca Starch), MSG (Flavor Enhancer), Vinegar, And Citric Acid (Acidulant), Contains: Fish, Soy, And May Contain Traces Of Milk, Wheat, And Sulphites","Calories(85), TotalFat(5g), SatFat(1g), TransFat(0g), Cholesterol(0.003g), Sodium(0.422g), TCarbs(5g), DietFbr(2g), Tsugar(2g), Protein(5g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)",Hypertension
+CannedGoods,555SizzlingDElightsSisig 155-g,36,"Pork, Beef, And Poultry Meat, Water, Vinegar, Soy Protein, Soy Sauce ( Water, SoyBean Extract, Flour, Iodized Salt, Caramel [Food Color], And Sodium Benzoate [ Preservative], Iodized Salt, Spices, Flavors, And Monosodium Glutamate (Flavor Enhancer).","Calories(120), TotalFat(8g), SatFat(3g), TransFat(0g), Cholesterol(0.031g), Sodium(0.359g), TCarbs(3g), DietFbr(1g), Tsugar(1g), Protein(8g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)",Hypertension
+CannedGoods,ArgentinaSpicySisig 155-g,35,"Pork, Pork Liver, Soy Protein, Spices (Contains Chili) And Seasonings, Sugar, Iodized Salt, MSG (Flavor Enhancer) And Vinegar, Contains: Soy","Calories(140), TotalFat(10g), SatFat(6g), TransFat(0g), Cholesterol(0.050g), Sodium(0.470g), TCarbs(4g), DietFbr(1g), Tsugar(2g), Protein(8g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)",Hypertension
+CannedGoods,StarCornedBeefChunkyCheese 150-g,37,"Cooked Beef, Beef Broth, Cheese (Water, Vegetable Oils [Coconut Oil And/or Palm, Starch, Milk Protein, Vinegar, Sodium Phosphates And Monoglyceride [ Emulsifying Agents], Cheese Maltodextrin, ButterMilk Powder, Rennet Casein, Iodized Salt, Flavors, Citric Acid [ Acidulant], Natural Colors [Beta-Carotene], And Potassium Sorbate [ Preservative], Soy Protein, Flavor, Erythorbate ( Reducing Agent), Soium Phosphates ( Acidity Regulator), Natural And Rtificial Colors (Annatto, Erythrosine), Vitamins ( Vitamins A, D3,B1,B6,B12), And Sodium Nitrite (Color retention agent), Contains: Milk, Soy, Wheat (Gluten) And Sulphites","Calories(95), TotalFat(7g), SatFat(4g), TransFat(0g), Cholesterol(0.012g), Sodium(0.321g), TCarbs(3g), DietFbr(1g), Tsugar(1g), Protein(5g), VitA(29%), VitB1, (31%), VitB6 (103%), VitB12(117%),VitD3(78%) VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
+CannedGoods,StarCarneNorte 150-g,37,"Cooked Beef, Beef Broth, Soy Protein, Spices, Flavors, Sugar, Iodized Salt, Carrageenan (Stabilizer), MonoSodium Glutamate (Flavor Enhancer), Sodium Phosphates (Acidity Regulator), Sodium Erythorbate ( Reducing Agent), Sodium Nitrite ( Color Retention Agent), Natural And Artificial Food Colors ( Annatto, Erythorosine), And Vitamins (VItamin A, D3, B1, B6, B12), Contains: Milk, Soy, And Sulphites","Calories(99), TotalFat(7g), SatFat(4g), TransFat(0g), Cholesterol(0.007g), Sodium(0.498g), TCarbs(5g), DietFbr(2g), Tsugar(2g), Protein(4g), VitA(29%), VitB1 (87%), VitB6 (148%), VitB12 (82%), VitD3 (24%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
+CannedGoods,PureFoodsCornedBeef 150-g,90,"Cooked Beef, Beef Broth, Iodized Salt, Sugar, Monosodium Glutamate (Flavor Enhancer), Sodium Phosphate (Acidity Regulator), Flavors Sodium Nitrite (Color Retention Agent), And Soium Erythorbate, Contains: Milk","Calories(99), TotalFat(7g), SatFat(4g), TransFat(0g), Cholesterol(0.024g), Sodium(0.286g), TCarbs(1g), DietFbr(1g), Tsugar(1g), Protein(8g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
+CannedGoods,PureFoodsCornedBeef 210-g,150,"Cooked Beef, Beef Broth, Iodized Salt, Sugar, Monosodium Glutamate (Flavor Enhancer), Sodium Phosphate (Acidity Regulator), Flavors Sodium Nitrite (Color Retention Agent), And Soium Erythorbate, Contains: Milk","Calories(99), TotalFat(7g), SatFat(4g), TransFat(0g), Cholesterol(0.024g), Sodium(0.286g), TCarbs(1g), DietFbr(1g), Tsugar(1g), Protein(8g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
+CannedGoods,PureFoodsCornedBeef 380-g,260,"Cooked Beef, Beef Broth, Iodized Salt, Sugar, Monosodium Glutamate (Flavor Enhancer), Sodium Phosphate (Acidity Regulator), Flavors Sodium Nitrite (Color Retention Agent), And Soium Erythorbate, Contains: Milk","Calories(99), TotalFat(7g), SatFat(4g), TransFat(0g), Cholesterol(0.024g), Sodium(0.286g), TCarbs(1g), DietFbr(1g), Tsugar(1g), Protein(8g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
+CannedGoods,ArgentinaReady-To-UseGinilingGroundPorkMix 250-g,50,"Cooked Pork And Broth, Soy Protein Concentrate, Vegetable Oil, Pork Seasonings [MSG (Flavor Enhancer), Natural Pork Flavor, Nature-Identical Pork Flavor], Iodized Salt, Starch And Sugar, Contains: Soy","Calories(95), TotalFat(6g), SatFat(3g), TransFat(0g), Cholesterol(0.003g), Sodium(0.530g), TCarbs(3g), DietFbr(3g), Tsugar(1g), Protein(7g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
+CannedGoods,PureFoodsViennaSausage 230-g,60,"Poultry Meat And Pork, Water, Starch, Soy, Protein, Iodized Salt, Sugar, Natural Flavors, Milk, Powder, Spices, Sodium Phosphate (Acidity Regulator), Monosodium Glutamate (Flavor Enhancer), Carrageenan (Stabalizer), Sodium Erythorbate (Reducing Agent), And Sodium Nitrite (Color Retention Agent), Contains: Milk, Soy, Wheat (Gluten), Mustard, And Sulphites","Calories(59), TotalFat(7g), SatFat(3g), TransFat(0g), Cholesterol(0.025g), Sodium(0.630g), TCarbs(4g), DietFbr(1g), Tsugar(1g), Protein(5g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
+CannedGoods,CdoHomeStyleLiverSpread 85-g,50,"Pork Liver, Poultry Meat, Beef And Pork, Cereals, Soy Protein, Spices, Iodized Salt, MSG (Flavor Enhancer) And Nature- Identical Flavors, Contains: Milk Cereals And Soy","Calories(97), TotalFat(5g), SatFat(1g), TransFat(0g), Cholesterol(0.024g), Sodium(0.401g), TCarbs(9g), DietFbr(1g), Tsugar(4g), Protein(4g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Liver Diseases"
+CannedGoods,AgentinaLiverSpread 85-g,25,"Pork Liver, Pork Fat, Broth, Vegetable, Protein, BreadCrumbs (Derived From Wheat), Skimmed Milk, Starch, Iodized Salt, Sugar, Spices, Seasonings (Natural And Nature Identical Flavors), MSG (Flavors Enhancer), Sodium Tripolyphosphate (Water Retention Agent), Sodium Nitrite ( Color Retention Agent) And Caramel Color (Coloring Agent), Contains: Soy, Milk, Wheat","Calories(110), TotalFat(6g), SatFat(2.5g), TransFat(0g), Cholesterol(0.050g), Sodium(0.390g), TCarbs(8g), DietFbr(1g), Tsugar(6g), Protein(6g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Liver Diseases"
+CannedGoods,RenoBrandLiverSpread 85-g,30,"pork livers offals and trimmings, poultry meat, cereals, vegetable oil and protein, sugar, iodized salt, spices, monosodium glutamate, and sodium nitrate, Contains: Meat, Wheat, Soy","Calories(69), TotalFat(3g), SatFat(1g), TransFat(0g), Cholesterol(0.014g), Sodium(0.194g), TCarbs(7g), DietFbr(1g), Tsugar(3g), Protein(3g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Liver Diseases"
+CannedGoods,PureFoodsLiverSpread,30,"Pork,Beef,And Poultry Meat, Pork Liver Or Beef Liver, Water, Starch, Wheat Flour, Sugar, Iodized Salt, Soy Protein, Spices, Monosodium Glutamate (Flavor Enhancer), Flavor And Sodium Nitrite (Color Retention Agent), Contains: Milk, Soy, Wheat (Gluten), And Sulphites","Calories(88), TotalFat(5g), SatFat(3g), TransFat(0g), Cholesterol(0.032g), Sodium(0.409g), TCarbs(5g), DietFbr(1g), Tsugar(1g), Protein(5g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Liver Diseases"
+CannedGoods,CDOBeefLoaf 150-g,70,"Poultry meat, Cereals, Soy protein, Iodized salt, Spices, Phosphate (Water Binding agent) and Sodium Nitrite (Color Retention Agent), Contains: Cereals And Soy","Calories(82), TotalFat(2g), SatFat(3g), TransFat(0g), Cholesterol(0.032g), Sodium(0.453g), TCarbs(12g), DietFbr(2g), Tsugar(1g), Protein(4g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
+CannedGoods,ArgentinaHot&SpicyBeefLoaf 150 -g,60,"Beef Meat And Beef Fat And Mechanically Separated Chicken, Water, Soy, Soy Protein, CornStarch, Iodized Salt, Sugar, Spices, Beef Seasoning (Natural And Nature-Identical Beef Flavors), MSG (Flavor Enhancer), Sodium Tripolyphosphate ( Water Retention Agent), Chili Sodium Nitrite (Color Retention Agent) And Sodium Erythorbate ( Antioxidant), Contains: Soy","Calories(85), TotalFat(4g), SatFat(2g), TransFat(0g), Cholesterol(0.025g), Sodium(0.500g), TCarbs(9g), DietFbr(1g), Tsugar(2g), Protein(3g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
+CannedGoods,ArgentinaMeatLoaf 150-g,56,"Mechanically Seperated Chicken, Water, Soy Protein, CornStarch, Sugar, Iodized Salt, Spices, MSG (Flavor Enhancer), Sodium Erythorbate ( Antioxidant), Phosphates (Water Retention Agent) And Sodium Nitrite ( Color Retention Agent), Contains: Soy","Calories(80), TotalFat(3g), SatFat(1g), TransFat(0g), Cholesterol(0.010g), Sodium(0.570g), TCarbs(12g), DietFbr(1g), Tsugar(1g), Protein(2g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
+CannedGoods,SpamLite 340 -g,280,"Pork, Mechanically Separated chicken, Water, Modified Potato Starch, Salt, Sugar, Sodium Nitrite (Preservative)","Calories(104), TotalFat(7.7g), SatFat(2.8g), TransFat(0.07g), Cholesterol(0.0395g), Sodium(0.415g), TCarbs(1.7g), DietFbr(0g), Tsugar(0.8g), Protein(7g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
+CannedGoods,Spam 340-g,300,"Pork, Mechanically Separated chicken, Water, Modified Potato Starch, Salt, Sugar, Sodium Nitrite (Preservative)","Calories(177), TotalFat(16g), SatFat(6g), TransFat(0.08g), Cholesterol(0.042g), Sodium(0.560g), TCarbs(1.3g), DietFbr(0g), Tsugar(0.7g), Protein(7g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
+CannedGoods,CDOKarneNorteClassicgGuisado 100-g,120,"CookedBeef, BeefBroth, SoyProtein, IodizedSalt, Spices, NatureIdenticalFlavors, SodiumTripolyphosphate(WaterBindingAgent), SodiumErythorbate(ColorRetentionAgent) And SodiumNitrite(ColorRetentionAgent) ,Contains:Soy, Cereals, and Milk","Calories(130), TotalFat(8.5g), SatFat(1.5g), TransFat(0g), Cholesterol(0g), Sodium(0.560g), TCarbs(2g), DietFbr(0g), Tsugar(1g), Protein(8g), VitA(0%), VitC(0%),Calcium(0%), Iron(0%)","Hypertension, Kidney Diseases"
 Nibbles,GrowersSaltedPistachioNuts 80-g,127,"Pistachio nuts, Iodized salt (salt and potassium iodate)","Calories(180), TotalFat(13g), SatFat(1.5g), TransFat(0g), Cholesterol(0g), Sodium(0.16g), TCarbs(8g), DietFbr(6g), Tsugar(2g), Protein(7g), VitA(0%),VitC(0%), Calcium(4%), Iron(8%), Potassium(0.267g), Phosphorus(21%), Magnesium(13%), Manganese(14%)","Kidney Diseases, Hypertension"
 Nibbles,GrowersToastedCashewNuts 80-g,102,Cashew nuts,"Calories(190), TotalFat(14g), SatFat(2.5g), TransFat(0g), Cholesterol(0g), Sodium(0.005g), TCarbs(8g), DietFbr(1g), Tsugar(5g), Protein(7g), VitA(0%),VitC(0%), Calcium(2%), Iron(12%), Potassium(0.24g), Phosphorus(19%), Magnesium(30%), Manganese(26%), Zinc(14%), Copper(0.0005g)","Kidney Diseases, Hypertension"
 Nibbles,GrowersOriental 80-g,42,"Peanuts, Wheat flour, Iodized salt (Salt and potassium iodate), Hydrolyzed soy protein, Spices, Coconut oil, Monosodium glutamate (Flavor enhancer), Silica (Anti-caking agent), Nature-identical flavor (Contains milk and egg), and Sugar.","Calories(190), TotalFat(14g), SatFat(6g), TransFat(0g), Cholesterol(0g), Sodium(0.05g), TCarbs(7g), DietFbr(0g), Tsugar(3g), Protein(7g), VitA(0%),VitC(0%), VitD(20%), Calcium(2%), Iron(5%), Potassium(0.135g), Phosphorus(24%), Magnesium(31%), Copper(0.00013g)","Hypertension, Gastrointestinal"
@@ -580,36 +581,36 @@ Candies,HariboHappyCola-25g,22,"Glucose Syrup, Sugar, Beef Gelatine, Dextrose, A
 Candies,HariboGoldBears-25g,28,"Glucose Syrup (From Wheat Or Corn), Sugar, Gelatin, Dextrose (From Wheat Or Corn), Contains Less Than 2% Of: Citric Acid, Artificial And Natural Flavors, Palm Oil, Palm Kernel Oil, Carnauba Wax, White Beeswax, Yellow Beeswax, Yellow 5, Red 40, Blue 1.","Calories(101), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(6g), TCarbs(23g), DietFbr(0g), Tsugar(14g), Protein(2g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Skin Diseases"
 Candies,AmosGummyBlocks-48g,33,"Sugar, Glucose Syrup (From Corn), Modified Potato Starch, Water, Sorbitol, Tartaric Acid, Artificial Flavor, Citric Acid, Malic Acid, Sodium Citrate, Fd&C Yellow 5, Fd&C Red 40, Fd&C Blue 1.","Calories(76), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(3g), TCarbs(18g), DietFbr(0g), Tsugar(13g), Protein(2g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Skin Diseases"
 Candies,AmosGummyFruits-48g,31,"Glucose Syrup (From Corn), Sugar, Water, Gelatin, Concentrated Apple Juice, Glycerol, Citric Acid, Malic Acid, Artificial Flavor, Pectin, Coconut Oil, Carnauba Wax, Fd&C Yellow No. 5, Fd&C Red No. 40, Fd&C Blue No. 1","Calories(76), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(2g), TCarbs(17g), DietFbr(0g), Tsugar(12g), Protein(2g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Skin Diseases"
-Candies,AmosSourRainbowRips-100g,,"Sugar, Wheat Flour, Maltose Syrup, Apple Juice Concentrate, Hydrogenated Soybean Oil, Acidity Regulators E330 (Citric Acid). Acidity Regulators E296 (Malic Acid), Artificial Flavors (Strawberry Flavor, Apple Flavor, Blueberry Flavor), Acidity Regulators E331 (ii) (Sodium Citrate), Salt, Emulsifier E471 (Mono-and diglycerides of fatty acids). Artificial Colors (E171 Titanium Dioxide, E129 Allura Red, E102 Tartrazine, E133 Brilliant Blue FCF).","Calories(117), TotalFat(0.5g), SatFat(0.2g), TransFat(0g), Cholesterol(0g), Sodium(45g), TCarbs(27.5g), DietFbr(0g), Tsugar(18.4g), Protein(0.7g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Gastrointestinal"
-Candies,MentosMint-50pcs-135g,,"Sugar, Glucose Syrup, Hydrogenated Coconut Oil, Rice Starch, Natural Flavors, Gum Arabic, Sucrose Esters Of Fatty Acids, Gellan Gum, Carnauba Wax, Beeswax.","Calories(10), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(2.6g), DietFbr(0g), Tsugar(2g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)",Gastrointestinal
-Candies,SPIStarEucalyptusMentholCandy-50+3pcs-212g,,"Glucose Syrup, Sugar, Menthol Crystals, Eucalyptus Oil, Peppermint Oil","Calories(50), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(12g), DietFbr(0g), Tsugar(4g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)",Gastrointestinal
-Candies,JackNJillMaxxHoneyLemon-50pcs,,"Sugar, Glucose, Acidity Regulator (Citric Acid), Artificial Flavors, Natural Honey, Menthol Crystals, Color (Curcumin), Eucalyptus Oil","Calories(60), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(16g), DietFbr(0g), Tsugar(14g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(2%)",Gastrointestinal
-Candies,JackNJillMaxxCherry-50pcs,,"Sugar, Glucose, Acidity Regulator (Citric Acid), Artificial Flavor, Menthol Crystals, Eucalyptus Oil, Colors (Carmoisine, Brilliant Blue FCF)","Calories(60), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(15g), DietFbr(0g), Tsugar(13g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)",Gastrointestinal
-Candies,Cavendish&Harvey-300g,,"Glucose Syrup, Sugar, Fruit Juice Concentrates 1%* (Plum, Apple), Acid: Citric Acid; Colouring Plant Extracts (Yellow Carrot, Beetroot, Spirulina), Natural Flavourings. May contain traces of milk.","Calories(392), TotalFat(0.5g), SatFat(0.1g), TransFat(0g), Cholesterol(0g), Sodium(0.01g), TCarbs(97g), DietFbr(0g), Tsugar(70g), Protein(0.5g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Gastrointestinal"
-Candies,JackNJillChooeyChoco,,"Caramel Iglucose Sugar. Vegetable Oil (Palm), Antioxidant (TBHQ), Humectant (Sorbitol), Cocoa, Skimmed Milk. Whey Powder (Milk), Gelatin","Calories(50), TotalFat(1.5g), SatFat(0.5g), TransFat(0g), Cholesterol(0g), Sodium(5g), TCarbs(8g), DietFbr(1g), Tsugar(6g), Protein(0g), VitA(0%),VitC(0%), Calcium(2%), Iron(2%)","Diabetes, Gastrointestinal"
-Candies,SharkeyHawHawMilkCandy-40pcs-140g,,"Sugar, Whey Powder, Buttermilk Powder, Glucose Syrup, Magnesium Stearate (E570) as lubricant and Artificial Milk Flavor","Calories(39), TotalFat(0.1g), SatFat(0.1g), TransFat(0g), Cholesterol(0.8g), Sodium(8g), TCarbs(9g), DietFbr(0g), Tsugar(5g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)",Diabetes
-Candies,RicoaCurlyTops-150g,,"Sugar, Milk Powder, Hydrogenated Vegetable Oil (Palm and Palm Kernel Oil), Whey, Cocoa Powder, Soy Lecithin (Emulsifier), Iodized Salt, Cinnamon Powder, Vanillin - An Artificial Flavors.","Calories(80), TotalFat(4.5g), SatFat(4g), TransFat(0g), Cholesterol(0g), Sodium(20g), TCarbs(8g), DietFbr(0g), Tsugar(7g), Protein(2g), VitA(0%),VitC(0%), Calcium(4%), Iron(2%), Potassium(2%)","Diabetes, Gastrointestinal"
-Candies,RicoaCurlyTops-500g,,"Sugar, Milk Powder, Hydrogenated Vegetable Oil (Palm and Palm Kernel Oil), Whey, Cocoa Powder, Soy Lecithin (Emulsifier), Iodized Salt, Cinnamon Powder, Vanillin - An Artificial Flavors.","Calories(80), TotalFat(4.5g), SatFat(4g), TransFat(0g), Cholesterol(0g), Sodium(20g), TCarbs(8g), DietFbr(0g), Tsugar(7g), Protein(2g), VitA(0%),VitC(0%), Calcium(4%), Iron(2%), Potassium(2%)","Diabetes, Gastrointestinal"
-Candies,MayfairSilverCrunchMilkChocolateWithRiceCrispies-20pcs,,"Milk Powder, Sugar, Hydrogenated Vegetable Oil (Palm and Palm Kernel Oil), Cocoa Powder, Soy Lecithin (Emulsifier), Iodized Salt, Cinnamon Powder, Vanillin - An Artificial Flavors.","Calories(80), TotalFat(4.5g), SatFat(4g), TransFat(0g), Cholesterol(5g), Sodium(20g), TCarbs(8g), DietFbr(0g), Tsugar(7g), Protein(2g), VitA(0%),VitC(0%), Calcium(4%), Iron(2%), Potassium(2%)","Diabetes, Gastrointestinal"
-Candies,MayfairBlockBusterMilkChocolate,,"Refined Sugar, Hydrogenated Palm Kernel Oil, Whey Powder, Rice Crispies, Cocoa Powder, Food Emulsifiers (Lecithin E322 & PGPR E476), lodized Salt and Artificial Flavor (Ethyl Vanillin).","Calories(200), TotalFat(9g), SatFat(9g), TransFat(0g), Cholesterol(0g), Sodium(50g), TCarbs(30g), DietFbr(0g), Tsugar(22g), Protein(0g), VitA(0%),VitC(0%), Calcium(6%), Iron(19%)","Diabetes, Gastrointestinal"
-Candies,MayfairEggheadsMilkChocolate,,"Sugar, Hydrogenated Vegetable Fat, Whey Powder, Dextrose, Cocoa Powder, Emulsifiers (Sorbitan Tristearate E492, Soya Lecithin E322 and Polyglycerol Pricinoleate E476), lodized Salt and Artificial Flavor (Ethyl Vanillin).","Calories(160), TotalFat(8g), SatFat(8g), TransFat(0g), Cholesterol(0g), Sodium(70g), TCarbs(20g), DietFbr(0g), Tsugar(19g), Protein(0g), VitA(0%),VitC(0%), Calcium(7%), Iron(0%)","Diabetes, Gastrointestinal"
-Candies,MayfairChocolateCoins-50pcs,,"Refined Sugar, Hydrogenated Vegetable Fat, Whey Powder, Cocoa Powder, Dextrose, Emulsifiers (Sorbitan Tristearate E492, Soya Lecithin E322 and Polyglycerol Polyricinoleate E476), lodized Salt and Artificial Flavor (Ethyl Vanillin).","Calories(150), TotalFat(9g), SatFat(8g), TransFat(0g), Cholesterol(0g), Sodium(70g), TCarbs(16g), DietFbr(0g), Tsugar(15g), Protein(1g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Gastrointestinal"
-Candies,MayfairCreepyBallsMilkChocolateBalls-24pcs,,"Refined Sugar, Hydrogenated Vegetable Fat, Whey Powder, Cocoa Powder, Dextrose, Emulsifiers (Sorbitan Tristearate E492, Soya Lecithin E322 and Polyglycerol Polyricinoleate E476), lodized Salt and Artificial Flavor (Ethyl Vanillin).","Calories(200), TotalFat(11g), SatFat(10g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(22g), DietFbr(1g), Tsugar(20g), Protein(2g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Gastrointestinal"
-Candies,MayfairMilkyWithChocolateEggs-24pcs,,"Refined Sugar, Hydrogenated Vegetable Fat, Whey Powder, Cocoa Powder, Dextrose, Emulsifiers (Sorbitan Tristearate E492, Soya Lecithin E322 and Polyglycerol Polyricinoleate E476), lodized Salt and Artificial Flavor (Ethyl Vanillin).","Calories(195), TotalFat(11g), SatFat(10g), TransFat(0g), Cholesterol(0g), Sodium(90g), TCarbs(22g), DietFbr(1g), Tsugar(20g), Protein(2g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Gastrointestinal"
-Candies,MayfairDutchTreatMilkChocolateCrunch-12pcs-130g,,"Sugar, Hydrogenated Vegetable Fat, Whey Powder, Dextrose, Emulsifiers (Sorbitan Tristearate E492, Soya Lecithin E322 and Polyglycerol Polyricinoleate E476), lodized Salt and Artificial Flavor (Titanium Dioxide E171), Antioxidant (Butylated HydroxyToluene E321), and Acidity Regulator (Citric Acid E330).","Calories(160), TotalFat(9g), SatFat(8g), TransFat(0g), Cholesterol(0g), Sodium(80g), TCarbs(20g), DietFbr(0g), Tsugar(19g), Protein(1g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Gastrointestinal"
-Candies,MelloMangoMallowsSoftMallow,,"Refined Sugar, Hydrogenated Palm Kernel Oil, Whey Powder, Rice Crispies, Cocoa Powder, Dextrose, Food Emulsifiers (Soya Lecithin E322 and Polyglycerol Polyricinoleate E476), lodized Salt and Artificial Flavor (Ethyl Vanillin).","Calories(200), TotalFat(9g), SatFat(9g), TransFat(0g), Cholesterol(0g), Sodium(50g), TCarbs(30g), DietFbr(1g), Tsugar(22g), Protein(0g), VitA(0%),VitC(0%), Calcium(6%), Iron(19%), Potassium(5%)","Diabetes, Gastrointestinal"
-Candies,MaxChocolateMallows-135g,,"Glucose Syrup, Refined Sugar, Water, Sodium Citrate E331, Beef Gelatine, Starch, Mango Puree, Sorbitol Modified Starch E1422, Malic Acid E296, Citric Acid E330, Tetrasodium Pyrophosphate E450, Artificial Flavor (Mango), Artificial Colors (Tartrazine Yellow 5 E102 and Sunset Yellow 6 E110) and Pectin E440","Calories(85), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(20g), DietFbr(0g), Tsugar(15g), Protein(1g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Gastrointestinal"
-Candies,JorizzaLycheeMiniFruitBites,,"Glucose Syrup, Refined Sugar, Water, Sodium Citrate E331, Beef Gelatine, Starch, Mango Puree, Sorbitol Modified Starch E1422, Malic Acid E296, Citric Acid E330, Artificial Flavor (Mango), Artificial Colors (Brilliant Blue 1 E133, Tartrazine Yellow 5 E102 and Sunset Yellow 6 E110), Acidity Regulator (Tetrasodium Pyrophosphate E450iii) and Mold Inhibitor (Potassium Sorbate E202).","Calories(80), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(10g), TCarbs(19g), DietFbr(0g), Tsugar(14g), Protein(1g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)",Diabetes
+Candies,AmosSourRainbowRips-100g,90,"Sugar, Wheat Flour, Maltose Syrup, Apple Juice Concentrate, Hydrogenated Soybean Oil, Acidity Regulators E330 (Citric Acid). Acidity Regulators E296 (Malic Acid), Artificial Flavors (Strawberry Flavor, Apple Flavor, Blueberry Flavor), Acidity Regulators E331 (ii) (Sodium Citrate), Salt, Emulsifier E471 (Mono-and diglycerides of fatty acids). Artificial Colors (E171 Titanium Dioxide, E129 Allura Red, E102 Tartrazine, E133 Brilliant Blue FCF).","Calories(117), TotalFat(0.5g), SatFat(0.2g), TransFat(0g), Cholesterol(0g), Sodium(45g), TCarbs(27.5g), DietFbr(0g), Tsugar(18.4g), Protein(0.7g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Gastrointestinal"
+Candies,MentosMint-50pcs-135g,70,"Sugar, Glucose Syrup, Hydrogenated Coconut Oil, Rice Starch, Natural Flavors, Gum Arabic, Sucrose Esters Of Fatty Acids, Gellan Gum, Carnauba Wax, Beeswax.","Calories(10), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(2.6g), DietFbr(0g), Tsugar(2g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)",Gastrointestinal
+Candies,SPIStarEucalyptusMentholCandy-50+3pcs-212g,220,"Glucose Syrup, Sugar, Menthol Crystals, Eucalyptus Oil, Peppermint Oil","Calories(50), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(12g), DietFbr(0g), Tsugar(4g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)",Gastrointestinal
+Candies,JackNJillMaxxHoneyLemon-50pcs,90,"Sugar, Glucose, Acidity Regulator (Citric Acid), Artificial Flavors, Natural Honey, Menthol Crystals, Color (Curcumin), Eucalyptus Oil","Calories(60), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(16g), DietFbr(0g), Tsugar(14g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(2%)",Gastrointestinal
+Candies,JackNJillMaxxCherry-50pcs,80,"Sugar, Glucose, Acidity Regulator (Citric Acid), Artificial Flavor, Menthol Crystals, Eucalyptus Oil, Colors (Carmoisine, Brilliant Blue FCF)","Calories(60), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(15g), DietFbr(0g), Tsugar(13g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)",Gastrointestinal
+Candies,Cavendish&Harvey-300g,250,"Glucose Syrup, Sugar, Fruit Juice Concentrates 1%* (Plum, Apple), Acid: Citric Acid; Colouring Plant Extracts (Yellow Carrot, Beetroot, Spirulina), Natural Flavourings. May contain traces of milk.","Calories(392), TotalFat(0.5g), SatFat(0.1g), TransFat(0g), Cholesterol(0g), Sodium(0.01g), TCarbs(97g), DietFbr(0g), Tsugar(70g), Protein(0.5g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Gastrointestinal"
+Candies,JackNJillChooeyChoco,60,"Caramel Iglucose Sugar. Vegetable Oil (Palm), Antioxidant (TBHQ), Humectant (Sorbitol), Cocoa, Skimmed Milk. Whey Powder (Milk), Gelatin","Calories(50), TotalFat(1.5g), SatFat(0.5g), TransFat(0g), Cholesterol(0g), Sodium(5g), TCarbs(8g), DietFbr(1g), Tsugar(6g), Protein(0g), VitA(0%),VitC(0%), Calcium(2%), Iron(2%)","Diabetes, Gastrointestinal"
+Candies,SharkeyHawHawMilkCandy-40pcs-140g,100,"Sugar, Whey Powder, Buttermilk Powder, Glucose Syrup, Magnesium Stearate (E570) as lubricant and Artificial Milk Flavor","Calories(39), TotalFat(0.1g), SatFat(0.1g), TransFat(0g), Cholesterol(0.8g), Sodium(8g), TCarbs(9g), DietFbr(0g), Tsugar(5g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)",Diabetes
+Candies,RicoaCurlyTops-150g,80,"Sugar, Milk Powder, Hydrogenated Vegetable Oil (Palm and Palm Kernel Oil), Whey, Cocoa Powder, Soy Lecithin (Emulsifier), Iodized Salt, Cinnamon Powder, Vanillin - An Artificial Flavors.","Calories(80), TotalFat(4.5g), SatFat(4g), TransFat(0g), Cholesterol(0g), Sodium(20g), TCarbs(8g), DietFbr(0g), Tsugar(7g), Protein(2g), VitA(0%),VitC(0%), Calcium(4%), Iron(2%), Potassium(2%)","Diabetes, Gastrointestinal"
+Candies,RicoaCurlyTops-500g,90,"Sugar, Milk Powder, Hydrogenated Vegetable Oil (Palm and Palm Kernel Oil), Whey, Cocoa Powder, Soy Lecithin (Emulsifier), Iodized Salt, Cinnamon Powder, Vanillin - An Artificial Flavors.","Calories(80), TotalFat(4.5g), SatFat(4g), TransFat(0g), Cholesterol(0g), Sodium(20g), TCarbs(8g), DietFbr(0g), Tsugar(7g), Protein(2g), VitA(0%),VitC(0%), Calcium(4%), Iron(2%), Potassium(2%)","Diabetes, Gastrointestinal"
+Candies,MayfairSilverCrunchMilkChocolateWithRiceCrispies-20pcs,150,"Milk Powder, Sugar, Hydrogenated Vegetable Oil (Palm and Palm Kernel Oil), Cocoa Powder, Soy Lecithin (Emulsifier), Iodized Salt, Cinnamon Powder, Vanillin - An Artificial Flavors.","Calories(80), TotalFat(4.5g), SatFat(4g), TransFat(0g), Cholesterol(5g), Sodium(20g), TCarbs(8g), DietFbr(0g), Tsugar(7g), Protein(2g), VitA(0%),VitC(0%), Calcium(4%), Iron(2%), Potassium(2%)","Diabetes, Gastrointestinal"
+Candies,MayfairBlockBusterMilkChocolate,50,"Refined Sugar, Hydrogenated Palm Kernel Oil, Whey Powder, Rice Crispies, Cocoa Powder, Food Emulsifiers (Lecithin E322 & PGPR E476), lodized Salt and Artificial Flavor (Ethyl Vanillin).","Calories(200), TotalFat(9g), SatFat(9g), TransFat(0g), Cholesterol(0g), Sodium(50g), TCarbs(30g), DietFbr(0g), Tsugar(22g), Protein(0g), VitA(0%),VitC(0%), Calcium(6%), Iron(19%)","Diabetes, Gastrointestinal"
+Candies,MayfairEggheadsMilkChocolate,60,"Sugar, Hydrogenated Vegetable Fat, Whey Powder, Dextrose, Cocoa Powder, Emulsifiers (Sorbitan Tristearate E492, Soya Lecithin E322 and Polyglycerol Pricinoleate E476), lodized Salt and Artificial Flavor (Ethyl Vanillin).","Calories(160), TotalFat(8g), SatFat(8g), TransFat(0g), Cholesterol(0g), Sodium(70g), TCarbs(20g), DietFbr(0g), Tsugar(19g), Protein(0g), VitA(0%),VitC(0%), Calcium(7%), Iron(0%)","Diabetes, Gastrointestinal"
+Candies,MayfairChocolateCoins-50pcs,50,"Refined Sugar, Hydrogenated Vegetable Fat, Whey Powder, Cocoa Powder, Dextrose, Emulsifiers (Sorbitan Tristearate E492, Soya Lecithin E322 and Polyglycerol Polyricinoleate E476), lodized Salt and Artificial Flavor (Ethyl Vanillin).","Calories(150), TotalFat(9g), SatFat(8g), TransFat(0g), Cholesterol(0g), Sodium(70g), TCarbs(16g), DietFbr(0g), Tsugar(15g), Protein(1g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Gastrointestinal"
+Candies,MayfairCreepyBallsMilkChocolateBalls-24pcs,40,"Refined Sugar, Hydrogenated Vegetable Fat, Whey Powder, Cocoa Powder, Dextrose, Emulsifiers (Sorbitan Tristearate E492, Soya Lecithin E322 and Polyglycerol Polyricinoleate E476), lodized Salt and Artificial Flavor (Ethyl Vanillin).","Calories(200), TotalFat(11g), SatFat(10g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(22g), DietFbr(1g), Tsugar(20g), Protein(2g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Gastrointestinal"
+Candies,MayfairMilkyWithChocolateEggs-24pcs,80,"Refined Sugar, Hydrogenated Vegetable Fat, Whey Powder, Cocoa Powder, Dextrose, Emulsifiers (Sorbitan Tristearate E492, Soya Lecithin E322 and Polyglycerol Polyricinoleate E476), lodized Salt and Artificial Flavor (Ethyl Vanillin).","Calories(195), TotalFat(11g), SatFat(10g), TransFat(0g), Cholesterol(0g), Sodium(90g), TCarbs(22g), DietFbr(1g), Tsugar(20g), Protein(2g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Gastrointestinal"
+Candies,MayfairDutchTreatMilkChocolateCrunch-12pcs-130g,90,"Sugar, Hydrogenated Vegetable Fat, Whey Powder, Dextrose, Emulsifiers (Sorbitan Tristearate E492, Soya Lecithin E322 and Polyglycerol Polyricinoleate E476), lodized Salt and Artificial Flavor (Titanium Dioxide E171), Antioxidant (Butylated HydroxyToluene E321), and Acidity Regulator (Citric Acid E330).","Calories(160), TotalFat(9g), SatFat(8g), TransFat(0g), Cholesterol(0g), Sodium(80g), TCarbs(20g), DietFbr(0g), Tsugar(19g), Protein(1g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Gastrointestinal"
+Candies,MelloMangoMallowsSoftMallow,78,"Refined Sugar, Hydrogenated Palm Kernel Oil, Whey Powder, Rice Crispies, Cocoa Powder, Dextrose, Food Emulsifiers (Soya Lecithin E322 and Polyglycerol Polyricinoleate E476), lodized Salt and Artificial Flavor (Ethyl Vanillin).","Calories(200), TotalFat(9g), SatFat(9g), TransFat(0g), Cholesterol(0g), Sodium(50g), TCarbs(30g), DietFbr(1g), Tsugar(22g), Protein(0g), VitA(0%),VitC(0%), Calcium(6%), Iron(19%), Potassium(5%)","Diabetes, Gastrointestinal"
+Candies,MaxChocolateMallows-135g,99,"Glucose Syrup, Refined Sugar, Water, Sodium Citrate E331, Beef Gelatine, Starch, Mango Puree, Sorbitol Modified Starch E1422, Malic Acid E296, Citric Acid E330, Tetrasodium Pyrophosphate E450, Artificial Flavor (Mango), Artificial Colors (Tartrazine Yellow 5 E102 and Sunset Yellow 6 E110) and Pectin E440","Calories(85), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(20g), DietFbr(0g), Tsugar(15g), Protein(1g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Gastrointestinal"
+Candies,JorizzaLycheeMiniFruitBites,120,"Glucose Syrup, Refined Sugar, Water, Sodium Citrate E331, Beef Gelatine, Starch, Mango Puree, Sorbitol Modified Starch E1422, Malic Acid E296, Citric Acid E330, Artificial Flavor (Mango), Artificial Colors (Brilliant Blue 1 E133, Tartrazine Yellow 5 E102 and Sunset Yellow 6 E110), Acidity Regulator (Tetrasodium Pyrophosphate E450iii) and Mold Inhibitor (Potassium Sorbate E202).","Calories(80), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(10g), TCarbs(19g), DietFbr(0g), Tsugar(14g), Protein(1g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)",Diabetes
 Candies,FrutosSoftChewyCandy,59,"Water, Sugar, Coconut, Fructose, Gum (Carrageenan, Locust Bean Gum), Citric Acid, Malic Acid, Lychee Flavor.","Calories(87), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(60g), TCarbs(21.8g), DietFbr(0g), Tsugar(15.6g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)",Diabetes
-Candies,PotchiStrawberryCream,,"Sugar, Glucose, Vegetable Fat (Palm Kernel, Coconut), Gelatin, Citric Acid, Lecithin, Nature Identical & Artificial Food Flavors (Pineapple, Orange, Grape, Lemon, Strawberry), Artificial Food Colors (Tartrazine, Brilliant Scarlet 4r, Sunset Yellow, Allura Red, Brilliant Blue, Amaranth Red","Calories(70), TotalFat(0.5g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(5g), TCarbs(16g), DietFbr(0g), Tsugar(10g), Protein(0g), VitA(0%),VitC(10%), Calcium(0%), Iron(0%)",Diabetes
-Candies,ICoolMentholated-50pcs,,"Sugar, Glucose, Gelatine as Gelling Agent, Citric Acid as Acid Regulator, Nature Identical Food Flavor (Strawberry, Vanilla), Allura Red","Calories(45), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(11g), DietFbr(0g), Tsugar(7g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)",Gastrointestinal 
-Candies,CandyMakerSnowBearMentholBallCandy-230g,,"Sugar, Gum Base, Glucose, Menthol Crystal, Nature Identical Food Flavor (Mint), Artificial Food Colors (Brilliant Blue, Tartrazine)","Calories(10), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(3g), DietFbr(0g), Tsugar(1g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)",Gastrointestinal 
-Candies,FresMintCandyBarley,,"Sugar, Glucose, Menthol, Eucalyptus Oil, and Citric Acid","Calories(40), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(10g), DietFbr(0g), Tsugar(9g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)",Gastrointestinal 
-Candies,FresMintCandyCherry,,"Sugar, Glucose, Nature-identical Barley Flavor, Menthol Crystal (0.05%), Salt, Artificial Color (Brilliant Blue FCF CI 42090.","Calories(35), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(9g), DietFbr(0g), Tsugar(7g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)",Gastrointestinal 
-Candies,DeliciosaTamarimFlavourCandy-180g,,"Sugar, Glucose, Nature-identical Cherry Flavor, Acidity Regulator (Citric Acid), Strawberry Concentrate (0.30% ), Cherry Concentrate (0.10%) Menthol Crystal (0.05%), Artificial Colors (Ponceau 4R CI 16255, Erythrosine Cl 45430).","Calories(35), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(5g), TCarbs(9g), DietFbr(0g), Tsugar(6g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)",Gastrointestinal 
-Candies,ColumbiaV-FreshSpearmint-50pcs,,"Sugar, Corn Syrup, Citric Acid (Acidity Regulator), Iodized Salt, Natural Tamarind Extract, Artificial Tamarind Flavor","Calories(60), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(50g), TCarbs(13g), DietFbr(0g), Tsugar(10g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)",Gastrointestinal 
+Candies,PotchiStrawberryCream,60,"Sugar, Glucose, Vegetable Fat (Palm Kernel, Coconut), Gelatin, Citric Acid, Lecithin, Nature Identical & Artificial Food Flavors (Pineapple, Orange, Grape, Lemon, Strawberry), Artificial Food Colors (Tartrazine, Brilliant Scarlet 4r, Sunset Yellow, Allura Red, Brilliant Blue, Amaranth Red","Calories(70), TotalFat(0.5g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(5g), TCarbs(16g), DietFbr(0g), Tsugar(10g), Protein(0g), VitA(0%),VitC(10%), Calcium(0%), Iron(0%)",Diabetes
+Candies,ICoolMentholated-50pcs,88,"Sugar, Glucose, Gelatine as Gelling Agent, Citric Acid as Acid Regulator, Nature Identical Food Flavor (Strawberry, Vanilla), Allura Red","Calories(45), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(11g), DietFbr(0g), Tsugar(7g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)",Gastrointestinal 
+Candies,CandyMakerSnowBearMentholBallCandy-230g,76,"Sugar, Gum Base, Glucose, Menthol Crystal, Nature Identical Food Flavor (Mint), Artificial Food Colors (Brilliant Blue, Tartrazine)","Calories(10), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(3g), DietFbr(0g), Tsugar(1g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)",Gastrointestinal 
+Candies,FresMintCandyBarley,54,"Sugar, Glucose, Menthol, Eucalyptus Oil, and Citric Acid","Calories(40), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(10g), DietFbr(0g), Tsugar(9g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)",Gastrointestinal 
+Candies,FresMintCandyCherry,36,"Sugar, Glucose, Nature-identical Barley Flavor, Menthol Crystal (0.05%), Salt, Artificial Color (Brilliant Blue FCF CI 42090.","Calories(35), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(9g), DietFbr(0g), Tsugar(7g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)",Gastrointestinal 
+Candies,DeliciosaTamarimFlavourCandy-180g,78,"Sugar, Glucose, Nature-identical Cherry Flavor, Acidity Regulator (Citric Acid), Strawberry Concentrate (0.30% ), Cherry Concentrate (0.10%) Menthol Crystal (0.05%), Artificial Colors (Ponceau 4R CI 16255, Erythrosine Cl 45430).","Calories(35), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(5g), TCarbs(9g), DietFbr(0g), Tsugar(6g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)",Gastrointestinal 
+Candies,ColumbiaV-FreshSpearmint-50pcs,90,"Sugar, Corn Syrup, Citric Acid (Acidity Regulator), Iodized Salt, Natural Tamarind Extract, Artificial Tamarind Flavor","Calories(60), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(50g), TCarbs(13g), DietFbr(0g), Tsugar(10g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)",Gastrointestinal 
 Candies,JackNJillX.O.ChocolateCandy,40,"Sugar, Gum Base, Glucose, Natural Spearmint Oil, Aspartame and Acesulfame K as sweeteners, Brilliant Blue","Calories(10), TotalFat(0g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(3g), DietFbr(0g), Tsugar(2g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Gastrointestinal"
-Candies,JackNJillButterCaramelCandy,,"Sugar, Glucose, Creamer [Glucose, Hydrogenated Vegetable Fat (Palm, Acidity Regulators (Dipotassium Phosphate, Sodium Citrate), Caseinate, Emulsifiers (Mono- And Diglycerides Of Fatty Acids, Diacetyl Tartaric Acid Esters Of Mono- And Diglycerides. And Sodium Stearoyl Lactylate), Stabilizer (Modified Starch), Anticaking Agent (Silicon Dioxide), Sweetener (Sucralose), (Color Riboflavin)], Cocoa Hydrogenated Vegetable Fat [Coconut, Antioxidant (Bha)] Whey, Iodized Salt, Artificial Flavors, Skimmed Milk, Emulsifer (Soya Lecithin).","Calories(60), TotalFat(0.5g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(65g), TCarbs(13g), DietFbr(0g), Tsugar(9g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Gastrointestinal"
+Candies,JackNJillButterCaramelCandy,79,"Sugar, Glucose, Creamer [Glucose, Hydrogenated Vegetable Fat (Palm, Acidity Regulators (Dipotassium Phosphate, Sodium Citrate), Caseinate, Emulsifiers (Mono- And Diglycerides Of Fatty Acids, Diacetyl Tartaric Acid Esters Of Mono- And Diglycerides. And Sodium Stearoyl Lactylate), Stabilizer (Modified Starch), Anticaking Agent (Silicon Dioxide), Sweetener (Sucralose), (Color Riboflavin)], Cocoa Hydrogenated Vegetable Fat [Coconut, Antioxidant (Bha)] Whey, Iodized Salt, Artificial Flavors, Skimmed Milk, Emulsifer (Soya Lecithin).","Calories(60), TotalFat(0.5g), SatFat(0g), TransFat(0g), Cholesterol(0g), Sodium(65g), TCarbs(13g), DietFbr(0g), Tsugar(9g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Gastrointestinal"
 Chocolates,HersheyKissesClsscMilkChoco 36-g,55,"Milk Chocolate [Sugar: Whole Milk Powder (Cow's Milk); Cocoa Mass; Cocoa Butter; Vegetable Oil (Palm Sunflower);  Lactose (Cow's Milk); Milk Fat (Cow's Milk); Emulsifiers: Soy Lecithin (INS 322i), Polyglycerol Polyriconoleate (INS 476) From Castor Oil; Natural and Artificial FLavors]","Calories(195), TotalFat(11.5g), SatFat(3g), TransFat(0g), Cholesterol(0g), Sodium(0.029g), TCarbs(20.3g), DietFbr(0g), Tsugar(19.7g), Protein(2.6g), VitA(0%),VitC(0%), Calcium(0%), Iron(6%)",Diabetes
 Chocolates,HersheyKissesCks&Creme 36-g,55,"White Chocolate Confectionery (88%) [Sugar, Vegetable Oil (Palm Sunflower); Skim Milk Powder (Cow's Milk); Corn Syrup Solids; Lactose (Cow's Milk); Vanillin]; Cookies (12%) [Wheat Flour; Sugar; Vegetable Oil (Palm Oil); Alkalized Cocoa Powder; Emulsifier: Soy Lecithin (INS 322i); Whole MIlk Powder (Cow's Milk); Raising Agent: Sodium Bicarbonate (INS 500i); Cocoa Mass; Artificial Flavor: Vanillin]","Calories(190), TotalFat(23g), SatFat(3g), TransFat(0g), Cholesterol(0g), Sodium(0.043g), TCarbs(23g), DietFbr(0g), Tsugar(18g), Protein(9.8g), VitA(0%),VitC(0%), Calcium(0%), Iron(6%)",Diabetes
 Chocolates,HersheyDarkChocolate 40-g,100,"Dark Chocolate [Sugar, Cocoa Mass; Cocoa Butter; Skim Milk Powder (Cow's Milk); Alkalized Cocoa Powder; Milk Fat (Cow's Milk); Emulsifiers: Soy Lecithin (INS 322i), Polyglycerol Polyricinoleate (INS 476) From Castor Oil; Artificial Flavor: Vanillin]","Calories(221), TotalFat(14.7g), SatFat(3g), TransFat(0g), Cholesterol(0g), Sodium(0.018g), TCarbs(19.5g), DietFbr(0g), Tsugar(18.4g), Protein(2.6g), VitA(0%),VitC(0%), Calcium(0%), Iron(6%)",Diabetes
@@ -629,7 +630,7 @@ Chocolates,RicoaCurlyTops 500-g,100,"Sugar, Milk Powder, Hydrogenated Vegetable 
 Chocolates,RicoaFlatTops 500-g,100,"Milk Powder, Sugar, Hydrogenated Vegetable Oil (Palm Kernel Oil), Cocoa Powder, Soy Lecithin (Emulsifier), Iodized Salt, Cinnamon Powder, Vanillin","Calories(80), TotalFat(4.5g), SatFat(4g), TransFat(0g), Cholesterol(0g), Sodium(0.020g), TCarbs(8g), DietFbr(0g), Tsugar(7g), Protein(2g), VitA(0%),VitC(0%), Calcium(7%), Iron(4%)","Diabetes, Gastrointestinal"
 Chocolates,SilverCrunch ,100,"Refined Sugar, Hydrogenated Palm Kernel Oil, Whey Powder, Rice Crispies, Cocoa Powder, Food Emulsifiers (Lecithin E322 & PGPR E476), Iodized Salt and Artificial Flavor (Ethyl Vanillin)","Calories(200), TotalFat(9g), SatFat(9g), TransFat(0g), Cholesterol(0g), Sodium(0.050g), TCarbs(30g), DietFbr(1g), Tsugar(22g), Protein(0g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Gastrointestinal"
 Chocolates,BlockBusterMChc 99-g,100,"Sugar, Hydrogenated Vegetable Fat, Whey Powder, Dextrose, Cocoa Powder, Emulsifiers (Sorbitan Tristereate E492), Iodized Salt and Artificial Flavor (Ethyl Vanillin)","Calories(160), TotalFat(8g), SatFat(8g), TransFat(0g), Cholesterol(0g), Sodium(0.070g), TCarbs(20g), DietFbr(1g), Tsugar(19g), Protein(1g), VitA(0%),VitC(0%), Calcium(7%), Iron(6%)","Diabetes, Gastrointestinal"
-Chocolates,EggHeadsMChc ,,,,"Diabetes, Gastrointestinal"
+Chocolates,EggHeadsMChc ,120,"Milk Chocolate (Sugar, Cocoa Butter, Whole Milk Powder, Cocoa Mass, Skimmed Milk Powder, Lactose, Emulsifier: Soy Lecithin, Natural Flavoring), Sugar, Cocoa Butter, Whole Milk Powder, Skimmed Milk Powder, Lactose, Emulsifier: Soy Lecithin, Natural Flavoring.","Calories (130), Total Fat (8 g), Saturated Fat (5 g), Trans Fat (0 g), Cholesterol (5 mg), Sodium (15 mg), Total Carbohydrates (15 g), Dietary Fiber (1 g), Total Sugars (13 g), Protein (2 g), Vitamin A (0%), Vitamin B1 (2%), Vitamin B2 (2%), Vitamin D3 (0%), Calcium (2%), Phosphorus (4%), Zinc (2%)","Diabetes, Gastrointestinal"
 Chocolates,FerreroRocherT24-300g,690,"Milk Chocolate (Sugar, Cocoa Butter, Cocoa Mass, Skim Milk Powder, Butteroil, Soy Lecithin as Emulsifier, Vanillin: An Artificial Flavor), Hazelnuts, Sugar, Palm Oil, Wheat Flour, Whey, Lowfat Cocoa Powder, Soy Lecithin as Emulsifier, Sodium Bicarbonate as Leavening Agent, Salt, Vanillin: An Artificial Flavor.","Calories(75), TotalFat(5g), SatFat(2g), TransFat(0g), Cholesterol(1g), Sodium(7.5g), TCarbs(6g), DietFbr(1g), Tsugar(5g), Protein(1g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Gastrointestinal"
 Chocolates,FerreroRocherT8Flat-100g,260,"Milk Chocolate (Sugar, Cocoa Butter, Cocoa Mass, Skim Milk Powder, Butteroil, Soy Lecithin as Emulsifier, Vanillin: An Artificial Flavor), Hazelnuts, Sugar, Palm Oil, Wheat Flour, Whey, Lowfat Cocoa Powder, Soy Lecithin as Emulsifier, Sodium Bicarbonate as Leavening Agent, Salt, Vanillin: An Artificial Flavor.","Calories(75), TotalFat(5g), SatFat(2g), TransFat(0g), Cholesterol(1g), Sodium(7.5g), TCarbs(6g), DietFbr(1g), Tsugar(5g), Protein(1g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Gastrointestinal"
 Chocolates,FerreroRocherT3-37.5g,45,"Milk Chocolate (Sugar, Cocoa Butter, Cocoa Mass, Skim Milk Powder, Butteroil, Soy Lecithin as Emulsifier, Vanillin: An Artificial Flavor), Hazelnuts, Sugar, Palm Oil, Wheat Flour, Whey, Lowfat Cocoa Powder, Soy Lecithin as Emulsifier, Sodium Bicarbonate as Leavening Agent, Salt, Vanillin: An Artificial Flavor.","Calories(75), TotalFat(5g), SatFat(2g), TransFat(0g), Cholesterol(1g), Sodium(7.5g), TCarbs(6g), DietFbr(1g), Tsugar(5g), Protein(1g), VitA(0%),VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Gastrointestinal"
@@ -648,271 +649,3 @@ Chocolates,VochelleAlmonds-75g,86,"Sugar, Milk Solids (Cows Milk), Almonds, Coco
 Chocolates,VochelleDairyMilk-75g,86,"Sugar, Milk Solids (Cows Milk), Hazelnuts, Cocoa Butter, Cocoa Mass, Vegetable Fat (Palm, Illipe, Shea, sal), Cocoa Powder And Milk Fat (Cow's Milk). Contains Permitted Emulsifiers (Soya Lecithin E322, E476), Thickener (E1400), Glazing Agent (E904) And Flavouring.","Calories(212), TotalFat(12g), SatFat(7.7g), TransFat(0g), Cholesterol(8g), Sodium(22g), TCarbs(22.3g), DietFbr(2g), Tsugar(29.8g), Protein(2.6g), VitA(0%), VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Gastrointestinal"
 Chocolates,VochelleFruits&Nuts-75g,86,"Sugar, Milk, Solids (Cow's Milk), Cocoa Butter, Cocoa Mass, Raisins, Almonds, Vegetable Fat (Palm, Illipe, Shea, Sal), Hazelnuts, Cocoa Powder And Milk Fat (Cows Milk).","Calories(206), TotalFat(11.8g), SatFat(7.1g), TransFat(0g), Cholesterol(7g), Sodium(35g), TCarbs(24.9g), DietFbr(2.2g), Tsugar(21.5g), Protein(2.8g), VitA(0%), VitC(0%), Calcium(0%), Iron(0%)","Diabetes, Gastrointestinal"
 Chocolates,JackNJillCloud9Classic-28g,10,"Glucose syrup, sugar, refined fats, PEANUTS, skimmed MILK powder, cocoa powder, WHEY powder (MILK), sorbitol E420, salt with iodine, EGG white, emulsifier (SOYAlecithin), natural and artificial flavors, antioxidants","Calories(492), TotalFat(17.86g), SatFat(7.14g), TransFat(0g), Cholesterol(0g), Sodium(0g), TCarbs(71.43g), DietFbr(10.71g), Tsugar(42.86g), Protein(7.14g), Salt(0.54g), VitA(0%), VitC(0%), Calcium(0%), Iron(0%)",Diabetes
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
