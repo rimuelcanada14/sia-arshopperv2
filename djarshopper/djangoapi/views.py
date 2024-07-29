@@ -17,22 +17,45 @@ from django.conf import settings
 class RecommendationView(APIView):
     def post(self, request):
         try:
+            # Define df within the method
             file_path = os.path.join(settings.BASE_DIR, 'djangoapi', 'DatasetWithPic.csv')
             print(f"Attempting to read CSV from path: {file_path}")
             df = pd.read_csv(file_path)
 
+            # Get data from request
             product_features = request.data.get('product_features')
             conditions = request.data.get('conditions')
             category = request.data.get('category')
 
-            recommendations = get_recommendations_with_healthiness(df, product_features, conditions, category)
+            # Log the received data for debugging
+            print(f"Received product_features: {product_features}")
+            print(f"Received conditions: {conditions}")
+            print(f"Received category: {category}")
 
-            return Response(recommendations.to_dict(orient='records'), status=status.HTTP_200_OK)
+            # Validate product_features format
+            if not isinstance(product_features, dict):
+                return Response({"error": "Invalid product_features format. Expected a dictionary."}, status=status.HTTP_400_BAD_REQUEST)
+            
+            # Ensure all required keys are present in product_features
+            required_keys = ['TotalFat', 'SatFat', 'TransFat', 'Sodium', 'TCarbs', 'Tsugar', 'DietFbr']
+            missing_keys = [key for key in required_keys if key not in product_features]
+            if missing_keys:
+                return Response({"error": f"Missing required keys in product_features: {', '.join(missing_keys)}"}, status=status.HTTP_400_BAD_REQUEST)
+
+            # Ensure df and other variables are valid before calling the recommendation function
+            if df is not None and product_features is not None:
+                recommendations = get_recommendations_with_healthiness(df, product_features, conditions, category)
+                print(f"Recommendations: {recommendations}")
+                return Response(recommendations.to_dict(orient='records'), status=status.HTTP_200_OK)
+            else:
+                return Response({"error": "Data not available or invalid."}, status=status.HTTP_400_BAD_REQUEST)
 
         except Exception as e:
-            print(f"Error reading CSV file: {str(e)}")
+            print(f"Error: {str(e)}")
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-    
+
+
+        
 def home(request):
     return render(request, 'home.html')
 

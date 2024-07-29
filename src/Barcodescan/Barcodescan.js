@@ -26,20 +26,38 @@ const BarcodeScanner = () => {
   const arSceneRef = useRef(null);
   const location = useLocation();
   const [userIllness, setUserIllness] = useState('');
-  const [scannedNutriFact, setScannedNutriFact] = useState('');
-  const [scannedCategory, setScannedCategory] = useState('');
+
 
   useEffect(() => {
     const handleBeforeUnload = (event) => {
-      event.preventDefault();
-      event.returnValue = '';
+        event.preventDefault();
+        event.returnValue = '';
     };
 
     window.addEventListener('beforeunload', handleBeforeUnload);
 
     return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload);
+        window.removeEventListener('beforeunload', handleBeforeUnload);
     };
+  }, []);
+
+  useEffect(() => {
+    const fetchUserIllness = async() => {
+      const mobileNumber = localStorage.getItem('mobileNumber');
+      if(mobileNumber){
+        try{
+          const response = await axios.get(`https://api-arshopper.ngrok.app/api/user-details/${mobileNumber}`);
+          setUserIllness({
+            illness: response.data.illness,
+            illness2: response.data.illness2,
+            illness3: response.data.illness3,
+          });
+        } catch(error){
+          console.error('Failed to fetch user illness', error);
+        }
+      }
+    };
+    fetchUserIllness();
   }, []);
 
   useEffect(() => {
@@ -58,8 +76,6 @@ const BarcodeScanner = () => {
               setProduct(data);
               setMessage(data.name);
               setGlbFile(data.glb_file);
-              setScannedNutriFact(data.nutritional_facts || '');
-              setScannedCategory(data.category || '');
               displayAR(data.image);
             } else {
               setProduct(null);
@@ -103,15 +119,20 @@ const BarcodeScanner = () => {
   };
 
   const fetchRecommendations = async (productFeatures, conditions, category) => {
+    console.log('Fetching recommendations for:', productFeatures, conditions, category);
+  
     try {
       const response = await axios.post('https://api-arshopper.ngrok.app/api/recommendations/', {
         product_features: productFeatures,
-        conditions: conditions,
-        category: category,
+        conditions: conditions || [], 
+        category: category || '',     
       });
+  
+      console.log('Response:', response);
   
       if (response.status === 200) {
         const recommendations = response.data;
+        console.log('Recommendations:', recommendations);
         setRecommendations(recommendations);
         setShowRecoModal(true);
       } else {
@@ -121,23 +142,42 @@ const BarcodeScanner = () => {
       console.error('Error fetching recommendations:', error);
     }
   };
+  
+  
+  
+  const parseNutritionalFacts = (factsString) => {
+    const factsArray = factsString.split(', ').map(fact => fact.match(/(\w+)\(([\d.]+)(\w+)\)/));
+    const factsDict = {};
+    factsArray.forEach(fact => {
+      if (fact && fact.length === 4) {
+        factsDict[fact[1]] = parseFloat(fact[2]);
+      }
+    });
+    return factsDict;
+  };
+  
 
   const handleShowRecommendations = () => {
-    const productFeatures = {
-      TotalFat: scannedNutriFact.TotalFat || 0,
-      SatFat: scannedNutriFact.SatFat || 0,
-      TransFat: scannedNutriFact.TransFat || 0,
-      Sodium: scannedNutriFact.Sodium || 0,
-      TCarbs: scannedNutriFact.TCarbs || 0,
-      Tsugar: scannedNutriFact.Tsugar || 0,
-      DietFbr: scannedNutriFact.DietFbr || 0,
-    };
+    if (!product) {
+      console.error('Product data not available');
+      return;
+    }
   
-    const conditions = userIllness ? [userIllness] : [];
-    const category = scannedCategory || 'Default Category';
+    // Parse the nutritional facts string to a dictionary
+    let productFeatures = parseNutritionalFacts(product.nutritional_facts);
+    console.log('Parsed Product Features:', productFeatures);
+  
+    const category = product.category;
+  
+    // Filter out null conditions
+    const conditions = [userIllness.illness, userIllness.illness2, userIllness.illness3].filter(
+      illness => illness !== 'null' && illness !== 'null2' && illness !== 'null3'
+    );
   
     fetchRecommendations(productFeatures, conditions, category);
   };
+  
+  
 
   const openModal = () => {
     setShowModal(true);
@@ -186,44 +226,30 @@ const BarcodeScanner = () => {
           <ambientLight intensity={1.5} />
           <directionalLight position={[5, 5, 5]} />
           {glbFile && (
-            <ModelBuilder
-              path={`https://api-arshopper.ngrok.app${product.glb_file}`}
-              position={[0, 0, 0]} // Adjust the position if necessary
-              scale={[1.5, 1.5, 1.5]} // Adjust the scale to make the model larger
-            />
+            <ModelBuilder path={`https://api-arshopper.ngrok.app${product.glb_file}`} position={[0, 0, -5]} />
           )}
           <OrbitControls
             enableZoom={true}
-            minDistance={0.5} // Allow closer zoom
-            maxDistance={5} // Allow further zoom out
+            minDistance={5}
+            maxDistance={7}
             enablePan={true}
           />
         </Canvas>
       </div>
     </div>
   );
-  
 
   const renderRecommendations = () => {
-    if (!recommendations.length) {
-      return <p>No recommendations found.</p>;
-    }
-
-    return (
-      <>
-        <h2 className="barcode-title">Recommendations</h2>
-        <p>Your Illness: {userIllness.illness1}, {userIllness.illness2}, {userIllness.illness3}</p>
-        <p>Scanned Nutritional Facts: {JSON.stringify(scannedNutriFact)}</p>
-        <p>Scanned Category: {scannedCategory}</p>
-        {recommendations.map((recommendation, index) => (
-          <div key={index} className="recommendation-item">
-            <h4>{recommendation.ProductName}</h4>
-            <p>Price: ₱{recommendation.Price}</p>
-            <img src={`https://api-arshopper.ngrok.app/media/${recommendation.ImagePath}`} alt={recommendation.ProductName} className='img-reco' />
-          </div>
-        ))}
-      </>
-    );
+    console.log('Rendering recommendations:', recommendations); // Debug log to check recommendations state
+    return recommendations.map((recommendation, index) => (
+      <div key={index} className="recommendation-item">
+        <h4>{recommendation.ProductName}</h4>
+        <p>Price: ₱{recommendation.Price}</p>
+        <img src={`https://api-arshopper.ngrok.app/media/${recommendation.ImagePath}`} alt={recommendation.ProductName} className='img-reco' />
+        {recommendation.Tsugar && <p>Sugar Content: {recommendation.Tsugar}</p>}
+        {recommendation.DietFbr && <p>Dietary Fiber: {recommendation.DietFbr}</p>}
+      </div>
+    ));
   };
 
   return (
@@ -256,9 +282,9 @@ const BarcodeScanner = () => {
           </div>
 
           <div className='button-right'>
-            {/* <button className="show-reco" onClick={handleShowRecommendations}>
+            <button className="show-reco" onClick={handleShowRecommendations}>
               Recommendations
-            </button> */}
+            </button>
 
             <button className="td-button" onClick={open3DModelModal}>
               3D Model
@@ -289,6 +315,7 @@ const BarcodeScanner = () => {
       </TDModal>
 
       <Modal show={showRecoModal} onClose={closeRecoModal}>
+        <h2 className="barcode-title">Recommendations</h2>
         {renderRecommendations()}
       </Modal>
 
