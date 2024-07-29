@@ -35,14 +35,17 @@ def get_recommendations_with_healthiness(df, product_features, conditions=None, 
     recommended_products = df_combined.sort_values(by='Distance').copy()
     print("Recommended Products after Distance Calculation:", recommended_products.head())
 
-    # Debug print to check unique categories before filtering
-    print("Unique Categories in Recommended Products:", recommended_products['Categories'].unique())
-
+    # Filter by category, case insensitive
     if category:
-        category = category.strip().lower()  # Ensure case-insensitive comparison
+        category = category.strip().lower()
         recommended_products['Categories'] = recommended_products['Categories'].str.strip().str.lower()
         recommended_products = recommended_products[recommended_products['Categories'] == category]
         print("Filtered Recommended Products based on Category:", recommended_products.head())
+
+    # If no products match the category, expand the search to include all products in the category
+    if recommended_products.empty:
+        recommended_products = df_combined[df_combined['Categories'] == category]
+        print("Expanded search to include all products in the category:", recommended_products.head())
 
     # Condition-based filtering and sorting
     if conditions:
@@ -53,8 +56,8 @@ def get_recommendations_with_healthiness(df, product_features, conditions=None, 
             elif condition == 'gastrointestinal' and 'DietFbr' in recommended_products.columns:
                 recommended_products = recommended_products[['ProductName', 'Price', 'Categories', 'NutritionalFacts', 'ImagePath', 'DietFbr']]
                 recommended_products = recommended_products.sort_values(by='DietFbr', ascending=False)
-            elif condition == 'hypertension' and 'Sodium' in recommended_products.columns:
-                recommended_products = recommended_products[['ProductName', 'Price', 'Categories', 'NutritionalFacts', 'ImagePath', 'Sodium']]
+            elif condition == 'hypertension' and all(col in recommended_products.columns for col in ['TransFat', 'Sodium']):
+                recommended_products = recommended_products[['ProductName', 'Price', 'Categories', 'NutritionalFacts', 'ImagePath', 'TransFat', 'Sodium']]
                 recommended_products = recommended_products.sort_values(by='Sodium')
             elif condition == 'uti' and all(col in recommended_products.columns for col in ['Tsugar', 'DietFbr']):
                 recommended_products = recommended_products[['ProductName', 'Price', 'Categories', 'NutritionalFacts', 'ImagePath', 'Tsugar', 'DietFbr']]
@@ -69,6 +72,7 @@ def get_recommendations_with_healthiness(df, product_features, conditions=None, 
                 recommended_products = recommended_products[['ProductName', 'Price', 'Categories', 'NutritionalFacts', 'ImagePath', 'Sodium']]
                 recommended_products = recommended_products.sort_values(by='Sodium')
 
+    # Provide fallback recommendations if strict criteria are not met
     recommended_products = recommended_products.head(3)
     for col in numeric_features:
         recommended_products[col] = original_values.loc[recommended_products.index, col]

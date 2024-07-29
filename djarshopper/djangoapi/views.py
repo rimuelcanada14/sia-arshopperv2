@@ -18,7 +18,7 @@ class RecommendationView(APIView):
     def post(self, request):
         try:
             # Define df within the method
-            file_path = os.path.join(settings.BASE_DIR, 'djangoapi', 'DatasetWithPic.csv')
+            file_path = os.path.join(settings.BASE_DIR, 'djangoapi', 'DatasetAlmostDone.csv')
             print(f"Attempting to read CSV from path: {file_path}")
             df = pd.read_csv(file_path)
 
