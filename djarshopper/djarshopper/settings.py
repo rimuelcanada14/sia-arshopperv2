@@ -105,7 +105,6 @@ CORS_ALLOWED_ORIGINS = [
     'https://192.168.100.7:3000',
     'https://192.168.1.46:8000',
     'https://192.168.1.46:3000',
-
     
 ]
 CORS_ALLOW_CREDENTIALS = True
