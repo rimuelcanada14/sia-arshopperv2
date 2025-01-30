@@ -71,7 +71,7 @@ MIDDLEWARE = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://api-arshopper.ngrok.app',
+    # 'https://api-arshopper.ngrok.app',
 ]
 
 JAZZMIN_SETTINGS = {
@@ -94,21 +94,20 @@ JAZZMIN_UI_TWEAKS = {
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-# CORS_ALLOWED_ORIGINS = [
-#     'https://localhost:3000',
-#     'https://localhost:8000',
-#     'https://192.168.1.13:8000',
-#     'https://192.168.1.13:3000',
-#     'https://192.168.1.14:8000',
-#     'https://192.168.1.14:3000',
-#     'https://192.168.100.7:8000',
-#     'https://192.168.100.7:3000',
-#     'https://192.168.1.46:8000',
-#     'https://192.168.1.46:3000',
-#     'https://api-arshopper.ngrok.app',
-#     'https://arshopper.ngrok.app'
+CORS_ALLOWED_ORIGINS = [
+    'https://localhost:3000',
+    'https://localhost:8000',
+    'https://192.168.1.13:8000',
+    'https://192.168.1.13:3000',
+    'https://192.168.1.15:8000',
+    'https://192.168.1.15:3000',
+    'https://192.168.100.7:8000',
+    'https://192.168.100.7:3000',
+    'https://192.168.1.46:8000',
+    'https://192.168.1.46:3000',
+
     
-# ]
+]
 CORS_ALLOW_CREDENTIALS = True
 # SECURE_SSL_REDIRECT = True\
 
