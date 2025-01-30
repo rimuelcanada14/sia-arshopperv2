@@ -29,13 +29,7 @@ itsdangerous==2.2.0
 Jinja2==3.1.4
 joblib==1.4.2
 Kivy==2.3.0
-kivy-deps.angle==0.4.0
-kivy-deps.glew==0.3.1
-kivy-deps.sdl2==0.7.0
 Kivy-Garden==0.1.5
-kivy-garden.kivymd==2019.910
-kivy-garden.xcamera==2020.613
-kivy-garden.zbarcam==2020.524
 kiwisolver==1.4.7
 MarkupSafe==2.1.5
 matplotlib==3.9.2
