@@ -21,7 +21,7 @@ def main():
         # Adding SSL configuration
         runserver.default_addr = '0.0.0.0'
         runserver.default_port = '8000'
-        runserver.default_ssl_context = ('cert.pem', 'key.pem')
+        # runserver.default_ssl_context = ('cert.pem', 'key.pem')
 
     execute_from_command_line(sys.argv)
 
